@@ -1,0 +1,121 @@
+{
+  "root": "/data/liuzonghao_data/dataset/BlendedMVS",
+  "maximum_footprint_gib": 140,
+  "download_workers": 6,
+  "files": [
+    {
+      "name": "BlendedMVS.z01",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z01",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215949463",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z02",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z02",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215949680",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z03",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z03",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215950254",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z04",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z04",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215950707",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z05",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z05",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215951417",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z06",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z06",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215953537",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z07",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z07",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215955997",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z08",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z08",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215955792",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z09",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z09",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215955481",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z10",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z10",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215955154",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z11",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z11",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215954830",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z12",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z12",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215954537",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z13",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z13",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215954259",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z14",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z14",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215953950",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.z15",
+      "bytes": 1950000000,
+      "url": "https://gh-proxy.com/https://github.com/YoYo000/BlendedMVS/releases/download/v1.0.0/BlendedMVS.z15",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215953720",
+      "transport": "public_forwarding_mirror_crosschecked_against_official"
+    },
+    {
+      "name": "BlendedMVS.zip",
+      "bytes": 281708973,
+      "url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215948462",
+      "official_asset_url": "https://api.github.com/repos/YoYo000/BlendedMVS/releases/assets/215948462"
+    }
+  ],
+  "mirror_verification": "logs/mirror_probe/summary.json and logs/mirror_probe/z01_range_evidence.json",
+  "prepare_config": "/home/liuzonghao/3Dscene/jar_reconstruction/configs/public_datasets/blendedmvs_prepare.json",
+  "minimum_free_gib": 300
+}

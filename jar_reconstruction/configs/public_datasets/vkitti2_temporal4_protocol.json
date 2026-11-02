@@ -1,0 +1,17 @@
+{
+  "protocol": "temporal4_non_synchronous_dynamic",
+  "synchronized": false,
+  "motion_compensation": false,
+  "dataset": "vkitti",
+  "dataset_path": "/data/liuzonghao_data/dataset/VKITTI2/raw",
+  "tuple_info_file_location": "/data/liuzonghao_data/dataset/VKITTI2/prepared/temporal4",
+  "mv_tuple_file_suffix": "_four_view.txt",
+  "num_images_in_tuple": 4,
+  "frame_tuple_type": "default",
+  "notes": [
+    "使用官方VirtualKITTIDataset/GenericMVSDataset加载，四张图都是Camera_0不同时间的真实图片。",
+    "按已知标定和帧邻域选源，不按GT深度或语义筛选。",
+    "未补偿动态汽车运动，不能与同步四目CARLA协议等同，也不生成伪同步JSONL。",
+    "train/val/test按原Scene隔离，每套tuple不跨Scene或天气。"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "method": "fast_mvsnet",
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "image_size": [
+    64,
+    128
+  ],
+  "model": {
+    "depth_range": [
+      1.0,
+      16.0
+    ],
+    "train_depth_planes": 16,
+    "test_depth_planes": 16,
+    "reference_indices": [
+      0
+    ],
+    "normalization": "consistent_standardized",
+    "weights": ""
+  },
+  "training": {
+    "epochs": 8,
+    "pretrain_epochs": 0,
+    "batch_size": 1,
+    "lr": 0.0005,
+    "weight_decay": 0.001,
+    "precision": "fp32",
+    "find_unused_parameters": true,
+    "num_workers": 0,
+    "max_steps": 1
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      1.0,
+      16.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "max_surface_points": 1024,
+    "warmup": 2
+  },
+  "synthetic_length": 8,
+  "seed": 1701,
+  "cpu_threads": 2
+}

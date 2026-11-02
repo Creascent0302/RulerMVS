@@ -1,0 +1,35 @@
+{
+  "seed": 20261102,
+  "device": "cuda:5",
+  "train_samples_per_domain": 128,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 3e-06,
+  "new_lr": 0.0003,
+  "feature_lr": 1e-06,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder.context_prior."
+  ],
+  "minimum_free_gib": 200,
+  "retention_weight": 0,
+  "workers": 2,
+  "variant": "coordinate",
+  "domain_augmentation": true,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_new_only/public",
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/public/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_public.json",
+  "training_condition": "new_only",
+  "retention_margin": 0,
+  "synthetic_options": {
+    "probability": 0.25,
+    "baseline_norm": [
+      0.03,
+      0.3
+    ],
+    "keep_other_sources": false,
+    "surface_relative_tolerance": 0.01,
+    "minimum_weight": 0.5,
+    "centroid_tolerance": 0.25
+  }
+}

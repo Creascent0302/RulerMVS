@@ -1,0 +1,18 @@
+{
+  "checkpoint": "runs/model_releases/RulerMVS-V2/public_recommended/b411275c3203/pretrained.pt",
+  "output": "runs/active/current_inference/public_fast",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "dataset": "TartanAir_forest",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "inference": {
+    "spatial_layout": true,
+    "factorized_fusion": true,
+    "hoist_reference": true,
+    "compact_pair": true,
+    "projective_ruler": true
+  }
+}

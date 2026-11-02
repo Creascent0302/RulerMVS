@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1670" viewBox="0 0 1640 1670" role="img" aria-label="一次候选匹配与融合：实际内部计算">
+  <title>一次候选匹配与融合：实际内部计算</title>
+  <desc>粗级和细级使用同一套模块与参数。下面 D / H / W 分别取 96 / 32 / 56，或 12 / 64 / 112；省略 batch 维。</desc>
+  <defs>
+    <style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#203246}</style>
+    <marker id="arrow526579" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#526579" />
+    </marker>
+  </defs>
+  <rect width="1640" height="1670" fill="#ffffff" />
+  <text x="60" y="61" font-size="31" font-weight="700" text-anchor="start">一次候选匹配与融合：实际内部计算</text>
+  <text x="60" y="100" font-size="18" font-weight="400" text-anchor="start">粗级和细级使用同一套模块与参数。下面 D / H / W 分别取 96 / 32 / 56，或 12 / 64 / 112；省略 batch 维。</text>
+  <rect x="60" y="120" width="14" height="14" rx="3" fill="#e8f1ff" stroke="#3874b8" />
+  <text x="82" y="133" font-size="16" font-weight="400" text-anchor="start">蓝：冻结预训练编码</text>
+  <rect x="450" y="120" width="14" height="14" rx="3" fill="#e8f6ef" stroke="#288261" />
+  <text x="472" y="133" font-size="16" font-weight="400" text-anchor="start">绿：可训练网络</text>
+  <rect x="840" y="120" width="14" height="14" rx="3" fill="#f0eafa" stroke="#8960ac" />
+  <text x="862" y="133" font-size="16" font-weight="400" text-anchor="start">紫：确定性标定计算</text>
+  <rect x="1230" y="120" width="14" height="14" rx="3" fill="#fff0da" stroke="#c37b17" />
+  <text x="1252" y="133" font-size="16" font-weight="400" text-anchor="start">橙：本轮有效替换</text>
+  <path d="M 385 255 L 385 315" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 385 440 L 385 500" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 385 605 L 385 635 L 212.5 635 L 212.5 665" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 385 605 L 385 635 L 557.5 635 L 557.5 665" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 212.5 810 L 212.5 840 L 385 840 L 385 870" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 557.5 810 L 557.5 840 L 385 840 L 385 870" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 385 1005 L 385 1065" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1225 255 L 1225 315" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1225 440 L 1225 500" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1225 605 L 1225 665" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 710 1135 L 900 1135" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1550 737.5 L 1590 737.5 L 1590 1135 L 1550 1135" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1225 1205 L 1225 1260" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 1225 1365 L 1225 1398 L 825 1398 L 825 1430" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <path d="M 385 1205 L 385 1487.5 L 500 1487.5" fill="none" stroke="#526579" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow526579)" />
+  <rect x="60" y="155" width="650" height="100" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="1.8" />
+  <text x="385.0" y="198.5" font-size="19" font-weight="700" text-anchor="middle">输入候选＋已知标定＋匹配特征库</text>
+  <text x="385.0" y="223.5" font-size="19" font-weight="400" text-anchor="middle">候选深度 D × H × W；四目匹配描述子各 16 维</text>
+  <rect x="900" y="155" width="650" height="100" rx="12" fill="#e8f1ff" stroke="#3874b8" stroke-width="1.8" />
+  <text x="1225.0" y="198.5" font-size="19" font-weight="700" text-anchor="middle">上相机四层图像特征</text>
+  <text x="1225.0" y="223.5" font-size="19" font-weight="400" text-anchor="middle">每层 768 × 16 × 28；来自同一次冻结 ViT 前向</text>
+  <rect x="60" y="315" width="650" height="125" rx="12" fill="#f0eafa" stroke="#8960ac" stroke-width="1.8" />
+  <text x="385.0" y="346.0" font-size="19" font-weight="700" text-anchor="middle">A. 几何引导采样</text>
+  <text x="385.0" y="371.0" font-size="19" font-weight="400" text-anchor="middle">反投影候选 → 精确投影 → 双线性读取源特征</text>
+  <text x="385.0" y="396.0" font-size="19" font-weight="400" text-anchor="middle">同一参考像素直接读取参考描述子；屏蔽无效源</text>
+  <text x="385.0" y="421.0" font-size="19" font-weight="400" text-anchor="middle">输出：参考 16 × H × W；最多三个源各 16 × D × H × W</text>
+  <rect x="900" y="315" width="650" height="125" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="1225.0" y="346.0" font-size="19" font-weight="700" text-anchor="middle">E. 每层保留独立的图像信息</text>
+  <text x="1225.0" y="371.0" font-size="19" font-weight="400" text-anchor="middle">四个互不共享的 1×1 适配器：768 → 64</text>
+  <text x="1225.0" y="396.0" font-size="19" font-weight="400" text-anchor="middle">输出：四层，各 64 × 16 × 28</text>
+  <text x="1225.0" y="421.0" font-size="19" font-weight="400" text-anchor="middle">同一次适配结果被粗级、细级复用</text>
+  <rect x="60" y="500" width="650" height="105" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="385.0" y="533.5" font-size="19" font-weight="700" text-anchor="middle">B. 逐源构造内容证据</text>
+  <text x="385.0" y="558.5" font-size="19" font-weight="400" text-anchor="middle">参考特征、源特征、逐元素乘积、绝对差</text>
+  <text x="385.0" y="583.5" font-size="19" font-weight="400" text-anchor="middle">四组 16 维拼接 → 每源 64 × D × H × W</text>
+  <rect x="900" y="500" width="650" height="105" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="1225.0" y="533.5" font-size="19" font-weight="700" text-anchor="middle">F. 按当前网格对齐图像信息</text>
+  <text x="1225.0" y="558.5" font-size="19" font-weight="400" text-anchor="middle">遵守原始特征中心与像素坐标，双线性采样</text>
+  <text x="1225.0" y="583.5" font-size="19" font-weight="400" text-anchor="middle">四层图像库：4 × 64 × H × W</text>
+  <rect x="60" y="665" width="305" height="145" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="212.5" y="693.5" font-size="19" font-weight="700" text-anchor="middle">内容相似度分支</text>
+  <text x="212.5" y="718.5" font-size="19" font-weight="400" text-anchor="middle">参考 16→16 作为 query</text>
+  <text x="212.5" y="743.5" font-size="19" font-weight="400" text-anchor="middle">源 16→16 作为 key</text>
+  <text x="212.5" y="768.5" font-size="19" font-weight="400" text-anchor="middle">归一化后求相似度</text>
+  <text x="212.5" y="793.5" font-size="19" font-weight="400" text-anchor="middle">另由参考特征预测拒绝分数</text>
+  <rect x="405" y="665" width="305" height="145" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="557.5" y="693.5" font-size="19" font-weight="700" text-anchor="middle">匹配内容与可靠性分支</text>
+  <text x="557.5" y="718.5" font-size="19" font-weight="400" text-anchor="middle">64→16→16 的逐点网络</text>
+  <text x="557.5" y="743.5" font-size="19" font-weight="400" text-anchor="middle">中间使用 SiLU</text>
+  <text x="557.5" y="768.5" font-size="19" font-weight="400" text-anchor="middle">得到源 value 与可靠性分数</text>
+  <text x="557.5" y="793.5" font-size="19" font-weight="400" text-anchor="middle">各候选、各源独立计算</text>
+  <rect x="900" y="665" width="650" height="145" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.8" />
+  <text x="1225.0" y="706.0" font-size="19" font-weight="700" text-anchor="middle">保留四层，不先求固定平均</text>
+  <text x="1225.0" y="731.0" font-size="19" font-weight="400" text-anchor="middle">每个位置存四个 64 维图像向量</text>
+  <text x="1225.0" y="756.0" font-size="19" font-weight="400" text-anchor="middle">候选内容将在后面决定读取哪一层</text>
+  <text x="1225.0" y="781.0" font-size="19" font-weight="400" text-anchor="middle">图像上下文不自动算作多目观测支持</text>
+  <rect x="60" y="870" width="650" height="135" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="385.0" y="906.0" font-size="19" font-weight="700" text-anchor="middle">C. 源视图和「拒绝接收」一起竞争</text>
+  <text x="385.0" y="931.0" font-size="19" font-weight="400" text-anchor="middle">相似度 / 温度＋可靠性 → 带掩码的源维 softmax</text>
+  <text x="385.0" y="956.0" font-size="19" font-weight="400" text-anchor="middle">输出：源 value 加权和 16 维＋null 拒绝质量 1 维</text>
+  <text x="385.0" y="981.0" font-size="19" font-weight="400" text-anchor="middle">null 不接收源内容；坏源可以获得很小的权重</text>
+  <rect x="900" y="870" width="650" height="135" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.8" />
+  <text x="1225.0" y="906.0" font-size="19" font-weight="700" text-anchor="middle">当前几何注意力开关的真实状态</text>
+  <text x="1225.0" y="931.0" font-size="19" font-weight="400" text-anchor="middle">use_geometry = false：额外几何偏置、温度调节关闭</text>
+  <text x="1225.0" y="956.0" font-size="19" font-weight="400" text-anchor="middle">候选信息通道取零；标定仍用于精确投影、退化屏蔽</text>
+  <text x="1225.0" y="981.0" font-size="19" font-weight="400" text-anchor="middle">标定导数仍参与总图步骤⑨的米制搜索步长</text>
+  <rect x="60" y="1065" width="650" height="140" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="385.0" y="1103.5" font-size="19" font-weight="700" text-anchor="middle">D. 构造 32 维候选特征</text>
+  <text x="385.0" y="1128.5" font-size="19" font-weight="400" text-anchor="middle">拼接：源内容16＋null 1＋几何信息0通道占位1 = 18</text>
+  <text x="385.0" y="1153.5" font-size="19" font-weight="400" text-anchor="middle">1×1×1 卷积 18→32 → GELU → 卷积 32→32</text>
+  <text x="385.0" y="1178.5" font-size="19" font-weight="400" text-anchor="middle">加上由深度刻度得到的 32 维位置编码</text>
+  <rect x="900" y="1065" width="650" height="140" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="1225.0" y="1103.5" font-size="19" font-weight="700" text-anchor="middle">G. 候选条件读取四层图像信息</text>
+  <text x="1225.0" y="1128.5" font-size="19" font-weight="400" text-anchor="middle">候选特征经 1×1×1 卷积：32 → query 64</text>
+  <text x="1225.0" y="1153.5" font-size="19" font-weight="400" text-anchor="middle">与四层 64 维图像向量逐层点积 → softmax</text>
+  <text x="1225.0" y="1178.5" font-size="19" font-weight="400" text-anchor="middle">每个深度候选可采用不同的四层权重</text>
+  <rect x="900" y="1260" width="650" height="105" rx="12" fill="#e8f6ef" stroke="#288261" stroke-width="1.8" />
+  <text x="1225.0" y="1293.5" font-size="19" font-weight="700" text-anchor="middle">H. 将所读图像信息返回候选</text>
+  <text x="1225.0" y="1318.5" font-size="19" font-weight="400" text-anchor="middle">四层加权和：64 × D × H × W</text>
+  <text x="1225.0" y="1343.5" font-size="19" font-weight="400" text-anchor="middle">1×1×1 卷积：64 → 32</text>
+  <rect x="500" y="1430" width="650" height="115" rx="12" fill="#e4f2f5" stroke="#337f8c" stroke-width="1.8" />
+  <text x="825.0" y="1468.5" font-size="19" font-weight="700" text-anchor="middle">I. 匹配证据与图像信息相加，再做通道归一化</text>
+  <text x="825.0" y="1493.5" font-size="19" font-weight="400" text-anchor="middle">每个候选独立归一化其 32 个通道；屏蔽无效参考位置</text>
+  <text x="825.0" y="1518.5" font-size="19" font-weight="400" text-anchor="middle">输出：32 × D × H × W，送回总图⑤或⑩</text>
+  <text x="60" y="1628" font-size="16" font-weight="400" text-anchor="start">实线：数据流；紫色虚线：标定依赖；灰色虚线：粗特征继承。仅展示当前实测配置；深度标签不进入推理。</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "training_root": "runs/active/rulermvs_v6_20261101/full_training",
+  "evaluation_root": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery",
+  "output": "runs/active/rulermvs_v6_20261101/full_training/paper_analysis",
+  "groups": ["public_main", "carla_new_main", "public_v3_public_transfer", "carla_new_v3_public_transfer"],
+  "splits": ["val", "test"],
+  "primary": "v6_best",
+  "comparators": ["v2_best", "v4_best", "v5_best", "mvsanywhere_refined"],
+  "paired_comparators": ["v5_best", "mvsanywhere_refined"],
+  "bootstrap_repetitions": 2000,
+  "seed": 20261101,
+  "mechanism_result": "runs/active/rulermvs_v6_20261101/full_training/paper_mechanism/results.json",
+  "provenance_label": "Recovered evaluation; inspect coverage and protocol notes"
+}

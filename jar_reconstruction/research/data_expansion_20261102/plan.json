@@ -1,0 +1,422 @@
+{
+  "reserve_gib": 200,
+  "interface": "eno5",
+  "local_ip": "172.16.2.4",
+  "test_policy": "只纳入与官方任务训练扫描名单/配组无交集的场景；未对基础预训练资产作绝对无曝光保证",
+  "hypersim": {
+    "root": "/data/liuzonghao_data/dataset/Hypersim_expanded",
+    "old_root": "/data/liuzonghao_data/dataset/Hypersim_subset",
+    "minimum": 4536,
+    "target": 5500,
+    "metadata": "docs/download_assets/mvsanywhere_20261023/metadata_camera_parameters.csv",
+    "scenes": [
+      {
+        "scene": "ai_010_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_006.zip",
+        "bytes": 1141950961,
+        "sha256": "a94124a0511e2170ed9b196a12fd2f65f2bea8bc478be68725c99aed6588d8a7",
+        "official_groups": 97
+      },
+      {
+        "scene": "ai_009_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_008.zip",
+        "bytes": 1100733099,
+        "sha256": "ec0ce013c6ef759645748d7e07eef096130faed24a6f2cbde4e417ffdda97a05",
+        "official_groups": 78
+      },
+      {
+        "scene": "ai_003_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_002.zip",
+        "bytes": 2843612984,
+        "sha256": "4a556e68d3db9188900ba1fffdfef8a719f289028e0d8fa4bd3839c05c1f17c1",
+        "official_groups": 191
+      },
+      {
+        "scene": "ai_002_001",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_001.zip",
+        "bytes": 1553465942,
+        "sha256": "97d3c6df8a30db88ee3e69a9723ae01046935a7c4cd69342a38e4e9c8d7a16de",
+        "official_groups": 100
+      },
+      {
+        "scene": "ai_002_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_006.zip",
+        "bytes": 1543160551,
+        "sha256": "f46911947a5d777dab759b6dfe2410ae63f41b6d38f52f48cbaea7b61ffd1e8e",
+        "official_groups": 95
+      },
+      {
+        "scene": "ai_011_005",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_005.zip",
+        "bytes": 2744722955,
+        "sha256": "209d48181c7a8f98cbd5985bb64ec73531af3c7610873d982f144f01f08cd0ed",
+        "official_groups": 168
+      },
+      {
+        "scene": "ai_018_007",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_007.zip",
+        "bytes": 3144788416,
+        "sha256": "d8b70b70b5f86c173e3c5446bb86e181af2b4e34a4cced7ef5fdc374b6cc460d",
+        "official_groups": 190
+      },
+      {
+        "scene": "ai_003_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_006.zip",
+        "bytes": 3042309010,
+        "sha256": "051eccc4128cae9ef23eac9c45f8bea34f4bedef99b4028632aaedaa5a8e3315",
+        "official_groups": 181
+      },
+      {
+        "scene": "ai_010_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_008.zip",
+        "bytes": 1681215967,
+        "sha256": "7eb96b5dba10728df422380693d691bfbe55c563e1677501bc8461b41995de9a",
+        "official_groups": 99
+      },
+      {
+        "scene": "ai_002_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_004.zip",
+        "bytes": 1628137754,
+        "sha256": "0453bcf1c385a3bb3625d91cde33d0b62383c7854302ccdd75c03e5fc542d522",
+        "official_groups": 94
+      },
+      {
+        "scene": "ai_006_009",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_009.zip",
+        "bytes": 5190808307,
+        "sha256": "9166b4e24e7e593f322bd6ecea47ab1745f3b44c052e4f248db33cadfd82ec9c",
+        "official_groups": 295
+      },
+      {
+        "scene": "ai_006_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_004.zip",
+        "bytes": 1770862884,
+        "sha256": "eabd0d280a54c133cc9ff4a7309ecebf4e9ae80a29cdb1d431a1aadf86c61bb4",
+        "official_groups": 100
+      },
+      {
+        "scene": "ai_010_005",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_005.zip",
+        "bytes": 1808242409,
+        "sha256": "de05c1a869eef25965401a59973312ecf4089b11f7ddf4a32f75b88cd2c5e027",
+        "official_groups": 99
+      },
+      {
+        "scene": "ai_001_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_008.zip",
+        "bytes": 1869665514,
+        "sha256": "961c4dfada8722b0934a0e130dd3a168067f7e871536435172420d66515d18d7",
+        "official_groups": 100
+      },
+      {
+        "scene": "ai_013_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_004.zip",
+        "bytes": 1536340762,
+        "sha256": "0ab53f4cfdea54f66d9c945d3b2ea4f953b4e8c8a5cce99857e1d0a754a9f95d",
+        "official_groups": 82
+      },
+      {
+        "scene": "ai_003_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_004.zip",
+        "bytes": 3540080729,
+        "sha256": "c6d156870eef8432934858ba3f747774fdc1ed97b1bc1fa25fbf191c3f9475e8",
+        "official_groups": 187
+      },
+      {
+        "scene": "ai_008_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_002.zip",
+        "bytes": 3649289087,
+        "sha256": "f87506308c6ccf6ccde296750468c77a9069fb0f6cd7cdc6df930f7eae25e1a6",
+        "official_groups": 190
+      },
+      {
+        "scene": "ai_043_007",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_007.zip",
+        "bytes": 1901549298,
+        "sha256": "893ff38d6f16cf63bbb9d31f5a95cb6b6a878cfdae4442d669a8c21334f27e2a",
+        "official_groups": 99
+      },
+      {
+        "scene": "ai_007_010",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_010.zip",
+        "bytes": 3551668181,
+        "sha256": "d77e0cedf865ea0c3af7d850c03fe4a8592ef705baf065d78f546bb94cd6fb30",
+        "official_groups": 184
+      },
+      {
+        "scene": "ai_005_007",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_007.zip",
+        "bytes": 1913270408,
+        "sha256": "af0bb40045ee01cd21c917956798a023ad5e38cdc62969fb4749748eab9240fb",
+        "official_groups": 99
+      },
+      {
+        "scene": "ai_006_010",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_010.zip",
+        "bytes": 5751438551,
+        "sha256": "6fb5c86e320ba81f8a45f867c2d478acfe1abf34ea047060fb0452653873d0aa",
+        "official_groups": 293
+      },
+      {
+        "scene": "ai_001_005",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_005.zip",
+        "bytes": 7728063956,
+        "sha256": "6a256e529686242fb6fbbec5bfe3dc4e2730c81d29622199184a9f34fd6d508e",
+        "official_groups": 387
+      },
+      {
+        "scene": "ai_010_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_002.zip",
+        "bytes": 1943279334,
+        "sha256": "d42ebf268a9340cc6e90771556963f111be1f07a1b2f020fd3498d13bed14ea4",
+        "official_groups": 97
+      },
+      {
+        "scene": "ai_005_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_006.zip",
+        "bytes": 1927553526,
+        "sha256": "4c5d76cf77debf852a6ad66155c03b0c3c95a826e786f71c2da9af09f571712e",
+        "official_groups": 96
+      },
+      {
+        "scene": "ai_007_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_004.zip",
+        "bytes": 5790543924,
+        "sha256": "0270c317b96e6df4d430005a0e322da7537542eafc18f4efb381b3118c06545b",
+        "official_groups": 285
+      },
+      {
+        "scene": "ai_006_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_002.zip",
+        "bytes": 5872297078,
+        "sha256": "10b6dd7a6a7480614ec730d4515ee1be43ca88a0a3469b181303e77082fcb276",
+        "official_groups": 287
+      },
+      {
+        "scene": "ai_029_001",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_029_001.zip",
+        "bytes": 5465977162,
+        "sha256": "57a8f60ad7190d700cb99eccd4ba4a1bf34ccb8784c43bdae3fedfc5318cf797",
+        "official_groups": 267
+      },
+      {
+        "scene": "ai_008_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_004.zip",
+        "bytes": 3596162638,
+        "sha256": "d392ae49f6417aed8bfbdf82b2d0c8f2f630ed505cef1263ea3790e1c713057c",
+        "official_groups": 175
+      },
+      {
+        "scene": "ai_001_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_002.zip",
+        "bytes": 7339526342,
+        "sha256": "13c9e7c0a98a6e93c12a26844e216afdf56666a52d16d761a83481181ac3650e",
+        "official_groups": 356
+      },
+      {
+        "scene": "ai_016_009",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_009.zip",
+        "bytes": 9711433397,
+        "sha256": "0091a7e3e9e622a0c5eb7bc71214aad14525fb43510c398428efb233946dddd2",
+        "official_groups": 458
+      },
+      {
+        "scene": "ai_009_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_006.zip",
+        "bytes": 1890797221,
+        "sha256": "add8531cb271e4d28f1db625a50b0aa28a0e45ffcd00b834f95a81f9f612cc1a",
+        "official_groups": 89
+      },
+      {
+        "scene": "ai_011_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_008.zip",
+        "bytes": 4113319075,
+        "sha256": "2e2f6586981e45df67ef322bbf6feb75cf40cf894641d692195ec0a13c87224e",
+        "official_groups": 192
+      },
+      {
+        "scene": "ai_007_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_002.zip",
+        "bytes": 2103195129,
+        "sha256": "72bade8bac3eb026cfd6e99fead434d3a7516b1dc05188e1888a622f088f56c6",
+        "official_groups": 97
+      },
+      {
+        "scene": "ai_009_005",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_005.zip",
+        "bytes": 3946637061,
+        "sha256": "83ea5a064c265cadae404313b03908a734a2a124c7fe313470600ff5bcc1c23f",
+        "official_groups": 182
+      },
+      {
+        "scene": "ai_035_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_008.zip",
+        "bytes": 2169967276,
+        "sha256": "e38b468f2c77cb52f91a8c815c3a89c23ce48abd4b1a11b3b05071fef929dd92",
+        "official_groups": 99
+      },
+      {
+        "scene": "ai_016_002",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_002.zip",
+        "bytes": 2153270391,
+        "sha256": "4fc08d1afe4bca493290d2597462cff52ec6fb233bdae599f54a451025c40ac6",
+        "official_groups": 98
+      },
+      {
+        "scene": "ai_001_006",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_006.zip",
+        "bytes": 6082053751,
+        "sha256": "969ce165973a3676cd77936a93cee5106a7a79694d40b8535499d19cbae561ea",
+        "official_groups": 276
+      },
+      {
+        "scene": "ai_005_008",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_008.zip",
+        "bytes": 2215657229,
+        "sha256": "2bc763c4241c7644bef6c64ff552c324083cf7f663b551ced0ce33dc87c54274",
+        "official_groups": 100
+      },
+      {
+        "scene": "ai_001_009",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_009.zip",
+        "bytes": 2156465956,
+        "sha256": "9e4a49c6b155fddbf56397f246b9c6ff92b586c2f5c0835594dd42420db386b6",
+        "official_groups": 97
+      },
+      {
+        "scene": "ai_030_004",
+        "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_004.zip",
+        "bytes": 2157797404,
+        "sha256": "0474ebb842aa637934c4f4f10bbe1dcdd541d3b000d2727741f2f39b921d2ca5",
+        "official_groups": 97
+      }
+    ]
+  },
+  "tartan": {
+    "root": "/data/liuzonghao_data/dataset/TartanAir_expanded",
+    "old_root": "/data/liuzonghao_data/dataset/TartanAir_forest",
+    "minimum": 9212,
+    "target": 10000,
+    "official_train_scans": "official_methods/methods/mvsanywhere/upstream/data_splits/tartanair/train_scans.txt",
+    "environments": [
+      {
+        "name": "office",
+        "files": [
+          {
+            "path": "office/Easy/seg_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/office/Easy/seg_left.zip",
+            "bytes": 44505642,
+            "sha256": "b02e891d6a3b87992e86d974bbf66d34d695c34bebc97c3f111a4ca3c06af84f"
+          },
+          {
+            "path": "office/Easy/depth_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/office/Easy/depth_left.zip",
+            "bytes": 1109350221,
+            "sha256": "02650e5fa08fbb1934a96a0bb55baf0c8ddc2f77d2e3ea67c3ff8be1979f33c2"
+          },
+          {
+            "path": "office/Easy/image_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/office/Easy/image_left.zip",
+            "bytes": 3309042345,
+            "sha256": "65b6f1c350ec88edf77c18aca1ca3535569ee75eaa62f03ed93b7be76f46f353"
+          }
+        ]
+      },
+      {
+        "name": "seasidetown",
+        "files": [
+          {
+            "path": "seasidetown/Easy/seg_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasidetown/Easy/seg_left.zip",
+            "bytes": 70854779,
+            "sha256": "06d2465df2875e42628643669fe7ce0ef7bcb66b8d96688250c307924bda2fba"
+          },
+          {
+            "path": "seasidetown/Easy/depth_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasidetown/Easy/depth_left.zip",
+            "bytes": 1167753975,
+            "sha256": "bbfb2db0dca63f0bca9067a1d3055738606b74e184558055d0bc13da0ab9f6f1"
+          },
+          {
+            "path": "seasidetown/Easy/image_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasidetown/Easy/image_left.zip",
+            "bytes": 3179905243,
+            "sha256": "e044e4b06d049b27be144d85276a40bb2453f9d5d693dd892fb5d1e1568b44c2"
+          }
+        ]
+      },
+      {
+        "name": "abandonedfactory",
+        "files": [
+          {
+            "path": "abandonedfactory/Easy/seg_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/abandonedfactory/Easy/seg_left.zip",
+            "bytes": 156442993,
+            "sha256": "9f3f731b77510f1b243a57322f3baa0e497abe8a8b166427068ffa54bc4dc38e"
+          },
+          {
+            "path": "abandonedfactory/Easy/depth_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/abandonedfactory/Easy/depth_left.zip",
+            "bytes": 2998317429,
+            "sha256": "b2867d97719bbc087f83bbd25b26207056efeecab1abdcffad35bf1838cd7264"
+          },
+          {
+            "path": "abandonedfactory/Easy/image_left.zip",
+            "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/abandonedfactory/Easy/image_left.zip",
+            "bytes": 7074777614,
+            "sha256": "8a46d32d9ebf42667f913d64de340499b5bcb9e9c428d2df7f6c3443f8867976"
+          }
+        ]
+      }
+    ]
+  },
+  "dynamic": {
+    "root": "/data/liuzonghao_data/dataset/DynamicReplica_train",
+    "old_root": "/data/liuzonghao_data/dataset/DynamicReplica_valid",
+    "minimum": 7010,
+    "target": 7200,
+    "official_train_scans": "official_methods/methods/mvsanywhere/upstream/data_splits/dynamic_replica/dynamic_replica_train.txt",
+    "annotation": {
+      "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_000.zip",
+      "bytes": 48871423,
+      "sha256": "e9fd9af579b0d08d538551c0ab6f7231a1fd162139667803e672cc0dc8b98b03"
+    },
+    "archives": [
+      {
+        "path": "train_001.zip",
+        "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_001.zip",
+        "bytes": 18905722740,
+        "sha256": "65cb438c7a48567f85db8e54109db6c25d2a621fcbd3267c542a8a640e1dad56",
+        "mirror_url": "https://hf-mirror.com/datasets/geyongtao/dynamic_replica/resolve/main/train_001.zip"
+      },
+      {
+        "path": "train_002.zip",
+        "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_002.zip",
+        "bytes": 19793999758,
+        "sha256": "c3d9a76a955dd9feb0275837a17133a1d7ee76c963f1c6fa7630deb0ca8209b2",
+        "mirror_url": "https://hf-mirror.com/datasets/geyongtao/dynamic_replica/resolve/main/train_002.zip"
+      },
+      {
+        "path": "train_003.zip",
+        "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_003.zip",
+        "bytes": 18879846172,
+        "sha256": "13e108f78c7da1f1c1469dd87fab55a6e4ec79f1fcb6d7d16cc9006a933979f4",
+        "mirror_url": "https://hf-mirror.com/datasets/geyongtao/dynamic_replica/resolve/main/train_003.zip"
+      },
+      {
+        "path": "train_004.zip",
+        "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_004.zip",
+        "bytes": 18505035827,
+        "sha256": "171b92a62b46a68f1d89c2326ba67b6433faf087bc1eecc7a947c19d0f90d3e6",
+        "mirror_url": "https://hf-mirror.com/datasets/geyongtao/dynamic_replica/resolve/main/train_004.zip"
+      },
+      {
+        "path": "train_005.zip",
+        "url": "https://dl.fbaipublicfiles.com/dynamic_replica_v2/train/train_005.zip",
+        "bytes": 19057847970,
+        "sha256": "75461ffe13cfbd87b4f0f9ffc83002b8381f5a0a212ece18b8961012f865a46e",
+        "mirror_url": "https://hf-mirror.com/datasets/geyongtao/dynamic_replica/resolve/main/train_005.zip"
+      }
+    ]
+  }
+}

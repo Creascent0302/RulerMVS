@@ -1,0 +1,163 @@
+{
+  "checked_utc": "2026-10-24",
+  "reserve_gib": 300,
+  "available_bytes_at_check": 446597050368,
+  "datasets": [
+    {
+      "directory": "TartanAir_forest",
+      "root": "/data/liuzonghao_data/dataset/TartanAir_forest",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/TartanAir_forest",
+      "scope": "10条seasonsforest/Easy完整轨迹",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "manifest_directory": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests",
+      "tuple_counts": {
+        "train": 3056,
+        "val": 710,
+        "test": 848
+      },
+      "allocated_bytes": 16523079680,
+      "own_config": "configs/public_datasets/tartanair_forest_own.json",
+      "mvsanywhere_config": "configs/public_datasets/tartanair_forest_mvsanywhere.json"
+    },
+    {
+      "directory": "MatrixCity_street",
+      "root": "/data/liuzonghao_data/dataset/MatrixCity_street",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "scope": "small_city/street/outside train+test完整选定模态",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "manifest_directory": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests",
+      "tuple_counts": {
+        "train": 4250,
+        "val": 475,
+        "test": 160
+      },
+      "allocated_bytes": 44932788224,
+      "own_config": "configs/public_datasets/matrixcity_street_own.json",
+      "mvsanywhere_config": "configs/public_datasets/matrixcity_street_mvsanywhere.json"
+    },
+    {
+      "directory": "Hypersim_subset",
+      "root": "/data/liuzonghao_data/dataset/Hypersim_subset",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/Hypersim_subset",
+      "scope": "12个完整标准针孔场景",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "manifest_directory": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests",
+      "tuple_counts": {
+        "train": 597,
+        "val": 199,
+        "test": 194
+      },
+      "allocated_bytes": 40575102976,
+      "own_config": "configs/public_datasets/hypersim_subset_own.json",
+      "mvsanywhere_config": "configs/public_datasets/hypersim_subset_mvsanywhere.json"
+    },
+    {
+      "directory": "MVS_Synth",
+      "root": "/data/liuzonghao_data/dataset/MVS_Synth",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "scope": "GTAV_540完整120场景",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": false,
+      "manifest_directory": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests",
+      "tuple_counts": {
+        "train": 9476,
+        "val": 1164,
+        "test": 1183
+      },
+      "allocated_bytes": 46080892928,
+      "own_config": "configs/public_datasets/mvssynth_own.json",
+      "mvsanywhere_config": "configs/public_datasets/mvssynth_mvsanywhere.json"
+    },
+    {
+      "directory": "VKITTI2",
+      "root": "/data/liuzonghao_data/dataset/VKITTI2",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "scope": "2.0.3完整RGB/depth/classSegmentation/textgt，未下flow",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "synchronized_capture": true,
+      "manifest_directory": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2",
+      "tuple_counts": {
+        "train": 9500,
+        "val": 3390,
+        "test": 8370
+      },
+      "allocated_bytes": 98511671296,
+      "own_config": "configs/public_datasets/vkitti2_own.json",
+      "mvsanywhere_config": "configs/public_datasets/vkitti2_mvsanywhere.json"
+    },
+    {
+      "directory": "BlendedMVS",
+      "root": "/data/liuzonghao_data/dataset/BlendedMVS",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "scope": "v1.0.0基础版完整113场景，不含+/++",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": false,
+      "manifest_directory": "/data/liuzonghao_data/dataset/BlendedMVS/manifests",
+      "tuple_counts": {
+        "train": 15184,
+        "val": 1719,
+        "test": 915
+      },
+      "allocated_bytes": 103284510720,
+      "own_config": "configs/public_datasets/blendedmvs_own.json",
+      "mvsanywhere_config": "configs/public_datasets/blendedmvs_mvsanywhere.json"
+    },
+    {
+      "directory": "DynamicReplica_valid",
+      "root": "/data/liuzonghao_data/dataset/DynamicReplica_valid",
+      "project_symlink": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+      "scope": "原valid_001中4条完整序列，仅validation",
+      "status": "downloaded_and_preprocessed",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": true,
+      "manifest_directory": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests",
+      "tuple_counts": {
+        "val": 1200
+      },
+      "allocated_bytes": 35662454784,
+      "own_config": "configs/public_datasets/dynamicreplica_own.json",
+      "mvsanywhere_config": "configs/public_datasets/dynamicreplica_mvsanywhere.json"
+    }
+  ],
+  "unavailable": [
+    {
+      "dataset": "SAIL-VOS 3D",
+      "reason": "需要作者授权原始depth与MVSAnywhere要求的额外rage_matrices投影矩阵，未找到公开完整可用来源"
+    }
+  ],
+  "excluded_large_versions": [
+    "BlendedMVS+ 87.49GB压缩",
+    "BlendedMVS++ 85.91GB压缩",
+    "Hypersim约1.9TB完整包",
+    "TartanAir/MatrixCity/DynamicReplica全量"
+  ],
+  "notes": [
+    "四视图静态多位置不是同步物理四目；双目未复制补四目",
+    "scene_unit单位未经米制认证，不与CARLA米制指标混评",
+    "DynamicReplica只有原validation，不提供伪造train/test",
+    "旧CARLA搜索/监督范围不自动适合新域，配置为接入模板，非已优化训练配方"
+  ]
+}

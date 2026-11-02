@@ -1,0 +1,17 @@
+{
+  "output": "runs/active/role_fusion_20261030/latency_carla.json",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "device": "cuda:0",
+  "datasets": [
+    "CARLA_new_stereo_up"
+  ],
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/carla_new/best.pt",
+    "control": "runs/active/role_fusion_20261030/carla_control/final.pt",
+    "context": "runs/active/role_fusion_20261030/carla_context/final.pt",
+    "carry": "runs/active/role_fusion_20261030/carla_carry/final.pt",
+    "both": "runs/active/role_fusion_20261030/carla_both/final.pt"
+  },
+  "warmup": 10,
+  "repeats": 40
+}

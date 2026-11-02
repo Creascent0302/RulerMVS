@@ -1,0 +1,29 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/carla_new/best.pt",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "output": "runs/active/near_evidence_20261030/carla_coarse_attention",
+  "device": "cuda:3",
+  "seed": 20261030,
+  "train_samples_per_domain": 497,
+  "epochs": 1,
+  "batch_size": 2,
+  "lr": 5e-06,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "model_overrides": {
+    "source_relative_evidence": false,
+    "source_intervention_probability": 0.0,
+    "source_intervention_seed": 20261030,
+    "source_relative_coarse_attention": true
+  },
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "actual_fine_risk": true,
+  "correspondence_weight": 0.0,
+  "augmentation": true,
+  "workers": 2,
+  "threads": 2,
+  "minimum_free_gib": 200,
+  "validation_note": "第二轮复用既有VAL的development/confirmation样本，后者已在第一轮查看，不能称新盲确认。"
+}

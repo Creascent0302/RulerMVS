@@ -1,0 +1,20 @@
+--- a/models/patchmatch.py
++++ b/models/patchmatch.py
+@@ -113,7 +113,7 @@
+         num_src_features = len(src_features)
+         num_src_projs = len(src_projs)
+         batch, feature_channel, height, width = ref_feature.size()
+-        device = ref_feature.get_device()
++        device = ref_feature.device
+         
+         num_depth = depth_sample.size()[1]
+         assert num_src_features == num_src_projs, "Patchmatch Evaluation: Different number of images and projection matrices"
+@@ -368,7 +368,7 @@
+                 depth = None, img = None, view_weights = None):
+         depth_samples = []
+ 
+-        device = ref_feature.get_device()
++        device = ref_feature.device
+         batch, _, height, width = ref_feature.size()
+         
+         # the learned additional 2D offsets for adaptive propagation

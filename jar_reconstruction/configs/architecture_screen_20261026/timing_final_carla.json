@@ -1,0 +1,54 @@
+{
+  "checkpoint": "runs/active/public_pretrain_no_hero_v2/carla_finetune/pretrained.pt",
+  "output": "runs/active/architecture_screen_20261026/timing_final_carla",
+  "mode": "timing",
+  "split": "val",
+  "partition": "development",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "seed": 20261026,
+  "development_per_domain": 8,
+  "confirmation_per_domain": 16,
+  "baseline": "previous",
+  "variants": {
+    "previous": {
+      "model_overrides": {},
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "compact_only": {
+      "model_overrides": {
+        "compact_sources": true
+      },
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "ruler_fast": {
+      "model_overrides": {
+        "compact_sources": true,
+        "projective_ruler": true
+      },
+      "inference": {
+        "spatial_layout": true,
+        "factorized_fusion": true,
+        "hoist_reference": true,
+        "compact_pair": true
+      }
+    }
+  },
+  "tolerance": {
+    "macro_relative_degradation": 0.005,
+    "per_domain_relative_degradation": 0.02,
+    "meaning": "固定工程容差，非统计证明；宏值为逐域相对变化均值，不平均不同单位的误差。"
+  },
+  "timing": {
+    "datasets": [
+      "CARLA_wide4"
+    ],
+    "warmup": 8,
+    "repetitions": 30
+  },
+  "data_config": "configs/current/carla_data.json"
+}

@@ -1,0 +1,69 @@
+{
+  "method": "simplerecon",
+  "profile": "carla",
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "model": {
+    "num_views": 4,
+    "image_height": 384,
+    "image_width": 512,
+    "reference_indices": [
+      0
+    ],
+    "depth_bins": 64,
+    "min_depth": 2.0,
+    "max_depth": 80.0,
+    "pretrained": false,
+    "weights": ""
+  },
+  "training": {
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "lr_steps": [
+      70000,
+      80000
+    ],
+    "gradient_accumulation_steps": 1,
+    "max_steps": 110000,
+    "batch_size": 1,
+    "seed": 0
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "warmup": 5,
+    "roi": [
+      [
+        0,
+        64
+      ],
+      [
+        -24,
+        24
+      ],
+      [
+        -2,
+        6
+      ]
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "initialization_note": "pretrained=false 用于无下载的完整架构合成验证；正式参考复现须启用骨干预训练或显式加载官方权重，不可将随机初始化结果称为论文复现精度。",
+  "adaptation_note": "官方 Hero 固定8目MLP输入；CARLA4目按官方 num_source_views=3 构造MLP，原8目该层权重不兼容，不裁剪、不补图。共同CARLA输入统一384×512（高×宽）、每卡batch_size=1；已补默认尺寸单GPU前向/损失/反向，正式预算仍须记录DDP卡数、累计步数和全局batch。"
+}

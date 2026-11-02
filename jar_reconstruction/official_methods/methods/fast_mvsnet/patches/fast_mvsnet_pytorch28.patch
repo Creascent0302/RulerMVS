@@ -1,0 +1,31 @@
+diff --git a/fastmvsnet/utils/feature_fetcher.py b/fastmvsnet/utils/feature_fetcher.py
+index aa3e612..a436599 100644
+--- a/fastmvsnet/utils/feature_fetcher.py
++++ b/fastmvsnet/utils/feature_fetcher.py
+@@ -54,7 +54,7 @@ class FeatureFetcher(nn.Module):
+ 
+         # pts_feature = F.grid_sample(feature_maps, grid, mode=self.mode, padding_mode='border')
+         # print("without border pad-----------------------")
+-        pts_feature = F.grid_sample(feature_maps, grid, mode=self.mode)
++        pts_feature = F.grid_sample(feature_maps, grid, mode=self.mode, align_corners=True)
+         pts_feature = pts_feature.squeeze(3)
+ 
+         pts_feature = pts_feature.view(batch_size, num_view, channels, num_pts)
+@@ -124,7 +124,7 @@ class FeatureGradFetcher(nn.Module):
+ 
+ 
+         def get_features(grid_uv):
+-            pts_feature = F.grid_sample(feature_maps, grid_uv, mode=self.mode)
++            pts_feature = F.grid_sample(feature_maps, grid_uv, mode=self.mode, align_corners=True)
+             pts_feature = pts_feature.squeeze(3)
+ 
+             pts_feature = pts_feature.view(batch_size, num_view, channels, num_pts)
+@@ -180,7 +180,7 @@ class FeatureGradFetcher(nn.Module):
+         grid[..., 1] = (grid[..., 1] / float(height - 1)) * 2 - 1.0
+ 
+         def get_features(grid_uv):
+-            pts_feature = F.grid_sample(feature_maps, grid_uv, mode=self.mode)
++            pts_feature = F.grid_sample(feature_maps, grid_uv, mode=self.mode, align_corners=True)
+             pts_feature = pts_feature.squeeze(3)
+ 
+             pts_feature = pts_feature.view(batch_size, num_view, channels, num_pts)

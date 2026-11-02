@@ -1,0 +1,329 @@
+{
+  "model": {
+    "name": "ruler_direct",
+    "feature_dim": 32,
+    "hidden_dim": 64,
+    "backbone_width": 12,
+    "near": 2.0,
+    "far": 80.0,
+    "depth_bins": 192,
+    "correlation_groups": 8,
+    "sweep_chunk": 192,
+    "max_queries": 1024,
+    "query_explore": 0.5,
+    "refinement_min_step": 0.002,
+    "refinement_max_step": 4.0,
+    "fusion_cell_size": 0.05,
+    "texture_threshold": 0.002,
+    "evidence_threshold": 0.15,
+    "min_support": 2,
+    "roi": [
+      [
+        0.0,
+        80.0
+      ],
+      [
+        -45.0,
+        45.0
+      ],
+      [
+        -2.0,
+        20.0
+      ]
+    ],
+    "semantic_classes": 0,
+    "validate_inputs": true,
+    "et_query_conditioned_matching": true,
+    "et_step_pixels": [
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "et_global_candidates": 192,
+    "et_photo_descriptor": "census5",
+    "et_query_policy": "phase_grid",
+    "et_query_policy_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "et_stage_fractions": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "et_oriented_polish_stages": [
+      3
+    ],
+    "op_query_chunk": 256,
+    "et_free_space_source": "verified_queries",
+    "multifocal": {
+      "enabled": true,
+      "tele_initialization": true,
+      "tele_birth": true,
+      "scale_routing": true,
+      "observability": true,
+      "tele_refinement": true,
+      "resolution_fusion": true
+    },
+    "depth_sampling": "hybrid",
+    "depth_transition": 16.0,
+    "depth_near_fraction": 0.6666666666666666,
+    "et_roi_proposals": true,
+    "et_parent_children": true,
+    "et_parent_fraction": 0.75,
+    "et_protect_parent": false,
+    "op_calibrated_span": true,
+    "op_rounds": 3,
+    "op_step_pixels": 1.0,
+    "et_edge_queries": true,
+    "et_edge_ruler": false,
+    "et_patch_dilation": 1,
+    "op_patch_dilation": 1,
+    "op_patch_radius": 1,
+    "et_shared_view_weights": true,
+    "pretrained_matching": {
+      "weight": 0.5,
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "prefix": "matching_model."
+    },
+    "et_curve_context": {
+      "enabled": true,
+      "stages": [
+        3
+      ],
+      "strength": 0.5,
+      "radius": 32.0,
+      "neighbors": 8
+    },
+    "hypothesis_context": {
+      "enabled": true,
+      "hidden_dim": 32,
+      "heads": 4,
+      "layers": 1,
+      "radius": 32.0,
+      "neighbors": 8,
+      "max_residual": 4.0,
+      "spatial": true,
+      "stages": [
+        1,
+        2,
+        3
+      ]
+    },
+    "deep_encoder": {
+      "enabled": true,
+      "stage_blocks": [
+        2,
+        3,
+        4,
+        3,
+        2
+      ],
+      "foundation": {
+        "enabled": true,
+        "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+        "fuse_matching": false
+      }
+    },
+    "candidate_reasoning": {
+      "enabled": true,
+      "layers": 3,
+      "max_residual": 4.0
+    },
+    "cost_context": {
+      "enabled": true,
+      "channels": 24,
+      "layers": 3,
+      "max_residual": 4.0
+    },
+    "dense_decoder": {
+      "enabled": true,
+      "hidden_dim": 64,
+      "blocks_per_stage": 2,
+      "context_layers": 2,
+      "context_heads": 4,
+      "full_resolution_dim": 16,
+      "rgb_skip": true,
+      "calibrated_refinement": {
+        "enabled": true,
+        "hidden_dim": 32,
+        "chunk_size": 7168,
+        "min_step": 0.02,
+        "max_step": 12,
+        "initial_gate": 0.05,
+        "feature_source": "pretrained",
+        "gate_multiplier": 4,
+        "pass_max_steps": [
+          12,
+          4
+        ]
+      },
+      "depth_initialization": "learned",
+      "surface_recovery": {
+        "enabled": true,
+        "weights": "",
+        "proposal_mode": "metric_supported",
+        "proposal_count": 9,
+        "view_consensus_weight": 0.9062904715538025
+      },
+      "raw_feature_reader": {
+        "enabled": true,
+        "hidden_dim": 64,
+        "memory_channels": 768,
+        "memory_layers": 4,
+        "memory_rank": 0,
+        "conditioned": true,
+        "chunk_size": 1024,
+        "max_residual": 4.0,
+        "residual_scale": 1.0,
+        "weights": ""
+      }
+    },
+    "dense_evidence": {
+      "enabled": true,
+      "chunk_size": 65536
+    },
+    "sparse_decoder": {
+      "enabled": false
+    },
+    "matching_evidence": {
+      "enabled": true,
+      "hidden_dim": 16,
+      "initial_weight": 2.0,
+      "max_weight": 4.0
+    },
+    "execution": {
+      "reference_indices": [
+        2
+      ]
+    },
+    "candidate_field": {
+      "enabled": true,
+      "stride": 4,
+      "cnn_stride": 16,
+      "neighbor_pixels": 16,
+      "weight": 3.0,
+      "weights": "",
+      "memory": {
+        "cost_channels": 12,
+        "channels": 16,
+        "blocks": 1,
+        "max_residual": 8.0,
+        "normalization": "group"
+      }
+    }
+  },
+  "data": {
+    "root": "/data/liuzonghao_data/dataset/DynamicReplica_valid",
+    "geometry_units": "scene_unit",
+    "num_views": 2,
+    "train_manifest": "",
+    "val_manifest": "prepared/manifests/val.jsonl",
+    "test_manifest": "",
+    "protocol": "calibrated_multiview",
+    "image_size": [
+      256,
+      448
+    ],
+    "matching_image_size": [
+      512,
+      896
+    ],
+    "depth_resize_mode": "nearest-exact"
+  },
+  "synthetic": {
+    "length": 8,
+    "height": 128,
+    "width": 192,
+    "num_cameras": 4,
+    "seed": 7
+  },
+  "train": {
+    "seed": 47,
+    "batch_size": 1,
+    "num_workers": 2,
+    "learning_rate": 0.0002,
+    "max_steps": 2000,
+    "checkpoint_every": 200,
+    "precision": "fp32"
+  },
+  "eval": {
+    "fscore_threshold": 0.2,
+    "max_metric_points": 4096,
+    "spatial_probe_spacing": 2.0,
+    "surface_band": 0.1,
+    "precision": "fp32",
+    "warmup": 3,
+    "num_workers": 0,
+    "pin_memory": true,
+    "observed_only": true
+  },
+  "runtime": {
+    "threads": 2,
+    "dist_timeout": 300
+  },
+  "loss": {
+    "enforce_reference_depth_range": true,
+    "reference_depth_regression": true,
+    "coarse_reference_depth": 0.2,
+    "reference_depth": 0.5,
+    "geometry": 0.1,
+    "update": 0.0,
+    "geometry_beta_m": 0.05,
+    "relative_geometry": true,
+    "geometry_absolute_scale_m": 0.05,
+    "geometry_relative_scale": 0.01,
+    "dense_depth": 1.0,
+    "dense_gradient": 0.1,
+    "dense_confidence": 0.05,
+    "dense_stage_weights": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.0
+    ],
+    "dense_log_weight": 1.0,
+    "dense_surface_recovery": 0.0
+  },
+  "baseline": {
+    "stride": 4
+  },
+  "experiment_note": "TRAIN220选择头 + TRAIN66留一视角稳定性标量；实验组合，未作为默认推荐。",
+  "direct": {
+    "near": 2.0,
+    "far": 80.0,
+    "depth_bins": 96,
+    "transition": 16.0,
+    "near_fraction": 0.5,
+    "channels": 32,
+    "raw_channels": 64,
+    "scene_channels": 128,
+    "scene_heads": 4,
+    "scene_grid": [
+      4,
+      4,
+      7
+    ],
+    "scene_blocks": 1,
+    "peak_count": 4,
+    "peak_separation_m": 1.0,
+    "fine_min_step_m": 0.05,
+    "fine_max_step_m": 8.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": false,
+    "use_scene": false,
+    "use_fine_offset": false,
+    "local_kind": "scale_space",
+    "proposal_transport": "bilinear",
+    "reference_index": 0,
+    "reference_indices": [
+      0
+    ]
+  },
+  "public_dataset_note": "仅四条官方validation序列；不提供伪造official train/test。训练前必须另行声明按序列development划分。单位scene_unit未经米制认证。"
+}

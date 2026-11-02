@@ -1,0 +1,27 @@
+[
+  {
+    "method": "MVSFormer++",
+    "url": "https://arxiv.org/html/2401.11673v1",
+    "used": "粗候选全局推理、细候选轴不再是统一物理平面；避免简单复制粗正则器到细层"
+  },
+  {
+    "method": "PatchmatchNet",
+    "url": "https://github.com/FangjinhuaWang/PatchmatchNet",
+    "used": "复用已有可靠性判断并读取少量新证据；本项目仍保留候选相关的视图可靠性"
+  },
+  {
+    "method": "IterMVS",
+    "url": "https://github.com/FangjinhuaWang/IterMVS",
+    "used": "保留多候选状态、主峰附近局部读出；未直接复制GRU"
+  },
+  {
+    "method": "GBi-Net",
+    "url": "https://github.com/MiZhenxing/GBi-Net",
+    "used": "粗判断可被容错候选修正；没有硬锁粗赢家"
+  },
+  {
+    "method": "Effi-MVS",
+    "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Efficient_Multi-View_Stereo_by_Iterative_Dynamic_Cost_Volume_CVPR_2022_paper.pdf",
+    "used": "压缩每轮新证据计算量；本轮实际提速来自计算复用/编译而非宣称动态体越小一定越快"
+  }
+]

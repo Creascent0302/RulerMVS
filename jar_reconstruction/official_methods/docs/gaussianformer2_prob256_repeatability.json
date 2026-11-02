@@ -1,0 +1,45 @@
+{
+  "config": "official_methods/configs/gaussianformer2_carla.json",
+  "random_init": true,
+  "gaussians": 25600,
+  "image_size": [
+    384,
+    512
+  ],
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "roi": [
+    [
+      0,
+      64
+    ],
+    [
+      -24,
+      24
+    ],
+    [
+      -2,
+      6
+    ]
+  ],
+  "requested_conv_algorithm": "default",
+  "original_conv_algorithms": [
+    "ConvAlgo.Native"
+  ],
+  "used_conv_algorithms": [
+    "ConvAlgo.Native"
+  ],
+  "fixed_rgb_calibration_rng": true,
+  "lifter_representation_max_abs_difference": 0.0,
+  "first_spconv_input_feature_max_abs_difference": 0.0,
+  "first_spconv_input_indices_identical": true,
+  "unique_first_spconv_indices": 7788,
+  "duplicate_entries": 17812,
+  "duplicate_entry_fraction": 0.69578125,
+  "entries_in_colliding_cells": 20767,
+  "first_spconv_output_max_abs_difference": 3.3113462924957275,
+  "probability_max_abs_difference": 0.9249433875083923,
+  "probability_mean_abs_difference": 0.008273783139884472,
+  "semantic_disagreement_fraction": 0.1676686704158783,
+  "strict_native_adapter_equality": false,
+  "limitation": "官方稀疏卷积输入含重复坐标；本探针不去重、不平均高斯、不更换网络。"
+}

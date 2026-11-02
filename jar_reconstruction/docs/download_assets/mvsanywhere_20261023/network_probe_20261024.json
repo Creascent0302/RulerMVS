@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-24 Asia/Shanghai",
+  "purpose": "只检查服务器自有网络与现有SSH代理可否分离；没有启动大型数据下载",
+  "existing_proxy": "HTTP/HTTPS=127.0.0.1:17898；ALL_PROXY为同端口SOCKS；.bashrc中标注SSH RemoteForward",
+  "server_route": {
+    "interface": "eno5",
+    "address": "172.16.2.4",
+    "default_gateway": "172.16.2.254"
+  },
+  "curl_version": "7.68.0",
+  "initial_probe_note": "curl不支持%{json}，首轮计量字段缺失；已改为独立write-out变量重跑，以下为重跑结果",
+  "probes": [
+    {
+      "name": "proxy_control_readme",
+      "method": "GET",
+      "direct": false,
+      "returncode": 0,
+      "http_code": "200",
+      "remote_ip": "127.0.0.1",
+      "local_ip": "127.0.0.1",
+      "bytes_downloaded": "1652",
+      "seconds": "0.649524",
+      "final_host": "modelscope.cn",
+      "error": ""
+    },
+    {
+      "name": "direct_readme",
+      "method": "GET",
+      "direct": true,
+      "returncode": 0,
+      "http_code": "200",
+      "remote_ip": "47.92.141.220",
+      "local_ip": "172.16.2.4",
+      "bytes_downloaded": "1652",
+      "seconds": "0.096174",
+      "final_host": "modelscope.cn",
+      "error": ""
+    },
+    {
+      "name": "direct_archive_head",
+      "method": "HEAD",
+      "direct": true,
+      "returncode": 0,
+      "http_code": "200",
+      "remote_ip": "58.205.209.134",
+      "local_ip": "172.16.2.4",
+      "bytes_downloaded": "0",
+      "seconds": "0.106199",
+      "final_host": "cdn-lfs-cn-1.modelscope.cn",
+      "error": ""
+    },
+    {
+      "name": "direct_archive_4k",
+      "method": "RANGE",
+      "direct": true,
+      "returncode": 0,
+      "http_code": "206",
+      "remote_ip": "58.205.209.134",
+      "local_ip": "172.16.2.4",
+      "bytes_downloaded": "4096",
+      "seconds": "0.107750",
+      "final_host": "cdn-lfs-cn-1.modelscope.cn",
+      "error": ""
+    },
+    {
+      "name": "direct_tsinghua",
+      "method": "HEAD",
+      "direct": true,
+      "returncode": 0,
+      "http_code": "200",
+      "remote_ip": "101.6.15.130",
+      "local_ip": "172.16.2.4",
+      "bytes_downloaded": "0",
+      "seconds": "0.010918",
+      "final_host": "pypi.tuna.tsinghua.edu.cn",
+      "error": ""
+    },
+    {
+      "name": "direct_hf_mirror",
+      "method": "HEAD",
+      "direct": true,
+      "returncode": 0,
+      "http_code": "200",
+      "remote_ip": "13.33.183.46",
+      "local_ip": "172.16.2.4",
+      "bytes_downloaded": "0",
+      "seconds": "1.337799",
+      "final_host": "cas-bridge.xethub.hf.co",
+      "error": ""
+    },
+    {
+      "name": "direct_github",
+      "method": "HEAD",
+      "direct": true,
+      "returncode": 28,
+      "http_code": "000",
+      "remote_ip": "",
+      "local_ip": "",
+      "bytes_downloaded": "0",
+      "seconds": "5.000267",
+      "final_host": "github.com",
+      "error": "curl: (28) Connection timed out after 5000 milliseconds"
+    }
+  ],
+  "tmux_probe": {
+    "in_tmux": true,
+    "proxy_variables_present": [],
+    "no_proxy": "*",
+    "NO_PROXY": "*",
+    "returncode": 0,
+    "curl_fields": [
+      "206",
+      "58.205.209.134",
+      "172.16.2.4",
+      "4096",
+      "0.100146"
+    ],
+    "error": "",
+    "payload_bytes": 4096,
+    "zip_signature": "504b0304"
+  },
+  "isolation_checks": {
+    "child_proxy_variables_removed": true,
+    "parent_HTTPS_PROXY_unchanged": true,
+    "existing_tmux_sessions_unchanged": true,
+    "temporary_probe_session_exited": true
+  },
+  "limits": [
+    "仅验证指定URL在本次网络状态下可达，不代表所有数据源直连可达",
+    "HF-Mirror只验证了HEAD；Hypersim原始归档实际读取4096字节且ZIP头正确",
+    "没有全文件下载、吞吐、稳定性或断点续传测试",
+    "下载助手只清理通用代理环境变量；应用自己硬编码的代理需要另行禁用"
+  ],
+  "helper": "tools/with_server_network.sh"
+}

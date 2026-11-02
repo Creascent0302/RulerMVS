@@ -1,0 +1,32 @@
+{
+  "root": "/data/liuzonghao_data/dataset/TartanAir_forest",
+  "source_repository": "theairlabcmu/tartanair",
+  "scope": [
+    "seasonsforest/Easy/seg_left.zip",
+    "seasonsforest/Easy/depth_left.zip",
+    "seasonsforest/Easy/image_left.zip"
+  ],
+  "files": [
+    {
+      "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasonsforest/Easy/seg_left.zip",
+      "output": "archives/seasonsforest/Easy/seg_left.zip",
+      "bytes": 111577132,
+      "sha256": "67e495cdd78e7084a8842c053c9f0c67a667b7bc442840cdb0805569351ac7d1",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasonsforest/Easy/depth_left.zip",
+      "output": "archives/seasonsforest/Easy/depth_left.zip",
+      "bytes": 1844757919,
+      "sha256": "ba7fff8709c56e25511d4c9ce0d2244c5bab58e95d2af7b15934f61acd813a1e",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/theairlabcmu/tartanair/resolve/main/seasonsforest/Easy/image_left.zip",
+      "output": "archives/seasonsforest/Easy/image_left.zip",
+      "bytes": 3096404925,
+      "sha256": "9c61c99c30f8d77eb2ead1bdc816c2d47c4c1c678d8e1999a82ac2bb4b764af8",
+      "extract_to": "raw"
+    }
+  ]
+}

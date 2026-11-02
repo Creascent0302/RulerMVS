@@ -1,0 +1,36 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/carla_new/best.pt",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "output": "runs/active/ruler_flow_20261030/smoke_carla_direct_rank_fixed",
+  "device": "cuda:4",
+  "seed": 20261030,
+  "train_samples_per_domain": 497,
+  "epochs": 1,
+  "batch_size": 2,
+  "lr": 5e-06,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "actual_fine_risk": true,
+  "correspondence_weight": 0.0,
+  "augmentation": true,
+  "workers": 2,
+  "threads": 2,
+  "minimum_free_gib": 200,
+  "variant": {
+    "objective": "direct",
+    "inference_steps": 1,
+    "direction": true,
+    "sigma": 0.05,
+    "hidden": 32,
+    "learn_quality": false
+  },
+  "aux_weight": 1.0,
+  "evaluation_steps": [
+    1
+  ],
+  "evaluate_reduced4": false,
+  "smoke": true,
+  "smoke_steps": 1,
+  "smoke_validation_samples": 2
+}

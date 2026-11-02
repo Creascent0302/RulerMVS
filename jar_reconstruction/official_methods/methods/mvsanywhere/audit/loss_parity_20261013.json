@@ -1,0 +1,112 @@
+{
+  "device": "cpu",
+  "torch": "2.8.0+cu128",
+  "cases": {
+    "dense": {
+      "official": {
+        "loss": 0.34999656677246094,
+        "si_loss": 0.07153689861297607,
+        "grad_loss": 0.009608881548047066,
+        "sky_loss": 0.0,
+        "abs_loss": 1.1408928632736206,
+        "normals_loss": 2.402036081150527e-08,
+        "ms_loss": 0.34038764238357544,
+        "inv_abs_loss": 0.03005368448793888,
+        "log_l1_loss": 0.18465574085712433
+      },
+      "integrated": {
+        "loss": 0.34999656677246094,
+        "si_loss": 0.07153689861297607,
+        "grad_loss": 0.009608881548047066,
+        "sky_loss": 0.0,
+        "abs_loss": 1.1408928632736206,
+        "normals_loss": 2.402036081150527e-08,
+        "ms_loss": 0.34038764238357544,
+        "inv_abs_loss": 0.03005368448793888,
+        "log_l1_loss": 0.18465574085712433
+      },
+      "gradient_max_difference": 0.0,
+      "source_depth_independent": true
+    },
+    "dense_sky": {
+      "official": {
+        "loss": 0.5960617065429688,
+        "si_loss": 0.07153689861297607,
+        "grad_loss": 0.009608881548047066,
+        "sky_loss": 2.4606516361236572,
+        "abs_loss": 1.1408928632736206,
+        "normals_loss": 2.402036081150527e-08,
+        "ms_loss": 0.34038764238357544,
+        "inv_abs_loss": 0.03005368448793888,
+        "log_l1_loss": 0.18465574085712433
+      },
+      "integrated": {
+        "loss": 0.5960617065429688,
+        "si_loss": 0.07153689861297607,
+        "grad_loss": 0.009608881548047066,
+        "sky_loss": 2.4606516361236572,
+        "abs_loss": 1.1408928632736206,
+        "normals_loss": 2.402036081150527e-08,
+        "ms_loss": 0.34038764238357544,
+        "inv_abs_loss": 0.03005368448793888,
+        "log_l1_loss": 0.18465574085712433
+      },
+      "gradient_max_difference": 0.0,
+      "source_depth_independent": true
+    },
+    "sparse_patch": {
+      "official": {
+        "loss": 0.3395848870277405,
+        "si_loss": 0.07143986970186234,
+        "grad_loss": 0.0,
+        "sky_loss": 0.0,
+        "abs_loss": 1.1059006452560425,
+        "normals_loss": 0.0,
+        "ms_loss": 0.3395848870277405,
+        "inv_abs_loss": 0.030852530151605606,
+        "log_l1_loss": 0.1844315081834793
+      },
+      "integrated": {
+        "loss": 0.3395848870277405,
+        "si_loss": 0.07143986970186234,
+        "grad_loss": 0.0,
+        "sky_loss": 0.0,
+        "abs_loss": 1.1059006452560425,
+        "normals_loss": 0.0,
+        "ms_loss": 0.3395848870277405,
+        "inv_abs_loss": 0.030852530151605606,
+        "log_l1_loss": 0.1844315081834793
+      },
+      "gradient_max_difference": 0.0,
+      "source_depth_independent": true
+    },
+    "empty": {
+      "official": {
+        "loss": null,
+        "si_loss": null,
+        "grad_loss": 0.0,
+        "sky_loss": 0.0,
+        "abs_loss": null,
+        "normals_loss": 0.0,
+        "ms_loss": null,
+        "inv_abs_loss": null,
+        "log_l1_loss": null
+      },
+      "integrated": {
+        "loss": 0.0,
+        "si_loss": null,
+        "grad_loss": 0.0,
+        "sky_loss": 0.0,
+        "abs_loss": null,
+        "normals_loss": 0.0,
+        "ms_loss": 0.0,
+        "inv_abs_loss": null,
+        "log_l1_loss": null
+      },
+      "gradient_max_difference": 0.0,
+      "source_depth_independent": true
+    }
+  },
+  "cpu_device_compatibility": "仅在CPU测试期间将官方硬编码Tensor.cuda替换为恒等设备操作",
+  "scope": "原compute_losses及各自官方损失类；不实例化完整Hero。null表示官方空监督NaN诊断项。"
+}

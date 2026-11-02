@@ -1,0 +1,75 @@
+{
+  "output": "runs/active/full_test_20261026/timing_public",
+  "data_config": "configs/full_test_20261026/public.json",
+  "own_weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+  "gpu": 0,
+  "cpu_threads": 2,
+  "seed": 20261026,
+  "precision": "fp32",
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "warmup": 8,
+  "repetitions": 30,
+  "isolated_resources": true,
+  "methods": {
+    "own_new": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+      "label": "新自研公共权重"
+    },
+    "own_old": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      },
+      "label": "上轮自研公共权重＋相同布局优化"
+    },
+    "own_new_equal": {
+      "kind": "own",
+      "input_mode": "equal_pixels",
+      "weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+      "label": "新自研／共同256×448像素输入"
+    },
+    "mvsanywhere_first": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 0,
+      "label": "MVSAnywhere官方Hero／首遍"
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "label": "MVSAnywhere官方Hero／范围细化1轮"
+    },
+    "fast_mvsnet_dtu": {
+      "kind": "fast_mvsnet",
+      "weights": "runs/carla_research_20261011/cache/fast_mvsnet_dtu.pth",
+      "label": "Fast-MVSNet官方DTU"
+    },
+    "simplerecon_carla": {
+      "kind": "simplerecon",
+      "weights": "runs/carla_research_20261011/baselines/simplerecon/step3000.pt",
+      "label": "SimpleRecon四目／CARLA训练3000步",
+      "num_views": 4
+    },
+    "mvsanywhere_shared_first": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 0,
+      "label": "MVSAnywhere官方／共享TRAIN范围／first",
+      "shared_train_range": true
+    },
+    "mvsanywhere_shared_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "label": "MVSAnywhere官方／共享TRAIN范围／refined",
+      "shared_train_range": true
+    }
+  }
+}

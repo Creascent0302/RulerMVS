@@ -1,0 +1,53 @@
+{
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "lr": 0.0004,
+    "precision": "fp32",
+    "scheduler_interval": "step",
+    "gradient_clip_norm": 35
+  },
+  "image_size": [
+    864,
+    1600
+  ],
+  "evaluation": {
+    "roi": [
+      [
+        -50,
+        50
+      ],
+      [
+        -50,
+        50
+      ],
+      [
+        -5,
+        3
+      ]
+    ],
+    "depth_range": [
+      2,
+      80
+    ]
+  },
+  "method": "gaussianformer2",
+  "protocol": "official_reference",
+  "model": {
+    "native_config": "config/prob/nuscenes_gs25600.py",
+    "num_cameras": 6,
+    "voxel_size": 0.5,
+    "initializer_checkpoint": "",
+    "backbone_checkpoint": "",
+    "checkpoint": "",
+    "synthetic_random_init": false,
+    "training_stage": "occupancy"
+  }
+}

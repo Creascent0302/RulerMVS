@@ -1,0 +1,17 @@
+{
+  "output": "runs/active/role_fusion_20261030/summary.json",
+  "groups": {
+    "public": {
+      "control": "runs/active/role_fusion_20261030/public_control",
+      "context": "runs/active/role_fusion_20261030/public_context",
+      "carry": "runs/active/role_fusion_20261030/public_carry",
+      "both": "runs/active/role_fusion_20261030/public_both"
+    },
+    "carla": {
+      "control": "runs/active/role_fusion_20261030/carla_control",
+      "context": "runs/active/role_fusion_20261030/carla_context",
+      "carry": "runs/active/role_fusion_20261030/carla_carry",
+      "both": "runs/active/role_fusion_20261030/carla_both"
+    }
+  }
+}

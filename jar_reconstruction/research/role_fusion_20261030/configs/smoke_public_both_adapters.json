@@ -1,0 +1,30 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/public/best.pt",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "output": "runs/active/role_fusion_20261030/smoke_public_both_adapters",
+  "device": "cuda:0",
+  "seed": 20261030,
+  "train_samples_per_domain": 128,
+  "epochs": 1,
+  "batch_size": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "actual_fine_risk": true,
+  "correspondence_weight": 0.0,
+  "augmentation": true,
+  "workers": 2,
+  "threads": 2,
+  "minimum_free_gib": 200,
+  "variant": {
+    "context": true,
+    "carry": true
+  },
+  "initial_identity": false,
+  "trainable_prefixes": [],
+  "verify_old_model_frozen": true,
+  "smoke": true,
+  "smoke_steps": 1,
+  "smoke_validation_samples": 2
+}

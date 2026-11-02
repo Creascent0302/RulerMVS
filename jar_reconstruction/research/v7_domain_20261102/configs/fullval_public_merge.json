@@ -1,0 +1,12 @@
+{
+  "merge": true,
+  "shards": [
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank0",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank1",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank2",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank3",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank4",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank5"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public.json"
+}

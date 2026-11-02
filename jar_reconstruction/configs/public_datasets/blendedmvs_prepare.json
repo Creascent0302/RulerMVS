@@ -1,0 +1,12 @@
+{
+  "root": "/data/liuzonghao_data/dataset/BlendedMVS",
+  "raw_directory": "raw/BlendedMVS",
+  "reference_slot": 2,
+  "validation_fraction": 0.1,
+  "split_seed": 47,
+  "principal_point_offset": 0.0,
+  "geometry_groups_per_scene": 1,
+  "official_training_list": "/home/liuzonghao/3Dscene/jar_reconstruction/official_methods/methods/mvsformerpp/upstream/lists/blended/training_list.txt",
+  "official_validation_list": "/home/liuzonghao/3Dscene/jar_reconstruction/official_methods/methods/mvsformerpp/upstream/lists/blended/validation_list.txt",
+  "minimum_free_gib": 300
+}

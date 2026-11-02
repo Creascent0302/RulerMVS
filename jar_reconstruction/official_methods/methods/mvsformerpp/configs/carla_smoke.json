@@ -1,0 +1,82 @@
+{
+  "method": "mvsformerpp",
+  "seed": 1701,
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "train_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_complete.jsonl",
+    "val_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+    "test_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl",
+    "split_protocol": "temporal_gap",
+    "min_frame_gap": 40,
+    "supervision_depth_range": [
+      2.0,
+      80.0
+    ]
+  },
+  "image_size": [
+    256,
+    448
+  ],
+  "model": {
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "reference_indices": [
+      2
+    ],
+    "temperature": [
+      5.0,
+      5.0,
+      5.0,
+      1.0
+    ],
+    "weights": "",
+    "dinov2_weights": "",
+    "allow_random_init": true
+  },
+  "training": {
+    "epochs": 15,
+    "batch_size": 1,
+    "num_workers": 0,
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_steps": 0,
+    "min_lr": 0.01,
+    "precision": "fp32",
+    "checkpoint_every": 1,
+    "max_steps": 2
+  },
+  "evaluation": {
+    "reference_indices": [
+      2
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "roi": [
+      [
+        0,
+        80
+      ],
+      [
+        -45,
+        45
+      ],
+      [
+        -2,
+        20
+      ]
+    ],
+    "warmup": 2
+  },
+  "adaptation_note": "官方完整DINOv2-B冻结+跨视图旁路+六层粗CVT+三个细卷积级；CARLA四目、固定米制范围、固定图像尺寸。无原生多尺度训练增强时不能称完整复现训练协议。",
+  "cpu_threads": 2,
+  "initialization_note": "完整官方架构随机初始化，仅验证真实CARLA数据与训练评估管线，不是精度baseline。"
+}

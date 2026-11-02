@@ -1,0 +1,7 @@
+{
+  "checkpoint": "runs/active/early_geometry_20261030/public_early/final.pt",
+  "output": "runs/active/early_geometry_20261030/public_early/diagnostic.json",
+  "device": "cuda:0",
+  "datasets": ["MatrixCity_street", "DynamicReplica_valid"],
+  "interventions": ["baseline_zero", "angular_canonical", "matching_off", "vit_off"]
+}

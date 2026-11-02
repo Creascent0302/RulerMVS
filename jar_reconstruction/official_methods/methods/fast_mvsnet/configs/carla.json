@@ -1,0 +1,67 @@
+{
+  "method": "fast_mvsnet",
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "image_size": [
+    384,
+    512
+  ],
+  "model": {
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "train_depth_planes": 48,
+    "test_depth_planes": 96,
+    "reference_indices": [
+      0
+    ],
+    "normalization": "consistent_standardized",
+    "weights": ""
+  },
+  "training": {
+    "epochs": 16,
+    "pretrain_epochs": 4,
+    "batch_size": 1,
+    "lr": 0.0005,
+    "weight_decay": 0.001,
+    "precision": "fp32",
+    "find_unused_parameters": true
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "roi": [
+      [
+        0,
+        64
+      ],
+      [
+        -24,
+        24
+      ],
+      [
+        -2,
+        6
+      ]
+    ]
+  },
+  "adaptation_note": "共同CARLA输入384×512（高×宽）、四目、每卡batch1；原512×640训练尺寸保留在official参考配置。此分辨率尚未进行真实数据训练。"
+}

@@ -1,0 +1,88 @@
+{
+  "model": {
+    "name": "mf_et_jar",
+    "feature_dim": 16,
+    "hidden_dim": 32,
+    "backbone_width": 8,
+    "near": 2.0,
+    "far": 80.0,
+    "depth_bins": 8,
+    "correlation_groups": 8,
+    "sweep_chunk": 4,
+    "max_queries": 48,
+    "query_explore": 0.1,
+    "refinement_min_step": 0.01,
+    "refinement_max_step": 4.0,
+    "fusion_cell_size": 0.05,
+    "texture_threshold": 0.002,
+    "evidence_threshold": 0.15,
+    "min_support": 2,
+    "roi": [
+      [
+        2.0,
+        10.0
+      ],
+      [
+        -4.0,
+        4.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "semantic_classes": 0,
+    "validate_inputs": true,
+    "multifocal": {
+      "enabled": true,
+      "tele_initialization": true,
+      "tele_birth": true,
+      "scale_routing": true,
+      "observability": true,
+      "tele_refinement": true,
+      "resolution_fusion": true
+    }
+  },
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "synthetic": {
+    "length": 3,
+    "height": 32,
+    "width": 48,
+    "num_cameras": 4,
+    "seed": 7
+  },
+  "train": {
+    "seed": 17,
+    "batch_size": 1,
+    "num_workers": 0,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "max_steps": 1,
+    "grad_clip": 1.0,
+    "precision": "fp32",
+    "accumulation_steps": 1,
+    "pin_memory": true,
+    "checkpoint_every": 100,
+    "log_every": 1
+  },
+  "eval": {
+    "fscore_threshold": 0.2,
+    "max_metric_points": 256,
+    "spatial_probe_spacing": 2.0,
+    "surface_band": 0.1,
+    "precision": "fp32",
+    "warmup": 0,
+    "num_workers": 0,
+    "pin_memory": true
+  },
+  "loss": {},
+  "runtime": {
+    "threads": 2,
+    "dist_timeout": 300
+  }
+}

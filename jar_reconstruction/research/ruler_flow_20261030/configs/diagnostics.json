@@ -1,0 +1,9 @@
+{
+  "output": "runs/active/ruler_flow_20261030/diagnosis",
+  "device": "cuda:0",
+  "minimum_free_gib": 200,
+  "domains": {
+    "public": ["MatrixCity_street", "Hypersim_subset", "DynamicReplica_valid"],
+    "carla": ["CARLA_new_stereo_up"]
+  }
+}

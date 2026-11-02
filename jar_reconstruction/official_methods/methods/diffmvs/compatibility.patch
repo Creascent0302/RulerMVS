@@ -1,0 +1,12 @@
+--- a/models/module.py
++++ b/models/module.py
+@@ -4,7 +4,8 @@
+ import time
+ import sys
+ sys.path.append("..")
+-x = torch.inverse(torch.ones((1, 1), device="cuda:0"))
++# Compatibility: removed unused import-time cuda:0 inverse warm-up.
++# Model operators and learned parameters are unchanged.
+ 
+ def init_bn(module):
+     if module.weight is not None:

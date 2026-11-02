@@ -1,0 +1,12 @@
+{
+  "evaluation_config": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/configs/carla_new_main_val.json",
+  "diagnostics": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_robustness",
+  "dataset": "CARLA_new_upper",
+  "indices": [0, 5, 10, 16, 21, 27, 32, 37, 43, 48, 54, 59, 64, 70, 75, 81],
+  "corrupt_source": "stereo_left",
+  "noise_std": [0.05, 0.15],
+  "blur_kernels": [5, 11],
+  "seed": 20261101,
+  "gpu": 7
+}

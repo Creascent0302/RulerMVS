@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Codex" version="24.7.17" type="device">
+  <diagram id="metric-ruler-20261022" name="公制标尺候选重建网络">
+    <mxGraphModel dx="2450" dy="1770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2480" pageHeight="1770" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="公制标尺候选重建网络｜从粗分布提议，到细射线验证" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=32;spacing=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="2390" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="status" value="研究架构：已实现、可运行；精度与速度仍需实验判定。不是已经优于基线的结论。" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=23;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="82" width="2390" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-geometry" value="蓝：已知几何／确定性运算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="560" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-learned" value="绿：新增学习模块／可适配头" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="140" width="560" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-inherited" value="紫：继承并冻结的原模块" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="140" width="560" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-gt" value="橙：仅训练使用的真实标签" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1840" y="140" width="560" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="panel-0" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="440" height="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="header-0" value="&lt;b&gt;① 生成粗候选图&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="panel-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="530" y="300" width="440" height="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="header-1" value="&lt;b&gt;② 公制推理与邻域多峰提议&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="220" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="header-0" target="header-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panel-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="300" width="440" height="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="header-2" value="&lt;b&gt;③ 细射线上的精确九候选验证&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="220" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="header-1" target="header-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panel-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="300" width="440" height="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="header-3" value="&lt;b&gt;④ 选择与原有几何细化&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="220" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="header-2" target="header-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panel-4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="300" width="440" height="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="header-4" value="&lt;b&gt;⑤ 全图输出与证据边界&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="220" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="header-3" target="header-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb" value="&lt;b&gt;同步四目原始 RGB&lt;/b&gt;&lt;br&gt;共同场景图：4 × 3 × 256 × 448&lt;br&gt;只使用 RGB、标定与输入有效掩码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="330" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="matching" value="&lt;b&gt;原匹配图像编码器&lt;/b&gt;&lt;br&gt;从原始 RGB 另行缩放至 512 × 896&lt;br&gt;输出：4 × 16 × 128 × 224" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="475" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="calibration" value="&lt;b&gt;已知相机内参与位姿&lt;/b&gt;&lt;br&gt;米制坐标、缺视图与图内掩码&lt;br&gt;真实候选点必须精确投影" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="635" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="coarse" value="&lt;b&gt;按标定读取多视图证据&lt;/b&gt;&lt;br&gt;192 个深度位置 × 16 × 28 网格&lt;br&gt;粗证据：12 × 192 × 16 × 28" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="785" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="old-memory" value="&lt;b&gt;继承原候选记忆评分器&lt;/b&gt;&lt;br&gt;提供粗图基础分数&lt;br&gt;新增核心学习分数修正" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="950" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="input-note" value="两种图像尺寸均来自原始文件，&lt;b&gt;不是把 256 × 448 图像放大冒充高分辨率输入&lt;/b&gt;。&lt;br&gt;&lt;br&gt;所有尺寸省略批次维；× 依次表示相机、通道或深度、图像高、图像宽。" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=19;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="65" y="1100" width="390" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="rgb" target="matching">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="matching" target="coarse">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="48" y="532" />
+              <mxPoint x="48" y="845" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="calibration" target="coarse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="coarse" target="old-memory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mono" value="&lt;b&gt;继承单图视觉编码器&lt;/b&gt;&lt;br&gt;只读取上相机场景图&lt;br&gt;4 层原始特征：每层 768 × 16 × 28" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="330" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="ruler" value="&lt;b&gt;虚拟公制标尺&lt;/b&gt;&lt;br&gt;由相机标定计算投影变化与视差&lt;br&gt;它提供空间尺度，不是额外观测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="475" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="source-fusion" value="&lt;b&gt;可靠视图聚合与候选入口&lt;/b&gt;&lt;br&gt;对各视图证据加权，保留拒绝通道&lt;br&gt;进入 C24 × 192 × 16 × 28 候选图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="615" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="raw-read" value="&lt;b&gt;候选条件化读取四层图像特征&lt;/b&gt;&lt;br&gt;不同候选选择所需层与内容&lt;br&gt;不先把每个像素压成唯一深度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="765" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="metric-blocks" value="&lt;b&gt;公制候选更新块 × 2&lt;/b&gt;&lt;br&gt;每块：C24 × 192 × 16 × 28&lt;br&gt;沿深度读取 Z ± 0.25／1／4 米&lt;br&gt;再交换局部平面邻域的候选证据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="905" width="400" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="score" value="&lt;b&gt;输出完整深度评分曲线&lt;/b&gt;&lt;br&gt;192 × 16 × 28&lt;br&gt;基础评分 + 学习到的候选修正" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1080" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="prior" value="&lt;b&gt;邻近粗节点分布混合&lt;/b&gt;&lt;br&gt;在同一深度轴上混合归一化评分&lt;br&gt;&lt;b&gt;保留多个峰；绝不平均不同表面深度&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1220" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ruler" target="source-fusion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="old-memory" target="source-fusion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="1002" />
+              <mxPoint x="505" y="672" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="source-fusion" target="raw-read">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#7C3AED;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="mono" target="raw-read">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="973" y="387" />
+              <mxPoint x="973" y="817" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="raw-read" target="metric-blocks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="metric-blocks" target="score">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="score" target="prior">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="proposal-input" value="&lt;b&gt;把粗图用于提出搜索位置&lt;/b&gt;&lt;br&gt;每条细射线读取邻近节点的多峰先验&lt;br&gt;细网格：64 × 112" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="330" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="old-depth" value="&lt;b&gt;保留原学习式深度初值&lt;/b&gt;&lt;br&gt;原 CNN、多尺度解码与原深度头&lt;br&gt;作为第 0 个候选及缺证据回退" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="485" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="k9" value="&lt;b&gt;每条细射线保留 9 个候选&lt;/b&gt;&lt;br&gt;原初值 + 8 个分离的深度峰&lt;br&gt;训练可扰动旧假设，再重新读取真实图像&lt;br&gt;这些是待验证假设，不是已发现表面" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="640" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="observer" value="&lt;b&gt;对 9 个三维点重新精确投影&lt;/b&gt;&lt;br&gt;复用①的匹配特征，逐视图重新采样&lt;br&gt;检查图内、纹理、视差与一致性" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="800" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="features19" value="&lt;b&gt;九候选真实验证特征&lt;/b&gt;&lt;br&gt;9 × 19 × 64 × 112&lt;br&gt;位置／原评分／实际多视图证据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="965" width="400" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="evidence-note" value="&lt;b&gt;先提议，再验证&lt;/b&gt;&lt;br&gt;粗节点“可提议”不等于细点“可见”&lt;br&gt;缺视图或无足够支持，不强行接纳" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1120" width="400" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="prior" target="proposal-input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="1277" />
+              <mxPoint x="995" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="proposal-input" target="k9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1460" y="385" />
+              <mxPoint x="1460" y="697" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="old-depth" target="k9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="k9" target="observer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="observer" target="features19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="features19" target="evidence-note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="late-reader" value="&lt;b&gt;继承原始特征后期读取器&lt;/b&gt;&lt;br&gt;复用同次单图编码的四层特征&lt;br&gt;按候选条件补充选择证据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="330" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="selector" value="&lt;b&gt;共享九候选选择头：2,185 参数&lt;/b&gt;&lt;br&gt;训练期加入旧假设质量增强&lt;br&gt;分类增强组为完整研究导出版本&lt;br&gt;米制风险目标另作同预算对照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="510" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="j-refinement" value="&lt;b&gt;继承原有几何尺子细化&lt;/b&gt;&lt;br&gt;选面之后再做小范围米制定位&lt;br&gt;有界更新、精确重投影与低证据拒绝" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="710" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="final-decoder" value="&lt;b&gt;继承原最终深度解码头&lt;/b&gt;&lt;br&gt;从 64 × 112 恢复至 256 × 448&lt;br&gt;保留原有边缘与局部几何处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="920" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="not-one-surface" value="设计分工：&lt;br&gt;&lt;br&gt;&lt;b&gt;粗层：&lt;/b&gt;便宜地保留可能的表面。&lt;br&gt;&lt;b&gt;细层：&lt;/b&gt;只为少数候选重新取证。&lt;br&gt;&lt;b&gt;细化：&lt;/b&gt;在选对表面后提高定位精度。&lt;br&gt;&lt;br&gt;不把“知道像素怎样移动”当成“已经匹配到正确表面”。" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="1535" y="1095" width="390" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="features19" target="selector">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1485" y="1017" />
+              <mxPoint x="1485" y="567" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="late-reader" target="selector">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="selector" target="j-refinement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="j-refinement" target="final-decoder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="depth-output" value="&lt;b&gt;全图上相机深度&lt;/b&gt;&lt;br&gt;256 × 448，单位：米&lt;br&gt;四目输入，本版只解码上相机" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="330" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="metadata-output" value="&lt;b&gt;同时保留预测状态&lt;/b&gt;&lt;br&gt;置信度、支持数、有效性&lt;br&gt;空闲／表面／未知空间状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="510" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="unknown-note" value="&lt;b&gt;深度假设 ≠ 已验证表面&lt;/b&gt;&lt;br&gt;当前单参考没有源视图预测深度&lt;br&gt;实测原验证器全部保留为 unknown&lt;br&gt;深度仍按全部GT评估，不删除难例" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="710" width="400" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="missing-inputs" value="&lt;b&gt;果断处理不良输入&lt;/b&gt;&lt;br&gt;缺参考图：不替换参考，相应输出未知&lt;br&gt;缺源图：屏蔽该视图并保留回退&lt;br&gt;遮挡后方不能标为空闲" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="920" width="400" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="output-note" value="推理接口只接收：&lt;br&gt;&lt;b&gt;RGB + 实际标定 + 有效掩码。&lt;/b&gt;&lt;br&gt;&lt;br&gt;没有真实深度、语义或占据标签。&lt;br&gt;评价采用固定真值分母，不靠删除未知区美化结果。" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="2025" y="1110" width="390" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="final-decoder" target="depth-output">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1975" y="980" />
+              <mxPoint x="1975" y="387" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="depth-output" target="metadata-output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="metadata-output" target="unknown-note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="training-lane" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=21;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1435" width="1910" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="training-title" value="只在训练时出现的标签与辅助监督（橙色虚线绝不接入推理输入）" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=22;spacing=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1445" width="1870" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="gt-depth" value="&lt;b&gt;独立 targets：真实深度与有效掩码&lt;/b&gt;&lt;br&gt;本批数据实际只有上相机深度可用&lt;br&gt;缺少源相机深度则跳过真实对应监督" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=19;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1510" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gt-build" value="&lt;b&gt;由真实深度构造训练目标&lt;/b&gt;&lt;br&gt;命中前空闲／命中带表面／后方未知&lt;br&gt;物理深度单元 + 单元内连续偏移" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=19;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="1510" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="aux-loss" value="&lt;b&gt;候选评分与辅助损失&lt;/b&gt;&lt;br&gt;深度单元分类、三态分类、偏移监督&lt;br&gt;虚拟刻度点本身不是表面真值" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=19;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="950" y="1510" width="455" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="offset-head" value="&lt;b&gt;连续偏移与三态辅助头&lt;/b&gt;&lt;br&gt;候选核辅助训练&lt;br&gt;&lt;b&gt;连续偏移当前未接后端&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="1510" width="480" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#EA580C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="gt-depth" target="gt-build">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#EA580C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="gt-build" target="aux-loss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#EA580C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="aux-loss" target="offset-head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-32" value="仅反向监督" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=16;html=1;strokeColor=#EA580C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#334155;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=1;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="aux-loss" target="score">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1177" y="1405" />
+              <mxPoint x="750" y="1405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="residual-control" value="&lt;b&gt;独立对照：保留原细候选场&lt;/b&gt;&lt;br&gt;&lt;br&gt;原细场 + α × 粗评分残差&lt;br&gt;α = 0.25&lt;br&gt;&lt;br&gt;保留原细格证据，计算开销也保留。&lt;br&gt;&lt;b&gt;它不属于上方稀疏验证主线。&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;align=center;verticalAlign=middle;spacing=12;dashed=1;dashPattern=8 5;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="1435" width="440" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="阅读顺序：上方五步主线 → 各框内部细节。蓝色几何只决定去哪里找、如何解释尺度；正确表面仍必须由真实图像证据支持。" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0F172A;fontFamily=Microsoft YaHei;fontSize=20;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1710" width="2395" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,15 @@
+{
+  "device": "cuda:7",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank7",
+  "models": [
+    {
+      "name": "control_synthetic",
+      "variant": "control",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic_control/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic_control/carla/synthetic_control_audit.json"
+    }
+  ],
+  "rank": 7,
+  "world": 8,
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json"
+}

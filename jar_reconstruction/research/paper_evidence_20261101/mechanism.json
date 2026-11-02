@@ -1,0 +1,6 @@
+{
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_mechanism",
+  "evaluation_plan": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "diagnostics": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json",
+  "gpu": 7
+}

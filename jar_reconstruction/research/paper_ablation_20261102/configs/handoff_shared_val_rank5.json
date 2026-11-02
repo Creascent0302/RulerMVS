@@ -1,0 +1,235 @@
+{
+  "rank": 5,
+  "world": 7,
+  "jobs": [
+    {
+      "name": "public_v5_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_v5_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_v5_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_marginal_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_marginal_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_marginal_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_constant_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_constant_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_constant_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_oldpoint_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_oldpoint_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_oldpoint_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_v5_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_v5_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_v5_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_marginal_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_marginal_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_marginal_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_constant_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_constant_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_constant_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_oldpoint_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_oldpoint_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_oldpoint_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_v5_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_v5_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_v5_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_marginal_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_marginal_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_marginal_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_constant_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_constant_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_constant_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "public_parent_oldpoint_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_public_parent_oldpoint_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/public_parent_oldpoint_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_v5_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_v5_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_v5_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_marginal_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_marginal_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_marginal_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_constant_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_constant_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_constant_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_oldpoint_seed20261102",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_oldpoint_seed20261102.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_oldpoint_seed20261102",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_v5_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_v5_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_v5_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_marginal_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_marginal_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_marginal_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_constant_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_constant_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_constant_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_oldpoint_seed20261103",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_oldpoint_seed20261103.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_oldpoint_seed20261103",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_v5_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_v5_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_v5_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_marginal_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_marginal_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_marginal_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_constant_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_constant_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_constant_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "carla_parent_oldpoint_seed20261104",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/handoff_carla_parent_oldpoint_seed20261104.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_oldpoint_seed20261104",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/handoff_train.py"
+    },
+    {
+      "name": "geometry_public_control",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_public_control.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/control",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_public_no_source_geometry",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_public_no_source_geometry.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_source_geometry",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_public_no_scale_routing",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_public_no_scale_routing.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_scale_routing",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_public_no_jacobian_width",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_public_no_jacobian_width.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_jacobian_width",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_carla_control",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_carla_control.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/carla/control",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_carla_no_source_geometry",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_carla_no_source_geometry.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/carla/no_source_geometry",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_carla_no_scale_routing",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_carla_no_scale_routing.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/carla/no_scale_routing",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    },
+    {
+      "name": "geometry_carla_no_jacobian_width",
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/configs/geometry_carla_no_jacobian_width.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/carla/no_jacobian_width",
+      "script": "/home/liuzonghao/3Dscene/jar_reconstruction/research/paper_ablation_20261102/geometry_train.py"
+    }
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/shared_val/rank5"
+}

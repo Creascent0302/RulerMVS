@@ -1,0 +1,5 @@
+{
+  "group": "carla",
+  "device": "cuda:1",
+  "output": "runs/active/role_fusion_20261030/fresh_carla_adapters"
+}

@@ -1,0 +1,71 @@
+{
+  "model": {
+    "name": "ruler_direct",
+    "near": 2.0,
+    "far": 80.0,
+    "roi": [[0.0, 80.0], [-45.0, 45.0], [-2.0, 20.0]],
+    "dense_decoder": {"enabled": true},
+    "sparse_decoder": {"enabled": false}
+  },
+  "direct": {
+    "near": 2.0,
+    "far": 80.0,
+    "depth_bins": 96,
+    "transition": 16.0,
+    "near_fraction": 0.5,
+    "channels": 32,
+    "raw_channels": 64,
+    "scene_channels": 128,
+    "scene_heads": 4,
+    "scene_grid": [4, 4, 7],
+    "scene_blocks": 1,
+    "peak_count": 4,
+    "peak_separation_m": 1.0,
+    "fine_min_step_m": 0.05,
+    "fine_max_step_m": 8.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": false,
+    "use_scene": false,
+    "use_fine_offset": false,
+    "local_kind": "volume",
+    "reference_index": 2,
+    "reference_indices": [0, 1, 2, 3]
+  },
+  "camera": {
+    "mode": "wide4",
+    "wide_ids": ["stereo_left", "stereo_right", "stereo_up", "stereo_down"],
+    "tele_ids": ["tele_left", "tele_right"],
+    "allow_missing": true,
+    "disabled_ids": []
+  },
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": "",
+    "image_size": [256, 448],
+    "matching_image_size": [512, 896],
+    "depth_resize_mode": "nearest-exact"
+  },
+  "train": {
+    "seed": 47,
+    "batch_size": 1,
+    "num_workers": 2,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0001,
+    "max_steps": 2000,
+    "grad_clip": 1.0,
+    "precision": "fp32",
+    "checkpoint_every": 200,
+    "log_every": 10
+  },
+  "loss": {
+    "depth_range_m": [2.0, 80.0],
+    "metric_normalizer_m": 20.0,
+    "log_weight": 0.2,
+    "gradient_weight": 0.05,
+    "coarse_weight": 1.0,
+    "fine_weight": 1.0,
+    "risk_weight": 1.0
+  }
+}

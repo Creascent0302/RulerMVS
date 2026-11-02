@@ -1,0 +1,52 @@
+{
+  "method": "diffmvs",
+  "seed": 1701,
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": "",
+    "num_views": 5,
+    "geometry_units": "scene_unit"
+  },
+  "image_size": [
+    512,
+    640
+  ],
+  "model": {
+    "variant": "diffmvs",
+    "pretraining_domain": "dtu",
+    "depth_range": [
+      425,
+      935
+    ],
+    "reference_indices": [
+      0
+    ],
+    "weights": "",
+    "allow_random_init": false
+  },
+  "training": {
+    "epochs": 12,
+    "batch_size": 1,
+    "num_workers": 0,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "gradient_clip_norm": 2.0,
+    "scheduler_interval": "step",
+    "precision": "fp32",
+    "checkpoint_every": 100
+  },
+  "evaluation": {
+    "reference_indices": [
+      0
+    ],
+    "depth_range": [
+      425,
+      935
+    ],
+    "warmup": 2
+  },
+  "adaptation_note": "官方DTU训练参考：5目、512×640、12轮、AdamW/OneCycle；425..935只为DTU示例搜索范围，真实官方每帧范围来自camera文件；本通用适配器固定范围并非逐帧DTU评测复现。使用upstream/scripts执行原论文数据流程。非米制数据不可沿用米制表面指标。",
+  "profile": "official"
+}

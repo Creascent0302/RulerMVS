@@ -1,0 +1,35 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/public/best.pt",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "output": "runs/active/near_evidence_20261030/smoke_public_visibility_nonempty",
+  "device": "cuda:2",
+  "seed": 20261030,
+  "train_samples_per_domain": 128,
+  "epochs": 1,
+  "batch_size": 2,
+  "lr": 1e-05,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "model_overrides": {
+    "source_relative_evidence": false,
+    "source_intervention_probability": 0.0,
+    "source_intervention_seed": 20261030,
+    "source_relative_coarse_attention": false
+  },
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "actual_fine_risk": true,
+  "correspondence_weight": 0.0,
+  "augmentation": true,
+  "workers": 0,
+  "threads": 2,
+  "minimum_free_gib": 200,
+  "visibility_weight": 0.02,
+  "validation_note": "第三轮固定预算，仅训练可见性责任。复用已查看VAL，不称盲确认；不读TEST。",
+  "smoke": true,
+  "smoke_steps": 1,
+  "smoke_validation_samples": 2,
+  "smoke_step_offset": 1,
+  "smoke_visibility_gradient": true
+}

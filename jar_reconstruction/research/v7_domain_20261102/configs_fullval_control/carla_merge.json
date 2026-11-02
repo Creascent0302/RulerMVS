@@ -1,0 +1,14 @@
+{
+  "merge": true,
+  "shards": [
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank0",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank1",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank2",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank3",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank4",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank5",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank6",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank7"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla.json"
+}

@@ -1,0 +1,92 @@
+{
+  "output": "runs/active/full_test_20261026/timing_carla",
+  "data_config": "configs/full_test_20261026/carla.json",
+  "own_weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+  "gpu": 0,
+  "cpu_threads": 2,
+  "seed": 20261026,
+  "precision": "fp32",
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "warmup": 8,
+  "repetitions": 30,
+  "isolated_resources": true,
+  "methods": {
+    "own_new_public": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+      "label": "新自研公共权重"
+    },
+    "own_old_public": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      },
+      "label": "上轮自研公共权重＋相同布局优化"
+    },
+    "own_new_carla": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_retrain_latest_20261025/carla_finetune/pretrained.pt",
+      "label": "新自研CARLA220微调"
+    },
+    "own_old_carla": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_pretrain_no_hero_v2/carla_finetune/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      },
+      "label": "上轮自研CARLA66微调"
+    },
+    "own_new_carla_equal": {
+      "kind": "own",
+      "input_mode": "equal_pixels",
+      "weights": "runs/active/public_retrain_latest_20261025/carla_finetune/pretrained.pt",
+      "label": "新自研CARLA微调／共同像素"
+    },
+    "mvsanywhere_official_shared": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "label": "MVSAnywhere官方／共享TRAIN范围／refined",
+      "shared_train_range": true,
+      "drop_missing_views": true
+    },
+    "fast_mvsnet_dtu": {
+      "kind": "fast_mvsnet",
+      "weights": "runs/carla_research_20261011/cache/fast_mvsnet_dtu.pth",
+      "label": "Fast-MVSNet官方DTU",
+      "drop_missing_views": true
+    },
+    "simplerecon_carla": {
+      "kind": "simplerecon",
+      "weights": "runs/carla_research_20261011/baselines/simplerecon/step3000.pt",
+      "label": "SimpleRecon四目／CARLA训练3000步",
+      "num_views": 4,
+      "datasets": [
+        "CARLA_complete"
+      ]
+    },
+    "mvsanywhere_carla_first": {
+      "kind": "mvsanywhere",
+      "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+      "project_checkpoint": true,
+      "drop_missing_views": true,
+      "refinements": 0,
+      "label": "MVSAnywhere／既有CARLA66微调／first"
+    },
+    "mvsanywhere_carla_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+      "project_checkpoint": true,
+      "drop_missing_views": true,
+      "refinements": 1,
+      "label": "MVSAnywhere／既有CARLA66微调／refined"
+    }
+  }
+}

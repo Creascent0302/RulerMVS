@@ -1,0 +1,91 @@
+{
+  "root": "/data/liuzonghao_data/dataset/Hypersim_subset",
+  "source_repository": "modelscope/OpenDataLab/Hypersim",
+  "scope": "12完整标准针孔场景，非全量数据集",
+  "files": [
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_007.zip",
+      "output": "archives/ai_022_007.zip",
+      "bytes": 824117879,
+      "sha256": "5422658c4a6336384444acf4cd41ea1245a296719a985a79a7fbb61d12358d24",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_013.zip",
+      "output": "archives/ai_053_013.zip",
+      "bytes": 1182644858,
+      "sha256": "3f98ca314e6a712b88400449ad216508abfff087fd9ab8c0e808ec81b9aefa22",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_009.zip",
+      "output": "archives/ai_002_009.zip",
+      "bytes": 1235092356,
+      "sha256": "7607915eb5902385839206a5c6ba70baec35d6fbfb0d5970a35d8fe2a067aaeb",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_009.zip",
+      "output": "archives/ai_033_009.zip",
+      "bytes": 1428074356,
+      "sha256": "ae0b5f1d5989a2e126fcd0884cbd31d25608503581c6613b33040401ecd1eaa7",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_004.zip",
+      "output": "archives/ai_011_004.zip",
+      "bytes": 1442475650,
+      "sha256": "7327f2e021eafa6acff4407e09d17ede69188b657cba8df3333ef4dcf7c74a81",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_007.zip",
+      "output": "archives/ai_013_007.zip",
+      "bytes": 1530965890,
+      "sha256": "5592dc2c072b3c50d6e86a7965180e1ea731e3b7e9d60214d643f692d1843263",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_003.zip",
+      "output": "archives/ai_017_003.zip",
+      "bytes": 1747592569,
+      "sha256": "b787ac7a142f63eb6f83f44f2ecf011c8461dc99194974e67eba5fff3f2937fb",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_012_001.zip",
+      "output": "archives/ai_012_001.zip",
+      "bytes": 1848485211,
+      "sha256": "993d8637245f0202488c5d998af2a8f8b0266fb95a8baa1e1156af4c51104b82",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_007.zip",
+      "output": "archives/ai_010_007.zip",
+      "bytes": 1644923808,
+      "sha256": "31b35dc2b8e06c01ce134489545f6fa23444ddae5cac648e997f4982fcc18b87",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_005.zip",
+      "output": "archives/ai_005_005.zip",
+      "bytes": 1672677055,
+      "sha256": "6a55f06296255d33018a3718c83f37f7201e502070e507f1a8d99fadb8761bc9",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_007.zip",
+      "output": "archives/ai_009_007.zip",
+      "bytes": 2001056244,
+      "sha256": "bcddee80da60297d8b9664d3446d02ff02396b1d74a0dd818590e1de99b44fd4",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_007.zip",
+      "output": "archives/ai_006_007.zip",
+      "bytes": 2111358145,
+      "sha256": "7fef6d3c621fe6f532fcc1f2e8c9e24e0464f0177df4e4b036bce3dce537d70d",
+      "extract_to": "raw"
+    }
+  ]
+}

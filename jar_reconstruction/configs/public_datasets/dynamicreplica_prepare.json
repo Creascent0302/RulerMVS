@@ -1,0 +1,13 @@
+{
+  "root": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+  "sequences": ["06dcf6-3_obj", "0cde48-3_obj", "151c87-3_obj", "216ba3-3_obj"],
+  "expected_frames_per_sequence": 300,
+  "reference_slot": 0,
+  "minimum_free_disk_gib": 300,
+  "geometry_units": "scene_unit",
+  "units_provenance": "原作者代码确认深度与位姿共用单位，尚未取得明确SI米制声明；暂不作米制精度比较",
+  "minimum_depth": 0.00001,
+  "maximum_depth": 1000.0,
+  "diagnostic_frames_per_sequence": 10,
+  "diagnostic_pixel_stride": 8
+}

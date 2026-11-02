@@ -1,0 +1,24 @@
+{
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/carla_new/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v2_restart_20261029/configs/train_carla_new.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/ruler_flow_v2_20261031/pilot/carla_new_direct",
+  "variant": "direct",
+  "flow": {
+    "objective": "direct",
+    "hidden": 48,
+    "inference_steps": 1
+  },
+  "seed": 20261031,
+  "batch_size": 2,
+  "epochs": 1,
+  "train_samples_per_domain": 497,
+  "workers": 2,
+  "threads": 2,
+  "device": "cuda:0",
+  "lr": 5e-06,
+  "new_lr": 0.001,
+  "aux_weight": 1.0,
+  "weight_decay": 0.0001,
+  "minimum_free_gib": 200,
+  "augmentation": true
+}

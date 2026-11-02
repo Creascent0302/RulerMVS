@@ -1,0 +1,60 @@
+{
+  "method": "patchmatchnet",
+  "seed": 1701,
+  "cpu_threads": 2,
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": "",
+    "num_views": 4
+  },
+  "image_size": [
+    256,
+    448
+  ],
+  "model": {
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "reference_indices": [
+      2
+    ],
+    "weights": ""
+  },
+  "training": {
+    "epochs": 8,
+    "batch_size": 1,
+    "num_workers": 0,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "lr_milestones": [
+      10,
+      12,
+      14
+    ],
+    "scheduler_interval": "epoch",
+    "precision": "fp32"
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "max_surface_points": 1024,
+    "warmup": 2
+  },
+  "adaptation_note": "固定作者指定论文版本，原始48逆深度随机候选与三级Patchmatch/细化/损失。CARLA四目及范围迁移不是论文DTU训练复现。"
+}

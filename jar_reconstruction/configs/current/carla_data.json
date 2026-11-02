@@ -1,0 +1,32 @@
+{
+  "image_size": [256, 448],
+  "matching_image_size": [512, 896],
+  "datasets": [
+    {
+      "name": "CARLA_wide4",
+      "capture_release": "new_20261028",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_prepared/val_upper.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_prepared/test_upper.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [2.0, 80.0],
+      "correspondence": true,
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": ["stereo_left", "stereo_right", "stereo_up", "stereo_down"],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      }
+    }
+  ]
+}

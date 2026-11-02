@@ -1,0 +1,30 @@
+{
+  "name": "formal_queue",
+  "output": "runs/active/role_fusion_20261030/logs",
+  "workers": [
+    [
+      "research/role_fusion_20261030/configs/public_control.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/public_context.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/public_carry.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/public_both.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/carla_control.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/carla_context.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/carla_carry.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/carla_both.json"
+    ]
+  ]
+}

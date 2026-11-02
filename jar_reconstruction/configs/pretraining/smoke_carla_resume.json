@@ -1,0 +1,101 @@
+{
+  "architecture": "ruler_direct_v2",
+  "seed": 20261025,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/smoke_carla_resume",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "augmentation": true,
+  "initialization": {
+    "foundation": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/depth_anything_v2_vitb.pth",
+    "matching": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/resnet18-f37072fd.pth"
+  },
+  "model": {
+    "near": 0.1,
+    "far": 1000.0,
+    "transition": 16.0,
+    "depth_bins": 96,
+    "channels": 64,
+    "raw_channels": 128,
+    "peak_count": 4,
+    "peak_separation_m": 0.1,
+    "fine_min_step_m": 0.005,
+    "fine_max_step_m": 100.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": true,
+    "absolute_information": true,
+    "use_scene": false,
+    "use_fine_offset": true,
+    "local_kind": "scale_space",
+    "proposal_transport": "bilinear",
+    "scale_routing": true
+  },
+  "datasets": [
+    {
+      "name": "CARLA_wide4",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_complete.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": false,
+      "train_manifest_sha256": "01efc04c609eb43f09e842ce132733619667ee10a341f86c439384711193267f"
+    }
+  ],
+  "train": {
+    "batch_size": 4,
+    "accumulation": 1,
+    "workers": 0,
+    "precision": "bf16",
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "checkpoint_every": 1,
+    "log_every": 1,
+    "validation_samples_per_domain": 1,
+    "full_validation_every": 3,
+    "minimum_free_gib": 200,
+    "threads": 2
+  },
+  "stages": [
+    {
+      "number": 4,
+      "name": "carla_finetuning",
+      "min_epochs": 2,
+      "max_epochs": 2,
+      "matching_lr": 2e-06,
+      "foundation_lr": 2e-07,
+      "new_lr": 1e-05,
+      "correspondence_weight": 0.0,
+      "patience_full_validations": 4
+    }
+  ],
+  "evaluation": {
+    "test_after_training": false,
+    "metrics": [
+      "AbsRel",
+      "RMSE",
+      "MAE",
+      "delta1",
+      "coverage"
+    ]
+  },
+  "smoke": true,
+  "stop_after_updates": 1,
+  "initial_model_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/smoke8/pretrained.pt"
+}

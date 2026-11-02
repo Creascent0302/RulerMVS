@@ -1,0 +1,30 @@
+flowchart TD
+    RGB["N张RGB：B×N×3×256×448<br/>N=2/4；缺视图由掩码标记"]
+    CAL["已知K、T、有效掩码<br/>不修改标定，不读取GT"]
+    CNN["共享ResNet-18＋FPN<br/>匹配输入由共同RGB上采样至512×896<br/>64维多尺度匹配特征"]
+    BR["保留V5：参考图layer1/2 → CNNTokenBridge<br/>保留子格位置，残差注入ViT patch token"]
+    VIT["参考图ViT-B<br/>四层768维、16×28特征"]
+    COARSE["保留V5粗层<br/>96×32×56候选：精确投影、多尺度采样<br/>候选相关源注意力＋图像上下文＋局部空间联合判断"]
+    PROP["四邻域传递，保留4个父候选族<br/>标定导数确定局部步长<br/>每族3个精确重投影候选，共12×64×112"]
+    FINE["细候选特征与连续位置<br/>沿用V5取证计算，不增加编码或投影轮次"]
+    GROUP["V6：先估计4个候选族的质量<br/>129参数质量门控协调父判断与细判断<br/>允许细层纠正粗层，不硬锁父峰"]
+    READ["选择候选族，再在族内连续定位<br/>不跨候选族平均深度<br/>组内赢家保留作为消融"]
+    UP["沿用可学习凸上采样<br/>默认读赢家特征；可选同候选族概率加权特征<br/>全图深度、有效性、置信度及源支持数<br/>深度假设不冒充已验证表面"]
+    LOSS["仅训练：GT深度<br/>细层分类/风险对齐各族实际读出<br/>保留粗层、连续定位和全图目标"]
+    FAST["可选部署：线性投影复用＋局部编译<br/>仅编译源注意力/上下文融合<br/>不减少分辨率、候选数或视图"]
+    RGB --> CNN
+    RGB --> VIT
+    CNN --> BR --> VIT
+    CNN --> COARSE
+    VIT --> COARSE
+    CAL --> COARSE
+    COARSE --> PROP --> FINE
+    CNN --> FINE
+    VIT --> FINE
+    CAL --> FINE
+    PROP -->|"父族质量"| GROUP
+    FINE --> GROUP --> READ --> UP
+    LOSS -.-> GROUP
+    LOSS -.-> READ
+    FAST -.-> COARSE
+    FAST -.-> FINE

@@ -1,0 +1,237 @@
+{
+  "output": "runs/active/full_test_20261026/carla",
+  "training_config": "configs/pretraining/train_latest_20261025.json",
+  "own_weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "datasets": [
+    {
+      "name": "CARLA_complete",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": false,
+      "train_manifest_sha256": "485eea70bccf8b6244b0f7627d912cd9f53f9804c8adb3245cf861bf183b3b8f",
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [
+          "tele_left",
+          "tele_right"
+        ],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "distance_bands": [
+        [
+          2,
+          10
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          24,
+          80
+        ]
+      ]
+    },
+    {
+      "name": "CARLA_partial",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_supervised.jsonl",
+        "val": "/data/liuzonghao_data/3Dscene_runs/active_research/full_test_20261026/manifests/dev_partial_supervised.jsonl",
+        "test": "/data/liuzonghao_data/3Dscene_runs/active_research/full_test_20261026/manifests/test_partial_supervised.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": false,
+      "train_manifest_sha256": "485eea70bccf8b6244b0f7627d912cd9f53f9804c8adb3245cf861bf183b3b8f",
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [
+          "tele_left",
+          "tele_right"
+        ],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "distance_bands": [
+        [
+          2,
+          10
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          24,
+          80
+        ]
+      ]
+    }
+  ],
+  "methods": {
+    "own_new_public": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+      "label": "新自研公共权重"
+    },
+    "own_old_public": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      },
+      "label": "上轮自研公共权重＋相同布局优化"
+    },
+    "own_new_carla": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_retrain_latest_20261025/carla_finetune/pretrained.pt",
+      "label": "新自研CARLA220微调"
+    },
+    "own_old_carla": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/public_pretrain_no_hero_v2/carla_finetune/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      },
+      "label": "上轮自研CARLA66微调"
+    },
+    "own_new_carla_equal": {
+      "kind": "own",
+      "input_mode": "equal_pixels",
+      "weights": "runs/active/public_retrain_latest_20261025/carla_finetune/pretrained.pt",
+      "label": "新自研CARLA微调／共同像素"
+    },
+    "mvsanywhere_official_shared": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "label": "MVSAnywhere官方／共享TRAIN范围／refined",
+      "shared_train_range": true,
+      "drop_missing_views": true
+    },
+    "fast_mvsnet_dtu": {
+      "kind": "fast_mvsnet",
+      "weights": "runs/carla_research_20261011/cache/fast_mvsnet_dtu.pth",
+      "label": "Fast-MVSNet官方DTU",
+      "drop_missing_views": true
+    },
+    "simplerecon_carla": {
+      "kind": "simplerecon",
+      "weights": "runs/carla_research_20261011/baselines/simplerecon/step3000.pt",
+      "label": "SimpleRecon四目／CARLA训练3000步",
+      "num_views": 4,
+      "datasets": [
+        "CARLA_complete"
+      ]
+    },
+    "mvsanywhere_carla_first": {
+      "kind": "mvsanywhere",
+      "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+      "project_checkpoint": true,
+      "drop_missing_views": true,
+      "refinements": 0,
+      "label": "MVSAnywhere／既有CARLA66微调／first"
+    },
+    "mvsanywhere_carla_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+      "project_checkpoint": true,
+      "drop_missing_views": true,
+      "refinements": 1,
+      "label": "MVSAnywhere／既有CARLA66微调／refined"
+    }
+  },
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "shard_size": 256,
+  "workers_per_gpu": 1,
+  "cpu_threads": 2,
+  "loader_workers": 2,
+  "seed": 20261026,
+  "precision": "fp32",
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "timing": {
+    "datasets": [],
+    "warmup": 5,
+    "repetitions": 20
+  },
+  "not_applicable": {
+    "mvsformerpp": "本地没有可用完整任务权重，不以随机初始化做精度baseline",
+    "octreeocc": "发布整模型仍缺模块，且本次没有同定义占据标签",
+    "gaussianformer2": "没有已验证完整任务权重和同定义占据标签"
+  },
+  "protocol_notes": [
+    "RGB和标定输入，GT不进入网络；禁止测试标签决定搜索范围。",
+    "相同主图256x448、相同参考、相同全部有效GT；原生高分辨率自研单独标注。",
+    "MVSAnywhere保持标定启发式范围；Fast-MVSNet和SimpleRecon只按现有TRAIN统计配置范围。",
+    "精度全部FP32/TF32关闭；只缓存冻结位置插值，不缓存图像或预测。",
+    "不同单位MAE/RMSE不得跨域平均；缺失预测保留GT分母并报告coverage。",
+    "预训练暴露和训练预算不同，此次是已有权重部署比较，非同预算架构归因。",
+    "本次全部模型重新测试；新旧自研均使用严格已验布局优化，未启用浮点重排快速版。",
+    "同像素分支仅由共同主图放大，无额外图像信息；原生自研读取512×896匹配图。",
+    "同时列出MVSAnywhere原生范围和共享TRAIN范围，不按TEST选择范围。",
+    "主要指标为完整TEST像素加权深度误差、阈值准确率、预测覆盖率；没有同定义占据GT，不报告IoU。",
+    "CARLA固定上相机参考、2–80米GT，完整200和缺相机150帧分别报告；不使用tele。",
+    "原生支持可变N的MVSAnywhere/Fast只删除缺失相机槽，不补图、不改核心。Simple固定四目MLP仅测完整200。",
+    "新CARLA权重训练220组，旧自研与既有MVSAnywhere训练66组，训练预算不同，不作纯架构归因。",
+    "新旧公共权重在CARLA单列；公共域未使用CARLA微调权重替代。"
+  ]
+}

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1200" viewBox="0 0 2200 1200">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#637A98"/></marker></defs>
+<path d="M 207.5,355 L 207.5,450" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 585.0,635 L 585.0,785" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 370,535.0 L 400.0,535.0 L 400.0,542.5 L 430,542.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 935.0,635 L 935.0,785" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 740,542.5 L 760.0,542.5 L 760.0,542.5 L 780,542.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1285.0,635 L 1285.0,785" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1090,542.5 L 1110.0,542.5 L 1110.0,542.5 L 1130,542.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1635.0,635 L 1635.0,785" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1440,542.5 L 1460.0,542.5 L 1460.0,542.5 L 1480,542.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1985.0,635 L 1985.0,785" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1790,542.5 L 1810.0,542.5 L 1810.0,542.5 L 1830,542.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 585,340 L 585,450" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 935,340 L 935,450" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1285,340 L 1285,450" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1635,340 L 1635,450" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1100.0" y="52.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="36" fill="#22334A">稠密解码：候选信息进入每一级，深度由粗到细修正</text>
+<rect x="45" y="185" width="325" height="170" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="207.5" y="218.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">完整192候选＋无匹配</text>
+<text x="207.5" y="252.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">773通道证据包</text>
+<text x="207.5" y="287.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">1×1投影＋残差块</text>
+<text x="207.5" y="321.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">64维候选特征</text>
+<rect x="45" y="450" width="325" height="170" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="207.5" y="487.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride16空间Transformer</text>
+<text x="207.5" y="519.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">2层/4头</text>
+<text x="207.5" y="550.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">448位置/每相机</text>
+<text x="207.5" y="582.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">位置含像素、射线与相机中心</text>
+<rect x="430" y="450" width="310" height="185" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="585.0" y="495.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride32解码</text>
+<text x="585.0" y="526.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">CNN＋语义＋候选＋父特征</text>
+<text x="585.0" y="558.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">2个残差块/64维</text>
+<text x="585.0" y="589.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">深度[1,4,8,14]</text>
+<rect x="430" y="785" width="310" height="110" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="585.0" y="824.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">连续深度＋置信度头</text>
+<text x="585.0" y="855.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">诊断点：解码stride32</text>
+<rect x="780" y="450" width="310" height="185" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="935.0" y="495.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride16解码</text>
+<text x="935.0" y="526.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">CNN＋语义＋候选＋父特征</text>
+<text x="935.0" y="558.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">2个残差块/64维</text>
+<text x="935.0" y="589.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">深度[1,4,16,28]</text>
+<rect x="780" y="785" width="310" height="110" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="935.0" y="824.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">连续深度＋置信度头</text>
+<text x="935.0" y="855.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">诊断点：解码stride16</text>
+<rect x="1130" y="450" width="310" height="185" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1285.0" y="495.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride8解码</text>
+<text x="1285.0" y="526.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">CNN＋语义＋候选＋父特征</text>
+<text x="1285.0" y="558.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">2个残差块/64维</text>
+<text x="1285.0" y="589.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">深度[1,4,32,56]</text>
+<rect x="1130" y="785" width="310" height="110" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="1285.0" y="824.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">连续深度＋置信度头</text>
+<text x="1285.0" y="855.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">诊断点：解码stride8</text>
+<rect x="1480" y="450" width="310" height="185" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1635.0" y="495.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride4解码</text>
+<text x="1635.0" y="526.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">CNN＋语义＋候选＋父特征</text>
+<text x="1635.0" y="558.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">2个残差块/64维</text>
+<text x="1635.0" y="589.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">深度[1,4,64,112]</text>
+<rect x="1480" y="785" width="310" height="110" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="1635.0" y="824.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">连续深度＋置信度头</text>
+<text x="1635.0" y="855.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">诊断点：解码stride4</text>
+<rect x="1830" y="450" width="310" height="185" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1985.0" y="495.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">完整分辨率解码</text>
+<text x="1985.0" y="526.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">继承stride4＋RGB细节</text>
+<text x="1985.0" y="558.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">16维轻量特征</text>
+<text x="1985.0" y="589.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">深度[1,4,256,448]</text>
+<rect x="1830" y="785" width="310" height="110" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="1985.0" y="824.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">连续深度＋置信度头</text>
+<text x="1985.0" y="855.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">诊断点：解码stride1</text>
+<rect x="475" y="195" width="1175" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1062.5" y="233.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">候选特征在每级对齐读取</text>
+<text x="1062.5" y="267.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">CNN和ViT上下文也按该级读取</text>
+<text x="1062.5" y="302.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">层间传递特征和有界深度编码</text>
+<rect x="1730" y="190" width="385" height="160" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="1922.5" y="238.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">本配置：首级学习深度</text>
+<text x="1922.5" y="270.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">其后预测深度编码残差</text>
+<text x="1922.5" y="301.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">不直接继承粗深度均值</text>
+<rect x="430" y="990" width="1640" height="155" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="1250.0" y="1031.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="24" fill="#22334A">固定权重干预</text>
+<text x="1250.0" y="1067.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="24" fill="#22334A">去语义 / 打平候选 / 去空间注意力 / 去RGB / 去代价上下文</text>
+<text x="1250.0" y="1103.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="24" fill="#22334A">标签纠正候选排序：仅诊断上限，不能作为正常推理结果</text>
+<rect x="45" y="800" width="325" height="165" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="207.5" y="851.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">可选局部标定细化</text>
+<text x="207.5" y="882.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">stride4上9个精确投影候选</text>
+<text x="207.5" y="914.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">当前关闭；梯度求解尚为独立实验</text>
+</svg>

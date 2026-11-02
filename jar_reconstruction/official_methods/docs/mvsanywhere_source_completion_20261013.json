@@ -1,0 +1,596 @@
+{
+  "commit": "5bd49bba0992aa56060e1aa3bb40b2150b04726f",
+  "repository": "https://github.com/nianticlabs/mvsanywhere",
+  "full_pristine_clone": "/tmp/mvsanywhere_official_audit_20261013",
+  "added": [
+    {
+      "path": ".gitignore",
+      "bytes": 159,
+      "sha256": "a4dde41a6ab33d1567bf6c1c7780a629bc5472be579937f5fd2bc247859d4676"
+    },
+    {
+      "path": "data_splits/ScanNetv2/dvmvs_split/dvmvs_train.txt",
+      "bytes": 18083,
+      "sha256": "cb35e771fa80bc554ed333b742c74d6a220330fd393f64242c340d35724e04f2"
+    },
+    {
+      "path": "data_splits/ScanNetv2/dvmvs_split/dvmvs_val.txt",
+      "bytes": 1586,
+      "sha256": "22ee70cd6e56d0c1d97a156ff4351ef8a7c90e53b54a5c6dbde060efb68a8be2"
+    },
+    {
+      "path": "data_splits/ScanNetv2/dvmvs_split/test_eight_view_deepvmvs.txt",
+      "bytes": 94671,
+      "sha256": "70d55fdc7fd7361b6fd76a17ccae5fb0efa5349d923834a71300bb3af1a903b4"
+    },
+    {
+      "path": "data_splits/ScanNetv2/dvmvs_split/test_eight_view_deepvmvs_dense.txt",
+      "bytes": 842087,
+      "sha256": "63e9f199e9cade4819829b83eb8e30bfce6a2fb5c595bfb72a7d119ef428005a"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/scannetv2_test.txt",
+      "bytes": 1300,
+      "sha256": "0214c6a3b1ee516ad653393b0321e7c0394c7662a4b3702eac1ddd7fbc00f7e0"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/scannetv2_test_planes.txt",
+      "bytes": 1300,
+      "sha256": "260ffd2237af11425d89e1d4c173900d8ff98748b41e8ccc810bfe078138e4e3"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/scannetv2_train.txt",
+      "bytes": 15613,
+      "sha256": "96acca299b7855f02824c496b19077904d80996e7ced1bb9f0dac98f7dd4d0c8"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/scannetv2_val.txt",
+      "bytes": 4056,
+      "sha256": "d75d4971c3fa7128c643695840e279042c212ef904fe933bd00cf9918c61b083"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/test_eight_view_deepvmvs.txt",
+      "bytes": 1765710,
+      "sha256": "553012ecd1daf8063f5a32778056f8edec153abc0607878d3aecec62c6fdc93d"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/test_eight_view_deepvmvs_dense.txt",
+      "bytes": 14404578,
+      "sha256": "60ee9eb86e3d861cbd8e7161415813ca872d3c3f32cb9d32eb1829eed2ec04cb"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/test_eight_view_deepvmvs_offline.txt",
+      "bytes": 1766331,
+      "sha256": "31a322e807449cfb72e9caf0ab253b6edf94fcec7471c4a54d7ae97b610c5133"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/test_planes_eight_view_deepvmvs.txt",
+      "bytes": 1492401,
+      "sha256": "389b79af6dd3bf2c46801a5c08517e637232ae604f30c603e658f638bf4d6f3e"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/train_eight_view_deepvmvs.txt",
+      "bytes": 25076532,
+      "sha256": "25b110b05053415c8c1c2a7ab1a1dc0344d9d84ceeb050e29bea1f4b651c644a"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/train_test_eight_view_deepvmvs.txt",
+      "bytes": 16924803,
+      "sha256": "aae4f4f052ae9635a239a7ccdf13d13c1f6538259160f6272385e1251647c709"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/val_eight_view_deepvmvs.txt",
+      "bytes": 6988665,
+      "sha256": "80d6ff20252ae285565e9cb3343e25a191f1213d48d9713041cfc56c79d05424"
+    },
+    {
+      "path": "data_splits/ScanNetv2/standard_split/val_test_eight_view_deepvmvs.txt",
+      "bytes": 4657155,
+      "sha256": "ca06740c0dcfa14556a73eddf96dfa2633e28e741171cf7335127902db6f1437"
+    },
+    {
+      "path": "data_splits/blendedmvg/blendedmvg_train.txt",
+      "bytes": 12374,
+      "sha256": "95c4a625bf32e1ca84fbaae15a02884137f0d0e5466b565d39424ce99c01648e"
+    },
+    {
+      "path": "data_splits/blendedmvg/blendedmvg_val.txt",
+      "bytes": 174,
+      "sha256": "bff0571119baa405fc99d2266620c9378fe9a8af9db07c1952009e0b43ca8c30"
+    },
+    {
+      "path": "data_splits/blendedmvg/train_eight_view_deepvmvs.txt",
+      "bytes": 9419282,
+      "sha256": "eaca9abbfb5bb670ec42bbc8f4610189e21d709c9859ab88fbd173bfd40f6acc"
+    },
+    {
+      "path": "data_splits/blendedmvg/val_eight_view_deepvmvs.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data_splits/dynamic_replica/dynamic_replica_test.txt",
+      "bytes": 260,
+      "sha256": "153abfe952beed8bc462136dbec1bbbcd7e402461adcef8208a9d7eca252a235"
+    },
+    {
+      "path": "data_splits/dynamic_replica/dynamic_replica_train.txt",
+      "bytes": 6279,
+      "sha256": "8761145d8649b5c2346929cd459ca31de396edea9ad02041d3a8346bfd0f54d4"
+    },
+    {
+      "path": "data_splits/dynamic_replica/dynamic_replica_val.txt",
+      "bytes": 260,
+      "sha256": "581e45776aa1b1a0db8a4f1c8abb78a55a203ec9a43b5430822550c4d8f8d6a4"
+    },
+    {
+      "path": "data_splits/dynamic_replica/train_eight_view_deepvmvs.txt",
+      "bytes": 2988311,
+      "sha256": "e635bfdc54eb81a8cc415040abcc60cacea011d1f377e85124f0e8a664857645"
+    },
+    {
+      "path": "data_splits/dynamic_replica/val_eight_view_deepvmvs.txt",
+      "bytes": 10153,
+      "sha256": "d2c364baf875427d7632890f27dd778e42a403e4e3d566cfe21528314588bc13"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/train_clean_eight_view_deepvmvs_bd.txt",
+      "bytes": 2630416,
+      "sha256": "dd6d9e361af0bc5ac45c938540df30caaf5014256dc5d071c9390c691b04c6e9"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/train_eight_view_deepvmvs_bd.txt",
+      "bytes": 2701350,
+      "sha256": "4957a6c0b7fb974c68dbdeef03c87a425fbf9f823e905bad6b6c68013e4272a1"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/train_files_bd.json",
+      "bytes": 404470,
+      "sha256": "64cb8ced863e53a9de7867220e14924a7ec24b2504735cdb94f4f73ec9879bae"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/train_files_mean_10_m_no_bad_scenes.txt",
+      "bytes": 1099538,
+      "sha256": "e77f22b65e9745b54c8ef06658c44a9fe35ad75e710a7ef47d63decf58556450"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/val_clean_eight_view_deepvmvs_bd.txt",
+      "bytes": 89494,
+      "sha256": "04784a15239404fb88224b95c016c9a7b13738f7bfd097334f20c7396c7ee336"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/val_eight_view_deepvmvs_bd.txt",
+      "bytes": 89494,
+      "sha256": "04784a15239404fb88224b95c016c9a7b13738f7bfd097334f20c7396c7ee336"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/val_files_bd.json",
+      "bytes": 54283,
+      "sha256": "40415dcdf5cf30b2411df715682504e9cf2d11c660deb1d894464175b4d677be"
+    },
+    {
+      "path": "data_splits/hypersim/bd_split/val_files_mean_10_m_no_bad_scenes.txt",
+      "bytes": 151501,
+      "sha256": "7f941dc6cbe98ebbcf39b5c96da5694b10f29aad721166ad1992cd0fa5c525ce"
+    },
+    {
+      "path": "data_splits/hypersim/standard_split/test_files_all.json",
+      "bytes": 63314,
+      "sha256": "83e8c0311fd99a20dc152ebc6766792547ebafa6b4240d864ecb9a97f83e51d2"
+    },
+    {
+      "path": "data_splits/hypersim/standard_split/train_files_all.json",
+      "bytes": 490466,
+      "sha256": "1018da701f5f03646e6c6f7cb74738d509cb337fae2477116e03c79228adc259"
+    },
+    {
+      "path": "data_splits/hypersim/standard_split/val_files_all.json",
+      "bytes": 60859,
+      "sha256": "c61f65798b2ee17091e0cc58d2986f96a94e757a3b3f17486d51e1aed542f9dd"
+    },
+    {
+      "path": "data_splits/matrix_city/matrix_city_train.json",
+      "bytes": 4584202,
+      "sha256": "8afdbd5cb4b330f55f507b1ce10b96baa1996a3500b960ca54a6bf7356419617"
+    },
+    {
+      "path": "data_splits/matrix_city/matrix_city_train.txt",
+      "bytes": 364,
+      "sha256": "6b3e0578db897bd028dbcf97e7f01c260a9c0059e0b5da68332cc852982c1ec9"
+    },
+    {
+      "path": "data_splits/matrix_city/matrix_city_val.txt",
+      "bytes": 404,
+      "sha256": "8921311ff8bac446e55e782bce7be11c00fbfef15725e8364a16b2f2bef3ea4a"
+    },
+    {
+      "path": "data_splits/matrix_city/train_eight_view_deepvmvs.txt",
+      "bytes": 3311040,
+      "sha256": "7524d6a3594814a716b274f5e22bbce80052f6af7ade524c7e3d0630b8c5c485"
+    },
+    {
+      "path": "data_splits/matrix_city/val_eight_view_deepvmvs.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data_splits/mvssynth/train_eight_view_deepvmvs.txt",
+      "bytes": 144855,
+      "sha256": "65a77c07093a91bdf8f5847614efc47d1aa79a6873d21b55d438c3c36bc2ca7a"
+    },
+    {
+      "path": "data_splits/mvssynth/train_scans.txt",
+      "bytes": 584,
+      "sha256": "1fbce99b3d173261e10a3948fd27ae2283f351d8da0e17269ea9d7f24b897b38"
+    },
+    {
+      "path": "data_splits/mvssynth/val_eight_view_deepvmvs.txt",
+      "bytes": 107999,
+      "sha256": "a2547d6ec751f29ee8db343a7bf8b9c46bbd2e43fde15b9c5c51ec7e4bf82124"
+    },
+    {
+      "path": "data_splits/mvssynth/val_scans.txt",
+      "bytes": 14,
+      "sha256": "82d6c8e9ba0a804fd4404d4fd05714e133b1468671f3967600ed084c1b9f5f3e"
+    },
+    {
+      "path": "data_splits/sailvos3d/split_train.txt",
+      "bytes": 2192,
+      "sha256": "99880e9b5071999c11d161a7b082f63d93da58f0f5098235b90765c155f3a22a"
+    },
+    {
+      "path": "data_splits/sailvos3d/train_eight_view_deepvmvs.txt",
+      "bytes": 1439052,
+      "sha256": "4c8e6fdece214be92c8c9ec4ed3f9b6c6629355388984e3f7384295b742b20a1"
+    },
+    {
+      "path": "data_splits/tartanair/all_scans.txt",
+      "bytes": 8141,
+      "sha256": "285dd0409d6a3714352a7a25cce8b97491065b5b73b6878dab27b6bf59d5e635"
+    },
+    {
+      "path": "data_splits/tartanair/train_eight_view_deepvmvs_bd.txt",
+      "bytes": 10930921,
+      "sha256": "3075a2cafe46c0ef49441b3ff6ebbea00c7fda8158c3be5251fc79a800582d93"
+    },
+    {
+      "path": "data_splits/tartanair/train_scans.txt",
+      "bytes": 7579,
+      "sha256": "e820575dc0ba137d37ea07ffbcb008e5907a47dfd619aa94ffdbc27ab8418b14"
+    },
+    {
+      "path": "data_splits/tartanair/val_eight_view_deepvmvs_bd.txt",
+      "bytes": 168480,
+      "sha256": "583658aacfac80569bb98737185b4af04a0dca7785ae2a4773c92f5735899688"
+    },
+    {
+      "path": "data_splits/tartanair/val_scans.txt",
+      "bytes": 209,
+      "sha256": "bec5621b236385e9d626a15b0ca19fd0053094c42ac3e9e2adee6b1a53961fe7"
+    },
+    {
+      "path": "data_splits/vdr/scans.txt",
+      "bytes": 17,
+      "sha256": "37b987d55b5a81bc372a5b6cd9e1c250f2a02dc707dc43d91a61cdf4ddbb0d4d"
+    },
+    {
+      "path": "data_splits/vdr/test_eight_view_deepvmvs.txt",
+      "bytes": 33208,
+      "sha256": "718c97c02a9f8454b759f7828fe7ecb45a727973688597b17b0ee09e08360ec5"
+    },
+    {
+      "path": "data_splits/vdr/test_eight_view_deepvmvs_dense.txt",
+      "bytes": 93727,
+      "sha256": "3d2e434358c91cc745eee8b0e1c535affde199989173e35497680f94a61378de"
+    },
+    {
+      "path": "data_splits/vdr/test_eight_view_deepvmvs_dense_offline.txt",
+      "bytes": 94398,
+      "sha256": "b1cde94383460fe9a3e99c26cdfb553d3c8c0c74531ad3ef31a809442c37eccd"
+    },
+    {
+      "path": "data_splits/vkitti/matrix_city_train.json",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "data_splits/vkitti/train_eight_view_deepvmvs.txt",
+      "bytes": 1862125,
+      "sha256": "af5f7f79c31374a3dd9a48c5f0f7bb34c7fa6a118c387f136237b409fc0ac6fe"
+    },
+    {
+      "path": "data_splits/vkitti/vkitti_train.txt",
+      "bytes": 845,
+      "sha256": "a0a3edcf82a559b7f05220bd65937211bdc7a4fa4144e729ebcf6f422d6d2e2d"
+    },
+    {
+      "path": "eval.py",
+      "bytes": 7427,
+      "sha256": "eaafd7e86922e750d95d449ace7455ba96288a43d6d8a69a747bc1538055d8d2"
+    },
+    {
+      "path": "scripts/create_visibility_volume.py",
+      "bytes": 10419,
+      "sha256": "aff28ebcf4de4a784f67379e6e73526057b587c412c57a89eb5ff986c6d80382"
+    },
+    {
+      "path": "scripts/data_scripts/filter_hypersim_scenes.py",
+      "bytes": 825,
+      "sha256": "f1f65ad84a078a31fd231014a248b42a92fbbfb0d227ac016af6407ed5f099cf"
+    },
+    {
+      "path": "scripts/data_scripts/fix_nerfcapture_filenames.py",
+      "bytes": 1004,
+      "sha256": "ea7184b7ce114739ca67dd09297be1b2c844e66d26629e0fd947700eba846ced"
+    },
+    {
+      "path": "scripts/data_scripts/generate_blendedmvg_tuples.py",
+      "bytes": 2109,
+      "sha256": "4431d3ad39c6decd584fea1bf3b90299dcb8aa54ddca57ceaa83056197363e00"
+    },
+    {
+      "path": "scripts/data_scripts/generate_hypersim_planar_depths.py",
+      "bytes": 3566,
+      "sha256": "31a99264ea6db89260c033cc6f0f4069a53f63cb492162c37c0895adc1d13ac5"
+    },
+    {
+      "path": "scripts/data_scripts/generate_matrix_scans.py",
+      "bytes": 1702,
+      "sha256": "3c5f11a24e6e8cbffbce2894882a8adeafda3b2d3fefca58dfaad299eda6e1e3"
+    },
+    {
+      "path": "scripts/data_scripts/generate_test_tuples.py",
+      "bytes": 21022,
+      "sha256": "05c1fc05d0f23fa18a8bef53c5d9dd92de0901dbfbfc3880af751d0704c2d120"
+    },
+    {
+      "path": "scripts/data_scripts/generate_train_tuples.py",
+      "bytes": 16496,
+      "sha256": "67d7e2ea899deae374cc5ca202215abf0b9cfad2e672b9080ea63974c6e097ef"
+    },
+    {
+      "path": "scripts/data_scripts/generate_train_tuples_geometry.py",
+      "bytes": 10648,
+      "sha256": "a6534823ea30e2b31355528f8f879c546a4b0def215a288a714bdae94ecf4ea4"
+    },
+    {
+      "path": "scripts/data_scripts/precompute_valid_frames.py",
+      "bytes": 4897,
+      "sha256": "01822beb6631905e1507ded969edbeb3b5ac8da1548612d33cfd028adb7af9e3"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/SensorData.py",
+      "bytes": 7549,
+      "sha256": "e459e35f9cd4242d247d057bda9d6fff5a5a732fe2ab583fd29588baa204d7e6"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/download_scannet.py",
+      "bytes": 13620,
+      "sha256": "954fed64ddd1049ef2908c7c1b268718815e240c902ebb9cefdc4e2bfec6fca7"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/env.yml",
+      "bytes": 147,
+      "sha256": "881eea2681d74a3357d5d53afa5d25071a979574b6c3cf081e543712986ed92a"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/reader.py",
+      "bytes": 3273,
+      "sha256": "85e525f2a5ba42983da37f00c7071dbd0003580aebed06b43e48f32a3404d489"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/splits/scannetv2_test.txt",
+      "bytes": 1300,
+      "sha256": "0214c6a3b1ee516ad653393b0321e7c0394c7662a4b3702eac1ddd7fbc00f7e0"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/splits/scannetv2_train.txt",
+      "bytes": 15613,
+      "sha256": "96acca299b7855f02824c496b19077904d80996e7ced1bb9f0dac98f7dd4d0c8"
+    },
+    {
+      "path": "scripts/data_scripts/scannet_wrangling_scripts/splits/scannetv2_val.txt",
+      "bytes": 4056,
+      "sha256": "d75d4971c3fa7128c643695840e279042c212ef904fe933bd00cf9918c61b083"
+    },
+    {
+      "path": "scripts/data_scripts/undistort_nerfstudio_data.py",
+      "bytes": 4385,
+      "sha256": "19c025cd755ae7b74aebbfb90a2c2f7dc15091673ef6a8213a251655d5bd1e73"
+    },
+    {
+      "path": "scripts/dust3r_waymo_preprocess.py",
+      "bytes": 19339,
+      "sha256": "f154336ef0970294631f7b9914d8754bd8db1a0cf9e43c9e94fa8d5a6bff909c"
+    },
+    {
+      "path": "scripts/evals/mesh_eval.py",
+      "bytes": 10530,
+      "sha256": "97c69432efe7bced170e69cda728511a4e32f30110b131bbd2e7423a6c8d507d"
+    },
+    {
+      "path": "scripts/evaluation.py",
+      "bytes": 1598,
+      "sha256": "eddf16ab369e81a005f411256b25383dd70f0e7816b460ad65e0da790104a14a"
+    },
+    {
+      "path": "scripts/render_scripts/render_meshes.py",
+      "bytes": 16742,
+      "sha256": "d6347fe823ddb6e5c2f36763df8f0d0281dca2a9e32092d205cc808de7ffaad5"
+    },
+    {
+      "path": "scripts/strip_checkpoint.py",
+      "bytes": 783,
+      "sha256": "8388d90008658af7ba822d83cb9f0a64e4e21fd8b7e21ea4d2b6126a2b017b80"
+    },
+    {
+      "path": "simple_demo.py",
+      "bytes": 1662,
+      "sha256": "8b9328e65f5b96c19dd4f4a013f43caf29e11d247b499a16f0350dc98088ac24"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/data/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/data/mvsanywhere_dataset.py",
+      "bytes": 9563,
+      "sha256": "e2df6be19ccba17e931c1563876aa04d9b8b0daea52142abc243f062461da33c"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/data/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/data/regsplatfacto_datamanager.py",
+      "bytes": 2936,
+      "sha256": "8b656fac5358188b2ab4591d2d853371e69c5bcfbc807d996a09397457882584"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/meshing.py",
+      "bytes": 5455,
+      "sha256": "40e2aa748635d060f5e6558a22761f096e1bf421bc1010ee6897df0111500ca3"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/regsplatfacto_config.py",
+      "bytes": 3785,
+      "sha256": "7d96e6dd1a5fec969bd7df4d8ae8adbd0095194710328f7bcbeb0dcc51b37858"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/regsplatfacto_model.py",
+      "bytes": 32397,
+      "sha256": "629b26fd246b2e1eff755a0de099ef2f982194f3826d1c648c5e8e53f073556a"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/render_for_meshing.py",
+      "bytes": 10679,
+      "sha256": "ca888e18316f5a5f20f01efe389cd15a65fb9c1b49cd5b7160fbe43636bb3f89"
+    },
+    {
+      "path": "src/regsplatfacto/regsplatfacto/utils.py",
+      "bytes": 4417,
+      "sha256": "77bac208d2cfa032f2299fbd0d875f3f4a07e516ffe28d78a6ca61e97ebbcb13"
+    }
+  ],
+  "preserved_existing": [
+    "LICENSE",
+    "Makefile",
+    "README.md",
+    "configs/data/blendedmvg/blendedmvg_default_train.yaml",
+    "configs/data/blendedmvg/blendedmvg_default_val.yaml",
+    "configs/data/colmap/colmap_empty.yaml",
+    "configs/data/demo/demo_colmap.yaml",
+    "configs/data/demo/demo_nerf_capture.yaml",
+    "configs/data/dynamic_replica/dynamic_replica_default_test.yaml",
+    "configs/data/dynamic_replica/dynamic_replica_default_train.yaml",
+    "configs/data/dynamic_replica/dynamic_replica_default_val.yaml",
+    "configs/data/hypersim/hypersim_default_test.yaml",
+    "configs/data/hypersim/hypersim_default_train.yaml",
+    "configs/data/hypersim/hypersim_default_val.yaml",
+    "configs/data/matrix_city/matrix_city_default_train.yaml",
+    "configs/data/matrix_city/matrix_city_default_val.yaml",
+    "configs/data/mvssynth/mvssynth_default_train.yaml",
+    "configs/data/mvssynth/mvssynth_default_val.yaml",
+    "configs/data/nerfstudio/nerfstudio_empty.yaml",
+    "configs/data/sailvos3d/sailvos3d_default_train.yaml",
+    "configs/data/scannet/scannet_default_test.yaml",
+    "configs/data/scannet/scannet_default_train.yaml",
+    "configs/data/scannet/scannet_default_train_inference_style.yaml",
+    "configs/data/scannet/scannet_default_train_ray.yaml",
+    "configs/data/scannet/scannet_default_val.yaml",
+    "configs/data/scannet/scannet_default_val_inference_style.yaml",
+    "configs/data/scannet/scannet_dense_test.yaml",
+    "configs/data/scannet/scannet_dense_val.yaml",
+    "configs/data/tartanair/tartanair_default_train.yaml",
+    "configs/data/tartanair/tartanair_default_val.yaml",
+    "configs/data/vdr/vdr_default.yaml",
+    "configs/data/vdr/vdr_dense.yaml",
+    "configs/data/vdr/vdr_dense_offline.yaml",
+    "configs/data/vkitti/vkitti_default_train.yaml",
+    "configs/models/mvsanywhere_dot_model.yaml",
+    "configs/models/mvsanywhere_model.yaml",
+    "configs/models/simplerecon_model.yaml",
+    "environment.yml",
+    "hubconf.py",
+    "pyproject.toml",
+    "scripts/data_scripts/scannet_wrangling_scripts/LICENSE",
+    "scripts/data_scripts/scannet_wrangling_scripts/README.md",
+    "setup.py",
+    "src/mvsanywhere/datasets/__init__.py",
+    "src/mvsanywhere/datasets/blendedmvg.py",
+    "src/mvsanywhere/datasets/change_of_basis.py",
+    "src/mvsanywhere/datasets/colmap_dataset.py",
+    "src/mvsanywhere/datasets/dynamic_replica.py",
+    "src/mvsanywhere/datasets/generic_mvs_dataset.py",
+    "src/mvsanywhere/datasets/hypersim.py",
+    "src/mvsanywhere/datasets/matrix_city.py",
+    "src/mvsanywhere/datasets/mvssynth.py",
+    "src/mvsanywhere/datasets/nerf_dataset.py",
+    "src/mvsanywhere/datasets/nerfstudio_dataset.py",
+    "src/mvsanywhere/datasets/read_write_colmap_model.py",
+    "src/mvsanywhere/datasets/sailvos3d.py",
+    "src/mvsanywhere/datasets/scannet_dataset.py",
+    "src/mvsanywhere/datasets/tartanair.py",
+    "src/mvsanywhere/datasets/vdr_dataset.py",
+    "src/mvsanywhere/datasets/vkitti.py",
+    "src/mvsanywhere/experiment_modules/rmvd_mvsa.py",
+    "src/mvsanywhere/experiment_modules/sr_depth_model.py",
+    "src/mvsanywhere/losses.py",
+    "src/mvsanywhere/modules/cost_volume.py",
+    "src/mvsanywhere/modules/depth_anything_blocks.py",
+    "src/mvsanywhere/modules/feature_volume.py",
+    "src/mvsanywhere/modules/layers.py",
+    "src/mvsanywhere/modules/networks.py",
+    "src/mvsanywhere/modules/networks_fast.py",
+    "src/mvsanywhere/modules/view_agnostic_feature_volume.py",
+    "src/mvsanywhere/modules/vit_modules.py",
+    "src/mvsanywhere/options.py",
+    "src/mvsanywhere/run_demo.py",
+    "src/mvsanywhere/test.py",
+    "src/mvsanywhere/test_rmvd.py",
+    "src/mvsanywhere/tools/fusers_helper.py",
+    "src/mvsanywhere/tools/keyframe_buffer.py",
+    "src/mvsanywhere/tools/marching_cubes/ext.cpp",
+    "src/mvsanywhere/tools/marching_cubes/marching_cubes.cu",
+    "src/mvsanywhere/tools/marching_cubes/marching_cubes.h",
+    "src/mvsanywhere/tools/marching_cubes/marching_cubes_cpu.cpp",
+    "src/mvsanywhere/tools/marching_cubes/marching_cubes_utils.h",
+    "src/mvsanywhere/tools/marching_cubes/pytorch3d_cutils.h",
+    "src/mvsanywhere/tools/marching_cubes/tables.h",
+    "src/mvsanywhere/tools/mesh_renderer.py",
+    "src/mvsanywhere/tools/partial_fuser.py",
+    "src/mvsanywhere/tools/tsdf.py",
+    "src/mvsanywhere/tools/tuple_generator.py",
+    "src/mvsanywhere/train.py",
+    "src/mvsanywhere/utils/augmentation_utils.py",
+    "src/mvsanywhere/utils/cropping_utils.py",
+    "src/mvsanywhere/utils/dataset_utils.py",
+    "src/mvsanywhere/utils/generic_utils.py",
+    "src/mvsanywhere/utils/geometry_utils.py",
+    "src/mvsanywhere/utils/metrics_utils.py",
+    "src/mvsanywhere/utils/model_utils.py",
+    "src/mvsanywhere/utils/pytorch3d_extras.py",
+    "src/mvsanywhere/utils/rendering_utils.py",
+    "src/mvsanywhere/utils/visualization_utils.py",
+    "src/mvsanywhere/utils/volume_utils.py",
+    "src/regsplatfacto/pyproject.toml"
+  ],
+  "omitted_demonstration": [
+    "demo_assets/cameras.npy",
+    "demo_assets/cur_image.png",
+    "demo_assets/src_image_1.png",
+    "demo_assets/src_image_2.png",
+    "demo_assets/src_image_3.png",
+    "demo_assets/src_image_4.png",
+    "demo_assets/src_image_5.png",
+    "demo_assets/src_image_6.png",
+    "demo_assets/src_image_7.png"
+  ]
+}

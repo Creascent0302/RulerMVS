@@ -1,0 +1,23 @@
+{
+  "root": "/data/liuzonghao_data/dataset/TartanAir_forest",
+  "reference_slot": 2,
+  "splits": {
+    "train": [
+      "seasonsforest/Easy/P001",
+      "seasonsforest/Easy/P002",
+      "seasonsforest/Easy/P003",
+      "seasonsforest/Easy/P004",
+      "seasonsforest/Easy/P005",
+      "seasonsforest/Easy/P007",
+      "seasonsforest/Easy/P008"
+    ],
+    "val": [
+      "seasonsforest/Easy/P009"
+    ],
+    "test": [
+      "seasonsforest/Easy/P010",
+      "seasonsforest/Easy/P011"
+    ]
+  },
+  "geometry_samples_per_trajectory": 6
+}

@@ -1,0 +1,14 @@
+{
+  "root": "/data/liuzonghao_data/dataset/MVS_Synth",
+  "source_repository": "phuang17/MVS-Synth",
+  "scope": "完整 GTAV_540；先下载校验，检查解压总量后再展开",
+  "storage_limit_bytes": 107374182400,
+  "files": [
+    {
+      "url": "https://hf-mirror.com/datasets/phuang17/MVS-Synth/resolve/main/GTAV_540.tar.gz",
+      "output": "archives/GTAV_540.tar.gz",
+      "bytes": 10492893238,
+      "sha256": "c382d45f315935ee039ef6918eacba40e727365e0fc7c7346d153c76cf77679f"
+    }
+  ]
+}

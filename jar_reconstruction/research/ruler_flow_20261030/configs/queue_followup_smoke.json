@@ -1,0 +1,24 @@
+{
+  "name": "followup_smoke_queue",
+  "output": "runs/active/ruler_flow_20261030/logs",
+  "workers": [
+    [
+      "research/ruler_flow_20261030/configs/smoke_public_flow_anchor.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/smoke_public_direct_rank_fixed.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/smoke_public_flow_rank_fixed.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/smoke_carla_flow_anchor.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/smoke_carla_direct_rank_fixed.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/smoke_carla_flow_rank_fixed.json"
+    ]
+  ]
+}

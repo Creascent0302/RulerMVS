@@ -1,0 +1,17 @@
+{
+  "output": "runs/active/early_geometry_20261030/latency_matching.json",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "datasets": [
+    "TartanAir_forest",
+    "VKITTI2"
+  ],
+  "device": "cuda:0",
+  "warmup": 10,
+  "repeats": 40,
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/public/best.pt",
+    "control": "runs/active/early_geometry_20261030/public_control/final.pt",
+    "matching_geometry": "runs/active/early_geometry_20261030/public_matching_geometry/final.pt",
+    "matching_constant": "runs/active/early_geometry_20261030/public_matching_constant/final.pt"
+  }
+}

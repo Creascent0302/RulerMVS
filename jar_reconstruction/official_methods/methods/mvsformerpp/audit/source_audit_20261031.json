@@ -1,0 +1,323 @@
+{
+  "archive_sha256": "3a6de251ca484261b6388b41a8e6317b7153698a4f4c7f648d337ee7d570269c",
+  "pristine": "/tmp/mvsformerpp_official_20261031/MVSFormerPlusPlus-bdd980cfbae9a863b5489e2ed973612b192d11a5",
+  "byte_identical": 103,
+  "changed": [
+    "models/losses.py",
+    "models/networks/DINOv2_mvsformer_model.py"
+  ],
+  "semantic_python_changes": [
+    "models/losses.py",
+    "models/networks/DINOv2_mvsformer_model.py"
+  ],
+  "missing": [],
+  "skipped_unsafe_links": [],
+  "date_utc": "2026-10-31",
+  "network": "server direct, proxy environment removed, curl --noproxy *",
+  "architecture_replaced": false,
+  "behavior_changes": {
+    "models/losses.py": "empty CE mask differentiable zero; nonempty labels unchanged",
+    "models/networks/DINOv2_mvsformer_model.py": "correct eval view indexing for batch>1; batch1 unchanged"
+  },
+  "pristine_parity": {
+    "device": "cpu",
+    "random_seed": 1701,
+    "source": "/tmp/mvsformerpp_official_20261031/MVSFormerPlusPlus-bdd980cfbae9a863b5489e2ed973612b192d11a5",
+    "tensor_count": 26,
+    "checks": {
+      ".stage1.depth": {
+        "shape": [
+          1,
+          8,
+          8
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage1.prob_volume": {
+        "shape": [
+          1,
+          32,
+          8,
+          8
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage1.photometric_confidence": {
+        "shape": [
+          1,
+          8,
+          8
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage1.depth_values": {
+        "shape": [
+          1,
+          32,
+          8,
+          8
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage1.prob_volume_pre": {
+        "shape": [
+          1,
+          32,
+          8,
+          8
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".depth": {
+        "shape": [
+          1,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".prob_volume": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".photometric_confidence": {
+        "shape": [
+          1,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".depth_values": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".prob_volume_pre": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage2.depth": {
+        "shape": [
+          1,
+          16,
+          16
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage2.prob_volume": {
+        "shape": [
+          1,
+          16,
+          16,
+          16
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage2.photometric_confidence": {
+        "shape": [
+          1,
+          16,
+          16
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage2.depth_values": {
+        "shape": [
+          1,
+          16,
+          16,
+          16
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage2.prob_volume_pre": {
+        "shape": [
+          1,
+          16,
+          16,
+          16
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage3.depth": {
+        "shape": [
+          1,
+          32,
+          32
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage3.prob_volume": {
+        "shape": [
+          1,
+          8,
+          32,
+          32
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage3.photometric_confidence": {
+        "shape": [
+          1,
+          32,
+          32
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage3.depth_values": {
+        "shape": [
+          1,
+          8,
+          32,
+          32
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage3.prob_volume_pre": {
+        "shape": [
+          1,
+          8,
+          32,
+          32
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage4.depth": {
+        "shape": [
+          1,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage4.prob_volume": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage4.photometric_confidence": {
+        "shape": [
+          1,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage4.depth_values": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".stage4.prob_volume_pre": {
+        "shape": [
+          1,
+          4,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      },
+      ".refined_depth": {
+        "shape": [
+          1,
+          64,
+          64
+        ],
+        "max_absolute_difference": 0.0
+      }
+    }
+  },
+  "pytest": {
+    "passed": 9,
+    "device": "cpu",
+    "command": "OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 official_methods/.venv/bin/python -m pytest -q official_methods/tests/test_mvsformerpp.py"
+  },
+  "weights_probe": {
+    "date_utc": "2026-10-31",
+    "url": "https://1drv.ms/f/s!AnZvbwfkzTydkk0TEvkA7M8cRY92?e=ZjncP5",
+    "result": "301 to onedrive.live.com, redirected connection timed out after 8 seconds; no checkpoint acquired"
+  },
+  "real_validation_forward": {
+    "method": "mvsformerpp",
+    "device": "cpu",
+    "pretrained": "random_full_architecture_no_accuracy_claim",
+    "load_targets": false,
+    "samples": [
+      {
+        "dataset": "TartanAir_forest",
+        "split": "val",
+        "index": 0,
+        "image_shape": [
+          1,
+          4,
+          3,
+          256,
+          448
+        ],
+        "depth_shape": [
+          1,
+          1,
+          256,
+          448
+        ],
+        "finite": true,
+        "all_positive": false,
+        "depth_range_from_train_config": [
+          0.11094082031250001,
+          356.3400000000547
+        ],
+        "manifest_sha256": "f575ca23de52e90428d471a0290ae04be0e20aad509cf8c198b054a48fdf108d"
+      },
+      {
+        "dataset": "VKITTI2",
+        "split": "val",
+        "index": 0,
+        "image_shape": [
+          1,
+          2,
+          3,
+          256,
+          448
+        ],
+        "depth_shape": [
+          1,
+          1,
+          256,
+          448
+        ],
+        "finite": true,
+        "all_positive": false,
+        "depth_range_from_train_config": [
+          0.78,
+          464.7243750001188
+        ],
+        "manifest_sha256": "9e5c4d3b58ecd312359e06bc0d9e0a57800fa03135c4a4867abe91a0c0ab3b7a"
+      }
+    ]
+  },
+  "adapter_fix": "Match upstream test.py/test_tt.py: remove obsolete pe_dict entries before strict full checkpoint loading; synthetic state verifies real missing parameters still raise. Official task checkpoint unavailable.",
+  "negative_depth_note": "Random model produced finite but nonpositive depth on broad public ranges. Upstream schedule_inverse_range uses unclamped inverse bounds (shift=False); preserve official behavior and valid mask, do not rank random predictions."
+}

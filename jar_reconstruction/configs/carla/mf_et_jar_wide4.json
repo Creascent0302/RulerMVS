@@ -1,0 +1,130 @@
+{
+  "model": {
+    "name": "mf_et_jar",
+    "feature_dim": 32,
+    "hidden_dim": 64,
+    "backbone_width": 12,
+    "near": 2.0,
+    "far": 24.0,
+    "depth_bins": 48,
+    "correlation_groups": 8,
+    "sweep_chunk": 8,
+    "max_queries": 512,
+    "query_explore": 0.5,
+    "refinement_min_step": 0.01,
+    "refinement_max_step": 4.0,
+    "fusion_cell_size": 0.05,
+    "texture_threshold": 0.002,
+    "evidence_threshold": 0.15,
+    "min_support": 2,
+    "roi": [
+      [
+        2.0,
+        18.0
+      ],
+      [
+        -6.0,
+        6.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "semantic_classes": 0,
+    "validate_inputs": true,
+    "et_query_conditioned_matching": true,
+    "et_step_pixels": [
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "et_global_candidates": 48,
+    "et_photo_descriptor": "census5",
+    "et_query_policy": "phase_grid",
+    "et_query_policy_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "et_stage_fractions": [
+      0.0625,
+      0.125,
+      0.25,
+      1
+    ],
+    "et_oriented_polish_stages": [
+      3
+    ],
+    "op_query_chunk": 256,
+    "et_free_space_source": "verified_queries"
+  },
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "train_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_wide4/train_supervised.jsonl",
+    "val_manifest": "",
+    "test_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_wide4/test_all.jsonl",
+    "image_size": [
+      270,
+      480
+    ]
+  },
+  "synthetic": {
+    "length": 8,
+    "height": 128,
+    "width": 192,
+    "seed": 7
+  },
+  "train": {
+    "seed": 17,
+    "batch_size": 1,
+    "num_workers": 0,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "max_steps": 1000,
+    "grad_clip": 1.0,
+    "precision": "bf16",
+    "accumulation_steps": 1,
+    "pin_memory": true,
+    "checkpoint_every": 100,
+    "log_every": 1
+  },
+  "eval": {
+    "fscore_threshold": 0.2,
+    "max_metric_points": 4096,
+    "spatial_probe_spacing": 2.0,
+    "surface_band": 0.1,
+    "precision": "fp32",
+    "warmup": 3,
+    "num_workers": 0,
+    "pin_memory": true,
+    "observed_only": true
+  },
+  "loss": {
+    "enforce_reference_depth_range": true
+  },
+  "baseline": {
+    "stride": 4
+  },
+  "camera": {
+    "mode": "wide4",
+    "wide_ids": [
+      "stereo_left",
+      "stereo_right",
+      "stereo_up",
+      "stereo_down"
+    ],
+    "tele_ids": [
+      "tele_left",
+      "tele_right"
+    ],
+    "allow_missing": true,
+    "disabled_ids": []
+  },
+  "runtime": {
+    "threads": 2,
+    "dist_timeout": 300
+  }
+}

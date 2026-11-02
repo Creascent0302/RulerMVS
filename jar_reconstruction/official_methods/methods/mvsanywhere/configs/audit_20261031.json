@@ -1,0 +1,21 @@
+{
+  "method": "mvsanywhere",
+  "profile": "audit_only",
+  "image_size": [64, 96],
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "val_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_up.jsonl"
+  },
+  "model": {
+    "num_views": 4,
+    "image_height": 64,
+    "image_width": 96,
+    "reference_indices": [0, 1, 2, 3],
+    "depth_bins": 64,
+    "pretrained": false,
+    "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+    "range_refinement_steps": 1,
+    "fast_cost_volume": false
+  },
+  "note": "仅对照固定官方源码与本地适配器的数值；新CARLA第一帧VAL与一致合成场景，CPU小尺寸，不是精度或速度评测。"
+}

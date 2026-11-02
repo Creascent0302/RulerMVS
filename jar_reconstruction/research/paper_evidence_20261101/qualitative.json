@@ -1,0 +1,8 @@
+{
+  "evaluation_config": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/configs/carla_new_main_test.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_qualitative",
+  "index": 87,
+  "gpu": 7,
+  "depth_range": [2.0, 80.0],
+  "error_max": 10.0
+}

@@ -1,0 +1,53 @@
+{
+  "output": "runs/active/ruler_flow_20261030/latency_public.json",
+  "device": "cuda:0",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "datasets": [
+    "TartanAir_forest",
+    "VKITTI2"
+  ],
+  "methods": {
+    "frozen": {
+      "checkpoint": "runs/active/v2_restart_20261029/public/best.pt"
+    },
+    "control": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_control/final.pt"
+    },
+    "reduced4": {
+      "checkpoint": "runs/active/v2_restart_20261029/public/best.pt",
+      "variant": {
+        "objective": "direct",
+        "inference_steps": 1,
+        "direction": true,
+        "sigma": 0.05,
+        "hidden": 32
+      },
+      "steps": 0
+    },
+    "direct_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_direct/final.pt",
+      "steps": 1
+    },
+    "flow_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_flow/final.pt",
+      "steps": 1
+    },
+    "flow_steps2": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_flow/final.pt",
+      "steps": 2
+    },
+    "flow_steps4": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_flow/final.pt",
+      "steps": 4
+    },
+    "flow_no_direction_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/public_flow_no_direction/final.pt",
+      "steps": 1
+    }
+  },
+  "warmup": 10,
+  "repeats": 40,
+  "reference_modes": [
+    "single"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "phases": {
+    "public": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_merge.json",
+    "carla": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_merge.json"
+  },
+  "jobs": [
+    {
+      "phase": "public",
+      "rank": 0,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_0.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank0"
+    },
+    {
+      "phase": "public",
+      "rank": 1,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_1.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank1"
+    },
+    {
+      "phase": "public",
+      "rank": 2,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_2.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank2"
+    },
+    {
+      "phase": "public",
+      "rank": 3,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_3.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank3"
+    },
+    {
+      "phase": "public",
+      "rank": 4,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_4.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank4"
+    },
+    {
+      "phase": "public",
+      "rank": 5,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_5.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank5"
+    },
+    {
+      "phase": "public",
+      "rank": 6,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_6.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank6"
+    },
+    {
+      "phase": "public",
+      "rank": 7,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/public_7.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/public/rank7"
+    },
+    {
+      "phase": "carla",
+      "rank": 0,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_0.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank0"
+    },
+    {
+      "phase": "carla",
+      "rank": 1,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_1.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank1"
+    },
+    {
+      "phase": "carla",
+      "rank": 2,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_2.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank2"
+    },
+    {
+      "phase": "carla",
+      "rank": 3,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_3.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank3"
+    },
+    {
+      "phase": "carla",
+      "rank": 4,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_4.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank4"
+    },
+    {
+      "phase": "carla",
+      "rank": 5,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_5.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank5"
+    },
+    {
+      "phase": "carla",
+      "rank": 6,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_6.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank6"
+    },
+    {
+      "phase": "carla",
+      "rank": 7,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs_fullval_control/carla_7.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control/carla/rank7"
+    }
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_control",
+  "evaluator": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/fullval.py",
+  "source_sha256": {
+    "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/fullval.py": "0fdd407fd1ca88c35bf4dcfaa80d5229ad9478ada4332bb9424e59ace158583d",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/validation_queue.py": "7b5e452a35ae0c5f6090581d4117ef8b8d72ee12bd2f6883910ec202575e3bad",
+    "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/model.py": "b9af7dec73d3c16fda42f361e21f5a88403f65556e51ea02ad20db6bece30f66"
+  }
+}

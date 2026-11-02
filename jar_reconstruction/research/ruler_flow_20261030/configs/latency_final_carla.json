@@ -1,0 +1,54 @@
+{
+  "output": "runs/active/ruler_flow_20261030/latency_carla.json",
+  "device": "cuda:0",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "datasets": [
+    "CARLA_new_stereo_up"
+  ],
+  "methods": {
+    "frozen": {
+      "checkpoint": "runs/active/v2_restart_20261029/carla_new/best.pt"
+    },
+    "control": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_control/final.pt"
+    },
+    "direct_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_direct/final.pt",
+      "steps": 1
+    },
+    "flow_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow/final.pt",
+      "steps": 1
+    },
+    "flow_steps2": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow/final.pt",
+      "steps": 2
+    },
+    "flow_steps4": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow/final.pt",
+      "steps": 4
+    },
+    "flow_no_direction_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow_no_direction/final.pt",
+      "steps": 1
+    },
+    "direct_rank_fixed_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_direct_rank_fixed/final.pt",
+      "steps": 1
+    },
+    "flow_rank_fixed_steps1": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow_rank_fixed/final.pt",
+      "steps": 1
+    },
+    "flow_rank_fixed_steps2": {
+      "checkpoint": "runs/active/ruler_flow_20261030/carla_flow_rank_fixed/final.pt",
+      "steps": 2
+    }
+  },
+  "warmup": 10,
+  "repeats": 40,
+  "reference_modes": [
+    "single",
+    "all"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "date_beijing": "2026-10-30",
+  "scope": "早期相机条件化与单/多目再融合的主文献调研；未在此子任务训练或修改生产模型。",
+  "current_code": {
+    "encoders": "MatchingPyramid仅读取RGB/view mask/image mask；TrainableFoundation仅读取参考RGB，K/T未进入两编码器。",
+    "geometry": "候选精确投影、投影导数、FPN采样尺度、CandidateViewAttention、候选log-depth位置编码在decoder中使用标定。",
+    "fusion": "粗层、细层都用候选query读取四层参考ViT bank；bank本身只读，未由几何证据更新。",
+    "lattices": "原图经14/16缩放再patch14，ViT token原图中心16j+7.5；matching图stride s格点经像素中心变换映回原图((sj+.5)/scale-.5)。"
+  },
+  "papers": [
+    {
+      "name": "CAM-Convs",
+      "venue": "CVPR 2019",
+      "paper": "https://arxiv.org/abs/1904.02028",
+      "primary_pdf": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Facil_CAM-Convs_Camera-Aware_Multi-Scale_Convolutions_for_Single-View_Depth_CVPR_2019_paper.pdf",
+      "verified_mechanism": "相机感知卷积将内参相关空间图送入网络，以适应不同相机的成像几何。",
+      "relevance": "像素位置之外，明确向单图表征提供相机采样条件；早期相机条件化有已有研究基础。",
+      "not_concluded": "不能由K本身恢复无先验单目公制尺度；不证明当前四目模型直接拼接坐标必然改善。"
+    },
+    {
+      "name": "Metric3D",
+      "venue": "ICCV 2023",
+      "paper": "https://arxiv.org/pdf/2307.10984",
+      "code": "https://github.com/YvanYin/Metric3D",
+      "verified_mechanism": "canonical camera space transformation处理焦距与深度尺度的混淆，再在多相机数据训练中学习单目公制先验。",
+      "relevance": "应区分相机归一化与真正几何测量，焦距条件与模型学习的对象尺度先验共同工作。",
+      "not_concluded": "不把canonical transformation解释为从标定新增深度观测；本轮没有移植其模型或预训练任务权重。"
+    },
+    {
+      "name": "UniDepth",
+      "venue": "CVPR 2024",
+      "paper": "https://arxiv.org/html/2403.18913v1",
+      "code": "https://github.com/lpiccinelli-eth/UniDepth",
+      "verified_mechanism": "dense camera ray表示条件化depth features；pseudo-spherical表示解耦相机与深度；对同图不同几何增强施加相机条件化特征一致性。外部已知camera可替换预测相机。",
+      "relevance": "我们已有强标定，可直接计算角尺度/射线prompt而不预测标定。几何增强一致性可防编码器记住某种焦距或crop。",
+      "not_concluded": "UniDepth不是把已知K随意拼在所有预训练层就完成；外部标定质量、prompt形式与训练都会影响结果。"
+    },
+    {
+      "name": "MVSAnywhere",
+      "venue": "CVPR 2025",
+      "paper": "https://arxiv.org/html/2503.22430v1",
+      "code": "https://github.com/nianticlabs/mvsanywhere",
+      "verified_mechanism": "cost-volume patchifier在多个尺度注入reference特征；融合ViT在2/5/9/11层加入对应reference表征，再多尺度DPT解码。",
+      "relevance": "学习原理是匹配证据与强先验在歧义解决过程中反复交换，而不是只在最终输出前拼一次。",
+      "not_concluded": "当前模型已有粗细两次bank读取，不能把再次读取命名为首次多阶段融合；拟议差别应是几何证据回写上下文，而非完整复制第二ViT/DPT。"
+    },
+    {
+      "name": "MVSFormer++",
+      "venue": "ICLR 2024",
+      "paper": "https://openreview.net/pdf?id=wXWfvSpYHh",
+      "code": "https://github.com/maybeLx/MVSFormerPlusPlus",
+      "verified_mechanism": "分别处理图像特征增强与候选cost-volume空间推理，使用规范化3D位置及不同attention设计。",
+      "relevance": "按信息性质选择计算层，早期角尺度与候选公制尺度不可混为一种位置编码。",
+      "not_concluded": "不证明再加一层Transformer一定是当前最合适解法。"
+    },
+    {
+      "name": "GTA",
+      "venue": "ICLR 2024",
+      "paper": "https://www.cvlibs.net/publications/Miyato2024ICLR.pdf",
+      "code": "https://github.com/autonomousvision/gta",
+      "verified_mechanism": "通过query/key-value之间相对几何变换在对齐坐标空间计算attention，原论文验证NVS。",
+      "relevance": "跨相机关系宜用相对变换，避免任意rig坐标系改变注意力。",
+      "not_concluded": "不直接套用全局点PE或宣称其NVS结果等于当前深度改善。"
+    },
+    {
+      "name": "Cameras as Relative Positional Encoding / PRoPE",
+      "venue": "NeurIPS 2025",
+      "paper": "https://arxiv.org/html/2507.10496v1",
+      "project": "https://www.liruilong.cn/prope/",
+      "code": "https://github.com/liruilong940607/prope",
+      "verified_mechanism": "比较raymap、SE3相对编码及同时含K/T的相对projective encoding，验证新视角合成、立体深度和空间判断。",
+      "relevance": "早期相机token条件与attention相对几何可互补；camera-conditioned transformer已有很接近的研究。",
+      "not_concluded": "我们不应将射线PE或K/T进attention本身宣称首创；需要在候选证据反馈和效率上体现具体差异。"
+    },
+    {
+      "name": "RayRoPE",
+      "venue": "ECCV 2026（官方仓库标注）",
+      "paper": "https://arxiv.org/html/2601.15275v1",
+      "code": "https://github.com/Lucas-707/RayRoPE",
+      "verified_mechanism": "按射线上预测位置和不确定性计算query-frame projective relative PE；不确定性用于平滑高频位置编码。",
+      "relevance": "未知深度时不能假装某个公制点已确定，可保留候选/位置分布再条件化推理。",
+      "not_concluded": "本轮不下载权重，不使用GT深度作输入，不复现其NVS或stereo指标；官方stereo代码当次README仍列待发布。"
+    },
+    {
+      "name": "G-ray",
+      "venue": "2026预印本",
+      "paper": "https://arxiv.org/html/2609.15018v1",
+      "project": "https://g-ray-project.github.io/",
+      "verified_mechanism": "用camera-local射线角度定义旋转相位，针对不同FoV/投影模型的相对位置一致性。",
+      "relevance": "跨镜头泛化的前端条件最好尊重实际射线几何，不能只使用归一化图像xy。",
+      "not_concluded": "本轮仅主文献阅读，不认定其全部性能已独立复现；我们的针孔四目协议不等于其50view混合投影实验。"
+    }
+  ],
+  "derivation": {
+    "ray": "q=inv(K)[u,v,1]; r=q/||q||; D_r=(I-r r^T) inv(K)[:,:2]/||q||。早期可用r、D_r对应实际token足迹；实际米制横向足迹仍乘未知Z。",
+    "monocular_ambiguity": "同一K下X和alpha*X产生相同投影。K已知仅去除成像歧义之一，不消除无先验单目尺度自由度。",
+    "metric_evidence": "已知米制baseline与对应关系共同给尺度。候选Z下g_i=d pi_i(X(Z))/dZ及g_i*deltaZ才是合法像素/米标尺；不能在未知Z的RGB encoder内当作观测GT尺度。",
+    "conditioning": "F_prime=F+tanh(MLP(ray,log angular footprint))*LN(F)，最后线性零初始化；只乘内容，不把纯位置向量当外观匹配证据。此为建议，不是已证明不变性或已取得收益。",
+    "feedback": "保留全部h_k，p_k=softmax(score(h_k))仅构造2D证据摘要m；上下文c=G2D(reference_bank,m)，再以零初始化残差回写h_k。摘要不替代候选集合，不先平均成唯一深度。"
+  },
+  "required_tests": [
+    "各真实CNN/ViT lattice像素中心正确；K随resize/crop同步后同物理ray一致",
+    "公共rig SE3坐标变换不影响camera-local编码与相对几何",
+    "t/depth/range/depth_scale共同换单位时归一化内部编码一致、输出按单位缩放",
+    "缺视图/全无效/纯旋转无NaN，geometry不能伪造纹理匹配证据",
+    "零初始化恢复旧输出，早期adapter梯度确实穿过冻结backbone；不可缓存旧特征或no_grad切断",
+    "early-only/fusion-only/both分别对同预算control；冻结起点另保留；当前TEST不用于调参"
+  ],
+  "limitations": [
+    "CARLA四轨迹标定固定，早期K图不会提供逐帧新遮挡信息，可能只学位置/镜头条件",
+    "几何乘性调制也不严格保证跨视角描述子等价，必须检验真对应vs错对应的间隔",
+    "若raw encoder被冻结但adapter插在早期，仍需反传穿过后续block，训练成本会增加",
+    "短预算的小幅改善不代表完整预训练收益；无改造后实测前不能宣称精度提升"
+  ]
+}

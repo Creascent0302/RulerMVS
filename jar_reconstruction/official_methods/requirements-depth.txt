@@ -1,0 +1,19 @@
+# PyTorch 2.8.0+cu128 / torchvision 0.23.0+cu128 单独安装或复制已验证环境。
+timm==0.9.12
+pytorch-lightning==1.9.5
+lightning==2.5.1
+kornia==0.6.7
+antialiased-cnns==0.3
+einops==0.8.2
+loguru==0.7.3
+moviepy==1.0.3
+matplotlib==3.10.9
+opencv-python-headless==4.11.0.86
+PyYAML==6.0.3
+scipy==1.15.3
+yacs==0.1.8
+tensorboard==2.21.0
+pytest==9.1.1
+ninja==1.13.2
+huggingface-hub==0.36.2
+omegaconf==2.3.0

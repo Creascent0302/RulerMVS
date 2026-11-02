@@ -1,0 +1,54 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "output": "runs/active/architecture_screen_20261026/confirmation_fast",
+  "mode": "screen",
+  "split": "val",
+  "partition": "confirmation",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "seed": 20261026,
+  "development_per_domain": 8,
+  "confirmation_per_domain": 32,
+  "baseline": "previous",
+  "variants": {
+    "previous": {
+      "model_overrides": {},
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "fast_only": {
+      "model_overrides": {},
+      "inference": {
+        "spatial_layout": true,
+        "factorized_fusion": true,
+        "hoist_reference": true,
+        "compact_pair": true
+      }
+    },
+    "ruler_fast": {
+      "model_overrides": {
+        "projective_ruler": true
+      },
+      "inference": {
+        "spatial_layout": true,
+        "factorized_fusion": true,
+        "hoist_reference": true,
+        "compact_pair": true
+      }
+    }
+  },
+  "tolerance": {
+    "macro_relative_degradation": 0.005,
+    "per_domain_relative_degradation": 0.02,
+    "meaning": "固定工程容差，非统计证明；宏值为逐域相对变化均值，不平均不同单位的误差。"
+  },
+  "timing": {
+    "datasets": [
+      "TartanAir_forest",
+      "VKITTI2"
+    ],
+    "warmup": 8,
+    "repetitions": 30
+  }
+}

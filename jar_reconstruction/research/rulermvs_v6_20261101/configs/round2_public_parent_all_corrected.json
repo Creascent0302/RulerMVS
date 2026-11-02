@@ -1,0 +1,25 @@
+{
+  "seed": 20261102,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_round2/public_parent_all_corrected",
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/public/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_public.json",
+  "device": "cuda:4",
+  "variant": "parent",
+  "grouped_loss": true,
+  "train_samples_per_domain": 64,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "minimum_free_gib": 200,
+  "verify_coarse_frozen": false,
+  "experiment_notes": [
+    "第二轮固定预算，采用修正版group target/CE；正式V5起点，不沿用第一轮更新。",
+    "fine_only仅训练细层继承/上采样及V6门控；全训组复核目标修正影响。",
+    "固定16VAL、无完整VAL/TEST追加；与原V5控制相同数据顺序和更新数。"
+  ]
+}

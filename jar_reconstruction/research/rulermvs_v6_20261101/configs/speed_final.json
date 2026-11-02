@@ -1,0 +1,15 @@
+{
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/baseline_full_comparison_20261101/configs/speed_data.json",
+  "v5_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/carla_v5/final.pt",
+  "v6_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/carla_parent/final.pt",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/speed_final",
+  "gpu": 0,
+  "warmup": 10,
+  "repeats": 40,
+  "four_references": true,
+  "fast": {
+    "compile_source": true,
+    "compile_fusion": true,
+    "cache_dir": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/inference_cache"
+  }
+}

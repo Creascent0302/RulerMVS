@@ -1,0 +1,219 @@
+{
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "gpus": [
+    0
+  ],
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "shard_size": 128,
+  "surface_queries": 1024,
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "training_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/train_public.json",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/control/final.pt",
+  "seed": 20261101,
+  "protocol_notes": [
+    "只用完整共同VAL；固定末步，不访问TEST或重新挑best。",
+    "三用途单因素消融；TRAIN/VAL起点/候选预算相同；不是从零训练。",
+    "几何关闭是有针对性的现有配置，不删除精确投影或有效掩码。"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/full_val/public",
+  "datasets": [
+    {
+      "name": "TartanAir_forest",
+      "root": "/home/liuzonghao/3Dscene/data/TartanAir_forest",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/TartanAir_forest_val.jsonl"
+      },
+      "near": 0.11094082031250001,
+      "far": 356.3400000000547,
+      "depth_scale": 0.428515625,
+      "correspondence": true,
+      "train_manifest_sha256": "f0edc4008aa1196df6fa01968f4bef069d3acfe6571f9d7e3f34dc9090b4b267",
+      "train_multiplier": 1
+    },
+    {
+      "name": "MatrixCity_street",
+      "root": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/MatrixCity_street_val.jsonl"
+      },
+      "near": 1.0887500047683716,
+      "far": 795.5999755859375,
+      "depth_scale": 0.7945000171661377,
+      "correspondence": true,
+      "train_manifest_sha256": "d1cd83f54824f8fbae8143b7503b745e07c7db3b48e86ea841e69085c6096ed0",
+      "train_multiplier": 1
+    },
+    {
+      "name": "Hypersim_subset",
+      "root": "/home/liuzonghao/3Dscene/data/Hypersim_subset",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/Hypersim_subset_val.jsonl"
+      },
+      "near": 0.07106640189886093,
+      "far": 31.5452378749897,
+      "depth_scale": 0.3856177568435669,
+      "correspondence": true,
+      "train_manifest_sha256": "2fbc6d929476674337edb486939b793a7f4a4cb79049b6840dba9036325b575a",
+      "train_multiplier": 5
+    },
+    {
+      "name": "MVS_Synth",
+      "root": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/MVS_Synth_val.jsonl"
+      },
+      "near": 7.552403125,
+      "far": 30080.0,
+      "depth_scale": 26.625,
+      "correspondence": false,
+      "train_manifest_sha256": "a583eb251bd41004f4f3d01fdaa23c9730b7404a0f02094b8c7fda95bad0ba06",
+      "train_multiplier": 1
+    },
+    {
+      "name": "VKITTI2",
+      "root": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/VKITTI2_val.jsonl"
+      },
+      "near": 0.78,
+      "far": 464.7243750001188,
+      "depth_scale": 1.675,
+      "correspondence": true,
+      "train_manifest_sha256": "393d2ff0ac3d00300444cca6d535aab160e275391d8c2321e9244011296ae7c7",
+      "train_multiplier": 1.5
+    },
+    {
+      "name": "BlendedMVS",
+      "root": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/BlendedMVS_val.jsonl"
+      },
+      "near": 0.054385287584364415,
+      "far": 465.98676498414227,
+      "depth_scale": 3.6425594329833983,
+      "correspondence": true,
+      "train_manifest_sha256": "df0e9c11ec22672621682c687a71cc8242fdf310376c0d67e40bd82de943ab71",
+      "train_multiplier": 1
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "root": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/manifests/DynamicReplica_valid_val.jsonl"
+      },
+      "near": 0.31982421875,
+      "far": 6.2890625,
+      "depth_scale": 0.2048828125,
+      "correspondence": true,
+      "train_manifest_sha256": "e1d43fd64400505c3b79f9236427cc57f9ed140abdee0e58b5845f83624ea407",
+      "train_multiplier": 5
+    }
+  ],
+  "methods": {
+    "geometry_control": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/control/final.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "geometry_no_source_geometry": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_source_geometry/final.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "geometry_no_scale_routing": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_scale_routing/final.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "geometry_no_jacobian_width": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/public/no_jacobian_width/final.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    }
+  },
+  "extension_source_sha256": {
+    "research/rulermvs_v6_20261101/speed_validation.py": "6fb4fc435b6a76c1c30e32b3fd739ee6d1651a0f9c7c87aaa1d54993f1508ae8",
+    "research/rulermvs_v6_20261101/test_evaluation.py": "c7f303cf2f400b76b69ddeb8c600347194eb615d854aba29f144c4df3e12b52f",
+    "research/rulermvs_v6_20261101/handoff.py": "06388dce26a76727fd42c346dd88b3e150b1d65ba128c463578961e9d5fe8d04",
+    "research/rulermvs_v6_20261101/test_objective.py": "6b91e30a3fa42074533a0353e60f6ebc1875a9b086c5d3d27f9dcc783aeb6c58",
+    "research/rulermvs_v6_20261101/test_group_feature.py": "e372e4d8f6271e4a15fc55db1fb7ff6e40a195df1d02ce7fcb62f098ff486551",
+    "research/rulermvs_v6_20261101/model.py": "fbb805cd098b6f02e3b166a4e38eacedb24a07b61929cb7fee2ee3f017f3b7a5",
+    "research/rulermvs_v6_20261101/pilot.py": "98492e6c7c7bc67b0d94fa8627ac3e4ad541b4411e1918961dd1dce22cc6127a",
+    "research/rulermvs_v6_20261101/speed_compile.py": "2b6d8c29b2435f851b1f97cc897de0e10b1d539e04fc394f0270bf6f06e0e17e",
+    "research/rulermvs_v6_20261101/speed_test_inference.py": "123f94c49895d03730e2af651c4e42769249027765804ec0d0ffcae79dfb4c9d",
+    "research/rulermvs_v6_20261101/speed_final.py": "54bf1d024fc2f7bdbd2c192907a0dfa52ac05cb94ed9aec0f301a6f35da75e31",
+    "research/rulermvs_v6_20261101/speed_profile.py": "caee1bf833035fcdb91371bd217153e1574b58c1927ff824d3059aa87aacabc5",
+    "research/rulermvs_v6_20261101/pooled_feature_probe.py": "cc99d54dbafdaba769c73bd16806d6dd03c8712bbc89cbcbf52f66ab0e986ef7",
+    "research/rulermvs_v6_20261101/test_model.py": "a89d81458a4e682322440102a734a3a2b922dcfd43e74354916f6b6547074798",
+    "research/rulermvs_v6_20261101/infer.py": "a1c9e24d5c53768fb26583d26cf73d372dd05c4062df5827f48d00b0f2342175",
+    "research/rulermvs_v6_20261101/inference.py": "74d31b498a4c3d98fad30e07040587b506eabce3a5952f9a96cb5a2c1cbe2c13",
+    "research/rulermvs_v6_20261101/post_training.py": "8aac268e0b8f010df2a8d77fab2566b7c8b014a32227517b01b19f5868a1bf17",
+    "research/rulermvs_v6_20261101/test_handoff.py": "0279a1eab5289abf5bea9d175c8a41427dfa6260226428e0a80e7159d247a659",
+    "research/rulermvs_v6_20261101/group_feature.py": "ee3f3454eb122a19d4e023221d35361fb8c168a181cb86e9a6222516fabb326b",
+    "research/rulermvs_v6_20261101/objective.py": "f71b53b54f05efa77a40f333a7087b10cea1128276055c585f4b7b41d45bc61d",
+    "research/rulermvs_v6_20261101/speed_options.py": "eb94f7cc7e1d965320b50a3115d7359c78bf19daa199de4aa6c5cdb6bcf3c121",
+    "research/rulermvs_v6_20261101/test_training.py": "846efc54ad11af6d141b92650fb65db482c101572ea18b507e03c582515ba305",
+    "research/rulermvs_v6_20261101/evaluation.py": "ba609f9b19d7b9c4b5280a7250624ccab9b53d9166b19f87791235db321edcfe",
+    "research/rulermvs_v6_20261101/test_readout.py": "39bb139f3f63685cd011b4312b2a1248d30c71fa69f9ca7b15c8c65a5dad9cf9",
+    "research/rulermvs_v6_20261101/test_training_ddp.py": "ab17e3ebdb31d7466ebbf02561f4cdcb4c403f56147550b6422a618b2fd3bd53",
+    "research/rulermvs_v6_20261101/training.py": "cf7b3c4e3f96e90d3e5497044851f8cf4610d38e1d9255c07dcda267f3294dbb",
+    "research/rulermvs_v6_20261101/diagnose.py": "e2d285af632bbed6efad800f0d35b892e51948a4692018bd1f0a257d0651bc68",
+    "research/baseline_full_comparison_20261101/evaluate.py": "bb3b1079ee6a15e4e830e6a57d870d667e4212bae8e9e98f728fb0aebdbd1d83",
+    "research/v5_comparison_20261101/evaluate.py": "cbe6796b9210ce4009b39fa44fd0b40646d612e15b79a17cc11204d7bdc4925f",
+    "research/ruler_flow_v2_20261031/model.py": "4f25847e72cc64498e05b29857eb5fa7b2f5f345fca60db255bf4b9ddd1406a6",
+    "research/ruler_flow_v2_20261031/field.py": "e286615d8706bb433421f4bd99a81cdae877b7ba58b0669df72629e669698196",
+    "research/rulermvs_v5_20261031/model.py": "efb21a78ce63e766ddb72ace74cf3bee58ed5641ee29fb4ecf4ba8c333645761",
+    "research/rulermvs_v5_20261031/bridge.py": "756e61f50563a5a938bc664337dbc51d11899cbd5db539295aa71624b2bfa8f1"
+  },
+  "evaluation_split": "val"
+}

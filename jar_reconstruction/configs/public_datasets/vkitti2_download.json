@@ -1,0 +1,37 @@
+{
+  "root": "/data/liuzonghao_data/dataset/VKITTI2",
+  "interface": "eno5",
+  "storage_budget_gib": 170,
+  "source_note": "Community mirror of Virtual KITTI 2.0.3; exact mirror archive SHA256 verified, official content equivalence separately checked by paths/calibration/depth specifications.",
+  "source_commit": "22bd74514d35e2df2f40d1f52c42ade62e0f3297",
+  "files": [
+    {
+      "url": "https://hf-mirror.com/datasets/nhatchung/Virtual_KITTI2/resolve/22bd74514d35e2df2f40d1f52c42ade62e0f3297/vkitti_2.0.3_textgt.tar.gz",
+      "output": "archives/vkitti_2.0.3_textgt.tar.gz",
+      "bytes": 24451078,
+      "sha256": "14595cf20e615fb6feca0cfb4f465aa0260abb9eba117bb0a0e9f968cc7b005a",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/nhatchung/Virtual_KITTI2/resolve/22bd74514d35e2df2f40d1f52c42ade62e0f3297/vkitti_2.0.3_classSegmentation.tar",
+      "output": "archives/vkitti_2.0.3_classSegmentation.tar",
+      "bytes": 1015961600,
+      "sha256": "045943405371706b85fdad2806fe4ccb9ca97fa73f681f9a4f710617e37fb59f",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/nhatchung/Virtual_KITTI2/resolve/22bd74514d35e2df2f40d1f52c42ade62e0f3297/vkitti_2.0.3_rgb.tar",
+      "output": "archives/vkitti_2.0.3_rgb.tar",
+      "bytes": 7532472320,
+      "sha256": "a9e3238572f5997536d87255eb30bd72470e8654f29fec73a58cf134267e025f",
+      "extract_to": "raw"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/nhatchung/Virtual_KITTI2/resolve/22bd74514d35e2df2f40d1f52c42ade62e0f3297/vkitti_2.0.3_depth.tar",
+      "output": "archives/vkitti_2.0.3_depth.tar",
+      "bytes": 8145715200,
+      "sha256": "ec67537b45bba5bd6d5e630a549747827d50bfdcef3ab7faeda68338aa383079",
+      "extract_to": "raw"
+    }
+  ]
+}

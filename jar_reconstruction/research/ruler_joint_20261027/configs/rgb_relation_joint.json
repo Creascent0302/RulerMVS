@@ -1,0 +1,24 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "cache": "runs/active/architecture_screen_20261026/features",
+  "seed": 20261027,
+  "train_samples_per_domain": 512,
+  "batch_size": 2,
+  "evaluate_every": 448,
+  "lr": 1e-05,
+  "relation_lr": 0.0001,
+  "relation": true,
+  "model_overrides": {},
+  "trainable_modules": [
+    "relation",
+    "fine_inherit",
+    "fine_score",
+    "fine_offset",
+    "upsample_mask"
+  ],
+  "metric_weight": 0.0,
+  "workers": 2,
+  "device": "cuda:2",
+  "output": "runs/active/ruler_research_20261027/rgb_relation_joint",
+  "save_evaluation_checkpoints": true
+}

@@ -1,0 +1,10 @@
+{
+  "dense": {
+    "loss_max_abs": 0.0,
+    "gradient_max_abs": 0.0
+  },
+  "sparse": {
+    "loss_max_abs": 0.0,
+    "gradient_max_abs": 0.0
+  }
+}

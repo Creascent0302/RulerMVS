@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-30",
+  "status": "已核查论文和官方源码；本文档本身不代表实现或实验通过",
+  "scope": "对现有 RulerMVS-V2 保峰条件流研究提供依据，保持生产模型与推荐权重不变",
+  "sources": [
+    {
+      "name": "DiffMVS / CasDiffMVS",
+      "title": "Lightweight and Accurate Multi-View Stereo with Confidence-Aware Diffusion Model",
+      "venue": "IEEE TPAMI 2025",
+      "paper": "https://arxiv.org/html/2509.15220v1",
+      "official_repository": "https://github.com/cvg/diffmvs",
+      "code": [
+        "https://github.com/cvg/diffmvs/blob/main/models/diffusion.py",
+        "https://github.com/cvg/diffmvs/blob/main/models/update.py",
+        "https://github.com/cvg/diffmvs/blob/main/models/loss.py"
+      ],
+      "verified": [
+        "初始深度使用48个逆深度候选；扩散更新围绕粗深度残差，依赖匹配cost、图像及深度上下文。",
+        "论文默认1个DDIM采样步；DiffMVS内部4次更新，CasDiffMVS两级各3次更新。update.py明确包含外层DDIM循环与内层self.iters循环，每个内部更新重新取cost。",
+        "loss.py监督归一化逆深度：普通阶段L1，含confidence阶段为误差除uncertainty加log uncertainty；后期迭代获得更高权重。不能笼统称为普通噪声MSE。",
+        "论文无扩散对照保留条件编码器、U-Net、GRU和置信度采样，DTU点云Overall为0.318mm，完整模型0.308mm；去cost为2.682mm。该指标不是米制深度MAE。"
+      ],
+      "transfer": "借鉴从有几何依据的初值开始、保留局部匹配条件、同结构对照训练目标；不复制其完整网络，也不把DDIM步数当网络调用次数。",
+      "limits": "目前只做源码与论文核查，没有安装或运行该官方模型；未固定仓库commit，链接对应本次所读main。"
+    },
+    {
+      "name": "DepthFM",
+      "title": "DepthFM: Fast Generative Monocular Depth Estimation with Flow Matching",
+      "venue": "AAAI 2025",
+      "paper": "https://arxiv.org/html/2403.13788v2",
+      "official_repository": "https://github.com/CompVis/depth-fm",
+      "code": ["https://github.com/CompVis/depth-fm/blob/main/depthfm/dfm.py"],
+      "verified": [
+        "从带噪图像latent到深度latent做配对条件流，目标为两个端点latent之差；使用Stable Diffusion先验，深度按log空间处理。",
+        "正文默认评测为4个Euler步、10个ensemble，并在log深度中对齐GT尺度与偏移；不能直接与本项目无GT对齐的米制误差比较。",
+        "官方generate用Euler、step_size=1/num_steps；每次ODE函数调用一次U-Net，另有VAE编码和解码。ensemble在batch维重复输入。",
+        "官方推理最后对exp后的输出做每图min-max归一化，不提供天然公制尺度；README示例为2步、4次ensemble。"
+      ],
+      "transfer": "借鉴已有有意义状态作为起点、少步求解；不引入其VAE或大型U-Net，不使用其相对深度评测口径。",
+      "limits": "官方公开目录主要为推理实现，未在本项目运行；论文展示低NFE可行性不构成本模型加速保证。"
+    },
+    {
+      "name": "Flow Matching",
+      "title": "Flow Matching for Generative Modeling",
+      "venue": "ICLR 2023",
+      "paper": "https://arxiv.org/abs/2210.02747",
+      "author_codebase": "https://github.com/facebookresearch/flow_matching",
+      "codebase_paper": "https://arxiv.org/abs/2412.06264",
+      "verified": [
+        "Flow Matching通过回归指定条件概率路径的向量场训练连续流，训练不必模拟完整ODE。",
+        "作者团队维护的flow_matching为后续Guide and Code配套库，不应标成2023论文原始实验脚本。",
+        "训练路径逐对直线不意味着边缘条件向量场的实际积分轨迹直线，也不保证一步Euler准确。"
+      ],
+      "transfer": "用可解释的局部深度路径与共享小速度头做独立试验；1、2、4步是数值求解预算，需要逐项记录网络与几何取证次数。",
+      "limits": "本轮无需引入该库；可用普通PyTorch实现线性路径与显式Euler。不把少步化称为MeanFlow或其他特定方法。"
+    }
+  ],
+  "current_experiment_contract": {
+    "locked": ["原编码器与粗候选", "四峰身份及由输入计算的界限", "标定精确投影", "旧权重冻结", "同TRAIN样本与固定末步", "GT仅训练目标或诊断", "所有输出统一分母"],
+    "comparisons": [
+      "原12候选冻结网络 vs 4峰零更新：单独量化删采样及读出变化的代价。",
+      "相同4峰共享小网络direct vs conditional FM：相同起点噪声、条件和训练取证预算，才解释目标差异。",
+      "同FM权重评估1/2/4步，终点重新取证；K步实际K+1次证据调用，另记训练aux取证。"
+    ],
+    "not_claimed": ["未经实验就保证提速", "原12与新4的差异完全由FM产生", "一步FM等同直接回归且必定更好", "所有近距瓶颈均为峰内误差", "候选删除失败即可否定所有Flow方法"]
+  },
+  "mathematical_risks": [
+    "同一参考条件下无噪声起点为单点，确定性ODE不凭空产生多模态分布；这里的四峰来自原网络，不是Flow自动发现的。",
+    "MSE条件速度在起点可为多种表面更新的平均；固定分支身份与有界局部支持用于减小跨表面混合，但不证明彻底消除。",
+    "训练中GT构造中间状态是合法Flow训练；若用GT改变推理范围、筛掉推理分支或确定有效视图则是泄漏。",
+    "GT落在区间外时不能通过静默扩大区间掩盖初值失败；定位监督可跳过，但全图评测和覆盖统计仍包含。",
+    "log深度局部尺度必须由预测起点与固定标尺界限定义；不得每帧用GT做尺度/偏移归一化。",
+    "Euler边界投影改变严格的连续流；若实际使用clamp，应明确为有界更新器并记录碰界比例，不声称精确概率密度。",
+    "训练仅1个中间时刻而推理多步可能出现状态分布偏移；不能假设4步必然优于1步。",
+    "终点深度变化后继续使用起点匹配分数可能选错峰；终点应重新取证或明确使用固定证据的消融版本。",
+    "组间误选与峰内定位不同，Matrix的组间主导误差不会因为只改连续更新而自动消失。"
+  ]
+}

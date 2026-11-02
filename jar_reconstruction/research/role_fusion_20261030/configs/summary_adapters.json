@@ -1,0 +1,15 @@
+{
+  "output": "runs/active/role_fusion_20261030/adapter_summary.json",
+  "groups": {
+    "public": {
+      "control": "runs/active/role_fusion_20261030/public_control",
+      "both": "runs/active/role_fusion_20261030/public_both",
+      "both_adapters": "runs/active/role_fusion_20261030/public_both_adapters"
+    },
+    "carla": {
+      "control": "runs/active/role_fusion_20261030/carla_control",
+      "both": "runs/active/role_fusion_20261030/carla_both",
+      "both_adapters": "runs/active/role_fusion_20261030/carla_both_adapters"
+    }
+  }
+}

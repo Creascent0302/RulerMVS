@@ -1,0 +1,240 @@
+{
+  "source_commit": "bdd980cfbae9a863b5489e2ed973612b192d11a5",
+  "pristine_repository": "/tmp/mvsformerpp_research_20261014",
+  "mode": "eval",
+  "device": "cpu",
+  "random_seed": 1701,
+  "input_size": [
+    1,
+    4,
+    3,
+    64,
+    64
+  ],
+  "tensor_count": 26,
+  "checks": {
+    ".stage1.depth": {
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage1.prob_volume": {
+      "shape": [
+        1,
+        32,
+        8,
+        8
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage1.photometric_confidence": {
+      "shape": [
+        1,
+        8,
+        8
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage1.depth_values": {
+      "shape": [
+        1,
+        32,
+        8,
+        8
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage1.prob_volume_pre": {
+      "shape": [
+        1,
+        32,
+        8,
+        8
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".depth": {
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".prob_volume": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".photometric_confidence": {
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".depth_values": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".prob_volume_pre": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage2.depth": {
+      "shape": [
+        1,
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage2.prob_volume": {
+      "shape": [
+        1,
+        16,
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage2.photometric_confidence": {
+      "shape": [
+        1,
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage2.depth_values": {
+      "shape": [
+        1,
+        16,
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage2.prob_volume_pre": {
+      "shape": [
+        1,
+        16,
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage3.depth": {
+      "shape": [
+        1,
+        32,
+        32
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage3.prob_volume": {
+      "shape": [
+        1,
+        8,
+        32,
+        32
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage3.photometric_confidence": {
+      "shape": [
+        1,
+        32,
+        32
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage3.depth_values": {
+      "shape": [
+        1,
+        8,
+        32,
+        32
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage3.prob_volume_pre": {
+      "shape": [
+        1,
+        8,
+        32,
+        32
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage4.depth": {
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage4.prob_volume": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage4.photometric_confidence": {
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage4.depth_values": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".stage4.prob_volume_pre": {
+      "shape": [
+        1,
+        4,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    },
+    ".refined_depth": {
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "max_absolute_difference": 0.0
+    }
+  }
+}

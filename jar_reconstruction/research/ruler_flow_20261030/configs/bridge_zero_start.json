@@ -1,0 +1,4 @@
+{
+  "output": "runs/active/ruler_flow_20261030/diagnosis",
+  "device": "cuda:7"
+}

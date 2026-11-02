@@ -1,0 +1,17 @@
+{
+  "checkpoint": "runs/model_releases/RulerMVS-V3/surface_final_20261027/bcb50b06a45f/pretrained.pt",
+  "output": "runs/active/current_inference/rulermvs_v3_public",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "dataset": "TartanAir_forest",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "inference": {
+    "spatial_layout": true,
+    "factorized_fusion": false,
+    "hoist_reference": false,
+    "compact_pair": false
+  }
+}

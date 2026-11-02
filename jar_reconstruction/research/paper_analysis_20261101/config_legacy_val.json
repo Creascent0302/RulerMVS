@@ -1,0 +1,26 @@
+{
+  "training_root": "runs/active/rulermvs_v6_20261101/full_training",
+  "evaluation_root": "runs/active/rulermvs_v6_20261101/full_training/evaluation",
+  "output": "runs/active/rulermvs_v6_20261101/full_training/paper_analysis_legacy_val",
+  "groups": [
+    "public_main",
+    "public_v3_public_transfer"
+  ],
+  "splits": [
+    "val"
+  ],
+  "primary": "v6_best",
+  "comparators": [
+    "v2_best",
+    "v4_best",
+    "v5_best",
+    "mvsanywhere_refined"
+  ],
+  "paired_comparators": [
+    "v5_best",
+    "mvsanywhere_refined"
+  ],
+  "bootstrap_repetitions": 2000,
+  "seed": 20261101,
+  "provenance_label": "原自动评测已完成的公共VAL；不是TEST，恢复评测将另行汇报"
+}

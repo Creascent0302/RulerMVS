@@ -1,0 +1,12 @@
+{
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "original_checkpoint": "runs/active/v2_restart_20261029/carla_new/best.pt",
+  "flow_checkpoint": "runs/active/ruler_flow_v2_20261031/pilot/carla_new_meanflow/final.pt",
+  "output": "runs/active/ruler_flow_v2_20261031/latency_carla.json",
+  "datasets": ["CARLA_new_stereo_up"],
+  "all_references": true,
+  "samples": 3,
+  "warmup": 10,
+  "repeats": 40,
+  "device": "cuda:0"
+}

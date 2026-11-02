@@ -1,0 +1,41 @@
+{
+  "fast_mvsnet": {
+    "patch": "fast_mvsnet_pytorch28.patch",
+    "patch_sha256": "ca4741a038e2840d2aace56eeb646d609f345ddd342a3d3a7969edc89939809f",
+    "files": {
+      "fastmvsnet/utils/feature_fetcher.py": "37d9f92a63ba3e39fe72de441268c7e60e9b464df0b31273f6d44f432cad467f"
+    }
+  },
+  "simplerecon": {
+    "patch": "simplerecon.patch",
+    "patch_sha256": "9b058e16cb52951810f29d4066bc9bdc2ed03b1e4f60118eb738ca356ffd3c29",
+    "files": {
+      "experiment_modules/depth_model.py": "f3a5e07da7a29b9c067c02506529a6eed8b957ecd0d203161546c66d22f035c6",
+      "losses.py": "452db52512e9b5370e424d04782d747e2fc9b9772572e72035349b6dfbbc1557",
+      "modules/cost_volume.py": "b1a435fcfea0e666f16c921e6f9fb3d4e336483887d150ae89a353f34be4da55",
+      "modules/networks.py": "30c49f632be9c2ec179ad5c6a240adcb23af26a0a15f64f09ba2e7ddee4fb50d",
+      "test.py": "0e71dc876872503dd8fe796b3723e704e0331c08e8f68140c290f0fad23ca21b",
+      "train.py": "23c3b69d940080292e7dea216e19f30a10afc0cc769dd41107119917c2b22471",
+      "utils/geometry_utils.py": "4d626eb122447cc051f8dbdc596d4734877955acbd9505d07aefc722c662d37b",
+      "utils/visualization_utils.py": "cc7d03eb1203482602c713e6ec9f0aa5b28040506febfd9c4bcca526411530d3"
+    }
+  },
+  "mvsanywhere": {
+    "patch": "mvsanywhere.patch",
+    "patch_sha256": "96152464645386e393c618c12e4af9963e3f67e2d3a25e32429f05f26b0ebd15",
+    "files": {
+      "src/mvsanywhere/experiment_modules/sr_depth_model.py": "5ec9d0fc596525937dfd8532de6a790f726bf96aa268896a8ddd84848dcd1596",
+      "src/mvsanywhere/losses.py": "21e1e7245be4d0d8609ea0fae92c5b3eb36fcb469dfe6df2ea4e813e3a9d6f7d",
+      "src/mvsanywhere/modules/vit_modules.py": "9be5638120d656efc89c8d5fd6d4a5467972941f5f2a5c1db88170e2fee7cf58"
+    }
+  },
+  "gaussianformer": {
+    "patch": "gaussianformer2_native.patch",
+    "patch_sha256": "13c0563d8cfb9e35a1fb42c00c3fcb5ec06d210654d95f0bfc96281923ac3d13",
+    "files": {
+      "model/lifter/gaussian_lifter_v2.py": "3569fb2e2c6fa0ee08ce1cb1b4014c1d9f67d72a6b15aa36860c805a4c6df0b0",
+      "model/head/gaussian_head.py": "b1583c2d0c793dc827e88c909f06ba9d24edd703a0a6a6902f633db10c26eed4",
+      "loss/utils/lovasz_softmax.py": "106db93b165f9736040323fc9ee455be5657f8cb7b8bb6a2e5533a9dfd0f55b1"
+    }
+  }
+}

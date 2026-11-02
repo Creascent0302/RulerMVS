@@ -1,0 +1,289 @@
+{
+  "architecture": "rulermvs_v6",
+  "seed": 20261101,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/smoke_public",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "augmentation": true,
+  "initialization": {
+    "foundation": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/depth_anything_v2_vitb.pth",
+    "matching": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/resnet18-f37072fd.pth"
+  },
+  "model": {
+    "near": 0.1,
+    "far": 1000.0,
+    "transition": 16.0,
+    "depth_bins": 96,
+    "channels": 64,
+    "raw_channels": 128,
+    "peak_count": 4,
+    "peak_separation_m": 0.1,
+    "fine_min_step_m": 0.005,
+    "fine_max_step_m": 100.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": true,
+    "absolute_information": true,
+    "use_scene": false,
+    "use_fine_offset": true,
+    "local_kind": "scale_space",
+    "proposal_transport": "bilinear",
+    "scale_routing": true,
+    "compact_sources": true,
+    "spatial_layout": true
+  },
+  "datasets": [
+    {
+      "name": "TartanAir_forest",
+      "root": "/home/liuzonghao/3Dscene/data/TartanAir_forest",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/val.jsonl"
+      },
+      "near": 0.11094082031250001,
+      "far": 356.3400000000547,
+      "depth_scale": 0.428515625,
+      "correspondence": true,
+      "train_manifest_sha256": "f0edc4008aa1196df6fa01968f4bef069d3acfe6571f9d7e3f34dc9090b4b267",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "MatrixCity_street",
+      "root": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/val.jsonl"
+      },
+      "near": 1.0887500047683716,
+      "far": 795.5999755859375,
+      "depth_scale": 0.7945000171661377,
+      "correspondence": true,
+      "train_manifest_sha256": "d1cd83f54824f8fbae8143b7503b745e07c7db3b48e86ea841e69085c6096ed0",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "Hypersim_subset",
+      "root": "/home/liuzonghao/3Dscene/data/Hypersim_subset",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/val.jsonl"
+      },
+      "near": 0.07106640189886093,
+      "far": 31.5452378749897,
+      "depth_scale": 0.3856177568435669,
+      "correspondence": true,
+      "train_manifest_sha256": "2fbc6d929476674337edb486939b793a7f4a4cb79049b6840dba9036325b575a",
+      "train_multiplier": 8.0
+    },
+    {
+      "name": "MVS_Synth",
+      "root": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/val.jsonl"
+      },
+      "near": 7.552403125,
+      "far": 30080.0,
+      "depth_scale": 26.625,
+      "correspondence": false,
+      "train_manifest_sha256": "a583eb251bd41004f4f3d01fdaa23c9730b7404a0f02094b8c7fda95bad0ba06",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "VKITTI2",
+      "root": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/val.jsonl"
+      },
+      "near": 0.78,
+      "far": 464.7243750001188,
+      "depth_scale": 1.675,
+      "correspondence": true,
+      "train_manifest_sha256": "393d2ff0ac3d00300444cca6d535aab160e275391d8c2321e9244011296ae7c7",
+      "train_multiplier": 1.5
+    },
+    {
+      "name": "BlendedMVS",
+      "root": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/val.jsonl"
+      },
+      "near": 0.054385287584364415,
+      "far": 465.98676498414227,
+      "depth_scale": 3.6425594329833983,
+      "correspondence": true,
+      "train_manifest_sha256": "df0e9c11ec22672621682c687a71cc8242fdf310376c0d67e40bd82de943ab71",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "root": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/val.jsonl"
+      },
+      "near": 0.31982421875,
+      "far": 6.2890625,
+      "depth_scale": 0.2048828125,
+      "correspondence": true,
+      "train_manifest_sha256": "e1d43fd64400505c3b79f9236427cc57f9ed140abdee0e58b5845f83624ea407",
+      "train_multiplier": 4.0
+    }
+  ],
+  "train": {
+    "batch_size": 4,
+    "accumulation": 1,
+    "workers": 0,
+    "precision": "fp32",
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "checkpoint_every": 1,
+    "log_every": 1,
+    "validation_samples_per_domain": 1,
+    "full_validation_every": 1,
+    "minimum_free_gib": 200,
+    "threads": 2,
+    "allow_tf32": false,
+    "stage_policy": "continuous_new",
+    "domain_schedule": "balanced_prefix"
+  },
+  "stages": [
+    {
+      "number": 1,
+      "name": "全公共数据适配候选族与实际深度读出，保留编码器",
+      "min_epochs": 1,
+      "max_epochs": 1,
+      "trainable_prefixes": [
+        "decoder."
+      ],
+      "foundation_blocks": 0,
+      "decoder_lr": 1e-05,
+      "handoff_lr": 0.0005,
+      "bridge_lr": 0.0,
+      "fpn_lr": 0.0,
+      "matching_lr": 0.0,
+      "foundation_lr": 0.0,
+      "bridge_detach_backbone": true,
+      "correspondence_weight": 0.0
+    },
+    {
+      "number": 2,
+      "name": "低学习率联合解码、桥与匹配金字塔",
+      "min_epochs": 1,
+      "max_epochs": 1,
+      "trainable_prefixes": [
+        "decoder.",
+        "bridge.",
+        "matching.lateral.",
+        "matching.smooth."
+      ],
+      "foundation_blocks": 0,
+      "decoder_lr": 5e-06,
+      "handoff_lr": 0.0001,
+      "bridge_lr": 2e-05,
+      "fpn_lr": 2e-06,
+      "matching_lr": 0.0,
+      "foundation_lr": 0.0,
+      "bridge_detach_backbone": true,
+      "correspondence_weight": 0.02
+    },
+    {
+      "number": 3,
+      "name": "匹配深层与ViT末四块保守适配",
+      "min_epochs": 1,
+      "max_epochs": 1,
+      "trainable_prefixes": [
+        "decoder.",
+        "bridge.",
+        "matching.lateral.",
+        "matching.smooth.",
+        "matching.backbone.layer3.",
+        "matching.backbone.layer4."
+      ],
+      "foundation_blocks": 4,
+      "decoder_lr": 3e-06,
+      "handoff_lr": 5e-05,
+      "bridge_lr": 1e-05,
+      "fpn_lr": 1e-06,
+      "matching_lr": 2e-07,
+      "foundation_lr": 5e-08,
+      "bridge_detach_backbone": true,
+      "correspondence_weight": 0.02
+    }
+  ],
+  "evaluation": {
+    "precision": "fp32",
+    "test_after_training": false,
+    "selection_region_weights": {
+      "full": 0.7,
+      "near": 0.15,
+      "mid": 0.1,
+      "far": 0.05
+    }
+  },
+  "initial_model_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_round2/public_parent_all_corrected/final.pt",
+  "loss": {
+    "fine_readout_weight": 0.0
+  },
+  "phase": "public",
+  "bridge": {
+    "enabled": true,
+    "layers": [
+      "layer1",
+      "layer2"
+    ],
+    "bottleneck": 32,
+    "hidden": 128,
+    "subcells": 2,
+    "detach_backbone": true,
+    "residual_scale": 0.1
+  },
+  "input_mode": "equal_pixels",
+  "handoff": {
+    "enabled": true,
+    "mode": "parent",
+    "within_group": "mean",
+    "upsample_feature": "winner",
+    "gate_bias": -2.0
+  },
+  "protocol_notes": [
+    "从独立自研V6权重继续训练；不加载Hero任务权重或baseline教师。",
+    "训练与VAL统一equal_pixels：共同RGB256x448，匹配图仅由共同RGB放大至512x896。",
+    "完整TRAIN每轮至少一次，有限重放沿用既有倍率；重放不是新样本。",
+    "各阶段连续训练末步参数，不回滚旧权重；本轮完整VAL选best，另存final/last。",
+    "固定VAL选择权重full/near/mid/far为0.70/0.15/0.10/0.05，非空段归一、各域等权。",
+    "远距/近距不退与超越旧模型是验收目标，不能由配置保证；完整TEST仅在训练后执行。",
+    "本轮暖启动且追加全量训练预算，不能把全部提升归因V6结构。",
+    "直接fine读出损失0.15在同预算短训未获通用收益，正式配置关闭，保留消融实现。"
+  ],
+  "smoke": true,
+  "smoke_note": "仅功能检查，每阶段每域一组8卡更新；CARLA从既有corrected CARLA V6开始，不冒充公共训练迁移验证。"
+}

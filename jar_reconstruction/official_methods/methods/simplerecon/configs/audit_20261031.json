@@ -1,0 +1,20 @@
+{
+  "method": "simplerecon",
+  "profile": "audit_only",
+  "image_size": [64, 96],
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "val_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_up.jsonl"
+  },
+  "model": {
+    "num_views": 4,
+    "image_height": 64,
+    "image_width": 96,
+    "reference_indices": [0, 1, 2, 3],
+    "depth_bins": 64,
+    "min_depth": 2.0,
+    "max_depth": 80.0,
+    "pretrained": false
+  },
+  "note": "仅对照原始官方四目实例与本地适配器，随机初始化；不是官方八目任务权重或精度评测。"
+}

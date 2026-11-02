@@ -1,0 +1,7 @@
+{
+  "protocol": "configs/carla_comparison/common.json",
+  "method": "zncc",
+  "model_config": "configs/carla_comparison/zncc_model.json",
+  "split": "test_complete",
+  "weights": ""
+}

@@ -1,0 +1,86 @@
+{
+  "method": "patchmatchnet",
+  "seed": 20261101,
+  "cpu_threads": 2,
+  "data": {
+    "root": "/data/liuzonghao_data/dataset/CARLA_data",
+    "num_views": 4,
+    "geometry_units": "meters",
+    "train_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/train.jsonl",
+    "val_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/val.jsonl",
+    "test_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/test.jsonl",
+    "supervision_depth_range": [
+      2.0,
+      80.0
+    ]
+  },
+  "image_size": [
+    256,
+    448
+  ],
+  "model": {
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "reference_indices": [
+      2
+    ],
+    "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/official_methods/methods/patchmatchnet/upstream/checkpoints/model_000007.ckpt",
+    "num_views": 4,
+    "image_height": 256,
+    "image_width": 448,
+    "min_depth": 2.0,
+    "max_depth": 80.0
+  },
+  "training": {
+    "epochs": 32,
+    "batch_size": 2,
+    "num_workers": 0,
+    "lr": 0.0001,
+    "weight_decay": 0.0,
+    "lr_milestones": [
+      20,
+      28
+    ],
+    "scheduler_interval": "epoch",
+    "precision": "fp32",
+    "max_steps": 2,
+    "gradient_accumulation_steps": 1,
+    "checkpoint_every": 1,
+    "validation_every_epochs": 0,
+    "minimum_free_gib": 200
+  },
+  "evaluation": {
+    "reference_indices": [
+      2
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "max_surface_points": 1024,
+    "warmup": 2
+  },
+  "adaptation_note": "固定作者指定论文版本，原始48逆深度随机候选与三级Patchmatch/细化/损失。CARLA四目及范围迁移不是论文DTU训练复现。",
+  "dataset_name": "CARLA_new_upper",
+  "protocol_note": [
+    "同一真实输入子集、256x448主图、同参考号，不复制视图或使用GT范围。",
+    "范围来自冻结的TRAIN配置。共同数据迁移配置不是原论文原数据训练协议。",
+    "SimpleRecon固定N的metadata MLP不可跨N共享任务权重。",
+    "大部分配置未填写任务权重，正式infer/evaluate将报错而非输出随机模型指标。"
+  ],
+  "experiment": {
+    "purpose": "独立CARLA适配先导试验，非与V5等预训练预算的架构对照",
+    "selection": "仅完整VAL选best；final独立保留；TEST只在训练结束后使用",
+    "training_reference": "上相机；三个真实源；完整403帧，标签不进入推理",
+    "initialization": "官方DTU任务权重",
+    "unit_note": "CARLA使用米；保留原生损失。PatchmatchNet原DTU使用毫米，SmoothL1拐点的物理尺度随单位变化，不能称原论文训练协议。",
+    "comparability": "与V5训练域、初始化、参考轮换和训练曝光不同，结果只作为适配基线；不据此宣称架构普遍胜出。"
+  }
+}

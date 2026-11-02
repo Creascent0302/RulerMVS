@@ -1,0 +1,32 @@
+{
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/carla_new/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v2_restart_20261029/configs/train_carla_new.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/smoke_pilot/carla_new_layer1",
+  "variant": "layer1",
+  "bridge": {
+    "enabled": true,
+    "layers": [
+      "layer1"
+    ],
+    "bottleneck": 32,
+    "hidden": 128,
+    "subcells": 2,
+    "detach_backbone": true,
+    "residual_scale": 0.1
+  },
+  "seed": 20261031,
+  "batch_size": 2,
+  "epochs": 1,
+  "train_samples_per_domain": 497,
+  "workers": 0,
+  "threads": 2,
+  "device": "cuda:0",
+  "lr": 5e-06,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "minimum_free_gib": 200,
+  "augmentation": true,
+  "smoke": true,
+  "smoke_steps": 2,
+  "smoke_validation_samples": 2
+}

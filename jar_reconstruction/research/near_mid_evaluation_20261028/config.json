@@ -1,0 +1,280 @@
+{
+  "output": "runs/active/near_mid_evaluation_20261028",
+  "training_config": "research/near_mid_20261027/configs/train_surface.json",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "datasets": [
+    {
+      "name": "TartanAir_forest",
+      "root": "/home/liuzonghao/3Dscene/data/TartanAir_forest",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/test.jsonl"
+      },
+      "near": 0.11094082031250001,
+      "far": 356.3400000000547,
+      "depth_scale": 0.428515625,
+      "correspondence": true,
+      "train_manifest_sha256": "f0edc4008aa1196df6fa01968f4bef069d3acfe6571f9d7e3f34dc9090b4b267",
+      "train_repeats": 1
+    },
+    {
+      "name": "MatrixCity_street",
+      "root": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/test.jsonl"
+      },
+      "near": 1.0887500047683716,
+      "far": 795.5999755859375,
+      "depth_scale": 0.7945000171661377,
+      "correspondence": true,
+      "train_manifest_sha256": "d1cd83f54824f8fbae8143b7503b745e07c7db3b48e86ea841e69085c6096ed0",
+      "train_repeats": 1
+    },
+    {
+      "name": "Hypersim_subset",
+      "root": "/home/liuzonghao/3Dscene/data/Hypersim_subset",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/test.jsonl"
+      },
+      "near": 0.07106640189886093,
+      "far": 31.5452378749897,
+      "depth_scale": 0.3856177568435669,
+      "correspondence": true,
+      "train_manifest_sha256": "2fbc6d929476674337edb486939b793a7f4a4cb79049b6840dba9036325b575a",
+      "train_repeats": 2
+    },
+    {
+      "name": "MVS_Synth",
+      "root": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/test.jsonl"
+      },
+      "near": 7.552403125,
+      "far": 30080.0,
+      "depth_scale": 26.625,
+      "correspondence": false,
+      "train_manifest_sha256": "a583eb251bd41004f4f3d01fdaa23c9730b7404a0f02094b8c7fda95bad0ba06",
+      "train_repeats": 1
+    },
+    {
+      "name": "VKITTI2",
+      "root": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/test.jsonl"
+      },
+      "near": 0.78,
+      "far": 464.7243750001188,
+      "depth_scale": 1.675,
+      "correspondence": true,
+      "train_manifest_sha256": "393d2ff0ac3d00300444cca6d535aab160e275391d8c2321e9244011296ae7c7",
+      "train_repeats": 1
+    },
+    {
+      "name": "BlendedMVS",
+      "root": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/test.jsonl"
+      },
+      "near": 0.054385287584364415,
+      "far": 465.98676498414227,
+      "depth_scale": 3.6425594329833983,
+      "correspondence": true,
+      "train_manifest_sha256": "df0e9c11ec22672621682c687a71cc8242fdf310376c0d67e40bd82de943ab71",
+      "train_repeats": 1
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "root": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/test.jsonl"
+      },
+      "near": 0.31982421875,
+      "far": 6.2890625,
+      "depth_scale": 0.2048828125,
+      "correspondence": true,
+      "train_manifest_sha256": "e1d43fd64400505c3b79f9236427cc57f9ed140abdee0e58b5845f83624ea407",
+      "train_repeats": 2
+    },
+    {
+      "name": "CARLA_complete",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": false,
+      "train_manifest_sha256": "485eea70bccf8b6244b0f7627d912cd9f53f9804c8adb3245cf861bf183b3b8f",
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [
+          "tele_left",
+          "tele_right"
+        ],
+        "allow_missing": true,
+        "disabled_ids": []
+      }
+    },
+    {
+      "name": "CARLA_partial",
+      "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_supervised.jsonl",
+        "val": "/data/liuzonghao_data/3Dscene_runs/active_research/full_test_20261026/manifests/dev_partial_supervised.jsonl",
+        "test": "/data/liuzonghao_data/3Dscene_runs/active_research/full_test_20261026/manifests/test_partial_supervised.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": false,
+      "train_manifest_sha256": "485eea70bccf8b6244b0f7627d912cd9f53f9804c8adb3245cf861bf183b3b8f",
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [
+          "tele_left",
+          "tele_right"
+        ],
+        "allow_missing": true,
+        "disabled_ids": []
+      }
+    }
+  ],
+  "methods": {
+    "own_original": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_refinement_20261025/recommended/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_control_last": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/control_training/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_control_valbest": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/control_training/stage1_full_best.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_surface_last": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/surface_training/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    }
+  },
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "shard_size": 128,
+  "surface_queries": 1024,
+  "seed": 20261028,
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "protocol_notes": [
+    "固定权重，TEST只用于最终报告，不选模。所有模型FP32/TF32off，batch1，RGB+标定输入。",
+    "原生部署比较：主图256x448，自研匹配512x896；不是相同像素预算。",
+    "七公共域11970组；旧CARLA完整200/缺相机150另列公共权重迁移，非本轮CARLA微调。",
+    "全部GT有效区，米制近中远<10/[10,40)/>=40；scene_unit以TRAIN中位0.5/2倍。",
+    "baseline官方Hero细化1次、共享TRAIN范围，暴露/训练预算不同，不作纯架构归因。",
+    "表面为单参考可见深度反投影，1024均匀查询对方完整点集；非完整场景重建。"
+  ]
+}

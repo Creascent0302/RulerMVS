@@ -1,0 +1,63 @@
+{
+  "method": "mvsanywhere",
+  "profile": "official",
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": ""
+  },
+  "model": {
+    "num_views": 8,
+    "image_height": 480,
+    "image_width": 640,
+    "reference_indices": [
+      0
+    ],
+    "depth_bins": 64,
+    "min_depth": 0.25,
+    "max_depth": 5.0,
+    "pretrained": true,
+    "weights": "",
+    "da_weights": "",
+    "range_refinement_steps": 1
+  },
+  "training": {
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "lr_steps": [
+      70000,
+      80000
+    ],
+    "gradient_accumulation_steps": 2,
+    "max_steps": 220000,
+    "batch_size": 6,
+    "seed": 0,
+    "lr_da_encoder": 5e-06,
+    "lr_da_decoder": 5e-05,
+    "training_depth_range": "gt_range_perturbation_train_only",
+    "step_unit": "upstream_lightning_global_step",
+    "step_note": "此文件只记录官方选项；上游每次联合更新调用三个优化器，220000 global steps约为73334次联合更新，不能原样作为共享训练器max_steps。",
+    "reference_note": "batch_size=6来自官方README训练命令；仓库mvsanywhere_model.yaml默认16。共享CARLA只提供fp32，而官方README使用precision=16。"
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "warmup": 5,
+    "iterations": 20
+  },
+  "initialization_note": "官方参考保留骨干预训练初始化。没有真实数据或所需预训练文件时不能运行论文训练；合成测试请显式使用随机初始化，不能宣称论文性能。"
+}

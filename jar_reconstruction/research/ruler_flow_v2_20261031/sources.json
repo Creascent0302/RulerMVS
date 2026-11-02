@@ -1,0 +1,27 @@
+{
+  "checked_on": "2026-10-31 Asia/Shanghai",
+  "scope": "本轮数学和结构设计的原始资料核查；未安装或执行外部生成模型，也未下载新权重",
+  "sources": [
+    {
+      "name": "Flow Matching for Generative Modeling",
+      "paper": "https://arxiv.org/abs/2210.02747",
+      "used": "条件向量场回归与路径训练；不意味着少步在所有条件任务上优于直接回归",
+      "boundary": "本模型默认确定性预测起点，非通用噪声到图像生成器"
+    },
+    {
+      "name": "Mean Flows for One-step Generative Modeling",
+      "paper": "https://arxiv.org/html/2505.13447v1",
+      "official_repository": "https://github.com/Gsunshine/meanflow",
+      "inspected_code": "https://raw.githubusercontent.com/Gsunshine/meanflow/main/meanflow.py",
+      "used": "两时刻平均速度，u_target=v-(t-r)*JVP，目标停止梯度；r=t退化为Flow Matching",
+      "boundary": "未复制JAX主模型、数据或权重；只在固定证据的小更新头采用其数学目标；未固定外部源码commit用于执行，因为没有执行外部源码"
+    },
+    {
+      "name": "DiffuVolume: Diffusion Model for Volume based Stereo Matching",
+      "paper": "https://arxiv.org/abs/2308.15989",
+      "official_repository": "https://github.com/iSEE-Laboratory/DiffuVolume",
+      "used": "生成过程作用于任务证据体的设计启发",
+      "boundary": "未复现该方法；其论文速度数字不作为当前模型速度证据"
+    }
+  ]
+}

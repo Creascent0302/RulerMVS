@@ -1,0 +1,83 @@
+{
+  "method": "simplerecon",
+  "profile": "carla",
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "train_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_complete.jsonl",
+    "val_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+    "test_manifest": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl",
+    "split_protocol": "temporal_gap",
+    "min_frame_gap": 40,
+    "supervision_depth_range": [
+      2.0,
+      80.0
+    ]
+  },
+  "model": {
+    "num_views": 4,
+    "image_height": 256,
+    "image_width": 448,
+    "reference_indices": [
+      2
+    ],
+    "depth_bins": 64,
+    "min_depth": 2.0,
+    "max_depth": 80.0,
+    "pretrained": true,
+    "weights": ""
+  },
+  "training": {
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "lr_steps": [
+      70000,
+      80000
+    ],
+    "gradient_accumulation_steps": 1,
+    "max_steps": 3000,
+    "batch_size": 1,
+    "seed": 17,
+    "num_workers": 2,
+    "checkpoint_every": 100,
+    "precision": "fp32"
+  },
+  "evaluation": {
+    "reference_indices": [
+      2
+    ],
+    "depth_range": [
+      2,
+      80
+    ],
+    "warmup": 2,
+    "roi": [
+      [
+        0,
+        80
+      ],
+      [
+        -45,
+        45
+      ],
+      [
+        -2,
+        20
+      ]
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "initialization_note": "官方ImageNet预训练EfficientNetV2-S与antialiased ResNet18。四目metadata MLP从头训练；未裁剪八目Hero权重。源视图无GT，原生多视图监督空集合项为0。",
+  "adaptation_note": "真实四目256x448，同轨迹train66/dev25且隔离40个frame ID，独立轨迹test200。仅stereo_up槽2有GT；深度监督2-80米，nearest-exact标签缩放。完整四参考推理另计开销。原生损失与网络保留。",
+  "image_size": [
+    256,
+    448
+  ],
+  "seed": 17,
+  "cpu_threads": 2,
+  "comparison_protocol": "configs/carla_comparison/common.json",
+  "budget_note": "仅将原生训练累计更新数从1000延长到3000；从step1000.pt精确恢复优化器、学习率、采样位置及随机状态。不据test调参。"
+}

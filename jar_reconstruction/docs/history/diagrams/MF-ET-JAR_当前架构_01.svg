@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1320" viewBox="0 0 2200 1320">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#637A98"/></marker></defs>
+<path d="M 275,262.5 L 307.5,262.5 L 307.5,257.5 L 340,257.5" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275,262.5 L 307.5,262.5 L 307.5,550.0 L 340,550.0" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275,262.5 L 307.5,262.5 L 307.5,832.5 L 340,832.5" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 675,257.5 L 712.5,257.5 L 712.5,257.5 L 750,257.5" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 675,550.0 L 712.5,550.0 L 712.5,550.0 L 750,550.0" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 675,832.5 L 712.5,832.5 L 712.5,832.5 L 750,832.5" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1040,257.5 L 1075.0,257.5 L 1075.0,315.0 L 1110,315.0" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1305.0,460 L 1305.0,550" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1500,645.0 L 1540.0,645.0 L 1540.0,327.5 L 1580,327.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1862.5,485 L 1862.5,600" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1862.5,745 L 1862.5,835" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1040,832 L 1075,832 L 1075,390 L 1110,390" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1040,550 L 1530,550 L 1530,340 L 1580,340" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1040,255 L 1065,255 L 1065,135 L 1550,135 L 1550,215 L 1580,215" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275,530 L 305,530 L 305,145 L 1125,145 L 1125,170" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1500,430 L 1535,430 L 1535,1000 L 1500,1000" fill="none" stroke="#8D96A3" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<path d="M 1040,285 L 1055,285 L 1055,1000 L 1110,1000" fill="none" stroke="#8D96A3" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1100.0" y="52.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="37" fill="#22334A">MF-ET-JAR：当前实际执行的四目稠密路径</text>
+<text x="1100.0" y="112.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">对应 matching.json / 蓝：图像信息　紫：几何候选与解码　橙：固定标定　灰：本配置关闭</text>
+<rect x="40" y="190" width="235" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="157.5" y="228.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">同步四目RGB</text>
+<text x="157.5" y="262.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">[1,4,3,256,448]</text>
+<text x="157.5" y="297.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">缺失视图与像素掩码</text>
+<rect x="40" y="450" width="235" height="180" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="157.5" y="488.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">固定内参和外参</text>
+<text x="157.5" y="522.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">rig：x前/y左/z上</text>
+<text x="157.5" y="557.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">相机：x右/y下/z前</text>
+<text x="157.5" y="591.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">不预测或修改标定</text>
+<rect x="340" y="180" width="335" height="155" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="507.5" y="223.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">① 深层本地CNN</text>
+<text x="507.5" y="257.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">五级共14个残差块</text>
+<text x="507.5" y="292.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">保留边缘与局部纹理</text>
+<rect x="750" y="180" width="290" height="155" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="895.0" y="223.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">多尺度FPN</text>
+<text x="895.0" y="257.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">stride 4/8/16/32</text>
+<text x="895.0" y="292.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">各尺度32维特征</text>
+<rect x="340" y="460" width="335" height="180" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="507.5" y="498.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">② 冻结Hero图像ViT</text>
+<text x="507.5" y="532.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">12层，取3/6/9/12层</text>
+<text x="507.5" y="567.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">每层768维</text>
+<text x="507.5" y="601.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">提供场景上下文</text>
+<rect x="750" y="460" width="290" height="180" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="895.0" y="498.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">逐层适配768→32</text>
+<text x="895.0" y="532.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">精确对齐像素中心</text>
+<text x="895.0" y="567.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">上下文送入解码器</text>
+<text x="895.0" y="601.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">当前不加入粗匹配特征</text>
+<rect x="340" y="760" width="335" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="507.5" y="798.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">③ 冻结Hero匹配编码器</text>
+<text x="507.5" y="832.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">完整16维描述子</text>
+<text x="507.5" y="867.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">stride4，独立匹配通路</text>
+<rect x="750" y="760" width="290" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="895.0" y="798.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">精确投影读取描述子</text>
+<text x="895.0" y="832.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">相似度、分歧与几何</text>
+<text x="895.0" y="867.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">学习可靠分数增量</text>
+<rect x="1110" y="170" width="390" height="290" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1305.0" y="228.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">④ 全范围已标定匹配</text>
+<text x="1305.0" y="263.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">stride16：16×28位置</text>
+<text x="1305.0" y="297.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">192个米制深度候选</text>
+<text x="1305.0" y="332.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">分组相关＋3D正则化</text>
+<text x="1305.0" y="366.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">三层代价上下文</text>
+<text x="1305.0" y="401.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">保留无匹配选项</text>
+<rect x="1110" y="550" width="390" height="190" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1305.0" y="593.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">⑤ 完整候选证据包</text>
+<text x="1305.0" y="627.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">分数/概率/有效性/位置</text>
+<text x="1305.0" y="662.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">773→64维</text>
+<text x="1305.0" y="696.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">两层空间Transformer</text>
+<rect x="1580" y="170" width="565" height="315" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1862.5" y="241.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">⑥ 独立稠密解码头</text>
+<text x="1862.5" y="275.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">32→16→8→4→1</text>
+<text x="1862.5" y="310.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">融合CNN、语义、候选</text>
+<text x="1862.5" y="344.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">继承父层特征和深度编码</text>
+<text x="1862.5" y="379.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">每级输出连续深度</text>
+<text x="1862.5" y="413.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">首级学习深度，后级修正</text>
+<rect x="1580" y="600" width="565" height="145" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="1862.5" y="638.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">四视图完整深度＋置信度</text>
+<text x="1862.5" y="672.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">[1,4,256,448]，2–80米</text>
+<text x="1862.5" y="707.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">预测有效性单独输出</text>
+<rect x="1580" y="835" width="565" height="180" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="1862.5" y="873.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">⑦ 独立多视图观测验证</text>
+<text x="1862.5" y="907.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">精确投影、纹理、视差</text>
+<text x="1862.5" y="942.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">图像与深度一致性</text>
+<text x="1862.5" y="976.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">输出支持数/observed/unknown</text>
+<rect x="1110" y="920" width="390" height="160" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="1305.0" y="965.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">可选：原分层稀疏表面头</text>
+<text x="1305.0" y="1000.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">四级射线查询与连续定位</text>
+<text x="1305.0" y="1034.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">当前关闭；参数仍保留</text>
+<rect x="40" y="1080" width="1000" height="180" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="540.0" y="1107.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">当前关闭的独立开关</text>
+<text x="540.0" y="1138.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">跨层语义增强 / 跨相机交流 / 候选平面运输</text>
+<text x="540.0" y="1170.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">局部几何细化 / 稀疏头 / 长焦输入</text>
+<text x="540.0" y="1201.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">长焦支持原稀疏路径</text>
+<text x="540.0" y="1233.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">当前深编码＋稠密组合暂不支持长焦</text>
+<text x="1615.0" y="1170.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">标签只进入训练损失与离线评价</text>
+<text x="1615.0" y="1205.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">完整深度预测与已观测空间分别输出</text>
+<text x="1615.0" y="1239.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">遮挡后方保持unknown</text>
+</svg>

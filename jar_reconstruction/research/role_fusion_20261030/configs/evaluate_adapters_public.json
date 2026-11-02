@@ -1,0 +1,5 @@
+{
+  "group": "public",
+  "device": "cuda:0",
+  "output": "runs/active/role_fusion_20261030/fresh_public_adapters"
+}

@@ -1,0 +1,46 @@
+{
+  "protocol": "configs/carla_comparison/common.json",
+  "own": {
+    "method": "mf_et_jar",
+    "model_config": "configs/feature_architecture/matching.json",
+    "weights": "runs/deep_architecture_20261014/feature_matching/last.pt"
+  },
+  "baseline": {
+    "method": "mvsanywhere",
+    "model_config": "official_methods/methods/mvsanywhere/configs/carla_finetune.json",
+    "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt"
+  },
+  "frame_sets": {
+    "train_complete": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56
+    ],
+    "dev_complete": "all"
+  },
+  "anchor_stride": 16,
+  "interventions": [
+    "no_semantic",
+    "flat_candidates",
+    "rank_oracle",
+    "no_rgb",
+    "no_candidate_attention",
+    "no_cost_context"
+  ],
+  "save_frames": [
+    0,
+    12,
+    24
+  ],
+  "output": "runs/stage_diagnosis_20261015/stages_final",
+  "diagrams": {
+    "output": "docs/diagrams",
+    "artifacts": "runs/stage_diagnosis_20261015/diagrams",
+    "font": "runs/stage_diagnosis_20261015/fonts/SourceHanSansSC-Regular.otf"
+  }
+}

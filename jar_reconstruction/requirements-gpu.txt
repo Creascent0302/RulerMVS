@@ -1,0 +1,5 @@
+# 先按 docs/gpu_5090.md 安装支持 Blackwell 的 PyTorch CUDA wheel。
+# 此文件不能替代 NVIDIA 驱动和逐卡内核预检，也不自动固定CUDA构建。
+torch>=2.7
+numpy>=1.26
+Pillow>=10

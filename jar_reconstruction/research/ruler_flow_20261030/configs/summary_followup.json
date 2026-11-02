@@ -1,0 +1,13 @@
+{
+  "output": "runs/active/ruler_flow_20261030",
+  "arms": [
+    "control",
+    "direct",
+    "flow",
+    "flow_no_direction",
+    "flow_anchor",
+    "direct_rank_fixed",
+    "flow_rank_fixed"
+  ],
+  "report": "summary_followup.json"
+}

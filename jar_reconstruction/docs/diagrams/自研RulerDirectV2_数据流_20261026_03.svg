@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="2050" viewBox="0 0 2200 2050">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#637A98"/></marker></defs>
+<path d="M 510,457.5 L 550.0,457.5 L 550.0,457.5 L 590,457.5" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1060,457.5 L 1100.0,457.5 L 1100.0,457.5 L 1140,457.5" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1610,457.5 L 1650.0,457.5 L 1650.0,457.5 L 1690,457.5" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275,265 L 275,355" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1850,560 L 1850,625 L 825,625 L 825,720" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 2020,560 L 2020,650 L 1375,650 L 1375,720" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1730,560 L 1730,600 L 275,600 L 275,720" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1610,825.0 L 1650.0,825.0 L 1650.0,825.0 L 1690,825.0" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 825.0,930 L 825.0,1050" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 510,825 L 550,825 L 550,1157 L 590,1157" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1925,930 L 1925,985 L 900,985 L 900,1050" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1060,1157.5 L 1100.0,1157.5 L 1100.0,1157.5 L 1140,1157.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 2080,930 L 2080,1050" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1650.0,1265 L 1650.0,1350" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1060,1435.0 L 1100.0,1435.0 L 1100.0,1435.0 L 1140,1435.0" fill="none" stroke="#C48836" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 640,1772.5 L 700.0,1772.5 L 700.0,1772.5 L 760,1772.5" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1310,1772.5 L 1370.0,1772.5 L 1370.0,1772.5 L 1430,1772.5" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1650,1520 L 1650,1585 L 1035,1585 L 1035,1650" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1100.0" y="47.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="35" fill="#22334A">匹配与融合：标尺管取证，图像管证据</text>
+<text x="1100.0" y="107.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">本页的模块在粗层与细层各调用一次并共享参数；粗D=96、32×56，细D=12、64×112</text>
+<rect x="40" y="155" width="2120" height="110" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="1100.0" y="192.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">输入：候选深度Z、参考像素网格、K/T、视图/像素掩码、匹配FPN与四层ViT上下文</text>
+<text x="1100.0" y="227.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">所有候选均为待判断假设；投影在图内不等于无遮挡，也不等于存在真实表面</text>
+<rect x="40" y="355" width="470" height="205" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="275.0" y="394.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">① unproject：反投影</text>
+<text x="275.0" y="426.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">参考像素 + 候选Z → 阵列点X</text>
+<text x="275.0" y="457.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">同时得到射线方向 dX/dZ</text>
+<text x="275.0" y="489.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">候选区间半宽为 ΔZ</text>
+<text x="275.0" y="520.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Z是光轴深度，不是射线距离</text>
+<rect x="590" y="355" width="470" height="205" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="825.0" y="394.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">② project：精确重投影</text>
+<text x="825.0" y="426.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">X → 每台源相机的像素u、v</text>
+<text x="825.0" y="457.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">计算投影导数J</text>
+<text x="825.0" y="489.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">g = J·dX/dZ</text>
+<text x="825.0" y="520.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">屏蔽图外、负深度、缺图与退化源</text>
+<rect x="1140" y="355" width="470" height="205" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="1375.0" y="397.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">③ 标尺尺度路由</text>
+<text x="1375.0" y="427.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">计算横向/纵向/深度跨度的投影</text>
+<text x="1375.0" y="457.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">最大跨度p决定F4/F8/F16权重</text>
+<text x="1375.0" y="487.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">目标约4个特征像素</text>
+<text x="1375.0" y="517.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">实现采样三层，相邻最多两层权重非零</text>
+<rect x="1690" y="355" width="470" height="205" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1925.0" y="394.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">④ grid_sample + L2归一化</text>
+<text x="1925.0" y="426.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">参考描述子固定读取F4</text>
+<text x="1925.0" y="457.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">源描述子按路由权重混合</text>
+<text x="1925.0" y="489.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">四目只算3个源，每源64通道</text>
+<text x="1925.0" y="520.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">源 [B,3,64,D,H,W]</text>
+<rect x="40" y="720" width="470" height="210" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="275.0" y="762.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">⑤a 参考query与拒绝分支</text>
+<text x="275.0" y="793.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">f_ref：64维</text>
+<text x="275.0" y="825.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Linear64→64：Q，拆成4头×16维</text>
+<text x="275.0" y="856.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Linear64→4：每头的null分数</text>
+<text x="275.0" y="888.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Q不随候选深度改变</text>
+<rect x="590" y="720" width="470" height="210" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="825.0" y="762.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">⑤b 源key</text>
+<text x="825.0" y="793.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">在当前候选投影处取f_src：64维</text>
+<text x="825.0" y="825.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Linear64→64：K，拆成4头×16维</text>
+<text x="825.0" y="856.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">候选改变 → 取样位置与源key改变</text>
+<text x="825.0" y="888.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">分数的外观部分：Q·K / 4</text>
+<rect x="1140" y="720" width="470" height="210" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1375.0" y="762.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">⑤c 成对描述：拼成139维</text>
+<text x="1375.0" y="793.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">逐通道乘积：64</text>
+<text x="1375.0" y="825.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">逐通道绝对差：64</text>
+<text x="1375.0" y="856.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">8组乘积求和：8</text>
+<text x="1375.0" y="888.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">标尺方向2 + log(1+|g|ΔZ)：1</text>
+<rect x="1690" y="720" width="470" height="210" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1925.0" y="762.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">⑤d pair + reliability</text>
+<text x="1925.0" y="793.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">MLP：139→64 → GELU →64</text>
+<text x="1925.0" y="825.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">输出64维value</text>
+<text x="1925.0" y="856.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Linear64→4：可靠性分数</text>
+<text x="1925.0" y="888.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">它与Q·K共同决定各头源权重</text>
+<rect x="590" y="1050" width="470" height="215" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="825.0" y="1097.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">⑥ 在源视图维做masked softmax</text>
+<text x="825.0" y="1127.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">每头：3个源分数 + 1个null分数</text>
+<text x="825.0" y="1157.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">无效源的权重为0，null始终可选</text>
+<text x="825.0" y="1187.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">不把拒绝的概率重新分给剩余源</text>
+<text x="825.0" y="1217.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">权重用于value聚合和证据质量统计</text>
+<rect x="1140" y="1050" width="1020" height="215" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1650.0" y="1091.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑦ 聚合得到三个量</text>
+<text x="1650.0" y="1124.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">pooled：4头value加权合并，64维</text>
+<text x="1650.0" y="1157.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">null_mass：4头无匹配权重均值，1维</text>
+<text x="1650.0" y="1190.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">information：按源权重加权的 |g|²，取log1p后为1维</text>
+<text x="1650.0" y="1223.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">合计66维；information是几何敏感度，不是纹理置信度</text>
+<rect x="590" y="1350" width="470" height="170" rx="12" fill="#FFF3DF" stroke="#C48836" stroke-width="2"/>
+<text x="825.0" y="1390.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">⑧b 深度位置编码</text>
+<text x="825.0" y="1420.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">将 log Z 在 near/far 之间归一化为p</text>
+<text x="825.0" y="1450.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">p、sin(πp)、cos(πp)共3维</text>
+<text x="825.0" y="1480.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">Linear3→64 → GELU → Linear64→64</text>
+<rect x="1140" y="1350" width="1020" height="170" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1650.0" y="1418.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑧a evidence：Conv3D1×1×1 66→64 → GELU → Conv3D1×1×1 64→64</text>
+<text x="1650.0" y="1451.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">加上⑧b深度位置编码，形成候选token [B,64,D,H,W]</text>
+<rect x="40" y="1650" width="600" height="245" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="340.0" y="1706.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑨ 四层参考图上下文 bank</text>
+<text x="340.0" y="1739.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">每层128维，按当前网格精确对齐</text>
+<text x="340.0" y="1772.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[B,128,4,H,W]</text>
+<text x="340.0" y="1805.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">同一像素的四个层级作为key/value</text>
+<text x="340.0" y="1838.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">这一步是选编码层，不是选相机</text>
+<rect x="760" y="1650" width="550" height="245" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1035.0" y="1706.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑩ 候选query读取上下文</text>
+<text x="1035.0" y="1739.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">raw_query：Conv3D1×1×1 64→128</text>
+<text x="1035.0" y="1772.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">query与四层bank点积 / √128</text>
+<text x="1035.0" y="1805.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">softmax沿4个编码层归一化</text>
+<text x="1035.0" y="1838.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">不同候选可以选择不同层级</text>
+<rect x="1430" y="1650" width="730" height="245" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1795.0" y="1706.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑪ 四层加权求和 → 128维</text>
+<text x="1795.0" y="1739.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">raw_output：Conv3D1×1×1 128→64</text>
+<text x="1795.0" y="1772.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">与原候选token相加 → 通道LayerNorm → 掩码</text>
+<text x="1795.0" y="1805.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">粗输出 [B,64,96,32,56]</text>
+<text x="1795.0" y="1838.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">细输出 [B,64,12,64,112]</text>
+<text x="1100.0" y="1975.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">所有候选中心精确重投影；J仅用于尺度、注意力几何条件和后续步长。无匹配槽位由最终任务间接学习，当前没有独立null监督头。</text>
+</svg>

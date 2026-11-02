@@ -1,0 +1,49 @@
+{
+  "device": "cuda:6",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank5",
+  "models": [
+    {
+      "name": "frozen_v6",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/carla_new/best.pt"
+    },
+    {
+      "name": "control_original",
+      "variant": "control",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/control_original/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/control_original/carla/completed.json"
+    },
+    {
+      "name": "control_augment",
+      "variant": "control",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/control_augment/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/control_augment/carla/completed.json"
+    },
+    {
+      "name": "projective_original",
+      "variant": "projective",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/projective_original/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/projective_original/carla/completed.json"
+    },
+    {
+      "name": "projective_augment",
+      "variant": "projective",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/projective_augment/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/projective_augment/carla/completed.json"
+    },
+    {
+      "name": "prior_original",
+      "variant": "prior",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/prior_original/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/prior_original/carla/completed.json"
+    },
+    {
+      "name": "prior_augment",
+      "variant": "prior",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/prior_augment/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round1/prior_augment/carla/completed.json"
+    }
+  ],
+  "rank": 5,
+  "world": 6,
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json"
+}

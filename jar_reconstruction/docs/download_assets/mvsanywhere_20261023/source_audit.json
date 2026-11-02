@@ -1,0 +1,129 @@
+{
+  "checked_date": "2026-10-23 Asia/Shanghai",
+  "mvsanywhere_live_main_commit": "5bd49bba0992aa56060e1aa3bb40b2150b04726f",
+  "scope": "下载源与数据格式核查；没有下载完整归档或启动训练",
+  "hypersim": {
+    "source": "https://modelscope.cn/datasets/OpenDataLab/Hypersim",
+    "zip_count": 457,
+    "zip_bytes": 1914288906139,
+    "required_train_scene_count": 303,
+    "missing_train_scenes": [],
+    "metadata_source": "https://raw.githubusercontent.com/apple-aiml-research/ml-hypersim/main/contrib/mikeroberts3000/metadata_camera_parameters.csv",
+    "metadata_sha256": "0b40e0884ba2458e7bdcdbb27de46a4ec6eacbfbbb4ef0d70188d78098cebdc9",
+    "checksums_in_manifests": "由镜像树API提供，未进行完整归档校验"
+  },
+  "link_head_probes": [
+    {
+      "name": "hypersim_ms_archive",
+      "status": 200,
+      "final_host": "cdn-lfs-cn-1.modelscope.cn",
+      "hops": [
+        {
+          "status": 302,
+          "from": "modelscope.cn",
+          "to": "cdn-lfs-cn-1.modelscope.cn"
+        }
+      ],
+      "content_type": "application/octet-stream",
+      "length": "2249481604",
+      "range": "bytes"
+    },
+    {
+      "name": "mvs_synth_hf_mirror",
+      "status": 200,
+      "final_host": "us.aws.cdn.hf.co",
+      "hops": [
+        {
+          "status": 308,
+          "from": "hf-mirror.com",
+          "to": "huggingface.co"
+        },
+        {
+          "status": 302,
+          "from": "huggingface.co",
+          "to": "us.aws.cdn.hf.co"
+        }
+      ],
+      "content_type": "application/gzip",
+      "length": "10492893238",
+      "range": "bytes"
+    },
+    {
+      "name": "vkitti_hf_mirror",
+      "error": "<urlopen error _ssl.c:1015: The handshake operation timed out>",
+      "hops": []
+    },
+    {
+      "name": "tartan_hf_mirror",
+      "status": 200,
+      "final_host": "us.aws.cdn.hf.co",
+      "hops": [
+        {
+          "status": 308,
+          "from": "hf-mirror.com",
+          "to": "huggingface.co"
+        },
+        {
+          "status": 302,
+          "from": "huggingface.co",
+          "to": "us.aws.cdn.hf.co"
+        }
+      ],
+      "content_type": "application/zip",
+      "length": "7074777614",
+      "range": "bytes"
+    },
+    {
+      "name": "matrix_hf_mirror",
+      "status": 200,
+      "final_host": "us.aws.cdn.hf.co",
+      "hops": [
+        {
+          "status": 308,
+          "from": "hf-mirror.com",
+          "to": "huggingface.co"
+        },
+        {
+          "status": 302,
+          "from": "huggingface.co",
+          "to": "us.aws.cdn.hf.co"
+        }
+      ],
+      "content_type": "application/x-tar",
+      "length": "32620237824",
+      "range": "bytes"
+    }
+  ],
+  "hf_cli_test": "项目现有hf CLI下载3KB README失败：FileMetadataError/LocalEntryNotFoundError；不能报告为镜像CLI通过",
+  "native_hypersim_script_test": "--help阶段因公共dataset_utils导入pytorch3d失败；只验证了Options配置解析，未运行真实转换",
+  "modelscope_tree_api": "https://modelscope.cn/api/v1/datasets/OpenDataLab/Hypersim/repo/tree?Revision=master&Root=raw&PageNumber=1&PageSize=1000",
+  "training_model_unchanged": true,
+  "conversion_checks": {
+    "checks": 3,
+    "official_ray_factor_max_difference": 1.1920928955078125e-07,
+    "synthetic_frontoparallel_plane_and_nan": "passed",
+    "existing_output_resume_and_atomic_file": "passed",
+    "real_dataset_conversion": "not_run",
+    "environment": "h5py仅安装至/tmp独立依赖目录；未改变项目训练环境",
+    "source_sha256": "80d9e7cc50c28beb0ffd294c436f7cad5c6cb58bdaa68f575ad5b92f101f0186"
+  },
+  "vkitti_official_archive_urls": [
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_backwardFlow.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_backwardSceneFlow.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_classSegmentation.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_depth.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_forwardFlow.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_forwardSceneFlow.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_instanceSegmentation.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_rgb.tar",
+    "https://download.europe.naverlabs.com/virtual_kitti_2.0.3/vkitti_2.0.3_textgt.tar"
+  ],
+  "tutorial_static_checks": {
+    "bash_blocks_syntax_checked": 24,
+    "local_links": "passed",
+    "aria2_counts_and_checksum_syntax": {
+      "hypersim_train_303.aria2": 303,
+      "hypersim_all_457.aria2": 457
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "output": "runs/active/near_evidence_20261030/carla_visibility_probe",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "device": "cuda:3",
+  "old_plan": "runs/active/near_evidence_20261030/carla_control/plan.json",
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/carla_new/best.pt",
+    "control": "runs/active/near_evidence_20261030/carla_control/final.pt",
+    "visibility_veto": "runs/active/near_evidence_20261030/carla_visibility_veto/final.pt"
+  }
+}

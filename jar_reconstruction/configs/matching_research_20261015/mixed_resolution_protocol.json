@@ -1,0 +1,128 @@
+{
+  "protocol_id": "carla_four_wide_20261011_v1_matching512x896",
+  "data": {
+    "root": "/home/liuzonghao/3Dscene/data/CARLA_data",
+    "manifests": {
+      "train_all": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_all.jsonl",
+      "train_complete": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_complete.jsonl",
+      "train_partial": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_partial.jsonl",
+      "train_supervised": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/train_supervised.jsonl",
+      "gap_all": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/gap_all.jsonl",
+      "gap_complete": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/gap_complete.jsonl",
+      "gap_partial": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/gap_partial.jsonl",
+      "gap_supervised": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/gap_supervised.jsonl",
+      "dev_all": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_all.jsonl",
+      "dev_complete": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_complete.jsonl",
+      "dev_partial": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_partial.jsonl",
+      "dev_supervised": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/dev_supervised.jsonl",
+      "test_all": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_all.jsonl",
+      "test_complete": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_complete.jsonl",
+      "test_partial": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_partial.jsonl",
+      "test_supervised": "/home/liuzonghao/3Dscene/jar_reconstruction/data/carla_comparison_20261011/test_supervised.jsonl"
+    },
+    "image_size": [
+      256,
+      448
+    ],
+    "depth_resize_mode": "nearest-exact",
+    "camera_ids": [
+      "stereo_left",
+      "stereo_right",
+      "stereo_up",
+      "stereo_down"
+    ],
+    "split_protocol": "temporal_gap",
+    "min_frame_gap": 40,
+    "matching_image_size": [
+      512,
+      896
+    ]
+  },
+  "evaluation": {
+    "reference_index": 2,
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "roi": [
+      [
+        0,
+        80
+      ],
+      [
+        -45,
+        45
+      ],
+      [
+        -2,
+        20
+      ]
+    ],
+    "absolute_thresholds_m": [
+      0.1,
+      0.2,
+      1.0
+    ],
+    "distance_bands_m": [
+      [
+        2,
+        10
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        24,
+        80
+      ]
+    ],
+    "surface_thresholds_m": [
+      0.1,
+      0.2,
+      0.5
+    ],
+    "max_surface_queries": 4096,
+    "warmup": 2,
+    "surface_metrics": false,
+    "raw_depth_diagnostics": true
+  },
+  "runtime": {
+    "threads": 2
+  },
+  "split_protocol": {
+    "sequence": "captured_data (1)",
+    "train_max_frame": 15892,
+    "gap_frames": [
+      15893,
+      15932
+    ],
+    "dev_min_frame": 15933,
+    "counts": {
+      "train_all": 275,
+      "train_complete": 66,
+      "train_partial": 209,
+      "train_supervised": 220,
+      "gap_all": 40,
+      "gap_complete": 7,
+      "gap_partial": 33,
+      "gap_supervised": 29,
+      "dev_all": 79,
+      "dev_complete": 25,
+      "dev_partial": 54,
+      "dev_supervised": 70,
+      "test_all": 451,
+      "test_complete": 200,
+      "test_partial": 251,
+      "test_supervised": 350
+    },
+    "test_policy": "原test清单保持不变，只在方法冻结后运行；不用于调参。",
+    "initialization_policy": "临时dev比较必须从头或非CARLA预训练开始；禁止用已见全部319帧训练轨迹的checkpoint声明未见验证。",
+    "limitation": "同序列按连续帧切分并隔离40帧，无法排除路线空间重叠；不等于独立新地图泛化。",
+    "source_manifest_sha256": {
+      "train_all.jsonl": "1ea0a7b2622ce7777259262468b70adc0c9c617d3ff78d0a6defa74e04e519aa",
+      "test_all.jsonl": "e8d10ea2fcf8201b89d770b36a17be308bc16d2f0392458238983215a9d81014"
+    }
+  },
+  "matching_resolution_note": "GT/场景RGB/K/ROI/分母不变；同四张原图仅匹配CNN读取512x896。其输入像素和计算预算高于低分辨率匹配，不称同资源比较。"
+}

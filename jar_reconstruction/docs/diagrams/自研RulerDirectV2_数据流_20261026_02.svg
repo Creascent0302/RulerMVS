@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1730" viewBox="0 0 2000 1730">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#637A98"/></marker></defs>
+<path d="M 275.0,555 L 275.0,625" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275.0,770 L 275.0,840" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275.0,985 L 275.0,1055" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275.0,1200 L 275.0,1270" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 275.0,310 L 275.0,380" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 510,697 L 620,697" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 510,912 L 620,912" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 510,1127 L 620,1127" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 510,1342 L 620,1342" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 925,1270 L 925,1200" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 925,1055 L 925,985" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 925,840 L 925,770" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1640.0,310 L 1640.0,380" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1640.0,555 L 1640.0,625" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1640.0,870 L 1640.0,950" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1640.0,1125 L 1640.0,1210" fill="none" stroke="#477BC2" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1000.0" y="47.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="35" fill="#22334A">编码阶段：纹理支路与上下文支路</text>
+<text x="1000.0" y="107.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">结构来自当前 encoders.py｜下列形状按 B=1、N=4 展示；每台相机使用同一套权重</text>
+<rect x="40" y="170" width="470" height="140" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="207.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">匹配图：合并B和N</text>
+<text x="275.0" y="240.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[4,3,512,896]</text>
+<text x="275.0" y="273.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">掩码置零 → ImageNet归一化</text>
+<rect x="40" y="380" width="470" height="175" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="420.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">ResNet-18 stem</text>
+<text x="275.0" y="451.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">Conv7×7，stride2，3→64 → BN → ReLU</text>
+<text x="275.0" y="483.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">MaxPool3×3，stride2</text>
+<text x="275.0" y="514.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">[4,64,128,224]</text>
+<rect x="40" y="625" width="470" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="664.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">layer1：2个BasicBlock</text>
+<text x="275.0" y="697.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">通道64，首块stride1</text>
+<text x="275.0" y="730.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[4,64,128,224]</text>
+<rect x="40" y="840" width="470" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="879.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">layer2：2个BasicBlock</text>
+<text x="275.0" y="912.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">64→128，首块stride2</text>
+<text x="275.0" y="945.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[4,128,64,112]</text>
+<rect x="40" y="1055" width="470" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="1094.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">layer3：2个BasicBlock</text>
+<text x="275.0" y="1127.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">128→256，首块stride2</text>
+<text x="275.0" y="1160.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[4,256,32,56]</text>
+<rect x="40" y="1270" width="470" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="275.0" y="1309.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">layer4：2个BasicBlock</text>
+<text x="275.0" y="1342.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">256→512，首块stride2</text>
+<text x="275.0" y="1375.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">[4,512,16,28]</text>
+<rect x="620" y="625" width="610" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="925.0" y="667.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">F4：侧投影64→64 + 对齐的上层结果</text>
+<text x="925.0" y="697.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">DW Conv3×3 → PW Conv1×1 → GN8 → GELU</text>
+<text x="925.0" y="727.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">输出 [B,N,64,128,224]，匹配图stride4</text>
+<rect x="620" y="840" width="610" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="925.0" y="882.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">F8：侧投影128→64 + 对齐的上层结果</text>
+<text x="925.0" y="912.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">DW Conv3×3 → PW Conv1×1 → GN8 → GELU</text>
+<text x="925.0" y="942.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">输出 [B,N,64,64,112]，匹配图stride8</text>
+<rect x="620" y="1055" width="610" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="925.0" y="1097.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">F16：侧投影256→64 + 对齐的上层结果</text>
+<text x="925.0" y="1127.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">DW Conv3×3 → PW Conv1×1 → GN8 → GELU</text>
+<text x="925.0" y="1157.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">输出 [B,N,64,32,56]，匹配图stride16</text>
+<rect x="620" y="1270" width="610" height="145" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="925.0" y="1312.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">最深侧投影：Conv1×1，512→64</text>
+<text x="925.0" y="1342.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">[4,64,16,28]，匹配图stride32</text>
+<text x="925.0" y="1372.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" fill="#22334A">参与自顶向下融合，不作为第4张输出图</text>
+<rect x="40" y="1500" width="1190" height="175" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="635.0" y="1540.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">BasicBlock：Conv3×3 → BN → ReLU → Conv3×3 → BN → 加捷径 → ReLU</text>
+<text x="635.0" y="1571.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">通道/步长变化时捷径用1×1卷积；BN运行统计冻结，仿射参数可训练</text>
+<text x="635.0" y="1603.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">FPN向上传递的是平滑前特征；DW为逐通道卷积，PW为1×1通道混合</text>
+<text x="635.0" y="1634.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">匹配格点中心按标准ResNet推导，不套用旧Hero匹配支路的中心偏移</text>
+<rect x="1320" y="170" width="640" height="140" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1640.0" y="207.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">参考主图 [B,3,256,448]</text>
+<text x="1640.0" y="240.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">掩码置零 → ImageNet归一化</text>
+<text x="1640.0" y="273.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">按14/16缩放为 [B,3,224,392]</text>
+<rect x="1320" y="380" width="640" height="175" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1640.0" y="418.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">ViT-B patch嵌入</text>
+<text x="1640.0" y="451.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">Conv14×14，stride14，3→768</text>
+<text x="1640.0" y="484.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">16×28＝448个patch + 1个CLS</text>
+<text x="1640.0" y="517.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">加位置编码 → [B,449,768]</text>
+<rect x="1320" y="625" width="640" height="245" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1640.0" y="665.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">12个Transformer Block，通道768</text>
+<text x="1640.0" y="698.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">每块：LayerNorm → 12头自注意力</text>
+<text x="1640.0" y="731.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">LayerScale → 加残差</text>
+<text x="1640.0" y="764.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">LayerNorm → Linear768→3072 → GELU</text>
+<text x="1640.0" y="797.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">Linear3072→768 → LayerScale → 加残差</text>
+<text x="1640.0" y="830.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">在第3、6、9、12块读取特征</text>
+<rect x="1320" y="950" width="640" height="175" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1640.0" y="988.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">共享末端LayerNorm → 丢弃CLS</text>
+<text x="1640.0" y="1021.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">四份 [B,768,16,28]</text>
+<text x="1640.0" y="1054.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">它们的空间尺寸相同，语义深度不同</text>
+<text x="1640.0" y="1087.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">不是四张不同分辨率的图</text>
+<rect x="1320" y="1210" width="640" height="175" rx="12" fill="#EAF2FF" stroke="#477BC2" stroke-width="2"/>
+<text x="1640.0" y="1250.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">四个独立raw_adapters</text>
+<text x="1640.0" y="1281.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">各Conv1×1：768→128</text>
+<text x="1640.0" y="1313.25" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">四份 [B,128,16,28]</text>
+<text x="1640.0" y="1344.75" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">粗/细阶段按主图patch中心7.5+16j对齐</text>
+<rect x="1320" y="1470" width="640" height="205" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="1640.0" y="1509.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">权重起点：原始Depth Anything V2 Base</text>
+<text x="1640.0" y="1541.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">阶段1：冻结ViT；阶段2：末4块及末端LN可训</text>
+<text x="1640.0" y="1572.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">阶段3/4：全ViT可训</text>
+<text x="1640.0" y="1604.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">本支路没有执行DA-V2的DPT深度头</text>
+<text x="1640.0" y="1635.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">可训练块启用激活重计算，只影响训练内存</text>
+</svg>

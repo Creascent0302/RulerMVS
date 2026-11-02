@@ -1,0 +1,499 @@
+<mxfile host="65bd71144e" pages="3">
+    <diagram id="mf-current-0" name="01 当前启用的整体架构">
+        <mxGraphModel dx="3617" dy="2430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1320" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=37;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="MF-ET-JAR：当前实际执行的四目稠密路径" vertex="1">
+                    <mxGeometry height="65" width="2120" x="40" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="sub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="对应 matching.json / 蓝：图像信息　紫：几何候选与解码　橙：固定标定　灰：本配置关闭" vertex="1">
+                    <mxGeometry height="45" width="2120" x="40" y="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="input" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="同步四目RGB&lt;br&gt;[1,4,3,256,448]&lt;br&gt;缺失视图与像素掩码" vertex="1">
+                    <mxGeometry height="145" width="235" x="-110" y="475" as="geometry"/>
+                </mxCell>
+                <mxCell id="calibration" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3DF;strokeColor=#C48836;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="固定内参和外参&lt;br&gt;rig：x前/y左/z上&lt;br&gt;相机：x右/y下/z前&lt;br&gt;不预测或修改标定" vertex="1">
+                    <mxGeometry height="180" width="235" y="-10" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ha3jtlLwswUBXCimsaeH-1" edge="1" parent="1" source="cnn" style="edgeStyle=none;html=1;" target="vit" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="① 深层本地CNN&lt;br&gt;五级共14个残差块&lt;br&gt;保留边缘与局部纹理" vertex="1">
+                    <mxGeometry height="155" width="335" x="372.5" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="多尺度FPN&lt;br&gt;stride 4/8/16/32&lt;br&gt;各尺度32维特征" vertex="1">
+                    <mxGeometry height="155" width="290" x="750" y="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="vit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="② 冻结Hero图像ViT&lt;br&gt;12层，取3/6/9/12层&lt;br&gt;每层768维&lt;br&gt;提供场景上下文" vertex="1">
+                    <mxGeometry height="180" width="335" x="380" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="semantic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="逐层适配768→32&lt;br&gt;精确对齐像素中心&lt;br&gt;上下文送入解码器&lt;br&gt;当前不加入粗匹配特征" vertex="1">
+                    <mxGeometry height="180" width="290" x="750" y="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="matching" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="③ 冻结Hero匹配编码器&lt;br&gt;完整16维描述子&lt;br&gt;stride4，独立匹配通路" vertex="1">
+                    <mxGeometry height="145" width="335" x="370" y="750" as="geometry"/>
+                </mxCell>
+                <mxCell id="evidence" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="精确投影读取描述子&lt;br&gt;相似度、分歧与几何&lt;br&gt;学习可靠分数增量" vertex="1">
+                    <mxGeometry height="145" width="290" x="750" y="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="coarse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="④ 全范围已标定匹配&lt;br&gt;stride16：16×28位置&lt;br&gt;192个米制深度候选&lt;br&gt;分组相关＋3D正则化&lt;br&gt;三层代价上下文&lt;br&gt;保留无匹配选项" vertex="1">
+                    <mxGeometry height="290" width="390" x="1110" y="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="packet" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="⑤ 完整候选证据包&lt;br&gt;分数/概率/有效性/位置&lt;br&gt;773→64维&lt;br&gt;两层空间Transformer" vertex="1">
+                    <mxGeometry height="190" width="390" x="1110" y="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="dense" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="⑥ 独立稠密解码头&lt;br&gt;32→16→8→4→1&lt;br&gt;融合CNN、语义、候选&lt;br&gt;继承父层特征和深度编码&lt;br&gt;每级输出连续深度&lt;br&gt;首级学习深度，后级修正" vertex="1">
+                    <mxGeometry height="315" width="565" x="1580" y="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="depth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="四视图完整深度＋置信度&lt;br&gt;[1,4,256,448]，2–80米&lt;br&gt;预测有效性单独输出" vertex="1">
+                    <mxGeometry height="145" width="565" x="1580" y="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="verify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="⑦ 独立多视图观测验证&lt;br&gt;精确投影、纹理、视差&lt;br&gt;图像与深度一致性&lt;br&gt;输出支持数/observed/unknown" vertex="1">
+                    <mxGeometry height="180" width="565" x="1580" y="835" as="geometry"/>
+                </mxCell>
+                <mxCell id="sparse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#8D96A3;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;dashed=1;" value="可选：原分层稀疏表面头&lt;br&gt;四级射线查询与连续定位&lt;br&gt;当前关闭；参数仍保留" vertex="1">
+                    <mxGeometry height="160" width="390" x="1110" y="920" as="geometry"/>
+                </mxCell>
+                <mxCell id="optional" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#8D96A3;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;dashed=1;" value="当前关闭的独立开关&lt;br&gt;跨层语义增强 / 跨相机交流 / 候选平面运输&lt;br&gt;局部几何细化 / 稀疏头 / 长焦输入&lt;br&gt;长焦支持原稀疏路径&lt;br&gt;当前深编码＋稠密组合暂不支持长焦" vertex="1">
+                    <mxGeometry height="180" width="1000" x="40" y="1080" as="geometry"/>
+                </mxCell>
+                <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="标签只进入训练损失与离线评价&lt;br&gt;完整深度预测与已观测空间分别输出&lt;br&gt;遮挡后方保持unknown" vertex="1">
+                    <mxGeometry height="130" width="1050" x="1090" y="1140" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-0" edge="1" parent="1" source="input" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn">
+                    <mxGeometry relative="1" x="0.1646" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="7.5" y="380"/>
+                            <mxPoint x="270" y="380"/>
+                            <mxPoint x="270" y="267.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-1" edge="1" parent="1" source="input" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="vit">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="240" y="550"/>
+                            <mxPoint x="240" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-2" edge="1" parent="1" source="input" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="matching">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="7.5" y="660"/>
+                            <mxPoint x="307.5" y="660"/>
+                            <mxPoint x="307.5" y="832.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-3" edge="1" parent="1" source="cnn" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="712.5" y="257.5"/>
+                            <mxPoint x="712.5" y="257.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-4" edge="1" parent="1" source="vit" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="semantic">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="712.5" y="550"/>
+                            <mxPoint x="712.5" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-5" edge="1" parent="1" source="matching" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="evidence">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="712.5" y="832.5"/>
+                            <mxPoint x="712.5" y="832.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-6" edge="1" parent="1" source="fpn" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="coarse">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1075" y="257.5"/>
+                            <mxPoint x="1075" y="315"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-7" edge="1" parent="1" source="coarse" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="packet">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-8" edge="1" parent="1" source="packet" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="dense">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1540" y="645"/>
+                            <mxPoint x="1540" y="327.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-9" edge="1" parent="1" source="dense" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="depth">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-10" edge="1" parent="1" source="depth" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="verify">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-11" edge="1" parent="1" source="evidence" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="coarse">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1075" y="832"/>
+                            <mxPoint x="1075" y="390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-12" edge="1" parent="1" source="semantic" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="dense">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1530" y="550"/>
+                            <mxPoint x="1530" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-13" edge="1" parent="1" source="fpn" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="dense">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1065" y="255"/>
+                            <mxPoint x="1065" y="135"/>
+                            <mxPoint x="1550" y="135"/>
+                            <mxPoint x="1550" y="215"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-14" edge="1" parent="1" source="calibration" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#C48836;strokeWidth=2;dashed=0;entryX=0.451;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;" target="coarse">
+                    <mxGeometry relative="1" x="-0.8542" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="390" y="80"/>
+                            <mxPoint x="390" y="145"/>
+                            <mxPoint x="1285.9" y="145"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-15" edge="1" parent="1" source="coarse" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8D96A3;strokeWidth=2;dashed=1;" target="sparse">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1535" y="430"/>
+                            <mxPoint x="1535" y="1000"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-16" edge="1" parent="1" source="fpn" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8D96A3;strokeWidth=2;dashed=1;" target="sparse">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1055" y="285"/>
+                            <mxPoint x="1055" y="1000"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="mf-current-1" name="02 编码器与特征尺寸">
+        <mxGraphModel dx="2150" dy="1371" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1160" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=36;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="编码器：保住细节，并独立读取预训练场景信息" vertex="1">
+                    <mxGeometry height="65" width="2120" x="40" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="sub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="尺寸写作 [批次×相机, 通道, 高, 宽]；当前B=1、N=4，所有相机共享网络权重" vertex="1">
+                    <mxGeometry height="45" width="2120" x="40" y="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="rgb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="RGB合并批次和相机&lt;br&gt;[4,3,256,448]" vertex="1">
+                    <mxGeometry height="105" width="310" x="40" y="205" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN阶段1&lt;br&gt;stride2，2个块&lt;br&gt;[4,12,128,224]" vertex="1">
+                    <mxGeometry height="140" width="300" x="390" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN阶段2&lt;br&gt;stride4，3个块&lt;br&gt;[4,24,64,112]" vertex="1">
+                    <mxGeometry height="140" width="300" x="740" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpn4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="1×1侧向映射＋对齐融合&lt;br&gt;3×3平滑&lt;br&gt;[4,32,64,112]" vertex="1">
+                    <mxGeometry height="145" width="300" x="740" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN阶段3&lt;br&gt;stride8，4个块&lt;br&gt;[4,36,32,56]" vertex="1">
+                    <mxGeometry height="140" width="300" x="1090" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpn8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="1×1侧向映射＋对齐融合&lt;br&gt;3×3平滑&lt;br&gt;[4,32,32,56]" vertex="1">
+                    <mxGeometry height="145" width="300" x="1090" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN阶段4&lt;br&gt;stride16，3个块&lt;br&gt;[4,48,16,28]" vertex="1">
+                    <mxGeometry height="140" width="300" x="1440" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpn16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="1×1侧向映射＋对齐融合&lt;br&gt;3×3平滑&lt;br&gt;[4,32,16,28]" vertex="1">
+                    <mxGeometry height="145" width="300" x="1440" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="cnn32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN阶段5&lt;br&gt;stride32，2个块&lt;br&gt;[4,48,8,14]" vertex="1">
+                    <mxGeometry height="140" width="300" x="1790" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpn32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="1×1侧向映射＋对齐融合&lt;br&gt;3×3平滑&lt;br&gt;[4,32,8,14]" vertex="1">
+                    <mxGeometry height="145" width="300" x="1790" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="vit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="冻结Hero ViT-B&lt;br&gt;同一图像取4个中间层&lt;br&gt;每层[4,768,16,28]&lt;br&gt;patch中心7.5＋16×i" vertex="1">
+                    <mxGeometry height="185" width="360" x="40" y="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="adapt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="分别投影768→32&lt;br&gt;按各CNN格点精确采样&lt;br&gt;作为解码上下文&lt;br&gt;冻结ViT每帧只计算一次" vertex="1">
+                    <mxGeometry height="185" width="440" x="470" y="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="desc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="冻结的匹配描述子&lt;br&gt;[1,4,16,64,112]&lt;br&gt;中心1.5＋4×i&lt;br&gt;不和CNN格点混用" vertex="1">
+                    <mxGeometry height="185" width="445" x="1040" y="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="optional" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#8D96A3;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;dashed=1;" value="可选跨层语义融合&lt;br&gt;各ViT层先768→128&lt;br&gt;每个CNN位置选择语义层&lt;br&gt;当前matching配置关闭" vertex="1">
+                    <mxGeometry height="185" width="540" x="1590" y="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=25;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="CNN的中心为stride×i；图像缩放、ViT patch和官方匹配描述子采用不同采样中心，代码分别处理。" vertex="1">
+                    <mxGeometry height="85" width="2120" x="40" y="1020" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-0" edge="1" parent="1" source="rgb" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn2">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="370" y="257.5"/>
+                            <mxPoint x="370" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-1" edge="1" parent="1" source="cnn2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="715" y="260"/>
+                            <mxPoint x="715" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-2" edge="1" parent="1" source="cnn4" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-3" edge="1" parent="1" source="cnn4" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1065" y="260"/>
+                            <mxPoint x="1065" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-4" edge="1" parent="1" source="cnn8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-5" edge="1" parent="1" source="cnn8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1415" y="260"/>
+                            <mxPoint x="1415" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-6" edge="1" parent="1" source="cnn16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-7" edge="1" parent="1" source="cnn16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="cnn32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1765" y="260"/>
+                            <mxPoint x="1765" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-8" edge="1" parent="1" source="cnn32" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-9" edge="1" parent="1" source="fpn32" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1940" y="640"/>
+                            <mxPoint x="1590" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-10" edge="1" parent="1" source="fpn16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1590" y="640"/>
+                            <mxPoint x="1240" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-11" edge="1" parent="1" source="fpn8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="fpn4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1240" y="640"/>
+                            <mxPoint x="890" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-12" edge="1" parent="1" source="vit" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="adapt">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="435" y="852.5"/>
+                            <mxPoint x="435" y="852.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="mf-current-2" name="03 稠密解码与诊断位置">
+        <mxGraphModel dx="2150" dy="1371" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=36;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="稠密解码：候选信息进入每一级，深度由粗到细修正" vertex="1">
+                    <mxGeometry height="65" width="2120" x="40" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="packet" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="完整192候选＋无匹配&lt;br&gt;773通道证据包&lt;br&gt;1×1投影＋残差块&lt;br&gt;64维候选特征" vertex="1">
+                    <mxGeometry height="170" width="325" x="45" y="185" as="geometry"/>
+                </mxCell>
+                <mxCell id="attention" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="stride16空间Transformer&lt;br&gt;2层/4头&lt;br&gt;448位置/每相机&lt;br&gt;位置含像素、射线与相机中心" vertex="1">
+                    <mxGeometry height="170" width="325" x="45" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="stage32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="stride32解码&lt;br&gt;CNN＋语义＋候选＋父特征&lt;br&gt;2个残差块/64维&lt;br&gt;深度[1,4,8,14]" vertex="1">
+                    <mxGeometry height="185" width="310" x="430" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="head32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="连续深度＋置信度头&lt;br&gt;诊断点：解码stride32" vertex="1">
+                    <mxGeometry height="110" width="310" x="430" y="785" as="geometry"/>
+                </mxCell>
+                <mxCell id="stage16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="stride16解码&lt;br&gt;CNN＋语义＋候选＋父特征&lt;br&gt;2个残差块/64维&lt;br&gt;深度[1,4,16,28]" vertex="1">
+                    <mxGeometry height="185" width="310" x="780" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="head16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="连续深度＋置信度头&lt;br&gt;诊断点：解码stride16" vertex="1">
+                    <mxGeometry height="110" width="310" x="780" y="785" as="geometry"/>
+                </mxCell>
+                <mxCell id="stage8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="stride8解码&lt;br&gt;CNN＋语义＋候选＋父特征&lt;br&gt;2个残差块/64维&lt;br&gt;深度[1,4,32,56]" vertex="1">
+                    <mxGeometry height="185" width="310" x="1130" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="head8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="连续深度＋置信度头&lt;br&gt;诊断点：解码stride8" vertex="1">
+                    <mxGeometry height="110" width="310" x="1130" y="785" as="geometry"/>
+                </mxCell>
+                <mxCell id="stage4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="stride4解码&lt;br&gt;CNN＋语义＋候选＋父特征&lt;br&gt;2个残差块/64维&lt;br&gt;深度[1,4,64,112]" vertex="1">
+                    <mxGeometry height="185" width="310" x="1480" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="head4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="连续深度＋置信度头&lt;br&gt;诊断点：解码stride4" vertex="1">
+                    <mxGeometry height="110" width="310" x="1480" y="785" as="geometry"/>
+                </mxCell>
+                <mxCell id="stage1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1ECFF;strokeColor=#8665BC;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="完整分辨率解码&lt;br&gt;继承stride4＋RGB细节&lt;br&gt;16维轻量特征&lt;br&gt;深度[1,4,256,448]" vertex="1">
+                    <mxGeometry height="185" width="310" x="1830" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="head1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#408766;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="连续深度＋置信度头&lt;br&gt;诊断点：解码stride1" vertex="1">
+                    <mxGeometry height="110" width="310" x="1830" y="785" as="geometry"/>
+                </mxCell>
+                <mxCell id="evidence" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#477BC2;fontSize=23;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="候选特征在每级对齐读取&lt;br&gt;CNN和ViT上下文也按该级读取&lt;br&gt;层间传递特征和有界深度编码" vertex="1">
+                    <mxGeometry height="145" width="1175" x="475" y="195" as="geometry"/>
+                </mxCell>
+                <mxCell id="initial" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3DF;strokeColor=#C48836;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;" value="本配置：首级学习深度&lt;br&gt;其后预测深度编码残差&lt;br&gt;不直接继承粗深度均值" vertex="1">
+                    <mxGeometry height="160" width="385" x="1730" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="diagnostic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#8D96A3;fontSize=24;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;dashed=1;" value="固定权重干预&lt;br&gt;去语义 / 打平候选 / 去空间注意力 / 去RGB / 去代价上下文&lt;br&gt;标签纠正候选排序：仅诊断上限，不能作为正常推理结果" vertex="1">
+                    <mxGeometry height="155" width="1640" x="430" y="990" as="geometry"/>
+                </mxCell>
+                <mxCell id="ruler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#8D96A3;fontSize=21;fontFamily=Microsoft YaHei;spacing=10;strokeWidth=2;dashed=1;" value="可选局部标定细化&lt;br&gt;stride4上9个精确投影候选&lt;br&gt;当前关闭；梯度求解尚为独立实验" vertex="1">
+                    <mxGeometry height="165" width="325" x="45" y="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-0" edge="1" parent="1" source="packet" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="attention">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-1" edge="1" parent="1" source="stage32" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#408766;strokeWidth=2;dashed=0;" target="head32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-2" edge="1" parent="1" source="attention" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="stage32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="400" y="535"/>
+                            <mxPoint x="400" y="542.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-3" edge="1" parent="1" source="stage16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#408766;strokeWidth=2;dashed=0;" target="head16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-4" edge="1" parent="1" source="stage32" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="stage16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="760" y="542.5"/>
+                            <mxPoint x="760" y="542.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-5" edge="1" parent="1" source="stage8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#408766;strokeWidth=2;dashed=0;" target="head8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-6" edge="1" parent="1" source="stage16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="stage8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1110" y="542.5"/>
+                            <mxPoint x="1110" y="542.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-7" edge="1" parent="1" source="stage4" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#408766;strokeWidth=2;dashed=0;" target="head4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-8" edge="1" parent="1" source="stage8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="stage4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1460" y="542.5"/>
+                            <mxPoint x="1460" y="542.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-9" edge="1" parent="1" source="stage1" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#408766;strokeWidth=2;dashed=0;" target="head1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-10" edge="1" parent="1" source="stage4" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#8665BC;strokeWidth=2;dashed=0;" target="stage1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1810" y="542.5"/>
+                            <mxPoint x="1810" y="542.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-11" edge="1" parent="1" source="evidence" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="stage32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-12" edge="1" parent="1" source="evidence" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="stage16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-13" edge="1" parent="1" source="evidence" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="stage8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge-14" edge="1" parent="1" source="evidence" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#477BC2;strokeWidth=2;dashed=0;" target="stage4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

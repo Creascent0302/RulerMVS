@@ -1,0 +1,25 @@
+--- a/models/losses.py
++++ b/models/losses.py
+@@ -57,7 +57,10 @@
+             final_mask = final_mask.to(torch.bool)
+             gt_index_volume = gt_index_volume[final_mask]  # [N,]
+             prob_volume_pre = prob_volume_pre.permute(0, 2, 3, 1)[final_mask, :]  # [B,H,W,D]->[N,D]
+-            depth_loss = F.cross_entropy(prob_volume_pre, gt_index_volume, reduction='mean')
++            if gt_index_volume.numel():
++                depth_loss = F.cross_entropy(prob_volume_pre, gt_index_volume, reduction='mean')
++            else:
++                depth_loss = prob_volume_pre.sum() * 0.0
+             # depth_loss = torch.sum(depth_loss * final_mask) / (torch.sum(final_mask) + 1e-6)
+             loss_dict[stage_key] = depth_loss_weights[stage_idx] * depth_loss
+         elif depth_type == 'reg':
+--- a/models/networks/DINOv2_mvsformer_model.py
++++ b/models/networks/DINOv2_mvsformer_model.py
+@@ -85,7 +85,7 @@
+             for vi in range(V):
+                 img_v = imgs[:, vi]
+                 conv01, conv11, conv21, conv31 = self.encoder(img_v)
+-                conv31 = conv31 + vit_feat[vi].unsqueeze(0)
++                conv31 = conv31 + vit_feat.reshape(B, V, *vit_feat.shape[1:])[:, vi]
+                 feat1, feat2, feat3, feat4 = self.decoder.forward(conv01, conv11, conv21, conv31)
+                 feat1s.append(feat1)
+                 feat2s.append(feat2)

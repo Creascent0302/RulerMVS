@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="2250" viewBox="0 0 2100 2250">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#637A98"/></marker></defs>
+<path d="M 960,310.0 L 1040.0,310.0 L 1040.0,310.0 L 1120,310.0" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1590,445 L 1590,560" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 500,445 L 500,560" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 500,810 L 500,940" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1590,810 L 1590,940" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 960,1050.0 L 1040.0,1050.0 L 1040.0,1050.0 L 1120,1050.0" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1590,1160 L 1590,1220 L 500,1220 L 500,1280" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 960,1390.0 L 1040.0,1390.0 L 1040.0,1390.0 L 1120,1390.0" fill="none" stroke="#8665BC" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 1590,1500 L 1590,1570 L 500,1570 L 500,1650" fill="none" stroke="#408766" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M 960,1390 L 1010,1390 L 1010,1810 L 1120,1810" fill="none" stroke="#8D96A3" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1050.0" y="47.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="35" fill="#22334A">从候选到深度：先保留，再细格取证，最后连续定位</text>
+<text x="1050.0" y="107.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">主图256×448｜候选体维度 [B,C,D,H,W]｜粗细两级共享评分与偏移参数；细层不执行三维空间卷积</text>
+<rect x="40" y="175" width="920" height="270" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="500.0" y="227.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">① CandidateScaleSpace：只在粗层执行</text>
+<text x="500.0" y="260.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">输入 F0=[B,64,96,32,56]</text>
+<text x="500.0" y="293.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">带掩码平均池化(1,2,2)：F1=16×28，F2=8×14</text>
+<text x="500.0" y="326.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">三个尺度各做 DW Conv3D3×3×3 → GELU → PW Conv3D1×1×1</text>
+<text x="500.0" y="359.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">低尺度消息逐级双线性返回，加到原尺度消息</text>
+<text x="500.0" y="392.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">外部再做 F0 + 消息；96个深度格始终不降采样</text>
+<rect x="1120" y="175" width="940" height="270" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1590.0" y="227.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">② 粗 _prediction：两个1×1×1卷积头</text>
+<text x="1590.0" y="260.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">score：64→1，再加 4×源加权余弦相似度</text>
+<text x="1590.0" y="293.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">offset：64→1，经tanh得到有界的区间内修正</text>
+<text x="1590.0" y="326.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">softmax在96个候选之间生成概率</text>
+<text x="1590.0" y="359.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">输出各候选连续深度与特征；最高分深度仅作中间诊断</text>
+<text x="1590.0" y="392.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">默认相同两个头还用于细层</text>
+<rect x="40" y="560" width="2020" height="250" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1050.0" y="616.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">③ SubrayTransport + transport_proposals：先传全部概率，再选峰</text>
+<text x="1050.0" y="650.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">在64×112细网格，对同一个深度刻度混合4个粗邻居的概率；连续深度/特征用条件权重继承</text>
+<text x="1050.0" y="685.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">在细网格选4个峰（当前仅0.1工作单位分离，不保证4个不同真实表面）</text>
+<text x="1050.0" y="719.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">每峰步长 = max(粗刻度半宽, 0.5 / 最大有效投影导数)，再限幅到[0.005,100]工作单位</text>
+<text x="1050.0" y="754.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">每峰取 -步长／中心／+步长，共12个候选；不对跨峰深度作一次全局平均</text>
+<rect x="40" y="940" width="920" height="220" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="500.0" y="981.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">④ 细层：12候选，每位置64维</text>
+<text x="500.0" y="1015.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">在64×112网格重新精确投影</text>
+<text x="500.0" y="1050.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">复用第3页的标尺路由、源注意力和四层上下文读取</text>
+<text x="500.0" y="1084.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">得到细层新证据 [B,64,12,64,112]</text>
+<text x="500.0" y="1119.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">不是简单把粗深度放大</text>
+<rect x="1120" y="940" width="940" height="220" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1590.0" y="984.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑤ 继承粗层信息，但允许新证据修改</text>
+<text x="1590.0" y="1017.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">只提取选中4个深度刻度对应的64维粗特征</text>
+<text x="1590.0" y="1050.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">每峰复制给三个局部候选</text>
+<text x="1590.0" y="1083.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">fine_inherit：Conv3D1×1×1 64→64</text>
+<text x="1590.0" y="1116.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">加到细层新证据 → 通道LayerNorm → 参考有效掩码</text>
+<rect x="40" y="1280" width="920" height="220" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="500.0" y="1321.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">⑥ 共享score / offset头：12个候选重新评分</text>
+<text x="500.0" y="1355.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">分数 = learned_score + 4×加权余弦相似度</text>
+<text x="500.0" y="1390.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">偏移受各候选局部区间限制</text>
+<text x="500.0" y="1424.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">argmax选最高分候选，取其连续修正后的Z</text>
+<text x="500.0" y="1459.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">深度与候选置信度 [B,1,64,112]</text>
+<rect x="1120" y="1280" width="940" height="220" rx="12" fill="#F1ECFF" stroke="#8665BC" stroke-width="2"/>
+<text x="1590.0" y="1324.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">⑦ 学习式凸组合上采样</text>
+<text x="1590.0" y="1357.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">取胜出候选特征 [B,64,64,112]</text>
+<text x="1590.0" y="1390.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">Conv2D3×3 64→64 → GELU → Conv2D1×1 64→144</text>
+<text x="1590.0" y="1423.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">144 = 3×3邻居 × 4×4子像素；对9邻居做masked softmax</text>
+<text x="1590.0" y="1456.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="22" fill="#22334A">相同凸权重混合深度与confidence，恢复256×448</text>
+<rect x="40" y="1650" width="920" height="320" rx="12" fill="#E8F5EE" stroke="#408766" stroke-width="2"/>
+<text x="500.0" y="1715.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">⑧ 输出合同与单位恢复</text>
+<text x="500.0" y="1747.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">depth：模型内为工作单位，导出时乘该域s</text>
+<text x="500.0" y="1778.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">valid：参考RGB有效性；confidence：候选softmax及上采样结果</text>
+<text x="500.0" y="1810.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">support：最近细格胜出候选的几何可采样源数</text>
+<text x="500.0" y="1841.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">unknown全true／observed全false／state全2</text>
+<text x="500.0" y="1873.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">不直接输出法线、网格、占据或已认证表面</text>
+<text x="500.0" y="1904.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">参考有效但邻域没有深度时，用√(near×far)作先验回退</text>
+<rect x="1120" y="1650" width="940" height="320" rx="12" fill="#F2F3F5" stroke="#8D96A3" stroke-width="2"/>
+<text x="1590.0" y="1715.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">独立训练支路：depth_objective，不进入推理</text>
+<text x="1590.0" y="1747.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">全图：log深度L1 + 0.2×相对误差 + 0.05×log梯度误差</text>
+<text x="1590.0" y="1778.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">粗/细各：0.25×最近候选分类 + 0.2×可达区间定位</text>
+<text x="1590.0" y="1810.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">　　　　 + 0.1×候选概率加权距离风险</text>
+<text x="1590.0" y="1841.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">可见对应：双方GT深度认证，9个标尺扰动候选分类</text>
+<text x="1590.0" y="1873.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">对应损失权重阶段1/2/3为0.2/0.1/0.05</text>
+<text x="1590.0" y="1904.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="21" fill="#22334A">CARLA及MVS-Synth配置关闭对应项；无独立null/法线损失</text>
+<text x="1050.0" y="2100.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">当前启用的计算减法：compact_sources跳过恒无效的参考源；spatial_layout仅整理3D卷积内存布局，不新增网络层。</text>
+<text x="1050.0" y="2135.0" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">当前关闭：场景节点、独立细头、峰内平均、候选相邻格排除及可选浮点重排加速；不把这些历史实验画进主线。</text>
+<text x="1050.0" y="2169.5" text-anchor="middle" dominant-baseline="central" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" fill="#22334A">本图对应train_latest_20261025.json及同构公共模型，绘制日期为北京时间2026-10-26。</text>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "seed": 20261103,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_handoff_ablation/carla_parent_seed20261103",
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/carla_new/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json",
+  "device": "cuda:0",
+  "variant": "parent",
+  "grouped_loss": true,
+  "train_samples_per_domain": 256,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "minimum_free_gib": 200
+}

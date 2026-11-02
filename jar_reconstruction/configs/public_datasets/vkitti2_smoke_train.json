@@ -1,0 +1,37 @@
+{
+  "device": "cuda:1",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "reference_index": 0,
+  "own_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/multiview_20261024/full_rgb_final/scale_transport_complete.pt",
+  "initializer": {
+    "model_config": "configs/candidate_revision_20261018/mvsanywhere_carla_upper_firstpass_probe.json",
+    "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+    "readout_weights": "",
+    "reference_index": 0,
+    "fast_cost_volume": true,
+    "auxiliary_outputs": false,
+    "cache_position_encoding": true
+  },
+  "preview_max_depth_m": 80,
+  "extra_baselines": [],
+  "training_smoke": true,
+  "datasets": [
+    {
+      "name": "VKITTI2_train",
+      "root": "/data/liuzonghao_data/dataset/VKITTI2",
+      "manifest": "prepared/manifests/synchronized2/train.jsonl",
+      "output": "/data/liuzonghao_data/dataset/VKITTI2/smoke/train"
+    }
+  ],
+  "num_views": 2,
+  "reference_indices": [
+    0
+  ]
+}

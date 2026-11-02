@@ -1,0 +1,24 @@
+{
+  "root": "/data/liuzonghao_data/dataset/VKITTI2",
+  "workers": 4,
+  "storage_budget_gib": 170,
+  "splits": {
+    "train": [
+      "Scene01",
+      "Scene02",
+      "Scene06"
+    ],
+    "val": [
+      "Scene18"
+    ],
+    "test": [
+      "Scene20"
+    ]
+  },
+  "temporal4": {
+    "maximum_frame_gap": 4,
+    "min_baseline_m": 0.05,
+    "max_baseline_m": 8.0,
+    "max_axis_angle_deg": 20.0
+  }
+}

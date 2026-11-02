@@ -1,0 +1,20 @@
+{
+  "checkpoint": "runs/model_releases/RulerMVS-V2/carla_recommended/7888b8b637d1/pretrained.pt",
+  "data_config": "configs/current/carla_data.json",
+  "output": "runs/active/current_inference/carla_fast",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "dataset": "CARLA_wide4",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "inference": {
+    "spatial_layout": true,
+    "factorized_fusion": true,
+    "hoist_reference": true,
+    "compact_pair": true,
+    "projective_ruler": true,
+    "compact_sources": true
+  }
+}

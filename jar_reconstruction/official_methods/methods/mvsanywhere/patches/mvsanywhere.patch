@@ -1,0 +1,138 @@
+diff --git a/src/mvsanywhere/experiment_modules/sr_depth_model.py b/src/mvsanywhere/experiment_modules/sr_depth_model.py
+--- a/src/mvsanywhere/experiment_modules/sr_depth_model.py
++++ b/src/mvsanywhere/experiment_modules/sr_depth_model.py
+@@ -1,3 +1,4 @@
++# 集成修改：本地骨干/预训练开关；loss 张量跟随输入设备，兼容 CPU 与 DDP。
+ import logging
+ 
+ import lightning as pl
+@@ -149,7 +150,9 @@
+             }[self.run_opts.image_encoder_name]
+             self.encoder = DINOv2(
+                 self.run_opts.image_encoder_name,
+-                num_intermediate_layers=intermediate_layers_idx
++                num_intermediate_layers=intermediate_layers_idx,
++                hub_source=getattr(opts, "dinov2_source", None),
++                pretrained=getattr(opts, "pretrained", True),
+             )
+             if self.run_opts.da_weights_path is not None:
+                 self.encoder.load_da_weights(self.run_opts.da_weights_path)
+@@ -179,7 +182,9 @@
+                 model_name=self.run_opts.image_encoder_name,
+                 num_ch_cv=self.run_opts.matching_num_depth_bins,
+                 feat_fuser_layers_idx=intermediate_layers_idx,
+-                intermediate_layers_idx=intermediate_layers_idx
++                intermediate_layers_idx=intermediate_layers_idx,
++                hub_source=getattr(opts, "dinov2_source", None),
++                pretrained=getattr(opts, "pretrained", True),
+             )
+         else:
+             raise ValueError("Unrecognized option for cost volume encoder type!")
+@@ -248,7 +253,7 @@
+         # init the matching encoder. resnet is fast and is the default for
+         # results in the paper, fpn is more accurate but much slower.
+         if "resnet" == self.run_opts.matching_encoder_type:
+-            self.matching_model = ResnetMatchingEncoder(18, self.run_opts.matching_feature_dims)
++            self.matching_model = ResnetMatchingEncoder(18, self.run_opts.matching_feature_dims, pretrained=getattr(opts, "pretrained", True))
+         elif "unet_encoder" == self.run_opts.matching_encoder_type:
+             self.matching_model = UNetMatchingEncoder()
+         else:
+@@ -638,7 +643,7 @@
+             sparsity = torch.isnan(depth_gt).sum(dim=[1, 2, 3]) / np.prod(depth_gt.shape[-2:])
+             l1_loss = torch.abs(log_depth_gt - log_depth_pred)
+             top_20_err = torch.stack([(
+-                torch.quantile(l1_loss[i][mask_b[i]], 0.8) if torch.any(mask_b[i]).item() else torch.tensor(torch.inf)).cuda() for i in range(mask_b.shape[0])
++                torch.quantile(l1_loss[i][mask_b[i]], 0.8) if torch.any(mask_b[i]).item() else depth_gt.new_tensor(torch.inf)).to(depth_gt.device) for i in range(mask_b.shape[0])
+             ])
+             mask_b_top20 = mask_b & (l1_loss < torch.where(sparsity > 0.5, top_20_err, torch.inf)[:, None, None, None])
+             mask_b_dense = mask_b & (sparsity < 0.5)[:, None, None, None]
+@@ -651,7 +656,7 @@
+                     mode="nearest",
+                 )
+                 ms_loss += (
+-                    self.ms_loss_fn(log_depth_gt[mask_b_top20], log_depth_pred_resized[mask_b_top20]) / 2**i
++                    (self.ms_loss_fn(log_depth_gt[mask_b_top20], log_depth_pred_resized[mask_b_top20]) if mask_b_top20.any() else log_depth_pred_resized.sum() * 0) / 2**i
+                 )
+                 found_scale = True
+ 
+diff --git a/src/mvsanywhere/losses.py b/src/mvsanywhere/losses.py
+--- a/src/mvsanywhere/losses.py
++++ b/src/mvsanywhere/losses.py
+@@ -1,3 +1,4 @@
++# 集成修改：空监督集合返回图连通零损失；有效监督上的原公式不变。
+ import kornia
+ import torch
+ import torch.jit as jit
+@@ -30,7 +31,11 @@
+             )
+ 
+             grad_error = torch.abs(depth_pred_grad - depth_gtn_grad.masked_select(mask_down_b))
+-            grad_loss += torch.mean(grad_error)
++            if not grad_error.numel():
++                # 原实现 mean(empty) 使整个多尺度项 NaN；compute_losses 随后
++                # nan_to_num 将整个项置零。保留该有效行为，而非只跳过当前尺度。
++                return depth_pred.sum() * 0
++            grad_loss += grad_error.mean()
+ 
+ 
+         return grad_loss
+@@ -70,7 +75,8 @@
+                     normals_gt_b3hw,
+                 )
+             ).unsqueeze(1)
+-        normals_loss = normals_dot_b1hw.masked_select(normals_mask_b1hw).mean()
++        valid_errors = normals_dot_b1hw.masked_select(normals_mask_b1hw)
++        normals_loss = valid_errors.mean() if valid_errors.numel() else valid_errors.sum()
+ 
+         return normals_loss
+ 
+@@ -204,7 +210,7 @@
+             torch.log(src_depth_sampled_b1hw) - torch.log(pred_src_depths_b1hw)
+         ).masked_select(valid_mask_b1hw)
+ 
+-        depth_loss = depth_diff_b1hw.nanmean()
++        depth_loss = depth_diff_b1hw.nanmean() if depth_diff_b1hw.isfinite().any() else depth_pred_b1hw.sum() * 0
+ 
+         return depth_loss
+ 
+diff --git a/src/mvsanywhere/modules/vit_modules.py b/src/mvsanywhere/modules/vit_modules.py
+--- a/src/mvsanywhere/modules/vit_modules.py
++++ b/src/mvsanywhere/modules/vit_modules.py
+@@ -1,3 +1,4 @@
++# 集成修改：支持固定版本本地 DINOv2 与显式预训练开关，网络不变。
+ from loguru import logger
+ import torch
+ import torch.nn as nn
+@@ -96,11 +97,12 @@
+             self,
+             model_name='dinov2_vitb14',
+             num_intermediate_layers=-1,
++            hub_source=None, pretrained=True,
+         ):
+         super().__init__()
+ 
+         assert model_name in DINOV2_ARCHS.keys(), f'Unknown model name {model_name}'
+-        self.model = torch.hub.load('facebookresearch/dinov2', model_name)
++        self.model = torch.hub.load(hub_source or 'facebookresearch/dinov2', model_name, source='local' if hub_source else 'github', pretrained=pretrained)
+         use_memeffattn_in_model(self.model)
+         self.num_channels = DINOV2_ARCHS[model_name]
+         self.num_intermediate_layers = len(self.model.blocks) if num_intermediate_layers == -1 else num_intermediate_layers
+@@ -220,7 +222,8 @@
+             model_name='dinov2_vitb14',
+             num_ch_cv=64,
+             feat_fuser_layers_idx=[2, 5, 8, 11],
+-            intermediate_layers_idx=[2, 5, 8, 11]
++            intermediate_layers_idx=[2, 5, 8, 11],
++            hub_source=None, pretrained=True,
+     ):
+         super().__init__()
+         assert model_name in DINOV2_ARCHS.keys(), f'Unknown model name {model_name}'
+@@ -228,7 +231,7 @@
+         self.num_ch_cv = num_ch_cv
+ 
+         # Load DINOv2 model
+-        self.model = torch.hub.load('facebookresearch/dinov2', model_name)
++        self.model = torch.hub.load(hub_source or 'facebookresearch/dinov2', model_name, source='local' if hub_source else 'github', pretrained=pretrained)
+         use_memeffattn_in_model(self.model)
+ 
+         self.feat_fuser_layers_idx = feat_fuser_layers_idx

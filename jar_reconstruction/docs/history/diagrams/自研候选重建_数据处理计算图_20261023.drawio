@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17" type="device">
+  <diagram id="ruler-flow-1" name="01 总体数据流">
+    <mxGraphModel dx="1710" dy="2160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1710" pageHeight="2160" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="自研候选重建：从四目图像到稠密深度" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=31;fontColor=#1f3347;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="25" width="1590" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="实际版本：RulerDirectModel / spatial_volume；四目输入，仅上相机作为输出参考；下方尺寸省略 batch 维。" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="78" width="1590" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-0" value="蓝：冻结预训练编码" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-1" value="绿：可训练网络" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="450" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-2" value="紫：确定性标定计算" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="840" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-3" value="橙：本轮有效替换" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb" value="&lt;b&gt;① 同一时刻的四目原始 RGB＋有效掩码&lt;/b&gt;&lt;br&gt;分别准备主图 4 × 3 × 256 × 448&lt;br&gt;以及匹配图 4 × 3 × 512 × 896" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="670" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="match" value="&lt;b&gt;② 四目共享匹配编码器｜冻结 ResNet-18&lt;/b&gt;&lt;br&gt;独立匹配输入：4 × 3 × 512 × 896&lt;br&gt;输出：4 × 16 × 128 × 224" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f1ff;strokeColor=#3874b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="295" width="530" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="mono" value="&lt;b&gt;③ 上相机图像编码器｜冻结 ViT-B&lt;/b&gt;&lt;br&gt;读取第 3、6、9、12 个 block&lt;br&gt;四张特征图：每张 768 × 16 × 28" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f1ff;strokeColor=#3874b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="700" y="295" width="510" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="calib" value="&lt;b&gt;已知相机标定与有效掩码&lt;/b&gt;&lt;br&gt;内参 K、rig→camera 变换 T&lt;br&gt;无效投影屏蔽；不学习修改标定" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f0eafa;strokeColor=#8960ac;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="295" width="370" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="bank" value="&lt;b&gt;共享特征库：粗、细阶段复用&lt;/b&gt;&lt;br&gt;四目 16 维匹配特征&lt;br&gt;四层上相机图像特征&lt;br&gt;每层由可训练适配器 768→64" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="360" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lattice" value="&lt;b&gt;④ 在上相机射线上铺设 96 个深度假设&lt;/b&gt;&lt;br&gt;粗网格：32 × 56；深度范围：2–80 米&lt;br&gt;候选深度：96 × 32 × 56" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f0eafa;strokeColor=#8960ac;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="500" width="650" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="coarse_tokens" value="&lt;b&gt;⑤ 粗级匹配与图像信息融合｜内部见第 2 页&lt;/b&gt;&lt;br&gt;候选反投影 → 精确投影其他相机 → 采样匹配特征&lt;br&gt;逐源加权与拒绝＋候选条件读取四层图像信息&lt;br&gt;候选特征：32 × 96 × 32 × 56" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="665" width="650" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="spatial" value="&lt;b&gt;⑥ 本轮有效替换：候选空间证据交换&lt;/b&gt;&lt;br&gt;逐通道 3×3×3 卷积 → GELU → 1×1×1 卷积&lt;br&gt;加回原候选特征；尺寸保持 32 × 96 × 32 × 56" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff0da;strokeColor=#c37b17;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="835" width="650" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="coarse_head" value="&lt;b&gt;⑦ 给每个粗候选评分，并预测有界深度偏移&lt;/b&gt;&lt;br&gt;共享评分头＋源视图加权相似度；另有粗偏移头&lt;br&gt;输出：96 个分数与 96 个连续候选深度 / 粗像素" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="995" width="650" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="peaks" value="&lt;b&gt;⑧ 保留 4 个高分表面候选&lt;/b&gt;&lt;br&gt;按分数依次选择，使用约 1 米的候选间隔抑制&lt;br&gt;输出：4 × 32 × 56；此处仍保留多种表面可能" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1145" width="650" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fine_proposals" value="&lt;b&gt;⑨ 利用标定导数确定米制搜索步长&lt;/b&gt;&lt;br&gt;结合粗单元宽度与约半个匹配特征像素的位移&lt;br&gt;每峰生成「前一步、中心、后一步」；转到 64 × 112&lt;br&gt;细候选：4 峰 × 3 位置 = 12 × 64 × 112" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f0eafa;strokeColor=#8960ac;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1285" width="650" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="fine_tokens" value="&lt;b&gt;⑩ 对 12 个细候选重新精确取证与融合&lt;/b&gt;&lt;br&gt;重新投影四目取样；重新执行逐源取舍与四层读取&lt;br&gt;融合继承的粗级候选特征，再做通道归一化&lt;br&gt;细候选特征：32 × 12 × 64 × 112" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1455" width="650" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fine_head" value="&lt;b&gt;⑪ 共享评分头：每条细射线选择一个候选&lt;/b&gt;&lt;br&gt;当前配置关闭细阶段连续偏移；选 12 个位置中的一个&lt;br&gt;细深度与置信度：1 × 64 × 112" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1620" width="650" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="upsample" value="&lt;b&gt;⑫ 学习式凸组合上采样 ×4&lt;/b&gt;&lt;br&gt;获胜候选的 32 维特征 → 每格 9 × 4 × 4 个权重&lt;br&gt;以邻近 3×3 个细深度生成 4×4 个输出像素&lt;br&gt;输出：1 × 256 × 448" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1765" width="650" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="&lt;b&gt;⑬ 上相机稠密米制 Z-depth&lt;/b&gt;&lt;br&gt;另有预测有效性、置信度和几何可采样源数&lt;br&gt;输出仍为深度假设；未认证为已观测表面或 free" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e4f2f5;strokeColor=#337f8c;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1930" width="650" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="mask_note" value="&lt;b&gt;标定首先决定「去哪里取证」&lt;/b&gt;&lt;br&gt;反投影得到 rig 中的候选三维点&lt;br&gt;再精确投影到各相机取匹配特征&lt;br&gt;图外、相机后方、缺失视图被屏蔽&lt;br&gt;投影合法不等于未被遮挡" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="590" width="370" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="step_note" value="&lt;b&gt;标定导数决定「查多远」&lt;/b&gt;&lt;br&gt;估计深度变动带来的像素位移&lt;br&gt;搜索步长限制在 0.05–8 米&lt;br&gt;真正的细候选仍然精确重投影&lt;br&gt;导数不直接代替深度预测" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1230" width="370" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_note" value="&lt;b&gt;读图说明&lt;/b&gt;&lt;br&gt;32 / 64 / 768：特征通道数&lt;br&gt;96 / 12：每像素的深度候选数&lt;br&gt;32×56 / 64×112：图像网格&lt;br&gt;候选体不是实体占据体素" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1020" width="360" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="inherit_note" value="&lt;b&gt;细阶段继承粗特征（虚线）&lt;/b&gt;&lt;br&gt;取四个峰对应的 32 维特征&lt;br&gt;扩展到细网格，每峰复制三份&lt;br&gt;经 1×1×1 卷积后与新证据相加" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1630" width="360" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="flags" value="&lt;b&gt;当前未执行的可选路径&lt;/b&gt;&lt;br&gt;scene 全局节点融合：关闭&lt;br&gt;源注意力额外几何偏置：关闭&lt;br&gt;细阶段 offset：关闭&lt;br&gt;不执行旧 K9 / GN 后端&lt;br&gt;未调用完整 Hero 融合 ViT / DPT" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1620" width="370" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rgb" target="match">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="263" />
+              <mxPoint x="325" y="263" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rgb" target="mono">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="263" />
+              <mxPoint x="955" y="263" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="match" target="bank">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="465" />
+              <mxPoint x="240" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mono" target="bank">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="365" />
+              <mxPoint x="660" y="465" />
+              <mxPoint x="240" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#8960ac;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="rgb" target="lattice">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1235" y="200" />
+              <mxPoint x="1235" y="475" />
+              <mxPoint x="860" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lattice" target="coarse_tokens">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="coarse_tokens" target="spatial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="spatial" target="coarse_head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="coarse_head" target="peaks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="peaks" target="fine_proposals">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fine_proposals" target="fine_tokens">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fine_tokens" target="fine_head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fine_head" target="upsample">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="upsample" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bank" target="coarse_tokens">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="580" />
+              <mxPoint x="460" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bank" target="fine_tokens">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="455" y="580" />
+              <mxPoint x="455" y="1515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#8960ac;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="calib" target="lattice">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1230" y="365" />
+              <mxPoint x="1230" y="557.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#8960ac;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="calib" target="coarse_tokens">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="365" />
+              <mxPoint x="1240" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#8960ac;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="calib" target="fine_proposals">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1670" y="365" />
+              <mxPoint x="1670" y="1432" />
+              <mxPoint x="1215" y="1432" />
+              <mxPoint x="1215" y="1347.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#8960ac;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="calib" target="fine_tokens">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1670" y="365" />
+              <mxPoint x="1670" y="1595" />
+              <mxPoint x="1225" y="1595" />
+              <mxPoint x="1225" y="1515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#64748b;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="spatial" target="fine_tokens">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="495" y="890" />
+              <mxPoint x="495" y="1515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="footer" value="尺寸格式：通道 × 候选 × 高 × 宽。实线为特征或预测数据流；紫色虚线为标定依赖；灰色虚线为粗特征继承。仅展示当前实测配置。" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2082" width="1590" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ruler-flow-2" name="02 匹配与融合展开">
+    <mxGraphModel dx="1640" dy="1670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1640" pageHeight="1670" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="一次候选匹配与融合：实际内部计算" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=31;fontColor=#1f3347;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="25" width="1520" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="粗级和细级使用同一套模块与参数。下面 D / H / W 分别取 96 / 32 / 56，或 12 / 64 / 112；省略 batch 维。" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="78" width="1520" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-0" value="蓝：冻结预训练编码" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-1" value="绿：可训练网络" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="450" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-2" value="紫：确定性标定计算" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="840" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-3" value="橙：本轮有效替换" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="119" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="candidate" value="&lt;b&gt;输入候选＋已知标定＋匹配特征库&lt;/b&gt;&lt;br&gt;候选深度 D × H × W；四目匹配描述子各 16 维" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="155" width="650" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="raw" value="&lt;b&gt;上相机四层图像特征&lt;/b&gt;&lt;br&gt;每层 768 × 16 × 28；来自同一次冻结 ViT 前向" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f1ff;strokeColor=#3874b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="155" width="650" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="project" value="&lt;b&gt;A. 几何引导采样&lt;/b&gt;&lt;br&gt;反投影候选 → 精确投影 → 双线性读取源特征&lt;br&gt;同一参考像素直接读取参考描述子；屏蔽无效源&lt;br&gt;输出：参考 16 × H × W；最多三个源各 16 × D × H × W" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f0eafa;strokeColor=#8960ac;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="315" width="650" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="adapters" value="&lt;b&gt;E. 每层保留独立的图像信息&lt;/b&gt;&lt;br&gt;四个互不共享的 1×1 适配器：768 → 64&lt;br&gt;输出：四层，各 64 × 16 × 28&lt;br&gt;同一次适配结果被粗级、细级复用" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="315" width="650" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="pair" value="&lt;b&gt;B. 逐源构造内容证据&lt;/b&gt;&lt;br&gt;参考特征、源特征、逐元素乘积、绝对差&lt;br&gt;四组 16 维拼接 → 每源 64 × D × H × W" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="650" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="align" value="&lt;b&gt;F. 按当前网格对齐图像信息&lt;/b&gt;&lt;br&gt;遵守原始特征中心与像素坐标，双线性采样&lt;br&gt;四层图像库：4 × 64 × H × W" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="500" width="650" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="qk" value="&lt;b&gt;内容相似度分支&lt;/b&gt;&lt;br&gt;参考 16→16 作为 query&lt;br&gt;源 16→16 作为 key&lt;br&gt;归一化后求相似度&lt;br&gt;另由参考特征预测拒绝分数" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="665" width="305" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="value" value="&lt;b&gt;匹配内容与可靠性分支&lt;/b&gt;&lt;br&gt;64→16→16 的逐点网络&lt;br&gt;中间使用 SiLU&lt;br&gt;得到源 value 与可靠性分数&lt;br&gt;各候选、各源独立计算" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="405" y="665" width="305" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="bank" value="&lt;b&gt;保留四层，不先求固定平均&lt;/b&gt;&lt;br&gt;每个位置存四个 64 维图像向量&lt;br&gt;候选内容将在后面决定读取哪一层&lt;br&gt;图像上下文不自动算作多目观测支持" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="665" width="650" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="pooled" value="&lt;b&gt;C. 源视图和「拒绝接收」一起竞争&lt;/b&gt;&lt;br&gt;相似度 / 温度＋可靠性 → 带掩码的源维 softmax&lt;br&gt;输出：源 value 加权和 16 维＋null 拒绝质量 1 维&lt;br&gt;null 不接收源内容；坏源可以获得很小的权重" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="870" width="650" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="off" value="&lt;b&gt;当前几何注意力开关的真实状态&lt;/b&gt;&lt;br&gt;use_geometry = false：额外几何偏置、温度调节关闭&lt;br&gt;候选信息通道取零；标定仍用于精确投影、退化屏蔽&lt;br&gt;标定导数仍参与总图步骤⑨的米制搜索步长" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="870" width="650" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="token" value="&lt;b&gt;D. 构造 32 维候选特征&lt;/b&gt;&lt;br&gt;拼接：源内容16＋null 1＋几何信息0通道占位1 = 18&lt;br&gt;1×1×1 卷积 18→32 → GELU → 卷积 32→32&lt;br&gt;加上由深度刻度得到的 32 维位置编码" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1065" width="650" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="read" value="&lt;b&gt;G. 候选条件读取四层图像信息&lt;/b&gt;&lt;br&gt;候选特征经 1×1×1 卷积：32 → query 64&lt;br&gt;与四层 64 维图像向量逐层点积 → softmax&lt;br&gt;每个深度候选可采用不同的四层权重" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1065" width="650" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="message" value="&lt;b&gt;H. 将所读图像信息返回候选&lt;/b&gt;&lt;br&gt;四层加权和：64 × D × H × W&lt;br&gt;1×1×1 卷积：64 → 32" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f6ef;strokeColor=#288261;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1260" width="650" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="fused" value="&lt;b&gt;I. 匹配证据与图像信息相加，再做通道归一化&lt;/b&gt;&lt;br&gt;每个候选独立归一化其 32 个通道；屏蔽无效参考位置&lt;br&gt;输出：32 × D × H × W，送回总图⑤或⑩" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e4f2f5;strokeColor=#337f8c;strokeWidth=1.8;fontColor=#203246;fontFamily=Arial;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1430" width="650" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="candidate" target="project">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="project" target="pair">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pair" target="qk">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="635" />
+              <mxPoint x="212.5" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pair" target="value">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="635" />
+              <mxPoint x="557.5" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qk" target="pooled">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="212.5" y="840" />
+              <mxPoint x="385" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="value" target="pooled">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557.5" y="840" />
+              <mxPoint x="385" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pooled" target="token">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="raw" target="adapters">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="adapters" target="align">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="align" target="bank">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="token" target="read">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bank" target="read">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1590" y="737.5" />
+              <mxPoint x="1590" y="1135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="read" target="message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="message" target="fused">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1225" y="1398" />
+              <mxPoint x="825" y="1398" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#526579;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="token" target="fused">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="1487.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="footer" value="尺寸格式：通道 × 候选 × 高 × 宽。实线为特征或预测数据流；紫色虚线为标定依赖；灰色虚线为粗特征继承。仅展示当前实测配置。" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#1f3347;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1592" width="1520" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

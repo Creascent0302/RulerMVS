@@ -1,0 +1,8 @@
+{
+  "arms": [
+    "flow_anchor",
+    "direct_rank_fixed",
+    "flow_rank_fixed"
+  ],
+  "report": "followup_smoke_verification.json"
+}

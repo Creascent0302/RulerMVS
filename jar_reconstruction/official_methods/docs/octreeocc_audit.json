@@ -1,0 +1,32 @@
+{
+  "method": "octreeocc",
+  "commit": "54afdd64b210fa45a0b1e1f255e4f88739b4e5a8",
+  "status": "blocked_upstream_incomplete",
+  "full_model_forward_backward_tested": false,
+  "findings": [
+    {
+      "kind": "invalid_official_config",
+      "path": "projects/configs/OctreeOcc/octreeocc_base.py",
+      "line": 106,
+      "detail": "keyword argument repeated: loss_octree_pred"
+    },
+    {
+      "kind": "missing_import",
+      "path": "projects/mmdet3d_plugin/bevformer/modules/temporal_self_attention.py",
+      "detail": "octree_transformer.py imports this unpublished module"
+    },
+    {
+      "kind": "unregistered_config_type",
+      "detail": "config selects OctreeOcc_pred; published detector is OctreeOcc"
+    },
+    {
+      "kind": "unpublished_semantic_initializer",
+      "path": "projects/mmdet3d_plugin/datasets/pipelines/loading.py:LoadSegPriorFromFile",
+      "detail": "RGB-only inference requires UNet-generated seg_structure_l1/l2; released code only loads offline NPZ, without its generation pipeline, trained UNet or training configuration"
+    },
+    {
+      "kind": "paper_code_temporal_difference",
+      "detail": "paper uses temporal self-attention; official config has queue_length=16 but layer operation_order omits self_attn, and forward_test supplies prev_bev=None"
+    }
+  ]
+}

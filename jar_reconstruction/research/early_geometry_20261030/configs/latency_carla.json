@@ -1,0 +1,18 @@
+{
+  "output": "runs/active/early_geometry_20261030/latency_carla.json",
+  "data_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "datasets": [
+    "CARLA_new_stereo_up"
+  ],
+  "device": "cuda:0",
+  "warmup": 10,
+  "repeats": 40,
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/carla_new/best.pt",
+    "control": "runs/active/early_geometry_20261030/carla_control/final.pt",
+    "appearance": "runs/active/early_geometry_20261030/carla_appearance/final.pt",
+    "early": "runs/active/early_geometry_20261030/carla_early/final.pt",
+    "late": "runs/active/early_geometry_20261030/carla_late/final.pt",
+    "both": "runs/active/early_geometry_20261030/carla_both/final.pt"
+  }
+}

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mxfile host="app.diagrams.net" agent="Codex" version="26.0.0" pages="1">
+  <diagram id="before" name="替换前">
+    <mxGraphModel dx="3200" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="1900" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="&lt;b&gt;自研模型：初始深度来源替换对照&lt;/b&gt;&lt;br&gt;两图采用完全相同的画布、模块位置和连线；差异只发生在下方红框内。" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=28;fontColor=#233449;fillColor=#FFFFFF;strokeColor=#B7C3D1;strokeWidth=2;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="55" y="25" width="3030" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="input" value="&lt;b&gt;同步四目输入&lt;/b&gt;&lt;br&gt;RGB 256×448 + 标定 K/T&lt;br&gt;匹配图另取 512×896&lt;br&gt;只输出上相机深度" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="300" height="185" as="geometry"/>
+        </mxCell>
+        <mxCell id="cnn" value="&lt;b&gt;自研深 CNN / 特征金字塔&lt;/b&gt;&lt;br&gt;五级残差层 [2,3,4,3,2]&lt;br&gt;输出步长 4 / 8 / 16 / 32" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="180" width="480" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="mono" value="&lt;b&gt;已有单图上下文&lt;/b&gt;&lt;br&gt;冻结 ViT-B，多层图像特征&lt;br&gt;权重来自 Hero 的单图编码分支" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="355" width="480" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="match" value="&lt;b&gt;已有 Hero ResNet 匹配编码器&lt;/b&gt;&lt;br&gt;四图共用，每点 16 维描述子&lt;br&gt;从高分辨率匹配图中提取" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="530" width="480" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="candidate" value="&lt;b&gt;自研多视图候选证据&lt;/b&gt;&lt;br&gt;192 个深度候选；标定精确投影&lt;br&gt;持久候选场与多视图匹配" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF8F2;strokeColor=#238A69;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="180" width="400" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="decoder" value="&lt;b&gt;自研分层稠密解码&lt;/b&gt;&lt;br&gt;步长 32 → 16 → 8 → 4&lt;br&gt;图像特征 + 候选包 + 父层信息&lt;br&gt;产生初步深度和解码特征" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="180" width="420" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="refine" value="&lt;b&gt;自研标定局部细化&lt;/b&gt;&lt;br&gt;初始深度 + 解码特征 + 匹配描述子&lt;br&gt;投影导数定尺度，精确重投影&lt;br&gt;9 个局部候选，两轮可靠性门控" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF8F2;strokeColor=#238A69;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2160" y="180" width="420" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="full" value="&lt;b&gt;自研原图分辨率解码&lt;/b&gt;&lt;br&gt;细化深度上采样 + 自研解码特征&lt;br&gt;融合原图 RGB，输出连续深度" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2710" y="180" width="420" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="output" value="&lt;b&gt;上相机最终深度&lt;/b&gt;&lt;br&gt;256×448；米制光轴深度&lt;br&gt;另输出置信度、有效性和观测状态" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF8F2;strokeColor=#238A69;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2710" y="465" width="420" height="135" as="geometry"/>
+        </mxCell>
+        <mxCell id="common_note" value="&lt;b&gt;红框外完全相同&lt;/b&gt;&lt;br&gt;上方各网络、权重和特征通路在本次替换实验中保持相同。&lt;br&gt;自研网络仍会完整执行；红框只改变局部细化收到的初始深度值。&lt;br&gt;下方橙色链路出现时，会额外执行完整 Hero 网络。" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=20;fontColor=#233449;fillColor=#FFFFFF;strokeColor=#B7C3D1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="780" width="870" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;颜色说明&lt;/b&gt;&lt;br&gt;蓝：自研已有网络    绿：几何候选 / 细化    橙：新增 Hero 计算&lt;br&gt;红框：唯一变化区域    灰虚线：已计算但未采用的初始深度" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=20;fontColor=#233449;fillColor=#FFFFFF;strokeColor=#B7C3D1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1080" width="870" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="reading" value="&lt;b&gt;对照方式&lt;/b&gt;&lt;br&gt;在两个文件间切换：上方模块应保持原位。&lt;br&gt;只比较红框中的初值流向和新增的橙色链路。" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=20;fontColor=#233449;fillColor=#FFFFFF;strokeColor=#B7C3D1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1340" width="870" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_region" parent="1" vertex="1" value="" style="rounded=1;arcSize=5;html=1;fillColor=#FFFDFD;strokeColor=#C94260;strokeWidth=3;dashed=1;container=1;collapsible=0;recursiveResize=0;">
+          <mxGeometry x="1010" y="750" width="2150" height="1080" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_input_cnn" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1" source="input" target="cnn">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_input_mono" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.8;entryX=0;entryY=0.5;" parent="1" edge="1" source="input" target="mono">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_input_match" value="高分辨率 RGB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" parent="1" edge="1" source="input" target="match">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="595"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_cnn_candidate" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1" source="cnn" target="candidate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_candidate_decoder" value="候选证据包" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1" source="candidate" target="decoder">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_cnn_decoder" value="多尺度图像特征" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" parent="1" edge="1" source="cnn" target="decoder">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="145"/>
+              <mxPoint x="1790" y="145"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_mono_decoder" value="单图上下文" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" parent="1" edge="1" source="mono" target="decoder">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1530" y="420"/>
+              <mxPoint x="1790" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_match_candidate" value="预训练匹配特征" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" parent="1" edge="1" source="match" target="candidate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="595"/>
+              <mxPoint x="1250" y="595"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_decoder_refine" value="自研解码特征（不替换）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1" source="decoder" target="refine">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_decoder_full" value="自研解码特征（不替换）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" parent="1" edge="1" source="decoder" target="full">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1790" y="115"/>
+              <mxPoint x="2920" y="115"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_match_refine" value="原匹配特征 + 标定 / 掩码" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" parent="1" edge="1" source="match" target="refine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2070" y="595"/>
+              <mxPoint x="2370" y="595"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_candidate_refine" value="原候选场" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.25;entryY=1;" parent="1" edge="1" source="candidate" target="refine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1250" y="520"/>
+              <mxPoint x="2265" y="520"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_refine_full" value="细化深度" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1" source="refine" target="full">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_full_output" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1" source="full" target="output">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_decoder_initial" value="自研初步深度" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1" source="decoder" target="swap_own">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1706" y="690"/>
+              <mxPoint x="1215" y="690"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_candidate_initial" value="候选峰 / 视图证据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#64748B;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1" source="candidate" target="swap_peaks">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1150" y="715"/>
+              <mxPoint x="1650" y="715"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_initial_refine" value="实际送入细化的初始深度" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#C94260;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#C94260;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" parent="1" edge="1" source="swap_port" target="refine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2835" y="710"/>
+              <mxPoint x="2496" y="710"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="swap_heading" value="&lt;b&gt;唯一变化区域：细化初始深度来源&lt;/b&gt;&lt;br&gt;A｜使用自研 K9 选出的预测作为初值" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=25;fontColor=#233449;fillColor=#FCE8ED;strokeColor=#C94260;strokeWidth=2;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="swap_region">
+          <mxGeometry x="25" y="10" width="2080" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_own" value="&lt;b&gt;自研解码器初步深度&lt;/b&gt;&lt;br&gt;步长 4 网格：64×112&lt;br&gt;此部分两图都实际计算" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="45" y="120" width="320" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_peaks" value="&lt;b&gt;形成 9 个表面候选&lt;/b&gt;&lt;br&gt;自身初值 + 8 个独立候选峰&lt;br&gt;不在前后表面之间直接求平均" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="450" y="120" width="370" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_scoring" value="&lt;b&gt;自研 K9 候选评分&lt;/b&gt;&lt;br&gt;小评分网络 + 留一视图一致性&lt;br&gt;选出一个初始表面" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#EAF3FF;strokeColor=#3775C3;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="905" y="120" width="395" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_port" value="&lt;b&gt;局部细化的 depth 输入&lt;/b&gt;&lt;br&gt;采用自研 K9 选中的深度&lt;br&gt;形状固定：1×64×112" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=19;fontColor=#233449;fillColor=#FCE8ED;strokeColor=#C94260;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="1595" y="120" width="455" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_own_peaks" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3775C3;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#3775C3;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="swap_region" edge="1" source="swap_own" target="swap_peaks">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_peaks_scoring" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3775C3;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#3775C3;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="swap_region" edge="1" source="swap_peaks" target="swap_scoring">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_selection_depth" value="作为细化初值" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3775C3;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Arial;fontSize=15;fontColor=#3775C3;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="swap_region" edge="1" source="swap_scoring" target="swap_port">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_empty" value="&lt;b&gt;此时未执行外部深度预测网络&lt;/b&gt;&lt;br&gt;自研 K9 输出直接进入上方局部细化器。&lt;br&gt;这里保留与另一张图完全相同的区域，便于直接切换对照。&lt;br&gt;接入后，仅本红框内增加 Hero 计算，并覆盖上方 depth 输入。" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=25;fontColor=#233449;fillColor=#F2F4F7;strokeColor=#9AA6B5;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="170" y="450" width="1775" height="320" as="geometry"/>
+        </mxCell>
+        <mxCell id="swap_before_note" value="&lt;b&gt;替换前的数据流&lt;/b&gt;&lt;br&gt;自研解码深度 → 9 候选重选 → 自研细化 → 自研全图输出" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontFamily=Arial;fontSize=23;fontColor=#233449;fillColor=#FFFFFF;strokeColor=#B7C3D1;strokeWidth=2;" vertex="1" parent="swap_region">
+          <mxGeometry x="170" y="880" width="1775" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

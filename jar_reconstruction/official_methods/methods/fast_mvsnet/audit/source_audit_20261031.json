@@ -1,0 +1,157 @@
+{
+  "archive_sha256": "cf96c1a1bc201f6b25e1af7a4f06befcf738d575b30c75f1b1e93c8f86242fa1",
+  "pristine": "/tmp/fastmvsnet_official_20261031/FastMVSNet-ccb686dda2717613c67d8a289dfe7b2aeb60e2fd",
+  "byte_identical": 12,
+  "changed": [
+    "tools/depthfusion.py",
+    "fastmvsnet/train.py",
+    "fastmvsnet/model.py",
+    "fastmvsnet/config.py",
+    "fastmvsnet/networks.py",
+    "fastmvsnet/solver.py",
+    "fastmvsnet/test.py",
+    "fastmvsnet/dataset.py",
+    "fastmvsnet/utils/feature_fetcher.py",
+    "fastmvsnet/utils/torch_utils.py",
+    "fastmvsnet/utils/logger.py",
+    "fastmvsnet/utils/preprocess.py",
+    "fastmvsnet/utils/io.py",
+    "fastmvsnet/utils/metric_logger.py",
+    "fastmvsnet/utils/eval_file_logger.py",
+    "fastmvsnet/utils/file_logger.py",
+    "fastmvsnet/utils/checkpoint.py",
+    "fastmvsnet/nn/linear.py",
+    "fastmvsnet/nn/mlp.py",
+    "fastmvsnet/nn/functional.py",
+    "fastmvsnet/nn/conv.py",
+    "fastmvsnet/nn/freeze_weight.py",
+    "fastmvsnet/functions/functions.py"
+  ],
+  "semantic_python_changes": [
+    "fastmvsnet/utils/feature_fetcher.py",
+    "fastmvsnet/utils/torch_utils.py",
+    "fastmvsnet/utils/preprocess.py",
+    "fastmvsnet/utils/io.py",
+    "fastmvsnet/nn/conv.py"
+  ],
+  "missing": [],
+  "skipped_unsafe_links": [
+    "FastMVSNet-ccb686dda2717613c67d8a289dfe7b2aeb60e2fd/data"
+  ],
+  "date_utc": "2026-10-31",
+  "network": "server direct, proxy environment removed, curl --noproxy *",
+  "architecture_replaced": false,
+  "behavior_changes": {
+    "fastmvsnet/utils/feature_fetcher.py": "three grid_sample calls explicitly align_corners=True, consistent with existing (W-1)/(H-1) coordinates; historical PyTorch implicit default not pinned by author"
+  },
+  "remaining_ast_differences": "docstring whitespace only; model/network AST unchanged",
+  "official_weights_sha256": "6e606835a1bfe5297a1d774e2005f436d0d7af75848973b9182a4ba01d676f19",
+  "tests": {
+    "device": "cpu",
+    "torch": "2.8.0+cu128",
+    "commit": "ccb686dda2717613c67d8a289dfe7b2aeb60e2fd",
+    "image_size": [
+      64,
+      128
+    ],
+    "views": 4,
+    "depth_planes": 16,
+    "parameter_count": 455472,
+    "pretrained": false,
+    "custom_cuda_ops": "none",
+    "epoch_0": {
+      "finite_backward": true,
+      "gradient_parameters": 79,
+      "loss": 3.776409387588501,
+      "depth_shape": [
+        1,
+        1,
+        16,
+        32
+      ]
+    },
+    "epoch_4": {
+      "finite_backward": true,
+      "gradient_parameters": 101,
+      "loss": 5.018721580505371,
+      "depth_shape": [
+        1,
+        1,
+        32,
+        64
+      ]
+    },
+    "native_adapter_max_error": 0.0,
+    "no_label_leakage": true,
+    "checkpoint_exact": true,
+    "four_reference_shape": [
+      1,
+      4,
+      32,
+      64
+    ],
+    "pixel_center_ray_consistency": true,
+    "native_sampler_identity_backward": true,
+    "official_checkpoint_strict_load": true,
+    "elapsed_s": 1.2715780455619097,
+    "status": "passed"
+  },
+  "real_validation_forward": {
+    "method": "fast_mvsnet",
+    "device": "cpu",
+    "pretrained": "author_DTU_complete_checkpoint",
+    "load_targets": false,
+    "samples": [
+      {
+        "dataset": "TartanAir_forest",
+        "split": "val",
+        "index": 0,
+        "image_shape": [
+          1,
+          4,
+          3,
+          256,
+          448
+        ],
+        "depth_shape": [
+          1,
+          1,
+          128,
+          224
+        ],
+        "finite": true,
+        "all_positive": true,
+        "depth_range_from_train_config": [
+          0.11094082031250001,
+          356.3400000000547
+        ],
+        "manifest_sha256": "f575ca23de52e90428d471a0290ae04be0e20aad509cf8c198b054a48fdf108d"
+      },
+      {
+        "dataset": "VKITTI2",
+        "split": "val",
+        "index": 0,
+        "image_shape": [
+          1,
+          2,
+          3,
+          256,
+          448
+        ],
+        "depth_shape": [
+          1,
+          1,
+          128,
+          224
+        ],
+        "finite": true,
+        "all_positive": true,
+        "depth_range_from_train_config": [
+          0.78,
+          464.7243750001188
+        ],
+        "manifest_sha256": "9e5c4d3b58ecd312359e06bc0d9e0a57800fa03135c4a4867abe91a0c0ab3b7a"
+      }
+    ]
+  }
+}

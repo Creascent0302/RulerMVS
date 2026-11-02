@@ -1,0 +1,64 @@
+{
+  "root": "/data/liuzonghao_data/dataset/MatrixCity_street",
+  "source_repository": "BoDai/MatrixCity",
+  "scope": [
+    "small_city/street/test/small_city_road_outside_test/transforms.json",
+    "small_city_depth/street/test/small_city_road_outside_test_depth.tar",
+    "small_city/street/test/small_city_road_outside_test.tar",
+    "small_city/street/train/small_city_road_outside/transforms.json",
+    "small_city/street/train/small_city_road_outside/transforms_origin.json",
+    "small_city_depth/street/train/small_city_road_outside_depth.tar",
+    "small_city/street/train/small_city_road_outside.tar"
+  ],
+  "files": [
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city/street/test/small_city_road_outside_test/transforms.json",
+      "output": "raw/small_city/street/test/small_city_road_outside_test/transforms.json",
+      "bytes": 450837,
+      "sha256": "0df75fbbe21c900ed9999ee1141c9a4e5903b7730f57bc13c61b721e6b64056c",
+      "official_git_blob_sha1": "cd13c6eabef0d652b527a0e33660d4b009e03616"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city_depth/street/test/small_city_road_outside_test_depth.tar",
+      "output": "archives/small_city_depth/street/test/small_city_road_outside_test_depth.tar",
+      "bytes": 84817920,
+      "sha256": "cd5fecbe5b3bdfb606301f0f768c8a939e17fb52dc22da747f028a0bca3279e7",
+      "extract_to": "raw/small_city_depth/street/test"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city/street/test/small_city_road_outside_test.tar",
+      "output": "archives/small_city/street/test/small_city_road_outside_test.tar",
+      "bytes": 765281792,
+      "sha256": "2ed5b626ae2159095302d50303699c87ea214fcfcdd3b0948b6f44268a9fa2ef",
+      "extract_to": "raw/small_city/street/test"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city/street/train/small_city_road_outside/transforms.json",
+      "output": "raw/small_city/street/train/small_city_road_outside/transforms.json",
+      "bytes": 2721330,
+      "sha256": "4778d12a341e521cd93e8e3c514f8bcdec311d994262e16303f3fb4bc974d3b8",
+      "official_git_blob_sha1": "0bf5d42272cfd78a83780c794492fd39e442bc4f"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city/street/train/small_city_road_outside/transforms_origin.json",
+      "output": "raw/small_city/street/train/small_city_road_outside/transforms_origin.json",
+      "bytes": 4685531,
+      "sha256": "7424b5f8ff63685986239a8141fba85a88a11216c46a6114de13406c4a688a7b",
+      "official_git_blob_sha1": "496e9196b492a5072a7941cdd730ce25629273df"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city_depth/street/train/small_city_road_outside_depth.tar",
+      "output": "archives/small_city_depth/street/train/small_city_road_outside_depth.tar",
+      "bytes": 755240960,
+      "sha256": "d3be6f7325814547407e71574d22b21883ba75027790b11f8eed795c8c2429d3",
+      "extract_to": "raw/small_city_depth/street/train"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/BoDai/MatrixCity/resolve/main/small_city/street/train/small_city_road_outside.tar",
+      "output": "archives/small_city/street/train/small_city_road_outside.tar",
+      "bytes": 8386287616,
+      "sha256": "c276c57b0c989c5c14ee4adb1a8ce5a3f2517d2b4cb6a9e8e11a749a4a10152f",
+      "extract_to": "raw/small_city/street/train"
+    }
+  ]
+}

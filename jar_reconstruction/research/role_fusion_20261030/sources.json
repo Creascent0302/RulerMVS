@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-30",
+  "scope": "按职责融合与粗细判断交接：已阅读原始论文和当前源码；文献结论不等于本项目已实现收益。",
+  "papers": [
+    {
+      "title": "MVSAnywhere: Zero-Shot Multi-View Stereo",
+      "paper": "https://arxiv.org/html/2503.22430v1",
+      "relevant_principle": "单目信息参与代价体压缩及后续多阶段解释，而非只在末端混合深度。",
+      "boundary": "本项目不引入其融合ViT、DPT或Hero任务权重；现有标尺候选和解码主体保留。"
+    },
+    {
+      "title": "Visibility-aware Multi-view Stereo Network",
+      "paper": "https://arxiv.org/abs/2008.07928",
+      "official_code": "https://github.com/jzhangbs/Vis-MVSNet",
+      "relevant_principle": "逐源匹配不确定性用于证据聚合，避免被遮挡源支配代价。",
+      "boundary": "当前context原型没有完整pairwise depth/uncertainty网络；新权重未被认证为真实可见性。164已有遮挡允许集合监督仅小收益，不能重复同一实验冒称新机制。"
+    },
+    {
+      "title": "Stereo Anywhere: Robust Zero-Shot Deep Stereo Matching Even Where Either Stereo or Mono Fail",
+      "paper": "https://arxiv.org/html/2412.04472v1",
+      "project": "https://stereoanywhere.github.io/",
+      "relevant_principle": "单目与双目都可能失败，互补融合必须允许拒绝不可靠的一方。",
+      "boundary": "当前不复制其双代价体、法线相关、GRU和单目尺度配准；透视幻觉也意味着不能将强单目特征当真值。"
+    },
+    {
+      "title": "Diving into the Fusion of Monocular Priors for Generalized Stereo Matching",
+      "paper": "https://arxiv.org/html/2505.14414v1",
+      "official_code": "https://github.com/YaoChengTang/Diving-into-the-Fusion-of-Monocular-Priors-for-Generalized-Stereo-Matching",
+      "relevant_principle": "隐式特征融合与直接深度融合各有优化和尺度障碍；相对局部顺序是一种跨表示的接口。",
+      "boundary": "其二值局部顺序引导和全局配准是已有方法，本轮未实现这些模块。未来如使用应显式归因，并验证非平行多相机/光轴深度条件。"
+    },
+    {
+      "title": "Attention Concatenation Volume for Accurate and Efficient Stereo Matching",
+      "paper": "https://arxiv.org/abs/2203.02146",
+      "relevant_principle": "匹配相关性与内容信息可以分工：利用相关线索控制内容体信息，而非让两者无条件混合。",
+      "boundary": "本轮context是单目条件化既有pair可靠性，不是ACV复现；不使用其patch聚合或完整代价体架构。"
+    },
+    {
+      "title": "Deep Stereo using Adaptive Thin Volume Representation with Uncertainty Awareness",
+      "paper": "https://arxiv.org/abs/1911.12012",
+      "relevant_principle": "前一阶段的不确定性应影响后续局部搜索，而不是把早期判断完全抛弃。",
+      "boundary": "该论文主要研究采样区间，本轮建议的是细层选峰的显式质量继承；不能将自己的log-opinion pool说成论文已验证模块。133缩半径已失败，不重复相同收缩。"
+    }
+  ],
+  "implemented_context": {
+    "files": ["context.py", "test_context.py"],
+    "description": "保留encoder和query/key/pair值。将对齐的四层单目bank拼接为512维context，零初始化1x1投影到64维，和归一化pair evidence按4头做双线性交互，0.5*tanh有界地修正source reliability；独立512到4的零投影修正null。",
+    "parameters_at_C64_raw128": 34884,
+    "formula": "delta_l_i,k,h = 0.5*tanh(<P_h(m_xy), LayerNorm(e_i,k)_h>/sqrt(16)); delta_null_h = 0.5*tanh(N_h(m_xy))",
+    "zero_init": "P,N的weight/bias全0，安装不改变旧参数、RNG、描述子或初始函数。",
+    "checkpoint": "context必须显式作为whole-source checkpoint输入；forward作用域内临时hooks每次安装并finally移除。",
+    "limitations": "pair evidence本来包含几何，因此此方法不保证无纹理时不会产生几何偏置；不把attention权重解释为已校准可见性概率。",
+    "actual_cpu_tests": "模块开发阶段5项通过，0.039秒，2026-10-30；随后完成集成GPU冒烟、正式短训与补充VAL，实际结果见research_memory实验171–173。"
+  },
+  "suggested_prior_pool": {
+    "status": "carry.py已实现HandoffGate，并在variants.py集成；GPU实验和训练取舍见research_memory实验171–173。",
+    "inputs": "p_c为SubrayTransport中选中4个粗候选质量归一化；s_gj为原fine 4组x3点logit；q_f(g)=softmax_g(logsumexp_j(s_gj))",
+    "formula": "s'_gj = s_gj + eta*(log p_c(g) - log q_f(g))",
+    "derivation": "0<=eta<=1时组质量为normalize(q_f^(1-eta)*p_c^eta)，等价于最小化(1-eta)KL(p||q_f)+eta KL(p||p_c)。组内条件分布softmax_j(s_gj)保持不变。",
+    "semantics": "这是假设组标签的判断池化，不是对相同RGB的独立似然相乘，也不是物理表面后验或严格互斥深度区间的质量守恒。",
+    "difference_from_experiments_131_135": "不添加组三点联合MLP、不修改offset；明确补回曾被丢弃的coarse分数，并区分组间选峰和组内细化。",
+    "complexity": "O(12*H*W)，无额外投影、ViT或3D卷积。",
+    "risks": "粗层错误会被保留；候选组可能重叠或重复；门控质量不是已认证置信度，不按TEST搜索alpha。",
+    "implemented_gate": "候选特征按detach fine全概率池化，加粗/细组熵、两分布内积、裁剪KL、平均null和源合法比例6量；Conv(C+6到16)+GELU+Conv16到1，sigmoid门控。所有门控输入detach，粗组质量detach，池化中的fine logq保持梯度。",
+    "gate_initialization": "最后weight=0、bias=-2，初始eta约.1192029，明确不是恒等。C64新增1153参数。",
+    "numerics": "log运算FP32；全零prior退为均匀，零组质量取1e-8地板并归一；K1熵归一分母使用log2；零源合法比例为0。"
+  },
+  "rejected_shortcuts": [
+    "直接把coarse与fine分数相加并声称贝叶斯：同RGB和单目bank被重复使用，不满足独立观测条件。",
+    "再添加更大的组三点MLP：131–135已有小预算和较大样本反证，需改变证据表示或判断职责。",
+    "把单目特征统一写入matching descriptor：167–169显示域冲突，且跨相机条件会改变描述子可比性。",
+    "用投影合法与否硬删全部单目信息：134单例有益但跨域退化，合法性不等于对应正确。"
+  ]
+}

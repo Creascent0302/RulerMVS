@@ -1,0 +1,20 @@
+{
+  "root": "/data/liuzonghao_data/dataset/MatrixCity_street",
+  "reference_slot": 2,
+  "validation_fraction": 0.1,
+  "validation_axis": 0,
+  "geometry_groups_per_split": 8,
+  "splits": {
+    "train": {
+      "rgb_directory": "raw/small_city/street/train/small_city_road_outside",
+      "depth_directory": "raw/small_city_depth/street/train/small_city_road_outside_depth",
+      "transforms": "raw/small_city/street/train/small_city_road_outside/transforms.json",
+      "transforms_origin": "raw/small_city/street/train/small_city_road_outside/transforms_origin.json"
+    },
+    "test": {
+      "rgb_directory": "raw/small_city/street/test/small_city_road_outside_test",
+      "depth_directory": "raw/small_city_depth/street/test/small_city_road_outside_test_depth",
+      "transforms": "raw/small_city/street/test/small_city_road_outside_test/transforms.json"
+    }
+  }
+}

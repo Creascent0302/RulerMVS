@@ -1,0 +1,909 @@
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_001.zip
+  out=ai_001_001.zip
+  checksum=sha-256=1c2504e6fb7731d0cd2964da28ec35012963a56d26220ffc0fcedde4819c9b96
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_002.zip
+  out=ai_001_002.zip
+  checksum=sha-256=13c9e7c0a98a6e93c12a26844e216afdf56666a52d16d761a83481181ac3650e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_003.zip
+  out=ai_001_003.zip
+  checksum=sha-256=f57e7cc46194c61a07610b1dd19902436e76f4ef375a0bed1879bae72922cbf6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_004.zip
+  out=ai_001_004.zip
+  checksum=sha-256=ee9ec55df0473c81221bba171ce10ada6be5ad61e688ec6154f2ced2e88ec9bb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_005.zip
+  out=ai_001_005.zip
+  checksum=sha-256=6a256e529686242fb6fbbec5bfe3dc4e2730c81d29622199184a9f34fd6d508e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_006.zip
+  out=ai_001_006.zip
+  checksum=sha-256=969ce165973a3676cd77936a93cee5106a7a79694d40b8535499d19cbae561ea
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_007.zip
+  out=ai_001_007.zip
+  checksum=sha-256=606b03d97b9b7ae241adb2233b5d8b2cfdc80753004a3fb515849d35e896d9e2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_008.zip
+  out=ai_001_008.zip
+  checksum=sha-256=961c4dfada8722b0934a0e130dd3a168067f7e871536435172420d66515d18d7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_001_009.zip
+  out=ai_001_009.zip
+  checksum=sha-256=9e4a49c6b155fddbf56397f246b9c6ff92b586c2f5c0835594dd42420db386b6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_001.zip
+  out=ai_002_001.zip
+  checksum=sha-256=97d3c6df8a30db88ee3e69a9723ae01046935a7c4cd69342a38e4e9c8d7a16de
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_002.zip
+  out=ai_002_002.zip
+  checksum=sha-256=3455820ada2f9ce57d3f0990377d0b8ca77f3e217b196a2124d1ccbbf03ab635
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_003.zip
+  out=ai_002_003.zip
+  checksum=sha-256=86d36fee36d61dc97abdce1a0ed114e873d3a8d5291c99fea173674edb93afe7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_004.zip
+  out=ai_002_004.zip
+  checksum=sha-256=0453bcf1c385a3bb3625d91cde33d0b62383c7854302ccdd75c03e5fc542d522
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_005.zip
+  out=ai_002_005.zip
+  checksum=sha-256=79b4fe95dd78c7bda93733cd04a6bd5c5d669f26b8b3a081117349352f789b8d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_006.zip
+  out=ai_002_006.zip
+  checksum=sha-256=f46911947a5d777dab759b6dfe2410ae63f41b6d38f52f48cbaea7b61ffd1e8e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_007.zip
+  out=ai_002_007.zip
+  checksum=sha-256=7bb218ed867da441fad884526ad122e65e826ff30782ec2421c2219aa734748d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_008.zip
+  out=ai_002_008.zip
+  checksum=sha-256=03924dea308a8a6e9bb9b44f56c1e2c8834fc0cb5aba1a6ca582180b9a493da1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_009.zip
+  out=ai_002_009.zip
+  checksum=sha-256=7607915eb5902385839206a5c6ba70baec35d6fbfb0d5970a35d8fe2a067aaeb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_002_010.zip
+  out=ai_002_010.zip
+  checksum=sha-256=f4693c46d31cf0e068f446f1b051d00d39d3b8c77036c33168901cd5d104a7e7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_001.zip
+  out=ai_003_001.zip
+  checksum=sha-256=d9fafba31679790323211d643109936a0d0c98d8a2084c63f404d1ed2fb82c64
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_002.zip
+  out=ai_003_002.zip
+  checksum=sha-256=4a556e68d3db9188900ba1fffdfef8a719f289028e0d8fa4bd3839c05c1f17c1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_004.zip
+  out=ai_003_004.zip
+  checksum=sha-256=c6d156870eef8432934858ba3f747774fdc1ed97b1bc1fa25fbf191c3f9475e8
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_005.zip
+  out=ai_003_005.zip
+  checksum=sha-256=39761e74d84d649ea686a20862a5eee018cb4a4c202a53e49ac3a1528c1c106c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_006.zip
+  out=ai_003_006.zip
+  checksum=sha-256=051eccc4128cae9ef23eac9c45f8bea34f4bedef99b4028632aaedaa5a8e3315
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_008.zip
+  out=ai_003_008.zip
+  checksum=sha-256=a8f628de03019bc212cd94c7967333eee7c8fd59f47201dbd3fc898695c51a65
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_003_009.zip
+  out=ai_003_009.zip
+  checksum=sha-256=db39b2b2357b8ffbc4806ec2e69e81a14f8edf679fbdbada44be14526fad95cb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_001.zip
+  out=ai_004_001.zip
+  checksum=sha-256=4395b70f4d86bce8057940e9d39db0ba46daf40ad8e5705e5d7f955fbd1c2e29
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_002.zip
+  out=ai_004_002.zip
+  checksum=sha-256=bfc0ecf4a71308f51ccf46b5981ecdd355559bd3a81bdd800fe3221af5c67e03
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_005.zip
+  out=ai_004_005.zip
+  checksum=sha-256=288dc942a1e67639cc84a1798ebab618e11aad8323dedfdf836ea7585d0a3a18
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_006.zip
+  out=ai_004_006.zip
+  checksum=sha-256=e58de33967073e755e7b9be5218bf8a3ab156958884672b00cb7b869aac0b554
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_007.zip
+  out=ai_004_007.zip
+  checksum=sha-256=2840b7e0015607a67b0e2b4a59488d464eb71630124db205d62e799965bf7d2c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_008.zip
+  out=ai_004_008.zip
+  checksum=sha-256=9dcd885f9d070363c1a6b33bbcaeea1fa0712b4cfe2a7fe4f2f8fce410d63fe6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_004_009.zip
+  out=ai_004_009.zip
+  checksum=sha-256=7903a5c81b22128dbb57b760e1a198bc214159ce4fa00ce82b61e274c08cc56d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_004.zip
+  out=ai_005_004.zip
+  checksum=sha-256=77c8fcbc5d55708e7df58edf9fcd5fd28c5265846050bb5d66f401e48ef9d5b8
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_006.zip
+  out=ai_005_006.zip
+  checksum=sha-256=4c5d76cf77debf852a6ad66155c03b0c3c95a826e786f71c2da9af09f571712e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_007.zip
+  out=ai_005_007.zip
+  checksum=sha-256=af0bb40045ee01cd21c917956798a023ad5e38cdc62969fb4749748eab9240fb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_008.zip
+  out=ai_005_008.zip
+  checksum=sha-256=2bc763c4241c7644bef6c64ff552c324083cf7f663b551ced0ce33dc87c54274
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_005_009.zip
+  out=ai_005_009.zip
+  checksum=sha-256=929ae9a99ff43ca5ff9d12833e7c07ec588ee203ed29a74656f859028803465d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_001.zip
+  out=ai_006_001.zip
+  checksum=sha-256=4e8ff7b876baac6882b17f6b06f30be9d97dfa6be77ba4de239d45b33b9981b6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_002.zip
+  out=ai_006_002.zip
+  checksum=sha-256=10b6dd7a6a7480614ec730d4515ee1be43ca88a0a3469b181303e77082fcb276
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_003.zip
+  out=ai_006_003.zip
+  checksum=sha-256=c7894908bb0ebe5ac4c0ffd836f0c96ca94405634e4cc6a9e790b3048f8df6e1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_004.zip
+  out=ai_006_004.zip
+  checksum=sha-256=eabd0d280a54c133cc9ff4a7309ecebf4e9ae80a29cdb1d431a1aadf86c61bb4
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_006.zip
+  out=ai_006_006.zip
+  checksum=sha-256=47ba8100bc23ccff66d43dfc8f02b50bf74fc37d77e7ea98762cd0be7eee0e48
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_008.zip
+  out=ai_006_008.zip
+  checksum=sha-256=49adaef091f08266889453f214063ce00b0c5e3554b45639ddeac180459fecbe
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_009.zip
+  out=ai_006_009.zip
+  checksum=sha-256=9166b4e24e7e593f322bd6ecea47ab1745f3b44c052e4f248db33cadfd82ec9c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_006_010.zip
+  out=ai_006_010.zip
+  checksum=sha-256=6fb5c86e320ba81f8a45f867c2d478acfe1abf34ea047060fb0452653873d0aa
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_002.zip
+  out=ai_007_002.zip
+  checksum=sha-256=72bade8bac3eb026cfd6e99fead434d3a7516b1dc05188e1888a622f088f56c6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_004.zip
+  out=ai_007_004.zip
+  checksum=sha-256=0270c317b96e6df4d430005a0e322da7537542eafc18f4efb381b3118c06545b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_005.zip
+  out=ai_007_005.zip
+  checksum=sha-256=9e15a030c90286a40e5579a259d1c28b5d12ac92dba65426ea211cce1ac7da8a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_006.zip
+  out=ai_007_006.zip
+  checksum=sha-256=109a6ecaee5ff03e5c4d43b360ff08e419941fdea319d3ea169693cdc4e2d02a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_007.zip
+  out=ai_007_007.zip
+  checksum=sha-256=aaad714da6af2b1a4f15dacf97cddea3314e71d0baa64db708e334aa82e90db2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_008.zip
+  out=ai_007_008.zip
+  checksum=sha-256=0856f9106384a98b97dba13e677e4fd459b3916130b72a8e7f408914d34807b6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_009.zip
+  out=ai_007_009.zip
+  checksum=sha-256=649abc7fdaa21edf5efdca9b91c5fc54a287455c839d3c4875bf7ac77469d65c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_007_010.zip
+  out=ai_007_010.zip
+  checksum=sha-256=d77e0cedf865ea0c3af7d850c03fe4a8592ef705baf065d78f546bb94cd6fb30
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_001.zip
+  out=ai_008_001.zip
+  checksum=sha-256=9098b704970199fad4ce862a3a13542c774647f42f752e4794c46a9c8f7a358c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_002.zip
+  out=ai_008_002.zip
+  checksum=sha-256=f87506308c6ccf6ccde296750468c77a9069fb0f6cd7cdc6df930f7eae25e1a6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_003.zip
+  out=ai_008_003.zip
+  checksum=sha-256=d2c6858c557789d7dfdb0dc7a6ccaf1d3cfd71af81933826b32bccf6c2c96b5c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_004.zip
+  out=ai_008_004.zip
+  checksum=sha-256=d392ae49f6417aed8bfbdf82b2d0c8f2f630ed505cef1263ea3790e1c713057c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_008.zip
+  out=ai_008_008.zip
+  checksum=sha-256=e4229cf1b01b23c3df0a0165da84862f84f5fa2008fe84e75edee860f22768f7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_009.zip
+  out=ai_008_009.zip
+  checksum=sha-256=6be6494f97a2e4411748cf8f625410a0696a22cf757d748fc3a06c27eea4a7e4
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_008_010.zip
+  out=ai_008_010.zip
+  checksum=sha-256=75726c08758320847d2c33a16f850b3e89f9914762926e52834133d6571db616
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_001.zip
+  out=ai_009_001.zip
+  checksum=sha-256=7d3949eeed9933eb9c842ae4b10621d0105eb9d339b7ad14cb5c1e896618bd02
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_002.zip
+  out=ai_009_002.zip
+  checksum=sha-256=6d754c6039f44a4a5d142a48c8262cedd4f2e75afa234110d804673676d68a8e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_003.zip
+  out=ai_009_003.zip
+  checksum=sha-256=8690642747428755d2034fc4757d8a6fa9a33e9a76ea9bc4bd9943278a761cf8
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_004.zip
+  out=ai_009_004.zip
+  checksum=sha-256=54449bb88cf80a3685248d7d7072c55966352524b1a7c0e954210507d50efcaf
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_005.zip
+  out=ai_009_005.zip
+  checksum=sha-256=83ea5a064c265cadae404313b03908a734a2a124c7fe313470600ff5bcc1c23f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_006.zip
+  out=ai_009_006.zip
+  checksum=sha-256=add8531cb271e4d28f1db625a50b0aa28a0e45ffcd00b834f95a81f9f612cc1a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_009_008.zip
+  out=ai_009_008.zip
+  checksum=sha-256=ec0ce013c6ef759645748d7e07eef096130faed24a6f2cbde4e417ffdda97a05
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_001.zip
+  out=ai_010_001.zip
+  checksum=sha-256=d45aab26324c1555867910bc6eeec5c05ad6d8583085ff1d23e1e9cc4ee049d9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_002.zip
+  out=ai_010_002.zip
+  checksum=sha-256=d42ebf268a9340cc6e90771556963f111be1f07a1b2f020fd3498d13bed14ea4
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_005.zip
+  out=ai_010_005.zip
+  checksum=sha-256=de05c1a869eef25965401a59973312ecf4089b11f7ddf4a32f75b88cd2c5e027
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_006.zip
+  out=ai_010_006.zip
+  checksum=sha-256=a94124a0511e2170ed9b196a12fd2f65f2bea8bc478be68725c99aed6588d8a7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_008.zip
+  out=ai_010_008.zip
+  checksum=sha-256=7eb96b5dba10728df422380693d691bfbe55c563e1677501bc8461b41995de9a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_010_009.zip
+  out=ai_010_009.zip
+  checksum=sha-256=7277da534f3e7c25bce16e989a993eb89e4640337eadae16a53b6607698feade
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_001.zip
+  out=ai_011_001.zip
+  checksum=sha-256=de2160003f7faaa977e1c78de1c45433db0a1853d03e2f116eed0c5244aa2d27
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_003.zip
+  out=ai_011_003.zip
+  checksum=sha-256=9c59d471cff5ddcb1ee658c68761affdbf2032f5756bad3d6a0b5adcf383e6e1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_004.zip
+  out=ai_011_004.zip
+  checksum=sha-256=7327f2e021eafa6acff4407e09d17ede69188b657cba8df3333ef4dcf7c74a81
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_005.zip
+  out=ai_011_005.zip
+  checksum=sha-256=209d48181c7a8f98cbd5985bb64ec73531af3c7610873d982f144f01f08cd0ed
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_006.zip
+  out=ai_011_006.zip
+  checksum=sha-256=7c8f4563cd660aefada43d06ecef0be0486543aec063c039cd1ddcdf0c7ef2c6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_008.zip
+  out=ai_011_008.zip
+  checksum=sha-256=2e2f6586981e45df67ef322bbf6feb75cf40cf894641d692195ec0a13c87224e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_009.zip
+  out=ai_011_009.zip
+  checksum=sha-256=6e0c89f18416aa28bd01c7f40f11086b98b736a50cb04fac1fa8f4f3a6933570
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_011_010.zip
+  out=ai_011_010.zip
+  checksum=sha-256=31d8a62a155bb2ea48923fbf1b3945394b764191dbc22df542d71a215f81ca75
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_012_001.zip
+  out=ai_012_001.zip
+  checksum=sha-256=993d8637245f0202488c5d998af2a8f8b0266fb95a8baa1e1156af4c51104b82
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_012_004.zip
+  out=ai_012_004.zip
+  checksum=sha-256=ce9fc87fe4218fd80e1e4822fff7ebac456402c204ca20dc59c49da9d2c000c0
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_012_009.zip
+  out=ai_012_009.zip
+  checksum=sha-256=a99345865da401823663d27098fd2c796173bd13b30298872cb0aae62d6cbef6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_012_010.zip
+  out=ai_012_010.zip
+  checksum=sha-256=aa3dfe201d2f8b3d0a68d80fe9140fc58ae245ed10ca26421bc2415419ddba93
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_002.zip
+  out=ai_013_002.zip
+  checksum=sha-256=abcd4d9405cb14287f4f3772755fc09f8b7054bcfb5f3cf7ce74acbf52a7589e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_004.zip
+  out=ai_013_004.zip
+  checksum=sha-256=0ab53f4cfdea54f66d9c945d3b2ea4f953b4e8c8a5cce99857e1d0a754a9f95d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_007.zip
+  out=ai_013_007.zip
+  checksum=sha-256=5592dc2c072b3c50d6e86a7965180e1ea731e3b7e9d60214d643f692d1843263
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_013_009.zip
+  out=ai_013_009.zip
+  checksum=sha-256=3e6ebe574c6682f2098109dda68e006846f85252471d75ba6ba1deefad88c51e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_014_003.zip
+  out=ai_014_003.zip
+  checksum=sha-256=e188320b73a31c08167bb60851f674a5e2bb6e73b2c26b7cf750fa07eafce585
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_014_010.zip
+  out=ai_014_010.zip
+  checksum=sha-256=d0373cc6af5c9164113a16cbb5220ff5f97c8e63cf19c0b61c065969062dc8d4
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_015_003.zip
+  out=ai_015_003.zip
+  checksum=sha-256=f9d31b3a48082f53085773af68992d5908c8e41dfb0d85a72898108e24f51a69
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_015_005.zip
+  out=ai_015_005.zip
+  checksum=sha-256=029c862687ddfe408b5e668b3b1d0e8df49c84689d3b4ab00daa976d4bc39939
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_015_007.zip
+  out=ai_015_007.zip
+  checksum=sha-256=727d259d9a06542616201016b902898b565c52bca5c9f584a3a563848d7188ab
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_015_008.zip
+  out=ai_015_008.zip
+  checksum=sha-256=ab9f639ece3638fd74e992eee514aaaa9495250e9dead799e81c3bcc756804d1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_015_009.zip
+  out=ai_015_009.zip
+  checksum=sha-256=53d9817605783b35cac3e95c480ffee3d8b9d34a5181c34e75ae108e782fc647
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_002.zip
+  out=ai_016_002.zip
+  checksum=sha-256=4fc08d1afe4bca493290d2597462cff52ec6fb233bdae599f54a451025c40ac6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_003.zip
+  out=ai_016_003.zip
+  checksum=sha-256=36f30c6ea4b9bb0ebe6b6e95e4f268445c4a7e20a3d63793d8fc6529c0f593c5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_005.zip
+  out=ai_016_005.zip
+  checksum=sha-256=e9ffc5f0f9d8978a1692648181534a7df9d520100a8fe135b1398cc6980a9778
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_006.zip
+  out=ai_016_006.zip
+  checksum=sha-256=fba3cad3f325dbb8edc0b440ce50430fb59c4887a87509aa0347006a40a65f2a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_009.zip
+  out=ai_016_009.zip
+  checksum=sha-256=0091a7e3e9e622a0c5eb7bc71214aad14525fb43510c398428efb233946dddd2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_016_010.zip
+  out=ai_016_010.zip
+  checksum=sha-256=d6eaeba471f75668c183154220c1edfc97c7837c26257f7983c5a2e16da8ebe7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_002.zip
+  out=ai_017_002.zip
+  checksum=sha-256=cdfb1e7f520aab797fceec551f84d2b7514f670acc92e673df232d446ad41395
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_003.zip
+  out=ai_017_003.zip
+  checksum=sha-256=b787ac7a142f63eb6f83f44f2ecf011c8461dc99194974e67eba5fff3f2937fb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_004.zip
+  out=ai_017_004.zip
+  checksum=sha-256=b04de06576e5989be80e2f148718203e74f8832508d2cbd9299409d765513bb3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_005.zip
+  out=ai_017_005.zip
+  checksum=sha-256=ffa05a57582eabc9acc87a0a7776219a98f776ffa92cdbde4acd0f2b1395d3d6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_006.zip
+  out=ai_017_006.zip
+  checksum=sha-256=7b2d6f5a1b08b351552a3e0fc3640b1727a96c837fe9a4d6487f12bbcca90631
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_008.zip
+  out=ai_017_008.zip
+  checksum=sha-256=230b5780e0576206c9a5f328b3f5be4a967baf4d91501afcc64b5dbf057e266e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_009.zip
+  out=ai_017_009.zip
+  checksum=sha-256=42266526761a9157f3e1e8ef4ff3350f3c55c5b3467bca6ee8a6bf9af5c1136c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_017_010.zip
+  out=ai_017_010.zip
+  checksum=sha-256=f4fbd13d7a234308aab4cfc4d4cbd3020f76a461d2e68b04b56d36ee607a6afe
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_002.zip
+  out=ai_018_002.zip
+  checksum=sha-256=7e4b11f123f340b0a767c43037826131bd60e230d2bb8af299d229338832799b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_003.zip
+  out=ai_018_003.zip
+  checksum=sha-256=8888f52e7cb7479b211685f211fd88db4bfaeb47869a1f4a9318583611595734
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_004.zip
+  out=ai_018_004.zip
+  checksum=sha-256=5df10d18a229458bd22a6b428341cb24316cd63690dfed306c31ff1d89e0784d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_006.zip
+  out=ai_018_006.zip
+  checksum=sha-256=19be2cbeaea675a2d6993fd7b86d224a26a253193d52275d16459b1cc305aff0
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_007.zip
+  out=ai_018_007.zip
+  checksum=sha-256=d8b70b70b5f86c173e3c5446bb86e181af2b4e34a4cced7ef5fdc374b6cc460d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_008.zip
+  out=ai_018_008.zip
+  checksum=sha-256=ca4b56220e09c0dd4c9ae382a1fb7f5c9992793616e18163e6ee568664fae04f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_009.zip
+  out=ai_018_009.zip
+  checksum=sha-256=c1ec24822776d2bbbe50b99d0ad2dc643362e77af46c36d777a029733fe42ea1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_018_010.zip
+  out=ai_018_010.zip
+  checksum=sha-256=050451a143c7c3d40d787de6c4e943c8e6057d5a26f94aa9519c6a6cca91e374
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_002.zip
+  out=ai_019_002.zip
+  checksum=sha-256=06cdce5fa3ca8dad0ab4d55f08c9ee82ea9f485705d56094187f1168ac047e38
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_003.zip
+  out=ai_019_003.zip
+  checksum=sha-256=4c11e0ee727b35f82f0d38f828b2350fd1e4623772f0a4f45169d34cb750185b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_004.zip
+  out=ai_019_004.zip
+  checksum=sha-256=41c16b7063f7e213f05b20763643f894347fb8a7501cd3d20a4deca12a6d2cf1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_006.zip
+  out=ai_019_006.zip
+  checksum=sha-256=c7930052bcd32fa71259df8915b35f8ed2c9d4db3320d4dfa426cd7fbf0d2a8b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_007.zip
+  out=ai_019_007.zip
+  checksum=sha-256=5698f49433c1a8645e2a91393de878397989c748a114e6de3e5c0fe03b0ded94
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_019_009.zip
+  out=ai_019_009.zip
+  checksum=sha-256=5334784a83c9e6201b953a12eaaaebff69f3eaa8ed2f2f83e7430c483c8337af
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_002.zip
+  out=ai_021_002.zip
+  checksum=sha-256=fe9485345c86b4872f93b84e3f558263b2a12bc3d56f0d92b1b4281b758b6e99
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_003.zip
+  out=ai_021_003.zip
+  checksum=sha-256=d22647c1aef7ad96cccac126e5219290b431589847ea485360fe44920c35b20b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_007.zip
+  out=ai_021_007.zip
+  checksum=sha-256=7a03b6eeb4fa26e28db38b4250e073fe3c480f58446e9e0ad879148ffb7bad5a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_008.zip
+  out=ai_021_008.zip
+  checksum=sha-256=2ec050c3d6a65c1d121b580535a625ce858872e91b22e573e464db673842693f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_009.zip
+  out=ai_021_009.zip
+  checksum=sha-256=d9131b8e542d8b04baefbe54c059d44c27fe7bede93b4a8aceb9e5d2f8e0fe96
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_021_010.zip
+  out=ai_021_010.zip
+  checksum=sha-256=54b279f68fdaa0fa18d572603752a005c95ae09d79254a9896d33bda350efcc1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_002.zip
+  out=ai_022_002.zip
+  checksum=sha-256=9225823ba85939865cee71de663f35194f5210e3b1b1acb14f597000a7d715f7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_004.zip
+  out=ai_022_004.zip
+  checksum=sha-256=8a2fa156c95e9d4520c28df6ac2756ba4acb19137b21c18f251d2ea35f32a419
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_005.zip
+  out=ai_022_005.zip
+  checksum=sha-256=55d245e1466a3b7ec455210c8283d36d569fba0985fb088a148925f7973e5c5b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_007.zip
+  out=ai_022_007.zip
+  checksum=sha-256=5422658c4a6336384444acf4cd41ea1245a296719a985a79a7fbb61d12358d24
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_022_009.zip
+  out=ai_022_009.zip
+  checksum=sha-256=6dc0a6ad89092672e5f1d2ed75da13b6069564a1a28a6f1f4e69ad7d10d84523
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_001.zip
+  out=ai_023_001.zip
+  checksum=sha-256=074f64fcfbea20233dd2b2fcd7d53c00f6cea8afef0f151ec33800943cb126cd
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_002.zip
+  out=ai_023_002.zip
+  checksum=sha-256=c3bb52f01d743bab6919e4f6add724db5c0e141e442c1acd0f67914d74e22513
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_006.zip
+  out=ai_023_006.zip
+  checksum=sha-256=732df54213cc19478f95f1b6559a7187689475fafab84d04130d5c1a70451f88
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_007.zip
+  out=ai_023_007.zip
+  checksum=sha-256=f2539916728b5873065d7bd82604d47a856d79b678f7a34c1bfac087197faa4b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_008.zip
+  out=ai_023_008.zip
+  checksum=sha-256=67cd6d85099405d43655310d2c4454ad64d1d0dfffba3e2dd21fd733dad5f2e3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_023_010.zip
+  out=ai_023_010.zip
+  checksum=sha-256=d2876d4c26b65586dbde912b1b6cc465cc24b71a186f9f955eed8aa3d5e071e1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_001.zip
+  out=ai_026_001.zip
+  checksum=sha-256=3ca4c71de6be82e9b935d52a9cd929cc17876dace227a5d44866c3538bd911c2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_003.zip
+  out=ai_026_003.zip
+  checksum=sha-256=14863ac9a0c5b6abfaaca1cf7ddc6d903f8acb65eebcc62715486ee69b078f0e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_004.zip
+  out=ai_026_004.zip
+  checksum=sha-256=db73b0ccff4a11dd12cc6e9e038f1fa152774f05fcd14cea715db4104626c087
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_009.zip
+  out=ai_026_009.zip
+  checksum=sha-256=86d01c58095425e299af6dbebb5173ad3e245059e9ef4df2ec6349b3682eb413
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_013.zip
+  out=ai_026_013.zip
+  checksum=sha-256=b7b5542f696742782500ab3579da2866a54e9163f7c5c1e76e07c4a9b4080f0a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_014.zip
+  out=ai_026_014.zip
+  checksum=sha-256=7cc0015c15c8ce2e502c18ed0692edac03fb847daae84c8b6157582fdc79b50f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_019.zip
+  out=ai_026_019.zip
+  checksum=sha-256=29354bb72239c63e08784a53a05f2550409208dd488f640462448454d70c6b74
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_026_020.zip
+  out=ai_026_020.zip
+  checksum=sha-256=169b3500ddbaa92f807b3a5327917c57da3aaf67c7b522d4a85d46030032fd26
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_003.zip
+  out=ai_027_003.zip
+  checksum=sha-256=36bd222d19e87c0b9e8e941d88ec40dd1655b772542311edc523c753a86b4621
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_004.zip
+  out=ai_027_004.zip
+  checksum=sha-256=a35ad386b954d4a1bfc22d4a1a399c5927a0791ebed37e244b83e087e31431a7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_006.zip
+  out=ai_027_006.zip
+  checksum=sha-256=e13735cac2cf85d2069ce0959b138237ae02b01149c7239a2f7cfd0fd6ead4ba
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_007.zip
+  out=ai_027_007.zip
+  checksum=sha-256=b0df9b7fdb37e7faa036733c2af0ebde57ae804b94a51bf88e9e60b1669b66a8
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_008.zip
+  out=ai_027_008.zip
+  checksum=sha-256=30fb117ce2704fcdaf18640e8b4327db551fea96285f1661eaaedac0df61d6a5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_009.zip
+  out=ai_027_009.zip
+  checksum=sha-256=9c4ebd124e6725eb886111c9536e9ebadbc33fcccf284750d26b7d01c050e9e6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_027_010.zip
+  out=ai_027_010.zip
+  checksum=sha-256=bb7a258f786c767036dffc73520b49cfebc5916d67b216d9453cf5f783edfbf9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_028_001.zip
+  out=ai_028_001.zip
+  checksum=sha-256=b289f73839ad36d772c46ebd7c0cf3813d12bfe5bf5d58b735860dfdbb8bf598
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_028_002.zip
+  out=ai_028_002.zip
+  checksum=sha-256=777f5b37dd54a4058f8fb6915db9f107e84c3073ce094bcc99edfd8ab16ed725
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_028_003.zip
+  out=ai_028_003.zip
+  checksum=sha-256=a591dd49670cc13be1698fc8bf324af4f2eb51bd9acfd2533c1f055859af8f20
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_028_004.zip
+  out=ai_028_004.zip
+  checksum=sha-256=4b415613f917d6d9ed44cb9f97cbe91c97e4419ccd00fdd0d3400f7a70cb49d1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_028_009.zip
+  out=ai_028_009.zip
+  checksum=sha-256=3c89f7816dcbc2b9803dc48b44dc9fa961b9fda6b5ef748820d5ccf6a01e9b34
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_029_001.zip
+  out=ai_029_001.zip
+  checksum=sha-256=57a8f60ad7190d700cb99eccd4ba4a1bf34ccb8784c43bdae3fedfc5318cf797
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_029_002.zip
+  out=ai_029_002.zip
+  checksum=sha-256=da8bce966b90ae4372205ea27695f47e108071c77ae817dbc910b53b35950bd9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_029_003.zip
+  out=ai_029_003.zip
+  checksum=sha-256=f70669f0d26df6e7225d7d51a71858d3893ae2863da70c6332d376b72554618b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_029_005.zip
+  out=ai_029_005.zip
+  checksum=sha-256=9974df1df54c0c0deea8618c173ee6abd2a7f3f6b17bc945db144a43041056ef
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_002.zip
+  out=ai_030_002.zip
+  checksum=sha-256=0b167da5b22ccba274ddb8551b20ff61e495c0ba2170239c77e0edfadc717886
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_003.zip
+  out=ai_030_003.zip
+  checksum=sha-256=e93231eaa8ca1f755e8ee0ad60c48726a656e6da79f744681e908f47507998f2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_004.zip
+  out=ai_030_004.zip
+  checksum=sha-256=0474ebb842aa637934c4f4f10bbe1dcdd541d3b000d2727741f2f39b921d2ca5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_005.zip
+  out=ai_030_005.zip
+  checksum=sha-256=3d3700313cace811c4b4f02d4f6543b6d134ab0965c32a12f4e76a26c194b03e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_007.zip
+  out=ai_030_007.zip
+  checksum=sha-256=222d2feebf789b0179f563d7e677f835e12a881ae3385b55ab43ad88c431fcc1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_009.zip
+  out=ai_030_009.zip
+  checksum=sha-256=60ac8023e71f98c759b911114984c1c61ac443b4020d4d5b2739d36cd3cbdc53
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_030_010.zip
+  out=ai_030_010.zip
+  checksum=sha-256=62ac30bb3f9533a5680bbd8108cafd2dcbeb635e9d096bd91e151f25b473e351
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_031_001.zip
+  out=ai_031_001.zip
+  checksum=sha-256=0971a434338f5b3276eb65d000633d2f618c9332790d2ad29db3f2b171d00e77
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_031_006.zip
+  out=ai_031_006.zip
+  checksum=sha-256=b9659ae1dbba4797550b2f32970c7b8871785eed1d2826b68cf8e37e49a2634f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_001.zip
+  out=ai_032_001.zip
+  checksum=sha-256=c5596d0cc083d74835d6f3e2b43b01b1df077b92f5aa0bd91aceee079788f6c1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_002.zip
+  out=ai_032_002.zip
+  checksum=sha-256=ef63f31438329aeda3792105f992e9257e8a26bb5b3b3dabcc29ba5eb2df0d36
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_003.zip
+  out=ai_032_003.zip
+  checksum=sha-256=3797958c2bf183c2a5aa1ceb9a255f77cefbcfdcf343e08f692a6e31663511d6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_005.zip
+  out=ai_032_005.zip
+  checksum=sha-256=2b17d8e3b453bf116898be921d01b34bbdcf9e69f55e98a8164054ec8bbca5e5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_008.zip
+  out=ai_032_008.zip
+  checksum=sha-256=3ce37caca26a6a9f1644e82eb7cd58fa6c409c9e8b8a97e850b44e5bdc7a1278
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_032_009.zip
+  out=ai_032_009.zip
+  checksum=sha-256=1ec47792e8bef878c6e87e496e416483d7a3224dc6ede7c0dc8e27b9b5066bbb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_001.zip
+  out=ai_033_001.zip
+  checksum=sha-256=46beacdbf64202d09ca8c5099951463be02d85e18943a670946d8dc4e086dca6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_004.zip
+  out=ai_033_004.zip
+  checksum=sha-256=97df926f9c1fc1dc7bf486990f0d7f9774317a6dc9a943120ed03fc44f34dc36
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_005.zip
+  out=ai_033_005.zip
+  checksum=sha-256=8bf36bc67665c28dfe6235ca3e9cabaf819eeab75aaf2e350aaedb36f8ae1be7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_008.zip
+  out=ai_033_008.zip
+  checksum=sha-256=0707c3fdf77fcd2575ed042bd3eb60b713e843792a7f284784c50b673bedbe36
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_033_009.zip
+  out=ai_033_009.zip
+  checksum=sha-256=ae0b5f1d5989a2e126fcd0884cbd31d25608503581c6613b33040401ecd1eaa7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_034_001.zip
+  out=ai_034_001.zip
+  checksum=sha-256=37d66a43faee2c212662dff89cc0418326323a24ba5b9098edb343675185db74
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_034_005.zip
+  out=ai_034_005.zip
+  checksum=sha-256=80e55e6638fa8e8f676d95bd36c712e52d64971fbfa721be39cdc7e2e6f9503d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_002.zip
+  out=ai_035_002.zip
+  checksum=sha-256=96fbb1ca7ac4d696481c76bddc0a6193d0520cdd4240dbb2125c5564aa93e3a0
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_006.zip
+  out=ai_035_006.zip
+  checksum=sha-256=fe0f4f7892b4ee2c21853c58c06dd302e1a82affa8e70723194e936c7d54a952
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_007.zip
+  out=ai_035_007.zip
+  checksum=sha-256=4a01573674601525242f1fdaf499c046bbad3d4e0256409fb86d683b407b576f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_008.zip
+  out=ai_035_008.zip
+  checksum=sha-256=e38b468f2c77cb52f91a8c815c3a89c23ce48abd4b1a11b3b05071fef929dd92
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_009.zip
+  out=ai_035_009.zip
+  checksum=sha-256=d18f6da4ec712d421bd1db7a03dad81c7527beb75889fdb3ec1de0a65d9cc5ca
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_035_010.zip
+  out=ai_035_010.zip
+  checksum=sha-256=1257a4e42f86ab3405d3d528f2ef0d02fe545680b85fab91e0e755d07829d08f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_001.zip
+  out=ai_036_001.zip
+  checksum=sha-256=276a9a2238012fcd6f34ba0df3928ef19355e3d139cfafac4ba3cc42910d1c83
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_002.zip
+  out=ai_036_002.zip
+  checksum=sha-256=52c821436314705fe1e565dd380e606e11297cdf3744c336605240dc1c9a3729
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_003.zip
+  out=ai_036_003.zip
+  checksum=sha-256=86032af766d44ffc8006603e0465c68606095a2aca5acf431da2458e1e55db7d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_005.zip
+  out=ai_036_005.zip
+  checksum=sha-256=cfd29e912ee237a79a239e5179e25da29915e38f0870d324c5a596854fe40fbc
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_007.zip
+  out=ai_036_007.zip
+  checksum=sha-256=d7e79bc0ae46498d8f08ce30409b8466720e43207595169c8d5fcbd672910da9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_036_010.zip
+  out=ai_036_010.zip
+  checksum=sha-256=7d6753d415a57a42ad141dcbe93fef174b89203675095924b0dd3f340caf2440
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_001.zip
+  out=ai_037_001.zip
+  checksum=sha-256=77de5ea55b7f5a43d48daf6d431d565144a10e46ae8f3eb356f1def7e5030f1d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_002.zip
+  out=ai_037_002.zip
+  checksum=sha-256=f0b0d54982fbcceefd8e86fb8fa0a4b8f4d967054ce064abebc9c456dae529e1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_003.zip
+  out=ai_037_003.zip
+  checksum=sha-256=d5ab607d391e6259bb491f5060cfbad95c18beee4bd156b26469c36f4de8f8a5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_004.zip
+  out=ai_037_004.zip
+  checksum=sha-256=df66b59853fda7006060f3678c103463b3cd09b4e3f38357c1a7cca8f9824228
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_005.zip
+  out=ai_037_005.zip
+  checksum=sha-256=19a112aff67a0fa9e66d2943769cea6b02bcfd2e170bec92cdbb976c63d9cfbf
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_006.zip
+  out=ai_037_006.zip
+  checksum=sha-256=e1c57dd48734b70732683de17e254c9df60f9c794d97bf6ad37e87a660118baf
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_007.zip
+  out=ai_037_007.zip
+  checksum=sha-256=b4fc09c5a7f8a070a257f205548c7d293e6094cb4806d574f5bad38d8c56f247
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_008.zip
+  out=ai_037_008.zip
+  checksum=sha-256=04d53872c88cf22e919790de4a5dac8bd5f036d8aee0180be755b1367bf51214
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_037_010.zip
+  out=ai_037_010.zip
+  checksum=sha-256=29b672a8d0eee824ff01f8eb6bfac68cdf2b32bb3912ac642b56591c4484185d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_038_004.zip
+  out=ai_038_004.zip
+  checksum=sha-256=db75c7274fb0ab42d83b389d9df4c1f27c02a1666ecd33ed48f42deadb79e5d3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_004.zip
+  out=ai_039_004.zip
+  checksum=sha-256=e4be65e5862ad35d6dbeb178b076ffc8b7643a48de725216f826b2cf4bf53a1f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_005.zip
+  out=ai_039_005.zip
+  checksum=sha-256=b75e950f245e050060274649b9c2517b33c0228c6a22109d9f6b54b6c5782ad3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_007.zip
+  out=ai_039_007.zip
+  checksum=sha-256=53c29bab95eeb55ad11a73ae9063db35537413737340b1b408108d361f401395
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_008.zip
+  out=ai_039_008.zip
+  checksum=sha-256=7e73d8fb35d2b501f3e4bf4d579e9abe1ddff2885340b74ff879ceca731f0689
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_009.zip
+  out=ai_039_009.zip
+  checksum=sha-256=7d7702db0f26d789cb3a0b46dc49aa6b445cecee3bcf275fe8787275c6162a7d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_039_010.zip
+  out=ai_039_010.zip
+  checksum=sha-256=b0abb007b33fd876d3a2f62acd3ab9edd7aa20aa296fdf6ce85462849f895dce
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_041_001.zip
+  out=ai_041_001.zip
+  checksum=sha-256=d8b06cf8a31e918962a808f5d10b38c4c6525f4778118fa13e00d1507e45568b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_041_005.zip
+  out=ai_041_005.zip
+  checksum=sha-256=3d635c8f7f1a2785f951c899cc77b5b027f11b4f4a8c8e8d42fc3206423fe135
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_041_009.zip
+  out=ai_041_009.zip
+  checksum=sha-256=b3e5b2ae2083f2f63c9903c87bf59acb33b6918b2a6c32ced29e0a044f5352de
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_042_001.zip
+  out=ai_042_001.zip
+  checksum=sha-256=d72e4a99aa10b4e40a7acc94d822f1b3880305dc750f9610de039eb8e6e401bc
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_042_002.zip
+  out=ai_042_002.zip
+  checksum=sha-256=e08c56a3873d9f773de6fe283bbf290483b2a88178daff1319979c7441e42210
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_042_003.zip
+  out=ai_042_003.zip
+  checksum=sha-256=2273a41f2c4c4e17a04bb7920bc1331caf00ce12a22ce2c10d7bb8193da6cf95
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_042_004.zip
+  out=ai_042_004.zip
+  checksum=sha-256=2b1d1dbd95e133a2de0cbd372156bae4b99232ab4a7faf5a3993afc48acc734b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_042_005.zip
+  out=ai_042_005.zip
+  checksum=sha-256=b4a6c1e5cea61dce49a6420baaa14ee94e8d681ec90d26ca206c23cd60deab61
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_002.zip
+  out=ai_043_002.zip
+  checksum=sha-256=37a3200556fbd25cc776112b778cc26117f9679801bfe575aa03ef6e12a08806
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_003.zip
+  out=ai_043_003.zip
+  checksum=sha-256=1f21e730f962b7f8c51cb8e2d54c277bd363e8e9496101d360571a823b574af3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_004.zip
+  out=ai_043_004.zip
+  checksum=sha-256=653cc2c25e332f4f5547561267154b81e385c06f7af1bb20845760a73c419300
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_005.zip
+  out=ai_043_005.zip
+  checksum=sha-256=5b8b98591daf49c2c55b19d7d7e8ba7431d1b0026163cbe960125f25d980247a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_006.zip
+  out=ai_043_006.zip
+  checksum=sha-256=6478d62aa4b1b8eaba57edd9682a3df4969dcede4415ae797681f5770b41ad62
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_007.zip
+  out=ai_043_007.zip
+  checksum=sha-256=893ff38d6f16cf63bbb9d31f5a95cb6b6a878cfdae4442d669a8c21334f27e2a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_008.zip
+  out=ai_043_008.zip
+  checksum=sha-256=a723ca7937e9292f726decddb98e3e764ac32d8d5dd6ec9e5fd8ef9500b8901d
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_009.zip
+  out=ai_043_009.zip
+  checksum=sha-256=b549985ccd634b00fb5dda038ad494a9ee50ad41e2c421fff5f05b309d19ac1b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_043_010.zip
+  out=ai_043_010.zip
+  checksum=sha-256=77fac1b185b0a76dcd0ed387e1d8b834e191d4fa3eb1bbe4d8932d0eff3584ab
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_002.zip
+  out=ai_044_002.zip
+  checksum=sha-256=c49f0532eb76c351237e73fcc77b56149375247c7b2c0dc87f2f1b0ceaecccad
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_005.zip
+  out=ai_044_005.zip
+  checksum=sha-256=3528d6dc8aa8ae9c928362561ab66e3cd2ac7e4876aee3c6cb454a495a245113
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_006.zip
+  out=ai_044_006.zip
+  checksum=sha-256=c12dd22fbc673e5811321de5366479ded99d0a5ec81a5f7b0468bfb4fbab1fa1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_007.zip
+  out=ai_044_007.zip
+  checksum=sha-256=7d59ffcf09f7d4063ce7ea3dca2899a342c7f9703fb83a2ea89b11683c0ee6f8
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_009.zip
+  out=ai_044_009.zip
+  checksum=sha-256=df68dcb23c6318ddbf996a731da5e8643d8554e66c904da08c156f09d6482bda
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_044_010.zip
+  out=ai_044_010.zip
+  checksum=sha-256=7bfe7c9bef2d74a21a3fa639d44b32cc09ca523a4d30683b0b7a6f906ea1daea
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_045_001.zip
+  out=ai_045_001.zip
+  checksum=sha-256=4db8a37d35cb2005c1ddfc72a8bd204710735eff5ea67d562bbbe2e951886d7a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_045_004.zip
+  out=ai_045_004.zip
+  checksum=sha-256=ef4bbe42611dae0205c3ea03d3683d31ef897c6bad9670b8eed75abfb93feafb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_045_005.zip
+  out=ai_045_005.zip
+  checksum=sha-256=6a32cc96a143b344dca1a7bd952c47880f6d0b7bac0ab423fbc56fed1729e7de
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_045_006.zip
+  out=ai_045_006.zip
+  checksum=sha-256=946137a7fb25beb01ba48b495d262d9e008b463e5d5a1ab141f3a0a733ca80a2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_045_010.zip
+  out=ai_045_010.zip
+  checksum=sha-256=5a2f5600f27a8dbdfef22f44699f0ffe70ca91ecfc4b03ef101fab5382e4839c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_046_002.zip
+  out=ai_046_002.zip
+  checksum=sha-256=b5c9d6c6d1359f3e070c3e98ff300b39f019e144bbeda0909add7e2dd295ab1c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_046_003.zip
+  out=ai_046_003.zip
+  checksum=sha-256=7a6da1e724c81c26937295847899a44c1070fafce0b7233d41e3839a69fa26e6
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_046_004.zip
+  out=ai_046_004.zip
+  checksum=sha-256=20b7fcec62944a121f69a94795a9f5de70d5d62934e963850503b5746ea5d362
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_046_007.zip
+  out=ai_046_007.zip
+  checksum=sha-256=e9ccadc27d9ba3b31bf912df408d104112486b72ca57df47658d05b1fcc530e9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_046_008.zip
+  out=ai_046_008.zip
+  checksum=sha-256=2b3f5b75b6c40f9b2048d5aa94c6ad040580945891683e886d40fcb14e635e43
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_001.zip
+  out=ai_047_001.zip
+  checksum=sha-256=90ae7bb91a2a75409ef1abe794b87efbaba63965090535bed20c6d050e4d0010
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_002.zip
+  out=ai_047_002.zip
+  checksum=sha-256=8e8cfca368a732dce6f8d4da33569cafdb0aa92c5d44b909ebdf55e86c02caa3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_004.zip
+  out=ai_047_004.zip
+  checksum=sha-256=a056bcaa965310cb5ffca54cfea5819473d2945c391c686a97e054a47edef4f7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_005.zip
+  out=ai_047_005.zip
+  checksum=sha-256=0b38abf304a7177d48dcd10d75ded9dbd09ad0d1d8c9e027a5d8097d5c1baa94
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_006.zip
+  out=ai_047_006.zip
+  checksum=sha-256=01e082a2426f8f6c646e35f05c3a7ad7dcd6a6d4e556b17690cab0c6d76918fb
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_007.zip
+  out=ai_047_007.zip
+  checksum=sha-256=a2caf9b71096e980b53330180f07142b3e1babf75301e97bc16ce1a797ee0f57
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_047_008.zip
+  out=ai_047_008.zip
+  checksum=sha-256=3e78f2016009953e1e06db30e18f8b7f38a50de412052e902cc85bbd7eae752c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_002.zip
+  out=ai_048_002.zip
+  checksum=sha-256=5b2f6b1a02e6ac253c3345be587e40336fe3640112424a64ab2d92e8934e22dc
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_003.zip
+  out=ai_048_003.zip
+  checksum=sha-256=566e08fc52f5eba13c2f8efd7e7c73ac413df50e27ebc87d59dc2f6612b2d18c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_004.zip
+  out=ai_048_004.zip
+  checksum=sha-256=5b20561a52f6a3cfb24e40a862b8292be505c6d1bd14e8a8e7460e47e8174483
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_005.zip
+  out=ai_048_005.zip
+  checksum=sha-256=33df35703913189607d0ba1fa3893fd4587944c358cbab8f86944ec8982cbd3c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_006.zip
+  out=ai_048_006.zip
+  checksum=sha-256=bdbf44113866786025295fc0dfe829e60f890945bb108dddeb97f28b89946c24
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_007.zip
+  out=ai_048_007.zip
+  checksum=sha-256=05073bb867f69f94ca01b9c538959cd2405dda677bfcb741e7f1a530567593a7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_048_009.zip
+  out=ai_048_009.zip
+  checksum=sha-256=d4a93ea24d01155ee6d566058f71db1cd87f3cfe7140cf5aaa83276808ef2ef1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_050_001.zip
+  out=ai_050_001.zip
+  checksum=sha-256=a0e7ea3e13b2f35cf0a50d9d70313ddb2ed3cb2411e80102ecabf21e25a4c248
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_050_003.zip
+  out=ai_050_003.zip
+  checksum=sha-256=1cfb4e904a9088e4dcd8429d8b483e62e7112d76e4890bfce6784e1d139b8580
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_050_004.zip
+  out=ai_050_004.zip
+  checksum=sha-256=b937a2ebf1aa2f25fc248b6c4c791c9abaa3a5409a0947feb257fc4cc5484e02
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_050_005.zip
+  out=ai_050_005.zip
+  checksum=sha-256=4734e47e1cead742bcf675524d730364ff6e2d104330d565f4fb5ac51c0f05a1
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_051_002.zip
+  out=ai_051_002.zip
+  checksum=sha-256=7dab59f99413f595178371a8bd98d10a9a4178dd570e0e13441331f27a958b18
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_051_003.zip
+  out=ai_051_003.zip
+  checksum=sha-256=69eb8a7b2c45c7c5b190189f0aadadf7f3ddcbd50cd6f614795f33aab3736f65
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_051_005.zip
+  out=ai_051_005.zip
+  checksum=sha-256=374f97adbfba6dac40f8552bd282c868068ed52c3845a9be17e5eaeab273abf5
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_052_002.zip
+  out=ai_052_002.zip
+  checksum=sha-256=954d872430da83256b6529cfe6dc3c0b671253271d4cc5ecad9c666d4f965831
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_052_004.zip
+  out=ai_052_004.zip
+  checksum=sha-256=bfa898d2683542e27c582cbaa4334dec7ebad95bc95dc0840429de97f297c800
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_052_006.zip
+  out=ai_052_006.zip
+  checksum=sha-256=90830d5bc4ab82a646fce06fa74e393df7048e2e5741431cb2cd206766b13cd9
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_052_008.zip
+  out=ai_052_008.zip
+  checksum=sha-256=c445d7f0e6a9fde8aa78f6703f79dcde352519c3a35d5ee026c5a6e37d5f1bc7
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_052_010.zip
+  out=ai_052_010.zip
+  checksum=sha-256=a062fd2f0f118de38c9730e023870a9f7461bef428ededd1c283c968de1c06ff
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_001.zip
+  out=ai_053_001.zip
+  checksum=sha-256=9b2d520dc1d7ef0217c278565f3b2b62a0d9fc1cdeec45cec4496312d9277683
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_004.zip
+  out=ai_053_004.zip
+  checksum=sha-256=4a2a60c879aa932c43f70ac9ec0071e0ea216107e5e05fdc3b7b5648fc873a4e
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_006.zip
+  out=ai_053_006.zip
+  checksum=sha-256=52a0cbf279d1ba19735b5e4083cee2bee21e88fb5cc89e5d5cf5a48fbabf162c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_008.zip
+  out=ai_053_008.zip
+  checksum=sha-256=d8c77064591ff2ea841f2216fb77fa2c0f92cb556b9b0b7cda9fec55c0680790
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_009.zip
+  out=ai_053_009.zip
+  checksum=sha-256=126d718b3bad84f552fc8e4c699ccefa8f183af607d125452409e5b792d7789c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_012.zip
+  out=ai_053_012.zip
+  checksum=sha-256=423681406359736a7cbc947b34d74b8bb9483b27b588208668b4f8735c844757
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_013.zip
+  out=ai_053_013.zip
+  checksum=sha-256=3f98ca314e6a712b88400449ad216508abfff087fd9ab8c0e808ec81b9aefa22
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_016.zip
+  out=ai_053_016.zip
+  checksum=sha-256=2ec4d60e135b9ac4e36a865d8bd6eb5557833c8d2641dd4d89c2336798de91ef
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_017.zip
+  out=ai_053_017.zip
+  checksum=sha-256=b4de85dd1cc2dd5e54845223fda3350348e5f389d5f677217c47a0aa1f644a48
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_018.zip
+  out=ai_053_018.zip
+  checksum=sha-256=84b3dc55816d270c8be51a7d8aec893efc7b948658a8090379b452b8af7945bd
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_019.zip
+  out=ai_053_019.zip
+  checksum=sha-256=19dc29486ba79b2f01a036e14133732d3853816b7b58e56f49e3d20825cb5e5f
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_053_020.zip
+  out=ai_053_020.zip
+  checksum=sha-256=67ec4e48fd9283dfe9d59163127808ccf5b29389936d96de0e5069f8616e49b3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_001.zip
+  out=ai_054_001.zip
+  checksum=sha-256=e36c547f35cfed24e81b58df489f9c642474cbd5ff32f9070777adece2b5a2e3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_002.zip
+  out=ai_054_002.zip
+  checksum=sha-256=bc1fff0c955de04ab0b7230732e944794d7cab51fc126a87f80b51017b7ab6a3
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_003.zip
+  out=ai_054_003.zip
+  checksum=sha-256=52cde07b35839d32c75d8b853bda644689d134a86a3c5e7cf06215bb6471e17a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_004.zip
+  out=ai_054_004.zip
+  checksum=sha-256=952c55e16e8aca8a3ecad5d8f269c510db36366cac6805b49d201bac93cd61d4
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_006.zip
+  out=ai_054_006.zip
+  checksum=sha-256=2366aeeab8a23d98f01ca72a3b275146d1fd06ec14bac64785d32fff47321bf2
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_008.zip
+  out=ai_054_008.zip
+  checksum=sha-256=f01e7e629d575b8a39e42dac23118c8ad514be9cfc32d09522e87470f872ce20
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_009.zip
+  out=ai_054_009.zip
+  checksum=sha-256=6d3f64a04580b93858fdceb388f51006adc907adf2c74772b62bb1da00655b38
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_054_010.zip
+  out=ai_054_010.zip
+  checksum=sha-256=d6974fd281cc41e019dec2c52d0cb84a7494c8a6b28e0173425167a6a026a50b
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_001.zip
+  out=ai_055_001.zip
+  checksum=sha-256=13dfbe3e6d713ba3a62a9a15d2bb1beadb75f2bc072cf0f0d2f4cfcafebd0bdf
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_002.zip
+  out=ai_055_002.zip
+  checksum=sha-256=12c397b51b8a1c24d8172e2bd2852a1cd6bd95ee9929ba7d563adfb313c5bc63
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_003.zip
+  out=ai_055_003.zip
+  checksum=sha-256=0a59cb2ad7e6cd612608851c135e790c56b451ef930d9d836374a40292ba1a4a
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_004.zip
+  out=ai_055_004.zip
+  checksum=sha-256=87898aa180a2b23b83f7958f0d2854d4bc5fda5aa6b09b0774b83b2810cd7e2c
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_005.zip
+  out=ai_055_005.zip
+  checksum=sha-256=5af10012ef9ecc622a241e3fcfe30f3420592f527bfe222ba4b8f29ad30dae53
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_006.zip
+  out=ai_055_006.zip
+  checksum=sha-256=b2e7cb6c0dc251f7f1ce3911deead6688a26b3a6e6fc79a9e094a9b72fe3fed0
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_007.zip
+  out=ai_055_007.zip
+  checksum=sha-256=ef6acbfe10c517ec9c5a5ade6937ccac6a33960c2fd68bea20c2f9bb0a6c9490
+https://modelscope.cn/datasets/OpenDataLab/Hypersim/resolve/master/raw/ai_055_010.zip
+  out=ai_055_010.zip
+  checksum=sha-256=a4bae3eaf52ad2ca674426407d439c3f2a0da3bb7c0879dfe6905cb32514ab6c

@@ -1,0 +1,99 @@
+{
+  "training_root": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery",
+  "training_configs": {
+    "public": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/train_public.json",
+    "carla_new": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/train_carla_new.json"
+  },
+  "reference_audits": {
+    "public": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_full_comparison_20261101/public_carla_transfer/full_test/audit.json",
+    "carla_new": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_full_comparison_20261101/carla_four_references/full_test/audit.json"
+  },
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "seed": 20261101,
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "historical_models": {
+    "v2_best": {
+      "weights": {
+        "public": "runs/active/v2_restart_20261029/public/best.pt",
+        "carla_new": "runs/active/v2_restart_20261029/carla_new/best.pt"
+      },
+      "selection": "既有训练完整VAL-best，固定不变"
+    },
+    "v4_best": {
+      "weights": {
+        "public": "runs/active/ruler_flow_v2_20261031/public/best.pt",
+        "carla_new": "runs/active/ruler_flow_v2_20261031/carla_new/best.pt"
+      },
+      "selection": "既有训练完整VAL-best，固定不变"
+    },
+    "v5_best": {
+      "weights": {
+        "public": "runs/active/rulermvs_v5_20261031/public/best.pt",
+        "carla_new": "runs/active/rulermvs_v5_20261031/carla_new/best.pt"
+      },
+      "selection": "既有训练完整VAL-best，固定不变"
+    }
+  },
+  "public_transfer_models": {
+    "v3_public_transfer": {
+      "weights": "runs/model_releases/RulerMVS-V3/surface_final_20261027/bcb50b06a45f/pretrained.pt",
+      "note": "仅公共权重；CARLA作为未专门适配新CARLA的跨域迁移单独展示。"
+    }
+  },
+  "baselines": {
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    },
+    "patchmatchnet_best": {
+      "kind": "patchmatchnet",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v5_comparison_20261101/patchmatchnet_adapt/training/best.pt",
+      "project_checkpoint": true,
+      "model": {
+        "variant": "patchmatchnet"
+      },
+      "sample_seed": 1701
+    },
+    "diffmvs_best": {
+      "kind": "diffmvs",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v5_comparison_20261101/diffmvs_adapt/training/best.pt",
+      "project_checkpoint": true,
+      "model": {
+        "variant": "diffmvs"
+      },
+      "sample_seed": 1701
+    }
+  },
+  "run_speed": true,
+  "speed": {
+    "gpu": 0,
+    "warmup": 10,
+    "repetitions": 40,
+    "isolated_resources": true
+  },
+  "notes": [
+    "所有主表方法使用相同输入像素、真实相机数及GT；历史训练预算不同，明确保留这一事实。",
+    "V6best只由训练阶段完整VAL选择，V6final固定末步，不按TEST选择。",
+    "主表精度与速度均eager；fast部署另有独立数值一致性与速度实验，不将其速度静默配给eager完整TEST。",
+    "不重新使用其他方法的last/final在TEST上择优；V3单列迁移，且不误称与本轮新CARLA同预算。",
+    "原自动评测在CARLA缺相机VAL冒烟失败：spawn工作进程未注册V6薄适配类。仅修复入口注册，模型、权重、指标、清单不变；新目录保留原失败证据。"
+  ],
+  "deployment": {
+    "data_config": "research/baseline_full_comparison_20261101/configs/speed_data.json",
+    "diagnostics": "runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json"
+  }
+}

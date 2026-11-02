@@ -1,0 +1,15 @@
+{
+  "evaluation_plan": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "output": "runs/active/rulermvs_v6_20261101/full_training/paper_firstpass",
+  "speed_data": "research/baseline_full_comparison_20261101/configs/speed_data.json",
+  "gpu": 0,
+  "seed": 20261101,
+  "warmup": 10,
+  "repeats": 40,
+  "include_v6_fast": true,
+  "historical_audits": [
+    "runs/active/ruler_flow_v2_20261031/verification/equal_pixels/public/full_test/audit.json",
+    "runs/active/ruler_flow_v2_20261031/verification/equal_pixels/carla/full_test/audit.json",
+    "runs/active/ruler_flow_v2_20261031/verification/equal_pixels/carla_other_refs/full_test/audit.json"
+  ]
+}

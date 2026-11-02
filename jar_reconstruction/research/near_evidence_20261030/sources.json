@@ -1,0 +1,211 @@
+{
+  "date_beijing": "2026-10-30",
+  "scope": "近距离误差的概念调研；只记录原论文/官方代码。以下迁移方案是待验证推论，不是已取得性能。TEST偏远不能外推VAL；CARLA VAL偏近，Hyp有源区域也明显落后，不能统一归因缺源或偏远。",
+  "papers": [
+    {
+      "name": "MVSAnywhere",
+      "venue": "CVPR 2025",
+      "paper": "https://arxiv.org/html/2503.22430v1",
+      "code": "https://github.com/nianticlabs/mvsanywhere",
+      "verified_mechanism": "候选代价体先由参考单目特征引导patchification，再在融合ViT多个深度注入单目表示，DPT解码连续深度。单目预训练不等于独立输出头，融合/解码也接受任务训练。",
+      "relevance": "当前V2四层128维bank主要在同像素、候选间被读取，粗候选局部卷积承担空间融合；它没有同等的全局融合ViT或预训练DPT。缺源区域差距可能是单目信息利用与公制约束传播，而不仅编码器有无。",
+      "not_concluded": "不能因当前缺源区域误差大便推断只需复制DPT，也不能把完整Hero换入后称独立架构。"
+    },
+    {
+      "name": "Vis-MVSNet",
+      "venue": "BMVC 2020",
+      "paper": "https://arxiv.org/html/2008.07928v1",
+      "code": "https://raw.githubusercontent.com/jzhangbs/Vis-MVSNet/master/core/model_cas.py",
+      "verified_mechanism": "每个参考-源对分别正则化，深度概率熵经浅层网络得到log不确定性；用Laplace式深度/不确定性联合损失。跨源体融合为归一化的exp(-S)加权平均。",
+      "relevance": "把匹配可置信性与被观测次数区分，避免一个不可匹配源污染所有候选。归一化质量的思想可用于现有null注意力，不必复制每源3D网络。",
+      "not_concluded": "熵不是遮挡真值；重复纹理可能给错误的尖峰，不能把低熵直接认证为几何可见。"
+    },
+    {
+      "name": "STTR",
+      "venue": "ICCV 2021",
+      "paper": "https://arxiv.org/html/2011.02910v3",
+      "code": "https://github.com/mli0603/stereo-transformer",
+      "verified_mechanism": "沿极线匹配序列，以相对位置、attention和最优传输处理对应关系，显式估计遮挡并纳入匹配唯一性。允许不可匹配，而不是强制每个像素占据一个对应。",
+      "relevance": "近距大视差/视野外区域需要不可匹配语义；当前source_valid只认证投影合法，null只有竞争权重而无可见性监督。可借鉴拒绝的训练目标，不能把全局扫描线OT直接搬到未校正的四目阵列。",
+      "not_concluded": "完整STTR匹配的计算和输入几何假设不同，不能按其论文速度外推当前四目。"
+    },
+    {
+      "name": "Token Merging (ToMe)",
+      "venue": "ICLR 2023",
+      "paper": "https://arxiv.org/html/2210.09461v1",
+      "code": "https://raw.githubusercontent.com/facebookresearch/ToMe/main/tome/patch/timm.py",
+      "verified_mechanism": "合并token后使用log token size修正attention logits，以补偿多个相同key合并后softmax质量的变化；官方实现为attn += size.log()。",
+      "relevance": "跨领域数学依据：softmax质量依赖token基数/测度，而不仅匹配质量。当前源+null竞争在候选合法源数变化时具有纯基数效应。可检验观测基数校准，使几何可用槽数不被混同为匹配证据。",
+      "not_concluded": "ToMe是token压缩工作，不是已解决本项目近距偏差的MVS方法；log修正本身不构成首创。"
+    },
+    {
+      "name": "MonSter",
+      "venue": "CVPR 2025",
+      "paper": "https://arxiv.org/html/2501.08643v1",
+      "code": "https://github.com/Junda24/MonSter",
+      "verified_mechanism": "单目相对逆深度先与立体视差做全局尺度/平移对齐，随后立体指导单目逐像素对齐，单目指导立体迭代。共享冻结ViT，并保留单目DPT与立体GRU；全局拟合选取立体视差排序20%到90%区域。",
+      "relevance": "把可观测像素当公制锚，向不良匹配区域传播形状先验。但可在现有bank和候选特征中做轻量锚定，不一定新增完整DPT双分支。",
+      "not_concluded": "单目先验和立体锚都可能错，不能直接采用固定远近分位数当可靠性认证；完整双分支代价不符合本轮优先轻量目标。"
+    },
+    {
+      "name": "Stereo Anywhere",
+      "venue": "CVPR 2025",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Bartolomei_Stereo_Anywhere_Robust_Zero-Shot_Deep_Stereo_Matching_Even_Where_Either_CVPR_2025_paper.pdf",
+      "supplement": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Bartolomei_Stereo_Anywhere_Robust_CVPR_2025_supplemental.pdf",
+      "code": "https://raw.githubusercontent.com/bartn8/stereoanywhere/main/models/stereoanywhere/stereoanywhere.py",
+      "verified_mechanism": "几何相关体与单目法线相关体双路；训练用局部volume rolling/noising/zeroing学习信息源失效时的取舍，并针对镜面使用基于单目可靠性的截断。",
+      "relevance": "训练概念是主动制造一条证据链失效，而非只增加数据重复次数。可在现有候选证据与视觉bank之间做受控局部源破坏，让模型学会何时拒绝、何时保留几何。",
+      "not_concluded": "不照搬镜面截断：当前尚未证明近距偏远来自反光。不能在正式推理输入中用GT补单目，也不能把训练期干预等同自然遮挡标签。"
+    },
+    {
+      "name": "MC-Stereo",
+      "venue": "3DV 2024",
+      "paper": "https://arxiv.org/html/2311.02340v1",
+      "code": "https://github.com/MiaoJieF/MC-Stereo",
+      "verified_mechanism": "围绕多个相关峰查询局部代价而非单峰，逐阶段收缩搜索范围；初始相关体按视差建立，使用多尺度查询处理不确定峰。",
+      "relevance": "当前已有4峰，不能重复以多峰为新概念。可借鉴的差异是让采样按源像素位移控制精度，在粗层用投影等弧长刻度覆盖大近距视差，而不是只按log深度分配候选。",
+      "not_concluded": "需先发现GT附近投影候选间距过大且oracle供给受限；如果正确候选已有而选择错误，增加采样不是主解。"
+    },
+    {
+      "name": "DVP-MVS",
+      "venue": "原论文 arXiv:2412.11578",
+      "paper": "https://arxiv.org/html/2412.11578v1",
+      "code": "https://github.com/ZhenlongYuan/DVP-MVS",
+      "verified_mechanism": "Depth Anything V2深度与Roberts边界经形态学对齐，限制可变形patch不跨深度边缘；用跨视图深度重投影恢复可见区域，再指导patch形变和几何细化。",
+      "relevance": "邻域聚合应具有表面归属约束。若误差集中近距边界，可考虑限制CandidateScaleSpace或凸上采样的跨表面信息迁移，先从已有深度/特征派生归属，不加语义大网。",
+      "not_concluded": "当前V3读出失败、旧凸上采样有益；不能只因边界差就删除上采样或宣布面片必优。"
+    },
+    {
+      "name": "FoundationStereo",
+      "venue": "CVPR 2025",
+      "paper": "https://arxiv.org/html/2501.09898v1",
+      "code": "https://github.com/NVlabs/FoundationStereo",
+      "verified_mechanism": "冻结单目foundation配合side-tuning提取匹配特征；3D轴向/平面卷积与视差Transformer处理候选，搭配百万级合成训练与数据自筛选。",
+      "relevance": "通用表示应被保留并适配，不应在小域过量重复中被任意改写；可比较冻结通用ViT与当前末4层微调的跨域保持。",
+      "not_concluded": "其优势同时包含大规模数据；不能将预训练foundation编码器名字相同视为任务表示相同。"
+    },
+    {
+      "name": "Fast-FoundationStereo",
+      "venue": "CVPR 2026",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wen_Fast-FoundationStereo_Real-Time_Zero-Shot_Stereo_Matching_CVPR_2026_paper.pdf",
+      "preprint": "https://arxiv.org/html/2512.11130v1",
+      "verified_mechanism": "按特征、代价过滤、迭代细化分开压缩：混合先验蒸馏、blockwise架构搜索与GRU结构化剪枝，并补充真实图像伪标签。",
+      "relevance": "说明减法应按瓶颈和信息职责逐段做，而非整网缩小；当前不需要为近距偏差先开展昂贵架构搜索。",
+      "not_concluded": "不能把采用完整baseline教师的蒸馏结果算独立无baseline权重方案；当前用户允许通用初始化但本轮没有授权改变已经登记的无Hero训练口径。"
+    },
+    {
+      "name": "Measurement and Modeling of Depth Cue Combination: in Defense of Weak Fusion",
+      "venue": "Vision Research 1995",
+      "paper": "https://www.cns.nyu.edu/~msl/papers/landyetal95.pdf",
+      "verified_mechanism": "经典决策论：平方误差对应后验均值，绝对误差对应后验中位数；可靠性与线索尺度需要校准。",
+      "relevance": "当前MAP单赢家不直接最小化深度MAE。可用现有12个连续候选及其概率做L1加权medoid，保留候选表面，不跨前后表面平均。",
+      "not_concluded": "不是新的数学发明；只有预测分布合理时才具有真实风险最优性。"
+    },
+    {
+      "name": "Wasserstein Distances for Stereo Disparity Estimation",
+      "venue": "NeurIPS 2020",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2020/file/fe7ecc4de28b2c83c016b5c6c2acd826-Paper.pdf",
+      "code": "https://github.com/Div99/W-Stereo-Disp",
+      "verified_mechanism": "固定候选加连续offset形成Dirac混合，以Wasserstein距离直接监督分布，推理输出mode；避免多峰均值产生前后物体之间虚假深度。",
+      "relevance": "区分分布建模、连续位置与决策读出；当前已有offset，不能说是新概念。",
+      "not_concluded": "该论文采用mode，不采用medoid；不可误引为本项目medoid已有效。"
+    },
+    {
+      "name": "Depth Anything V2",
+      "venue": "NeurIPS 2024",
+      "paper": "https://arxiv.org/html/2406.09414v2",
+      "code": "https://github.com/DepthAnything/Depth-Anything-V2",
+      "verified_mechanism": "合成标注训练教师，以大规模真实图像伪标签训练学生；通用相对深度与后续metric fine-tuning版本分开。",
+      "relevance": "现有初始化提供形状与相对深度表示；只取encoder不等于完整单目模型，也不自动提供米制尺度。",
+      "not_concluded": "不能说大规模先验天然补全m=0的米制GT；需要自有公制监督或可靠锚。"
+    },
+    {
+      "name": "Metric3D",
+      "venue": "ICCV 2023",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Yin_Metric3D_Towards_Zero-shot_Metric_3D_Prediction_from_A_Single_Image_ICCV_2023_paper.pdf",
+      "code": "https://github.com/YvanYin/Metric3D",
+      "verified_mechanism": "canonical camera transformation减少跨数据集焦距与尺度歧义，统一训练后恢复原相机度量。",
+      "relevance": "无源时仍应保留已知参考K，可条件化现有bank，不需第二个单目大头。",
+      "not_concluded": "已知K减少焦距歧义，不消除单目全局场景尺度歧义。"
+    },
+    {
+      "name": "UniDepth",
+      "venue": "CVPR 2024",
+      "paper": "https://arxiv.org/html/2403.18913v1",
+      "code": "https://github.com/lpiccinelli-eth/unidepth",
+      "verified_mechanism": "密集相机表示条件化深度特征，伪球坐标分开射线与Z深度优化，几何不变性损失约束相机相关变化。",
+      "relevance": "本项目应使用已有K而不预测K，可将参考射线条件化到单目候选先验。",
+      "not_concluded": "尚未验证；Hyp有源区域也差，因此不是本轮优先方向。"
+    },
+    {
+      "name": "Towards Unbiased Exploration in Partial Label Learning",
+      "venue": "JMLR 2024",
+      "paper": "https://jmlr.org/papers/volume25/23-0868/23-0868.pdf",
+      "verified_mechanism": "部分标签允许集合的概率质量损失，以及softmax初始化偏向会持续强化既有优势成员的风险。",
+      "relevance": "遮挡否决只排除不允许源，允许可见/未知/null，不把可见当可靠；同时需监测null捷径。",
+      "not_concluded": "本试验使用常见允许集合NLL，不是复现该文新损失，也不声称其理论保证三维深度改善。"
+    },
+    {
+      "name": "Using Multiple Hypotheses to Improve Depth-Maps for Multi-View Stereo",
+      "venue": "ECCV 2008",
+      "paper": "https://carlos-hernandez.org/papers/eccv08_multi_hypo_dm.pdf",
+      "verified_mechanism": "保留多深度假设，以空间一致性和unknown状态改善重复纹理与遮挡造成的误匹配。",
+      "relevance": "后续考虑在已有fine候选上按真实深度进行邻域协商，给选峰增加空间证据。",
+      "not_concluded": "未实现本轮邻域消息；不能将简单平滑当作该文完整MRF或全局最优。"
+    },
+    {
+      "name": "Belief Propagation Reloaded: Learning BP-Layers for Labeling Problems",
+      "venue": "CVPR 2020",
+      "code": "https://github.com/VLOGroup/bp-layers",
+      "verified_mechanism": "把标签问题中的信念传播结构纳入可训练计算。",
+      "relevance": "参考候选状态之间有物理含义的兼容关系，而非将不同像素的top-k序号直接相加。",
+      "not_concluded": "尚未运行此方向，不宣称本项目已有BP实现。"
+    }
+  ],
+  "candidate_concepts": [
+    {
+      "name": "观测基数与证据质量解耦",
+      "mathematical_fact": "m个合法源logit均为a，null为b时，非null质量m*exp(a)/(exp(b)+m*exp(a))随m单调增。当前pooled与显式similarity同时承接该质量。",
+      "proposed_interventions": [
+        "仅将显式similarity除以非null质量，保留融合特征不变，定位评分旁路。",
+        "null += log(m/M)，M为该帧有效源总数，使全源合法候选保持原行为，部分合法候选的纯基数弱势被消除。m=0独立屏蔽。",
+        "每源沿合法候选中心化cosine，区分共同特征背景与真实匹配对比；不与前两项同时启用做首次归因。"
+      ],
+      "required_evidence": "误选远候选的合法源数显著高于GT候选，并且控制真实可见性/边界后仍相关；相同源重复的合成输入能复现分数变化。",
+      "risk": "更多独立源可能确实增加可信度；不能将必要的多视图证据增益误删。只改推理会分布偏移，应做同预算适配控制。"
+    },
+    {
+      "name": "可观测公制锚与不可观测形状的条件传播",
+      "proposed_interventions": [
+        "利用已有候选概率与几何一致性识别公制锚，在现有视觉bank/局部候选交互中传递尺度，不新建完整单目DPT。",
+        "训练期对源证据做局部受控破坏，监督干净与破坏样本的GT深度及拒绝行为；推理不读GT，现有编码/解码复用。"
+      ],
+      "required_evidence": "偏差集中于无真实可见源、低纹理或低观测秩区域，且真实可见区域的初始候选质量明显更好。",
+      "risk": "低置信不等于不可见，传播可能跨表面，单目尺度不可凭空确定；保持unknown语义而不假装新传感信息。"
+    },
+    {
+      "name": "按投影弧长分配候选计算",
+      "proposed_interventions": [
+        "以源像素投影距离而非统一log深度间隔分配有限粗候选；最敏感源可只影响局部预算而不独占所有刻度。",
+        "保留少量全范围探索候选，避免新几何采样器在低重叠/纯旋转时退化。"
+      ],
+      "required_evidence": "近距GT两侧候选的源特征位移较大、连续区间oracle尚好但点采样相关峰漏检；小间距组误差显著更低。",
+      "risk": "每像素非均匀深度刻度破坏现有候选序号卷积的相邻语义，需要同时定义可比较的相对坐标，不能只替换depth_lattice而声称兼容。"
+    },
+    {
+      "name": "损失一致、表面保留的候选决策",
+      "formula": "R_k=sum_j p_j*abs(z_k-z_j); k*=argmin_k R_k; prediction=z[k*]。即离散L1加权中位数/medoid。",
+      "proposed_interventions": [
+        "固定权重仅替换fine读出；coarse供给和上采样不动；报告细候选与最终结果。",
+        "原MAP、现有mode_mean、全候选medoid三组。mode_mean先MAP选组，medoid用全12候选。"
+      ],
+      "required_evidence": "可见源充足且候选oracle明显优于细选择；本轮Hyp诊断符合方向，但不保证干预有效。",
+      "risk": "当前CE目标是最近sampling log-depth，risk为截断log距离；分数不等于已校准continuous-depth后验。重复或挤集候选可偏置质量，不应随意除采样间距。单候选p>0.5时medoid与MAP相同；MAE改善未必带来RMSE或AbsRel改善。"
+    }
+  ],
+  "audit_notes": {
+    "null_calibration": "null+=log(clamp(m,1)/clamp(M,1)); m=M保留原始输出，m=0严格mask所有源且null合法。只消除固定M下同质量合法槽数效应，不保证重复相机或跨帧M改变时不变；不认证似然/可见性。coarse/fine用source_valid.any(D,H,W)可给不同M，必须明确阶段内或跨阶段契约。",
+    "stereo_anywhere_code_difference": "官方stereoanywhere.py rolling用dims=3，noising为局部幅值乘法；不能直接按论文措辞认作候选维加性噪声。",
+    "local_counterfactual_training": "局部置换单个source已采样特征、保留合法mask/K/T/reference bank，让可靠性分支学内容坏而几何合法的拒绝；保留干净样本及等预算干净续训。人工失效不等于自然遮挡标签，推理不增加模块。"
+  }
+}

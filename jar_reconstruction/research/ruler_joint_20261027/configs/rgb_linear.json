@@ -1,0 +1,20 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "cache": "runs/active/architecture_screen_20261026/features",
+  "seed": 20261027,
+  "train_samples_per_domain": 512,
+  "batch_size": 2,
+  "evaluate_every": 448,
+  "lr": 0.0001,
+  "relation_lr": 0.0001,
+  "relation": false,
+  "model_overrides": {},
+  "trainable_modules": [
+    "fine_offset"
+  ],
+  "metric_weight": 0.0,
+  "workers": 2,
+  "device": "cuda:0",
+  "output": "runs/active/ruler_research_20261027/rgb_linear",
+  "save_evaluation_checkpoints": true
+}

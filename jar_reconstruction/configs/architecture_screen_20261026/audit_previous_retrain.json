@@ -1,0 +1,34 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "output": "runs/active/architecture_screen_20261026/retrain_gate_backtest",
+  "mode": "screen",
+  "split": "val",
+  "partition": "development",
+  "device": "cuda:1",
+  "cpu_threads": 2,
+  "seed": 20261026,
+  "development_per_domain": 8,
+  "confirmation_per_domain": 32,
+  "baseline": "previous",
+  "variants": {
+    "previous": {
+      "model_overrides": {},
+      "inference": {"spatial_layout": true}
+    },
+    "new_public": {
+      "checkpoint": "runs/active/public_retrain_latest_20261025/pretrained.pt",
+      "model_overrides": {},
+      "inference": {"spatial_layout": true}
+    }
+  },
+  "tolerance": {
+    "macro_relative_degradation": 0.005,
+    "per_domain_relative_degradation": 0.02,
+    "meaning": "回测固定工程门槛，非统计证明；不改变抽样、种子或容差以获得预期结论。"
+  },
+  "timing": {
+    "datasets": ["TartanAir_forest", "VKITTI2"],
+    "warmup": 8,
+    "repetitions": 30
+  }
+}

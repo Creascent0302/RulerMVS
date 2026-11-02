@@ -1,0 +1,21 @@
+{
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/speed_validation",
+  "gpu": 0,
+  "fast": {
+    "compile_source": true,
+    "compile_fusion": true,
+    "cache_dir": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/inference_cache"
+  },
+  "diagnostics": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json",
+  "phases": {
+    "public": {
+      "v5_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/public_v5/final.pt",
+      "v6_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/public_parent/final.pt"
+    },
+    "carla": {
+      "v5_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/carla_v5/final.pt",
+      "v6_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/carla_parent/final.pt"
+    }
+  },
+  "resume": true
+}

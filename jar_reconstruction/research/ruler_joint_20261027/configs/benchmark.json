@@ -1,0 +1,16 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "decoder_checkpoints": {
+    "relation140": "runs/active/ruler_research_20261027/relation/best.pt"
+  },
+  "baseline_weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+  "cache": "runs/active/architecture_screen_20261026/features",
+  "datasets": ["TartanAir_forest", "VKITTI2"],
+  "device": "cuda:0",
+  "output": "runs/active/ruler_research_20261027/timing",
+  "verify_cache": true,
+  "warmup": 8,
+  "repetitions": 30,
+  "cpu_threads": 2,
+  "seed": 20261027
+}

@@ -1,0 +1,261 @@
+{
+  "schema": "public_pretraining_design_v2",
+  "status": "design_only_not_a_train_config",
+  "date_utc": "2026-10-24",
+  "dataset_registry": "configs/pretraining/public_v1.json",
+  "registry_use": "data roots, manifests, units and view counts only; ignore its old model, training and sampling proposals",
+  "registry_sha256": "5bc0c06fcc347a9d58966fcddd52c8e0f85259adbbd1c5668ffaebd8b7c34b79",
+  "initialization": {
+    "foundation": "Depth Anything V2 Base original encoder",
+    "foundation_weights": "",
+    "matching": "ImageNet ResNet-18 original convolutional backbone",
+    "matching_weights": "",
+    "new_layers": "random",
+    "previous_self_decoder": "not_loaded",
+    "hero_weights": "forbidden_in_self_model",
+    "hero_features_or_distillation": false,
+    "online_download_in_model": false,
+    "encoder_training": "temporary staged freezing, then full fine-tuning",
+    "required_provenance": [
+      "source_url",
+      "version",
+      "sha256",
+      "loaded_keys",
+      "license"
+    ]
+  },
+  "architecture_proposal": {
+    "name": "ruler_direct_v2",
+    "implemented": false,
+    "main_image_hw": [
+      256,
+      448
+    ],
+    "matching_image_hw": [
+      512,
+      896
+    ],
+    "matching_backbone": "standard_resnet18_all_four_stages",
+    "matching_fpn_channels": 64,
+    "matching_groups": 8,
+    "foundation_backbone": "vit_base_patch14",
+    "foundation_resize_scale": 0.875,
+    "foundation_indices": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "foundation_context_channels_per_layer": 128,
+    "foundation_execution": "requested_output_views_only; all_views_for_all_reference_output",
+    "camera_parameters_shared": true,
+    "candidate_channels": 64,
+    "attention_heads": 4,
+    "coarse_candidates": 96,
+    "coarse_stride": 8,
+    "fine_stride": 4,
+    "peak_count": 4,
+    "local_candidates_per_peak": 3,
+    "source_aggregation": "candidate_conditioned_attention_with_no_match_slot",
+    "geometry_role": "exact_projection_and_jacobian_footprint_scale_routing",
+    "coarse_spatial_aggregation": "existing_scale_space_separable_volume",
+    "proposal_transport": "full_distribution_before_topk",
+    "final_upsampling": "learned_local_convex",
+    "full_hero_fusion_vit_or_dpt": false,
+    "candidate_range": "TRAIN-only statistics first; calibrated scale normalization as controlled comparison",
+    "range_statistics_status": "not_computed"
+  },
+  "training_inventory": [
+    {
+      "name": "TartanAir_forest",
+      "groups": 3056,
+      "unique_reference_images": 3056,
+      "unique_input_images": 3056,
+      "sequence_labels": 7,
+      "views": 4,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/train.jsonl",
+      "train_manifest_sha256": "f0edc4008aa1196df6fa01968f4bef069d3acfe6571f9d7e3f34dc9090b4b267"
+    },
+    {
+      "name": "MatrixCity_street",
+      "groups": 4185,
+      "unique_reference_images": 4185,
+      "unique_input_images": 4208,
+      "sequence_labels": 1,
+      "views": 4,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+      "train_manifest_sha256": "d1cd83f54824f8fbae8143b7503b745e07c7db3b48e86ea841e69085c6096ed0"
+    },
+    {
+      "name": "Hypersim_subset",
+      "groups": 597,
+      "unique_reference_images": 597,
+      "unique_input_images": 603,
+      "sequence_labels": 8,
+      "views": 4,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/train.jsonl",
+      "train_manifest_sha256": "2fbc6d929476674337edb486939b793a7f4a4cb79049b6840dba9036325b575a"
+    },
+    {
+      "name": "MVS_Synth",
+      "groups": 9476,
+      "unique_reference_images": 9476,
+      "unique_input_images": 9560,
+      "sequence_labels": 96,
+      "views": 4,
+      "stage_a_eligible": false,
+      "train_manifest": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+      "train_manifest_sha256": "a583eb251bd41004f4f3d01fdaa23c9730b7404a0f02094b8c7fda95bad0ba06"
+    },
+    {
+      "name": "VKITTI2",
+      "groups": 9500,
+      "unique_reference_images": 9500,
+      "unique_input_images": 19000,
+      "sequence_labels": 30,
+      "views": 2,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+      "train_manifest_sha256": "393d2ff0ac3d00300444cca6d535aab160e275391d8c2321e9244011296ae7c7"
+    },
+    {
+      "name": "BlendedMVS",
+      "groups": 15184,
+      "unique_reference_images": 15184,
+      "unique_input_images": 15184,
+      "sequence_labels": 95,
+      "views": 4,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+      "train_manifest_sha256": "df0e9c11ec22672621682c687a71cc8242fdf310376c0d67e40bd82de943ab71"
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "groups": 600,
+      "unique_reference_images": 600,
+      "unique_input_images": 1200,
+      "sequence_labels": 2,
+      "views": 2,
+      "stage_a_eligible": true,
+      "train_manifest": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/train.jsonl",
+      "train_manifest_sha256": "e1d43fd64400505c3b79f9236427cc57f9ed140abdee0e58b5845f83624ea407"
+    }
+  ],
+  "training_counts": {
+    "all_groups": 42598,
+    "unique_rgb_paths_summed_across_datasets": 52811,
+    "correspondence_stage_groups": 33122,
+    "correspondence_stage_rgb_paths": 43251,
+    "content_deduplicated": false
+  },
+  "sampling": {
+    "default": "each training tuple once per pass, homogeneous domain and view count per microbatch",
+    "domain_schedule": "shared_across_ddp_ranks",
+    "ddp_padding": "log_actual_repeated_samples",
+    "reference": "rotate among real RGB views with valid depth supervision",
+    "mvs_synth": "reference depth supervision; no unconditional static cross-frame correspondence loss",
+    "dynamic_replica": "project_development_v1 from official validation; not official train split",
+    "teacher_forced_test_range": false
+  },
+  "stages": [
+    {
+      "id": 0,
+      "name": "data_geometry_and_gradient_smoke",
+      "training_run": false
+    },
+    {
+      "id": 1,
+      "name": "visible_correspondence_training",
+      "groups_per_pass": 33122,
+      "initial_passes": 2,
+      "max_passes": 3,
+      "approx_updates_per_pass": 1036,
+      "foundation": "frozen",
+      "matching_backbone_lr": 2e-05,
+      "new_layers_lr": 0.0002
+    },
+    {
+      "id": 2,
+      "name": "candidate_decoder_alignment",
+      "groups_per_pass": 42598,
+      "initial_passes": 1,
+      "approx_updates_per_pass": 1332,
+      "foundation": "last_four_blocks_trainable",
+      "foundation_lr": 2e-06,
+      "matching_backbone_lr": 1e-05,
+      "new_layers_lr": 0.0002
+    },
+    {
+      "id": 3,
+      "name": "joint_encoder_decoder_pretraining",
+      "groups_per_pass": 42598,
+      "initial_passes": 10,
+      "max_passes": 30,
+      "approx_updates_per_pass": 1332,
+      "foundation": "all_blocks_trainable",
+      "foundation_lr": 2e-06,
+      "matching_backbone_lr": 2e-05,
+      "new_layers_lr": 0.0001
+    },
+    {
+      "id": 4,
+      "name": "carla_zero_shot_then_finetuning",
+      "status": "use_fixed_train_dev_test_or_create_new_nonoverlapping_validation_before_expansion"
+    }
+  ],
+  "optimizer_proposal": {
+    "world_size": 8,
+    "micro_batch_per_gpu": 1,
+    "gradient_accumulation": 4,
+    "global_batch": 32,
+    "optimizer": "AdamW",
+    "precision": "bf16_with_fp32_geometry_and_reductions",
+    "activation_checkpointing": true,
+    "weight_decay": 0.0001,
+    "exclude_bias_norm_from_weight_decay": true,
+    "gradient_clip_norm": 1.0,
+    "warmup_fraction": 0.05,
+    "warmup_cap_updates": 500,
+    "schedule": "cosine_per_stage",
+    "final_lr_fraction": 0.1,
+    "matching_bn": "frozen_running_statistics_trainable_affine",
+    "workers_per_rank": 2,
+    "seed": 20261024
+  },
+  "validation": {
+    "fixed_stratified_subset_every_pass": true,
+    "full_every_passes": 3,
+    "patience_full_checks": 3,
+    "select_on": "VAL only; per-domain depth and candidate metrics",
+    "test_for_hyperparameter_selection": false
+  },
+  "storage": {
+    "physical_run_directory": "/data/liuzonghao_data/3Dscene_runs/active_research/public_pretrain_no_hero_v2",
+    "project_path": "runs/active/public_pretrain_no_hero_v2",
+    "directory_created": false,
+    "available_bytes_at_design": 454123790336,
+    "default_run_budget_gib": 160,
+    "minimum_free_during_training_gib": 100,
+    "minimum_free_at_finish_gib": 200,
+    "checkpoint_retention": [
+      "last",
+      "validation_best",
+      "previous_recovery"
+    ],
+    "cleanup_scope": "only explicitly tagged temporary files of this run",
+    "feature_cache": false,
+    "must_recheck_free_space_at_finish": true
+  },
+  "not_executed": [
+    "new_model_implementation",
+    "new_weights_download",
+    "range_statistics",
+    "architecture_experiments",
+    "8gpu_smoke",
+    "pretraining",
+    "new_accuracy_or_latency_evaluation"
+  ]
+}

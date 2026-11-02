@@ -1,0 +1,26 @@
+{
+  "root": "/data/liuzonghao_data/dataset/Hypersim_subset",
+  "metadata": "docs/download_assets/mvsanywhere_20261023/metadata_camera_parameters.csv",
+  "splits": {
+    "train": [
+      "ai_022_007",
+      "ai_053_013",
+      "ai_002_009",
+      "ai_033_009",
+      "ai_011_004",
+      "ai_013_007",
+      "ai_017_003",
+      "ai_012_001"
+    ],
+    "val": [
+      "ai_010_007",
+      "ai_005_005"
+    ],
+    "test": [
+      "ai_009_007",
+      "ai_006_007"
+    ]
+  },
+  "reference_slot": 2,
+  "geometry_groups_per_scene": 4
+}

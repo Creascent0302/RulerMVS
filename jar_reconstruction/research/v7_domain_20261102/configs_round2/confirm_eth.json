@@ -1,0 +1,18 @@
+{
+  "device": "cuda:0",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_eth3d/evaluation.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/confirmation/eth",
+  "selection": "事前固定synthetic_joint_keep末步，仅检验训练再生成方向能否外推；不以ETH/TEST选择候选或epoch。公共/CARLA分别独立权重。此确认不能称新的盲测。",
+  "models": [
+    {
+      "name": "frozen_v6",
+      "variant": "control",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/public/best.pt"
+    },
+    {
+      "name": "synthetic_joint_keep",
+      "variant": "coordinate",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_joint_keep/public/final.pt"
+    }
+  ]
+}

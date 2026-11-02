@@ -1,0 +1,25 @@
+{
+  "output": "runs/active/rulermvs_v5_20261031/latency_pilot.json",
+  "groups": [
+    {
+      "name": "public",
+      "settings": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v5_20261031/configs/pilot_public_control.json",
+      "methods": {
+        "frozen": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/public/best.pt",
+        "layer1": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/pilot/public_layer1/final.pt",
+        "layer12": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/pilot/public_layer12/final.pt"
+      },
+      "shared_references": false
+    },
+    {
+      "name": "carla_new",
+      "settings": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v5_20261031/configs/pilot_carla_new_control.json",
+      "methods": {
+        "frozen": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/carla_new/best.pt",
+        "layer1": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/pilot/carla_new_layer1/final.pt",
+        "layer12": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/pilot/carla_new_layer12/final.pt"
+      },
+      "shared_references": true
+    }
+  ]
+}

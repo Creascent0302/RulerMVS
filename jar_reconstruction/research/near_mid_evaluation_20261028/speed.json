@@ -1,0 +1,54 @@
+{
+  "data_config": "research/near_mid_evaluation_20261028/config.json",
+  "output": "runs/active/near_mid_evaluation_20261028/latency",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "methods": {
+    "own_original": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_refinement_20261025/recommended/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_control_last": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/control_training/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_control_valbest": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/control_training/stage1_full_best.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "own_surface_last": {
+      "kind": "own",
+      "input_mode": "native",
+      "weights": "runs/active/near_mid_20261027/surface_training/pretrained.pt",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    }
+  },
+  "gpu": 0,
+  "cpu_threads": 2,
+  "seed": 20261028,
+  "warmup": 8,
+  "repetitions": 30,
+  "isolated_resources": true,
+  "position_cache": true,
+  "fast_cost_volume": true
+}

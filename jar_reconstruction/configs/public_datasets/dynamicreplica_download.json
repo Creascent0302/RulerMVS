@@ -1,0 +1,21 @@
+{
+  "root": "/data/liuzonghao_data/dataset/DynamicReplica_valid",
+  "source_repository": "ZhengGuangze/DynamicReplica_raw",
+  "scope": "公开validation第001分包中的四条完整同步双目序列；保留原包，仅解压RGB/depth/mask和注释",
+  "storage_limit_bytes": 75161927680,
+  "files": [
+    {
+      "url": "https://hf-mirror.com/datasets/ZhengGuangze/DynamicReplica_raw/resolve/main/valid_000.zip",
+      "output": "archives/valid_000.zip",
+      "bytes": 2026136,
+      "sha256": "0f35bee47030ae1a30289beb92ba69c5336491e0f07aab0a05cb5505173d1faf",
+      "extract_to": "raw/valid"
+    },
+    {
+      "url": "https://hf-mirror.com/datasets/ZhengGuangze/DynamicReplica_raw/resolve/main/valid_001.zip",
+      "output": "archives/valid_001.zip",
+      "bytes": 20565870136,
+      "sha256": "cb37d3b1f643118ae22840b4212b00c00a8fe137099d3730a07796a5fefab24a"
+    }
+  ]
+}

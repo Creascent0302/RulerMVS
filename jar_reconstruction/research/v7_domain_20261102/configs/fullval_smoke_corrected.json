@@ -1,0 +1,26 @@
+{
+  "device": "cuda:7",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/fullval_smoke_corrected",
+  "models": [
+    {
+      "name": "v6",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/carla_new/best.pt"
+    },
+    {
+      "name": "projective",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/smoke_frozen/projective/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/smoke_frozen/projective/completed.json",
+      "variant": "projective"
+    },
+    {
+      "name": "prior",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/smoke_frozen/prior/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/smoke_frozen/prior/completed.json",
+      "variant": "prior"
+    }
+  ],
+  "rank": 0,
+  "world": 1,
+  "smoke": true,
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json"
+}

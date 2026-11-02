@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CARLA 重建结果查看</title>
+<style>
+body { font: 15px/1.7 system-ui,sans-serif; color:#172338; background:#f1f4f8; margin:0; }
+main { max-width:1440px; margin:auto; padding:24px; }
+section { background:white; padding:22px; margin:18px 0; border-radius:12px; }
+h1,h2 { line-height:1.3; } .note { border-left:4px solid #e79720; padding:10px 16px; background:#fff5df; }
+.scroll { overflow:auto; } table { border-collapse:collapse; width:100%; white-space:nowrap; font-variant-numeric:tabular-nums; }
+th,td { border-bottom:1px solid #e0e6ee; padding:8px; text-align:right; } th:first-child,td:first-child { text-align:left; }
+th { background:#edf2f7; } button,select { padding:8px 12px; margin:4px; font:inherit; }
+canvas { width:100%; height:520px; background:#101a2a; border-radius:8px; touch-action:none; }
+img { width:100%; } code { overflow-wrap:anywhere; } .controls { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.orange { color:#c66600; } .green { color:#25875b; } .purple { color:#9858ce; } a { color:#1566ad; }
+</style>
+<main>
+<h1>CARLA 重建结果查看</h1>
+<p>结果目录：<code>__RUN__</code> · 本次报告共 <strong>__COUNT__ 帧</strong>，请确认是否使用了 <code>--limit</code>。</p>
+<section>
+<h2>先看覆盖率，再看误差</h2>
+<p class="note">深度 MAE/RMSE 只在“有真值且模型确实预测了深度”的像素上计算。覆盖率很低时，即使误差较小，也不能说明场景重建完整。没有标签的帧不产生精度指标，“—”表示无法计算，不是零误差。</p>
+<div class="scroll"><table>__TABLE__</table></div>
+<p><a href="metrics.csv" download>下载分组指标 CSV</a>（CSV 中比例为 0–1 数值）。MAE/RMSE 越低越好；表面 F 分数、精确率、召回率越高越好，匹配距离阈值为 __THRESHOLD__ 米。</p>
+<p>“未知查询比例”统计网络查询点，不是整个空间的未知体积。未知是证据不足，不能当作空闲。单帧网络耗时不包含读图和评测后处理，也不是多卡吞吐率。分组的表面指标按有指标帧平均，深度误差按有效预测像素加权。</p>
+</section>
+<section id="visuals">
+<h2>逐帧对照</h2>
+<p>默认按固定顺序选择：第一张有标签的完整帧、第一张有标签的缺失帧、第一张无标签缺失帧；不根据效果挑样本。可用 <code>--samples</code> 指定其他样本序号。</p>
+<select id="frame" aria-label="选择帧"></select><span id="detail"></span>
+<p>上排：各相机 RGB，MISSING 表示该相机缺失。下排从左到右：① 标签深度 ② 预测深度 ③ 共同有效像素上的绝对误差 ④ 俯视点云对照。深度图只选择一台相机，优先显示有深度标签的相机；这里通常为 stereo_up。</p>
+<p class="note">图中的稀疏预测点为方便查看而放大显示，没有补洞或生成稠密表面。深色空白包含无标签、无预测和重建范围以外的位置，不能当作空闲空间。误差色标上限为 __ERROR_MAX__ 米，更大的误差仍保留在统计中。下排标签按配置的三维范围裁定，图中米制色标全帧一致。</p>
+<img id="comparison" alt="相机图像、标签深度、预测深度、误差与俯视图">
+<p><a id="png" download>下载对照 PNG</a> · <a id="ply" download>下载确认表面点 PLY</a></p>
+<h2>可旋转的三维点云</h2>
+<div class="controls">
+<label class="orange"><input type="checkbox" id="surface" checked> 橙色：预测表面</label>
+<label class="green"><input type="checkbox" id="target" checked> 绿色：标签表面（抽样显示）</label>
+<label class="purple"><input type="checkbox" id="unknown"> 紫色：未知查询位置</label>
+<button id="reset">复位</button><button id="top">俯视</button>
+</div>
+<p>鼠标拖动旋转，滚轮缩放。坐标为米：X 向前、Y 向左、Z 向上；线框是配置的重建范围。这里用正交视图展示已有点，不生成网格。紫色查询位置不代表障碍物；标签只覆盖实际提供深度的位置。</p>
+<canvas id="cloud" aria-label="交互式三维点云"></canvas>
+</section>
+<section id="empty" hidden><h2>当前仅有指标</h2><p>原评测没有导出预测文件，或启用了仅汇总模式。运行评测时添加 <code>--save-predictions</code>，再运行本可视化工具，即可显示逐帧结果。</p></section>
+<p>本页面在本地生成，图像和点数据已嵌入 HTML。下载 index.html 后可直接离线打开；CSV、PNG、PLY 下载链接需保留同目录文件。标签只用于此处对照，不作为网络推理输入。</p>
+</main>
+<script id="result-data" type="application/json">__DATA__</script>
+<script>
+const data = JSON.parse(document.getElementById('result-data').textContent);
+const byId = id => document.getElementById(id);
+if (!data.frames.length) {
+  byId('visuals').hidden = true;
+  byId('empty').hidden = false;
+} else {
+  const select = byId('frame');
+  const canvas = byId('cloud');
+  const ctx = canvas.getContext('2d');
+  const center = data.roi.map(bounds => (bounds[0] + bounds[1]) / 2);
+  const extent = Math.max(...data.roi.map(bounds => bounds[1] - bounds[0]));
+  let yaw = 0.6;
+  let pitch = 0.7;
+  let zoom = 1;
+  let drag = null;
+  data.frames.forEach((frame, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = frame.label;
+    select.append(option);
+  });
+  function screen(point) {
+    const [x, y, z] = point.map((value, i) => value - center[i]);
+    const horizontal = x * Math.cos(yaw) - y * Math.sin(yaw);
+    const forward = x * Math.sin(yaw) + y * Math.cos(yaw);
+    const vertical = z * Math.cos(pitch) - forward * Math.sin(pitch);
+    const depth = forward * Math.cos(pitch) + z * Math.sin(pitch);
+    const scale = Math.min(canvas.clientWidth, canvas.clientHeight) * 0.76 * zoom / extent;
+    return [canvas.clientWidth / 2 + horizontal * scale,
+            canvas.clientHeight / 2 - vertical * scale, depth];
+  }
+  function draw() {
+    const ratio = window.devicePixelRatio || 1;
+    canvas.width = Math.round(canvas.clientWidth * ratio);
+    canvas.height = Math.round(canvas.clientHeight * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.strokeStyle = '#63718b';
+    ctx.lineWidth = 1;
+    const corners = Array.from({length: 8}, (_, i) =>
+      data.roi.map((bounds, j) => bounds[(i >> j) & 1]));
+    for (let i = 0; i < 8; i++) {
+      for (let axis = 0; axis < 3; axis++) {
+        const j = i ^ (1 << axis);
+        if (j < i) continue;
+        const a = screen(corners[i]);
+        const b = screen(corners[j]);
+        ctx.beginPath();
+        ctx.moveTo(a[0], a[1]);
+        ctx.lineTo(b[0], b[1]);
+        ctx.stroke();
+      }
+    }
+    const frame = data.frames[Number(select.value)];
+    const dots = [];
+    const layers = [
+      ['target', '#64c59c', 1.1], ['unknown', '#b584e5', 2], ['surface', '#ffb044', 3]
+    ];
+    for (const [key, color, radius] of layers) {
+      if (!byId(key).checked) continue;
+      for (const point of frame[key]) dots.push([...screen(point), color, radius]);
+    }
+    dots.sort((a, b) => b[2] - a[2]);
+    for (const [x, y, z, color, radius] of dots) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.fillStyle = '#e4ebf6';
+    ctx.font = '14px sans-serif';
+    ctx.fillText(`显示：预测 ${frame.surface.length} 点 / 标签 ${frame.target.length} 点 / 未知 ${frame.unknown.length} 点`,16,24);
+    const start = data.roi.map(bounds => bounds[0]);
+    for (let axis = 0; axis < 3; axis++) {
+      const end = start.slice();
+      end[axis] = data.roi[axis][1];
+      const p = screen(end);
+      ctx.fillText(['X 前', 'Y 左', 'Z 上'][axis], p[0] + 4, p[1] - 4);
+    }
+  }
+  function update() {
+    const frame = data.frames[Number(select.value)];
+    byId('comparison').src = frame.image;
+    byId('png').href = frame.png;
+    byId('ply').href = frame.ply;
+    byId('detail').textContent=` 样本序号 ${frame.sample}；深度视图 ${frame.camera}；有效标签 ${frame.labeled} 像素，共同预测 ${frame.overlap} 像素。`;
+    draw();
+  }
+  select.addEventListener('change', update);
+  for (const id of ['surface', 'target', 'unknown']) byId(id).addEventListener('change', draw);
+  byId('reset').onclick = () => {
+    yaw = 0.6;
+    pitch = 0.7;
+    zoom = 1;
+    draw();
+  };
+  byId('top').onclick = () => {
+    yaw = Math.PI / 2;
+    pitch = -Math.PI / 2;
+    zoom = 1;
+    draw();
+  };
+  canvas.onpointerdown = event => {
+    drag = [event.clientX, event.clientY];
+    canvas.setPointerCapture(event.pointerId);
+  };
+  canvas.onpointerup = canvas.onpointercancel = () => { drag = null; };
+  canvas.onpointermove = event => {
+    if (!drag) return;
+    yaw += (event.clientX - drag[0]) * 0.008;
+    pitch = Math.max(-1.57, Math.min(1.57, pitch + (event.clientY - drag[1]) * 0.008));
+    drag = [event.clientX, event.clientY];
+    draw();
+  };
+  canvas.addEventListener('wheel', event => {
+    event.preventDefault();
+    zoom = Math.max(0.25, Math.min(5, zoom * Math.exp(-event.deltaY * 0.001)));
+    draw();
+  }, {passive: false});
+  window.addEventListener('resize', draw);
+  update();
+}
+</script>
+</html>

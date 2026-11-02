@@ -1,0 +1,46 @@
+{
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v2_evaluation_20261029/carla.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/carla/latency",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/public/pretrained.pt",
+  "methods": {
+    "v2_public": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/public/pretrained.pt",
+      "input_mode": "native",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "v2_carla_new": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_new/pretrained.pt",
+      "input_mode": "native",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "v2_carla_new_equal": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_new/pretrained.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    }
+  },
+  "gpu": 0,
+  "cpu_threads": 2,
+  "seed": 20261029,
+  "warmup": 10,
+  "repetitions": 40,
+  "isolated_resources": true,
+  "position_cache": true,
+  "fast_cost_volume": true
+}

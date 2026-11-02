@@ -1,0 +1,18 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/carla_new/best.pt",
+  "data_config": "configs/current/carla_data.json",
+  "output": "runs/active/current_inference/v2_latest_carla",
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "dataset": "CARLA_wide4",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "inference": {
+    "spatial_layout": true,
+    "factorized_fusion": false,
+    "hoist_reference": false,
+    "compact_pair": false
+  }
+}

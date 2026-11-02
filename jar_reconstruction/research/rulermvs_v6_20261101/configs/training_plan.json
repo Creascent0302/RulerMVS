@@ -1,0 +1,262 @@
+{
+  "status": "training_and_recovered_evaluation_complete",
+  "target": "提高V6完整精度并保留部署效率，不预先保证超过旧模型",
+  "phases": {
+    "public": {
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/train_public.json",
+      "config_sha256": "de2bd11b2546c0c188d211f0aef57f10a64bc3c71680983170992fea973136f1",
+      "initial_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_round2/public_parent_all_corrected/final.pt",
+      "unique_training_groups": 42598,
+      "domain_sampling_per_epoch": {
+        "TartanAir_forest": {
+          "unique_samples": 3056,
+          "multiplier": 1.0,
+          "requested_exposures": 3056,
+          "replay_exposures": 0,
+          "padding_exposures": 16,
+          "total_exposures": 3072,
+          "updates": 96,
+          "cycles": 1
+        },
+        "MatrixCity_street": {
+          "unique_samples": 4185,
+          "multiplier": 1.0,
+          "requested_exposures": 4185,
+          "replay_exposures": 0,
+          "padding_exposures": 7,
+          "total_exposures": 4192,
+          "updates": 131,
+          "cycles": 1
+        },
+        "Hypersim_subset": {
+          "unique_samples": 597,
+          "multiplier": 8.0,
+          "requested_exposures": 4776,
+          "replay_exposures": 4179,
+          "padding_exposures": 24,
+          "total_exposures": 4800,
+          "updates": 150,
+          "cycles": 8
+        },
+        "MVS_Synth": {
+          "unique_samples": 9476,
+          "multiplier": 1.0,
+          "requested_exposures": 9476,
+          "replay_exposures": 0,
+          "padding_exposures": 28,
+          "total_exposures": 9504,
+          "updates": 297,
+          "cycles": 1
+        },
+        "VKITTI2": {
+          "unique_samples": 9500,
+          "multiplier": 1.5,
+          "requested_exposures": 14250,
+          "replay_exposures": 4750,
+          "padding_exposures": 22,
+          "total_exposures": 14272,
+          "updates": 446,
+          "cycles": 2
+        },
+        "BlendedMVS": {
+          "unique_samples": 15184,
+          "multiplier": 1.0,
+          "requested_exposures": 15184,
+          "replay_exposures": 0,
+          "padding_exposures": 16,
+          "total_exposures": 15200,
+          "updates": 475,
+          "cycles": 1
+        },
+        "DynamicReplica_valid": {
+          "unique_samples": 600,
+          "multiplier": 4.0,
+          "requested_exposures": 2400,
+          "replay_exposures": 1800,
+          "padding_exposures": 0,
+          "total_exposures": 2400,
+          "updates": 75,
+          "cycles": 4
+        }
+      },
+      "updates_per_epoch": 1670,
+      "exposures_per_epoch": 53440,
+      "stages": [
+        {
+          "number": 1,
+          "name": "全公共数据适配候选族与实际深度读出，保留编码器",
+          "min_epochs": 2,
+          "max_epochs": 2,
+          "trainable_prefixes": [
+            "decoder."
+          ],
+          "foundation_blocks": 0,
+          "decoder_lr": 1e-05,
+          "handoff_lr": 0.0005,
+          "bridge_lr": 0.0,
+          "fpn_lr": 0.0,
+          "matching_lr": 0.0,
+          "foundation_lr": 0.0,
+          "bridge_detach_backbone": true,
+          "correspondence_weight": 0.0,
+          "planned_updates": 3340,
+          "planned_exposures": 106880
+        },
+        {
+          "number": 2,
+          "name": "低学习率联合解码、桥与匹配金字塔",
+          "min_epochs": 3,
+          "max_epochs": 3,
+          "trainable_prefixes": [
+            "decoder.",
+            "bridge.",
+            "matching.lateral.",
+            "matching.smooth."
+          ],
+          "foundation_blocks": 0,
+          "decoder_lr": 5e-06,
+          "handoff_lr": 0.0001,
+          "bridge_lr": 2e-05,
+          "fpn_lr": 2e-06,
+          "matching_lr": 0.0,
+          "foundation_lr": 0.0,
+          "bridge_detach_backbone": true,
+          "correspondence_weight": 0.02,
+          "planned_updates": 5010,
+          "planned_exposures": 160320
+        },
+        {
+          "number": 3,
+          "name": "匹配深层与ViT末四块保守适配",
+          "min_epochs": 4,
+          "max_epochs": 4,
+          "trainable_prefixes": [
+            "decoder.",
+            "bridge.",
+            "matching.lateral.",
+            "matching.smooth.",
+            "matching.backbone.layer3.",
+            "matching.backbone.layer4."
+          ],
+          "foundation_blocks": 4,
+          "decoder_lr": 3e-06,
+          "handoff_lr": 5e-05,
+          "bridge_lr": 1e-05,
+          "fpn_lr": 1e-06,
+          "matching_lr": 2e-07,
+          "foundation_lr": 5e-08,
+          "bridge_detach_backbone": true,
+          "correspondence_weight": 0.02,
+          "planned_updates": 6680,
+          "planned_exposures": 213760
+        }
+      ],
+      "total_updates": 15030,
+      "total_exposures": 480960
+    },
+    "carla_new": {
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/train_carla_new.json",
+      "config_sha256": "d6722bee748764503e26aae8d723b5b05520230886822874083eeee01280b4d2",
+      "initial_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/public/best.pt",
+      "unique_training_groups": 497,
+      "domain_sampling_per_epoch": {
+        "CARLA_new_wide4": {
+          "unique_samples": 497,
+          "multiplier": 1,
+          "requested_exposures": 497,
+          "replay_exposures": 0,
+          "padding_exposures": 15,
+          "total_exposures": 512,
+          "updates": 16,
+          "cycles": 1
+        }
+      },
+      "updates_per_epoch": 16,
+      "exposures_per_epoch": 512,
+      "stages": [
+        {
+          "number": 1,
+          "name": "公共V6迁移新CARLA，轮换全部有标签参考",
+          "min_epochs": 8,
+          "max_epochs": 8,
+          "trainable_prefixes": [
+            "decoder.",
+            "bridge.",
+            "matching.lateral.",
+            "matching.smooth."
+          ],
+          "foundation_blocks": 0,
+          "decoder_lr": 1e-05,
+          "handoff_lr": 0.0001,
+          "bridge_lr": 2e-05,
+          "fpn_lr": 5e-06,
+          "matching_lr": 0.0,
+          "foundation_lr": 0.0,
+          "bridge_detach_backbone": true,
+          "correspondence_weight": 0.02,
+          "planned_updates": 128,
+          "planned_exposures": 4096
+        },
+        {
+          "number": 2,
+          "name": "新CARLA几何与匹配深层低速收敛",
+          "min_epochs": 24,
+          "max_epochs": 24,
+          "trainable_prefixes": [
+            "decoder.",
+            "bridge.",
+            "matching.lateral.",
+            "matching.smooth.",
+            "matching.backbone.layer3.",
+            "matching.backbone.layer4."
+          ],
+          "foundation_blocks": 0,
+          "decoder_lr": 5e-06,
+          "handoff_lr": 5e-05,
+          "bridge_lr": 1e-05,
+          "fpn_lr": 2e-06,
+          "matching_lr": 2e-07,
+          "foundation_lr": 0.0,
+          "bridge_detach_backbone": true,
+          "correspondence_weight": 0.02,
+          "planned_updates": 384,
+          "planned_exposures": 12288
+        }
+      ],
+      "total_updates": 512,
+      "total_exposures": 16384
+    }
+  },
+  "sources": [
+    {
+      "url": "https://github.com/FangjinhuaWang/PatchmatchNet/blob/main/models/net.py",
+      "use": "每阶段直接深度监督的经验依据；本轮0.15对照无净收益，未采用该新增项"
+    },
+    {
+      "url": "https://arxiv.org/abs/2202.10054",
+      "use": "先适配任务头再温和微调特征的经验参考，论文不保证本项目的轮数或学习率最优"
+    }
+  ],
+  "rationale": [
+    "结构保持已验证的候选族交接与族内mean，winner上采样；本轮只调整训练而不增加推理成本。",
+    "公开域先训decoder两轮，再桥/FPN三轮，最后匹配深层与ViT末四块四轮；以低LR避免V5后期训练误差下降而VAL退化的重演，但不保证消除过拟合。",
+    "原骨干学习率比解码器低至少一个数量级；桥较V5联合阶段低10至15倍，门控按自身新参数独立学习率。",
+    "公开域保持完整覆盖与既有有限弱域重放：Hypersim小样本8倍、Dynamic小样本4倍、VKITTI2 1.5倍；不以重复曝光冒充新数据。",
+    "新CARLA497组含完整与缺视图帧，参考轮换；8+24轮给新解码器32轮适配，区别于旧V5的24轮，比较须披露新增预算。",
+    "训练与VAL同为equal_pixels，正式输入协议和既有V6短试一致；消除native高信息训练与共同像素验证的频带差异。",
+    "不加入未获实验支持的0.15直接fine读出损失、不冻结粗层、不启用组特征池化。",
+    "每个epoch完整VAL选择本轮best，同时保留末步final和可恢复last；没有TEST选超参数或旧权重回滚。",
+    "公开域预训练与CARLA适配分别保存权重；不是一个checkpoint在所有域通吃。"
+  ],
+  "launch_time_beijing": "2026-11-01T19:28:51+08:00",
+  "tmux_session": "rulermvs_v6_full_20261101",
+  "smoke_report": "runs/active/rulermvs_v6_20261101/full_training/smoke_validation.json",
+  "evaluation_plan": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "training_completed_beijing": {
+    "public": "2026-11-01T21:46:29+08:00",
+    "carla_new": "2026-11-01T22:12:56+08:00"
+  },
+  "evaluation_session": "rulermvs_v6_eval_recovery_20261101",
+  "completion_audit": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_audit/completion.json",
+  "completed_at_beijing": "2026-11-02T01:02:09.231015+08:00"
+}

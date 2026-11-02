@@ -1,0 +1,8 @@
+{
+  "evaluation_plan": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "timing_config": "runs/active/rulermvs_v6_20261101/full_training/paper_firstpass/configs/speed.json",
+  "output": "runs/active/rulermvs_v6_20261101/full_training/paper_fast_test",
+  "gpu": 7,
+  "loader_workers": 1,
+  "shard_size": 128
+}

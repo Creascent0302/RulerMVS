@@ -1,0 +1,30 @@
+{
+  "name": "smoke_queue",
+  "output": "runs/active/role_fusion_20261030/logs",
+  "workers": [
+    [
+      "research/role_fusion_20261030/configs/smoke_public_control.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_public_context.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_public_carry.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_public_both.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_carla_control.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_carla_context.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_carla_carry.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_carla_both.json"
+    ]
+  ]
+}

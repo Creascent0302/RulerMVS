@@ -1,0 +1,41 @@
+{
+  "device": "cuda:2",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "reference_index": 0,
+  "own_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/multiview_20261024/full_rgb_final/scale_transport_complete.pt",
+  "initializer": {
+    "model_config": "configs/candidate_revision_20261018/mvsanywhere_carla_upper_firstpass_probe.json",
+    "weights": "runs/mvsanywhere_audit_20261013/finetune_verified/last.pt",
+    "readout_weights": "",
+    "reference_index": 0,
+    "fast_cost_volume": true,
+    "auxiliary_outputs": false,
+    "cache_position_encoding": true
+  },
+  "preview_max_depth_m": 80,
+  "extra_baselines": [],
+  "training_smoke": false,
+  "datasets": [
+    {
+      "name": "DynamicReplica_public_validation",
+      "root": "/data/liuzonghao_data/dataset/DynamicReplica_valid",
+      "manifest": "prepared/manifests/val.jsonl",
+      "geometry_units": "scene_unit",
+      "output": "/data/liuzonghao_data/dataset/DynamicReplica_valid/smoke/val",
+      "notes": [
+        "只验证官方validation数据的推理入口，不训练此划分。"
+      ]
+    }
+  ],
+  "num_views": 2,
+  "reference_indices": [
+    0
+  ]
+}

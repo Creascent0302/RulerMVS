@@ -1,0 +1,6 @@
+{
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/baseline_full_comparison_20261101/configs/speed_data.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_full_comparison_20261101/four_reference_latency.json",
+  "warmup": 10,
+  "repeats": 40
+}

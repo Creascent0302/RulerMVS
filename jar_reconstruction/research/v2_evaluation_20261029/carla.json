@@ -1,0 +1,110 @@
+{
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "shard_size": 128,
+  "surface_queries": 1024,
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "training_config": "research/v2_training_20261028/configs/train_public.json",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/public/pretrained.pt",
+  "seed": 20261029,
+  "protocol_notes": [
+    "固定VAL选择的导出权重；公共导出已回退旧V2，新CARLA导出为stage2 epoch1。TEST不选模。",
+    "主图256x448，自研native匹配512x896；equal_pixels仅由共同256x448主图上采样，仍非相同计算预算。",
+    "真实N=2或4；缺源图仅压缩实际存在视图交给MVSAnywhere，不复制图片。",
+    "MVSAnywhere官方Hero细化1次，使用相同TRAIN固定搜索范围；无测试范围估计或GT输入。",
+    "公共三维scene_unit不称米；原生系统精度差异不能单独归因架构。",
+    "新CARLA微调V2与官方未做新CARLA微调的baseline训练经历不同；单独列公共V2迁移对照。",
+    "同GT掩码，按像素汇总误差；缺失预测报告coverage，delta按全部GT分母；不删范围外预测。",
+    "表面是单参考GT可见区深度反投影，不是全场景重建或语义占据。"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/carla",
+  "datasets": [
+    {
+      "name": "CARLA_new_upper",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/val_upper.jsonl",
+        "test": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/test_upper.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    }
+  ],
+  "methods": {
+    "v2_public": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/public/pretrained.pt",
+      "input_mode": "native",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "v2_carla_new": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_new/pretrained.pt",
+      "input_mode": "native",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "v2_carla_new_equal": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_training_20261028/carla_new/pretrained.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    }
+  }
+}

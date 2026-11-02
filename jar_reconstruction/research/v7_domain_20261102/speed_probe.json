@@ -1,0 +1,16 @@
+{
+  "output": "runs/active/v7_domain_20261102/speed_probe_initial",
+  "gpu": 0,
+  "warmup": 10,
+  "repetitions": 30,
+  "phases": [
+    {
+      "data_config": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/configs/public_main_val.json",
+      "dataset": "VKITTI2"
+    },
+    {
+      "data_config": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/configs/carla_new_main_val.json",
+      "dataset": "CARLA_new_upper"
+    }
+  ]
+}

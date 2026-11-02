@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="2050" viewBox="0 0 1740 2050">
+  <title>V4：标定候选匹配 + 缓存证据上的一步局部 Flow</title>
+  <desc>蓝：继承 V2 的模块结构（参数可续训）｜橙：标定计算｜绿：V4 新增｜单参考输出路径</desc>
+  <rect width="100%" height="100%" fill="white" />
+  <defs>
+    <marker id="arrow_old" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A72B2" />
+    </marker>
+    <marker id="arrow_geo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B97A18" />
+    </marker>
+    <marker id="arrow_new" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#29804B" />
+    </marker>
+    <marker id="arrow_train" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8754A5" />
+    </marker>
+    <marker id="arrow_note" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A8796" />
+    </marker>
+  </defs>
+  <polyline points="815.0,270 815,300 270,300 270.0,330" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="815.0,270 815,300 820,300 820.0,330" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="815.0,270 815,300 1420,300 1420.0,330" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" />
+  <polyline points="270.0,510 270,540 550,540 550,660 570,660.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="820.0,510 820.0,570" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1160,420.0 1110,420 1110,660 1070,660.0" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" stroke-dasharray="9 6" />
+  <polyline points="1420.0,510 1710,540 1710,870 1070,870.0" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" stroke-dasharray="9 6" />
+  <polyline points="1420.0,510 1690,530 1690,1065 1070,1065.0" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" stroke-dasharray="9 6" />
+  <polyline points="820.0,750 820.0,810" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="820.0,930 820.0,990" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="820.0,1140 820.0,1210" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="270.0,510 20,535 20,1065 570,1065.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="570,420.0 530,420 530,1170 550,1170 550,1065 570,1065.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1070,1065.0 1120,1065 1120,1170 1420,1170 1420.0,1210" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="1070,1285.0 1160,1300.0" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="820.0,1360 820.0,1440" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1420.0,1390 1420,1495 1070,1495.0" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="820.0,1550 820.0,1610" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="820.0,1720 820.0,1780" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <text x="870.0" y="42.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="870.0" dy="0">V4：标定候选匹配 + 缓存证据上的一步局部 Flow</tspan>
+  </text>
+  <text x="870.0" y="105.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="870.0" dy="0">蓝：继承 V2 的模块结构（参数可续训）｜橙：标定计算｜绿：V4 新增｜单参考输出路径</tspan>
+  </text>
+  <rect x="560" y="150" width="510" height="120" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="815.0" y="179.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="815.0" dy="0">同步 RGB + K + T_cam_from_rig</tspan>
+    <tspan x="815.0" dy="31">有效相机 / 像素掩码；不输入 GT</tspan>
+    <tspan x="815.0" dy="31">示例 B 批次，N=4，参考为上相机</tspan>
+  </text>
+  <rect x="40" y="330" width="460" height="180" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="270.0" y="360.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="270.0" dy="0">四目共享匹配编码器</tspan>
+    <tspan x="270.0" dy="30">512×896 → ResNet-18 → 对齐 FPN</tspan>
+    <tspan x="270.0" dy="30">F4: [B,N,64,128,224]</tspan>
+    <tspan x="270.0" dy="30">F8: [B,N,64,64,112]</tspan>
+    <tspan x="270.0" dy="30">F16: [B,N,64,32,56]</tspan>
+  </text>
+  <rect x="570" y="330" width="500" height="180" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="360.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">参考图语义编码器</tspan>
+    <tspan x="820.0" dy="30">DA-V2初始化的 DINOv2 ViT-B/14</tspan>
+    <tspan x="820.0" dy="30">256×448→224×392；取3/6/9/12层</tspan>
+    <tspan x="820.0" dy="30">4 张 [B,768,16,28]</tspan>
+    <tspan x="820.0" dy="30">各自 1×1 投影：768 → 128</tspan>
+  </text>
+  <rect x="1160" y="330" width="520" height="180" rx="12" fill="#FFF3DB" stroke="#B97A18" stroke-width="2" />
+  <text x="1420.0" y="360.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1420.0" dy="0">标定 → 精确投影与空间标尺</tspan>
+    <tspan x="1420.0" dy="30">候选 Z → 三维点 → 各源图像坐标</tspan>
+    <tspan x="1420.0" dy="30">J 与沿参考射线的投影导数 g</tspan>
+    <tspan x="1420.0" dy="30">几何有效性 / 投影尺度 / 搜索步长</tspan>
+    <tspan x="1420.0" dy="30">由标定计算，不新增传感器信息</tspan>
+  </text>
+  <rect x="40" y="720" width="460" height="180" rx="12" fill="#F4F6F8" stroke="#7A8796" stroke-width="2" />
+  <text x="270.0" y="752.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="270.0" dy="0">编码结果在粗、细阶段复用</tspan>
+    <tspan x="270.0" dy="29">四层单图特征不先压成唯一深度</tspan>
+    <tspan x="270.0" dy="29">每个候选按内容读取四层图像信息</tspan>
+    <tspan x="270.0" dy="29">多参考推理可只算一次匹配 FPN</tspan>
+    <tspan x="270.0" dy="29">每个参考仍独立运行 ViT 与解码</tspan>
+  </text>
+  <rect x="570" y="570" width="500" height="180" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="600.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">① 全范围粗匹配与空间判断</tspan>
+    <tspan x="820.0" dy="30">96 个 log 深度候选；格点 32×56</tspan>
+    <tspan x="820.0" dy="30">投影取证 → 源注意力 → 单图融合</tspan>
+    <tspan x="820.0" dy="30">三尺度候选卷积 → 共享评分/偏移头</tspan>
+    <tspan x="820.0" dy="30">候选特征 [B,64,96,32,56]</tspan>
+  </text>
+  <rect x="570" y="810" width="500" height="120" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="840.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">② 先传递分布，再挑 4 个表面峰</tspan>
+    <tspan x="820.0" dy="30">同深度刻度的四邻格双线性传递</tspan>
+    <tspan x="820.0" dy="30">标尺控制每峰左 / 中 / 右三个采样</tspan>
+  </text>
+  <rect x="570" y="990" width="500" height="150" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="1020.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">③ 12 个细候选，重新精确取证一次</tspan>
+    <tspan x="820.0" dy="30">在 64×112 格点融合多目和单目信息</tspan>
+    <tspan x="820.0" dy="30">加上继承的粗层特征（64→64）</tspan>
+    <tspan x="820.0" dy="30">细特征 [B,64,12,64,112]</tspan>
+  </text>
+  <rect x="570" y="1210" width="500" height="150" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="1240.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">④ 保留原共享评分头 / 偏移头</tspan>
+    <tspan x="820.0" dy="30">score = 学习分数 + 4×匹配相似度</tspan>
+    <tspan x="820.0" dy="30">产生每候选原连续深度 Z_old</tspan>
+    <tspan x="820.0" dy="30">argmax 确定赢家；Flow 不改分数</tspan>
+  </text>
+  <rect x="1160" y="1210" width="520" height="180" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="1420.0" y="1240.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1420.0" dy="0">⑤ V4 新增：三点联合局部平均流</tspan>
+    <tspan x="1420.0" dy="30">复用细特征 + 标尺 / 可靠性统计</tspan>
+    <tspan x="1420.0" dy="30">218→48 上下文 + 区间门控四邻域</tspan>
+    <tspan x="1420.0" dy="30">58→48→48→3 平均速度头</tspan>
+    <tspan x="1420.0" dy="30">每候选局部位置修正；推理默认一步</tspan>
+  </text>
+  <rect x="570" y="1440" width="500" height="110" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="1465.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">⑥ 按原赢家取修正后的连续深度</tspan>
+    <tspan x="820.0" dy="30">[B,1,64,112]；不重新选表面</tspan>
+    <tspan x="820.0" dy="30">Flow 不再投影、不再读取图像</tspan>
+  </text>
+  <rect x="570" y="1610" width="500" height="110" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="1635.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">⑦ 原凸组合上采样 ×4</tspan>
+    <tspan x="820.0" dy="30">赢家特征 → 每子像素 9 邻域权重</tspan>
+    <tspan x="820.0" dy="30">64→64→144；邻域深度加权</tspan>
+  </text>
+  <rect x="570" y="1780" width="500" height="110" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="820.0" y="1805.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="820.0" dy="0">输出参考相机深度 [B,1,256,448]</tspan>
+    <tspan x="820.0" dy="30">并保留 confidence / valid / support</tspan>
+    <tspan x="820.0" dy="30">接口：depth×unit_scale 恢复原单位</tspan>
+  </text>
+  <rect x="60" y="1940" width="1620" height="85" rx="12" fill="#F4F6F8" stroke="#7A8796" stroke-width="2" />
+  <text x="870.0" y="1968.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="870.0" dy="0">V4 是有界的条件深度纠错，不是从随机噪声生成整幅深度；全局场景节点分支关闭。</tspan>
+    <tspan x="870.0" dy="29">support 是几何可采样源数；输出仍是深度假设，unknown 保留，不能当作已验证表面。</tspan>
+  </text>
+</svg>

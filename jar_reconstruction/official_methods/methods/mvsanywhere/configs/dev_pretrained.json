@@ -1,0 +1,8 @@
+{
+  "protocol": "configs/carla_comparison/common.json",
+  "method": "mvsanywhere",
+  "model_config": "official_methods/methods/mvsanywhere/configs/carla_finetune.json",
+  "split": "dev_complete",
+  "seed": 17,
+  "weights": ""
+}

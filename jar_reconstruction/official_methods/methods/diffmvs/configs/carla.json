@@ -1,0 +1,58 @@
+{
+  "method": "diffmvs",
+  "seed": 1701,
+  "data": {
+    "root": "",
+    "train_manifest": "",
+    "val_manifest": "",
+    "test_manifest": "",
+    "num_views": 4
+  },
+  "image_size": [
+    256,
+    448
+  ],
+  "model": {
+    "variant": "diffmvs",
+    "pretraining_domain": "dtu",
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "reference_indices": [
+      2
+    ],
+    "weights": "",
+    "allow_random_init": false
+  },
+  "training": {
+    "epochs": 12,
+    "batch_size": 1,
+    "num_workers": 0,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "gradient_clip_norm": 2.0,
+    "scheduler_interval": "step",
+    "precision": "fp32",
+    "checkpoint_every": 100
+  },
+  "evaluation": {
+    "reference_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "depth_range": [
+      2.0,
+      80.0
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "warmup": 2
+  },
+  "adaptation_note": "官方DiffMVS完整架构；RGB为0..1，深度为光轴Z，保留随机置信度扩散。官方原始训练DTU五目、Blended九目；本配置同步四目、固定训练集范围，不代表复现论文指标。"
+}

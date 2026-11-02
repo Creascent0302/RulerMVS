@@ -1,0 +1,12 @@
+{
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "old_plan": "runs/active/near_evidence_20261030/public_control/plan.json",
+  "output": "runs/active/near_evidence_20261030/public_fresh_confirmation",
+  "device": "cuda:2",
+  "seed": 20261030,
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/public/best.pt",
+    "control": "runs/active/near_evidence_20261030/public_control/final.pt",
+    "coarse_attention": "runs/active/near_evidence_20261030/public_coarse_attention/final.pt"
+  }
+}

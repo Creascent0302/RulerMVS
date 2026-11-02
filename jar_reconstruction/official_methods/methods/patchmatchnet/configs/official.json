@@ -1,0 +1,31 @@
+{
+  "method": "patchmatchnet",
+  "repository": "https://github.com/FangjinhuaWang/PatchmatchNet",
+  "commit": "c6d2dce962be8109779afcdb3b79880d35ff9c83",
+  "native_train": "upstream/train.sh",
+  "native_eval": "upstream/eval.sh",
+  "train_views": 5,
+  "train_image_size": [
+    512,
+    640
+  ],
+  "epochs": 8,
+  "batch_size": 4,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "weight_decay": 0,
+  "script_lr_milestones": [
+    10,
+    12,
+    14
+  ],
+  "loss": "all Patchmatch iteration + refined depth SmoothL1",
+  "depth_units": "DTU mm; caller determines dataset units",
+  "checkpoint": "upstream/checkpoints/model_000007.ckpt",
+  "notes": [
+    "作者2025-05-19指定此commit复现论文，main权重由贡献者重训",
+    "原生随机初始化48个逆深度候选；保留原生插值默认行为",
+    "原论文指标尚未重新运行"
+  ],
+  "profile": "official"
+}

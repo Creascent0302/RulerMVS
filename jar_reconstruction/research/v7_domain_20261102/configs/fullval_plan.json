@@ -1,0 +1,81 @@
+{
+  "phases": {
+    "public": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_merge.json",
+    "carla": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_merge.json"
+  },
+  "jobs": [
+    {
+      "phase": "public",
+      "rank": 0,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_0.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank0"
+    },
+    {
+      "phase": "public",
+      "rank": 1,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_1.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank1"
+    },
+    {
+      "phase": "public",
+      "rank": 2,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_2.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank2"
+    },
+    {
+      "phase": "public",
+      "rank": 3,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_3.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank3"
+    },
+    {
+      "phase": "public",
+      "rank": 4,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_4.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank4"
+    },
+    {
+      "phase": "public",
+      "rank": 5,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_public_5.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/public/rank5"
+    },
+    {
+      "phase": "carla",
+      "rank": 0,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_0.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank0"
+    },
+    {
+      "phase": "carla",
+      "rank": 1,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_1.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank1"
+    },
+    {
+      "phase": "carla",
+      "rank": 2,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_2.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank2"
+    },
+    {
+      "phase": "carla",
+      "rank": 3,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_3.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank3"
+    },
+    {
+      "phase": "carla",
+      "rank": 4,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_4.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank4"
+    },
+    {
+      "phase": "carla",
+      "rank": 5,
+      "config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v7_domain_20261102/configs/fullval_carla_5.json",
+      "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1/carla/rank5"
+    }
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round1"
+}

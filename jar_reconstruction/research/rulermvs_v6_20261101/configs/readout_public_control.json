@@ -1,0 +1,22 @@
+{
+  "seed": 20261102,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/readout_pilots/readout_public_control",
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_round2/public_parent_all_corrected/final.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_public.json",
+  "device": "cuda:0",
+  "variant": "parent",
+  "grouped_loss": true,
+  "train_samples_per_domain": 64,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "minimum_free_gib": 200,
+  "loss": {
+    "fine_readout_weight": 0.0
+  }
+}

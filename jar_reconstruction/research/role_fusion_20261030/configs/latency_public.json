@@ -1,0 +1,18 @@
+{
+  "output": "runs/active/role_fusion_20261030/latency_public.json",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "device": "cuda:0",
+  "datasets": [
+    "TartanAir_forest",
+    "VKITTI2"
+  ],
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/public/best.pt",
+    "control": "runs/active/role_fusion_20261030/public_control/final.pt",
+    "context": "runs/active/role_fusion_20261030/public_context/final.pt",
+    "carry": "runs/active/role_fusion_20261030/public_carry/final.pt",
+    "both": "runs/active/role_fusion_20261030/public_both/final.pt"
+  },
+  "warmup": 10,
+  "repeats": 40
+}

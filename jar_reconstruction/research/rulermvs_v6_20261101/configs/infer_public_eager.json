@@ -1,0 +1,19 @@
+{
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/public_parent/final.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_public.json",
+  "dataset": "TartanAir_forest",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "device": "cuda:0",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/infer_public_eager",
+  "inference": {
+    "spatial_layout": true,
+    "factorized_fusion": false,
+    "hoist_reference": false,
+    "compact_pair": false,
+    "compile_source": false,
+    "compile_fusion": false
+  }
+}

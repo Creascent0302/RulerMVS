@@ -1,0 +1,18 @@
+{
+  "evaluation_plan": "runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "diagnostics": "runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json",
+  "output": "runs/active/rulermvs_v6_20261101/full_training/paper_physics",
+  "gpu": 7,
+  "conditions": [
+    {"name": "clean", "kind": "clean"},
+    {"name": "unit_half", "kind": "units", "scale": 0.5},
+    {"name": "unit_double", "kind": "units", "scale": 2.0},
+    {"name": "physical_half", "kind": "physical_scale", "scale": 0.5},
+    {"name": "physical_double", "kind": "physical_scale", "scale": 2.0},
+    {"name": "rig_change", "kind": "rig"},
+    {"name": "focal_1pct", "kind": "focal", "factor": 1.01},
+    {"name": "focal_5pct", "kind": "focal", "factor": 1.05},
+    {"name": "source_yaw_025", "kind": "source_yaw", "degrees": 0.25},
+    {"name": "source_yaw_1", "kind": "source_yaw", "degrees": 1.0}
+  ]
+}

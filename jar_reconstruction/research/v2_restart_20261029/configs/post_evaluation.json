@@ -1,0 +1,14 @@
+{
+  "training_root": "runs/active/v2_restart_20261029",
+  "output": "runs/active/v2_restart_20261029/evaluation",
+  "public_training_config": "research/v2_restart_20261029/configs/train_public.json",
+  "carla_training_config": "research/v2_restart_20261029/configs/train_carla_new.json",
+  "python": "official_methods/.venv/bin/python",
+  "gpus": [0, 1, 2, 3, 4, 5, 6, 7],
+  "timing_gpu": 0,
+  "seed": 20261029,
+  "include_other_references": true,
+  "equal_pixels": false,
+  "run_smoke": true,
+  "run_speed": true
+}

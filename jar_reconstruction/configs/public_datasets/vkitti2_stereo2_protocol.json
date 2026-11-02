@@ -1,0 +1,39 @@
+{
+  "protocol": "synchronized_stereo2",
+  "synchronized": true,
+  "num_views": 2,
+  "reference_index": 0,
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "data": {
+    "root": "/data/liuzonghao_data/dataset/VKITTI2",
+    "train_manifest": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+    "val_manifest": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/val.jsonl",
+    "test_manifest": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/test.jsonl",
+    "protocol": "calibrated_multiview",
+    "num_views": 2,
+    "geometry_units": "meters",
+    "image_size": [
+      256,
+      448
+    ],
+    "matching_image_size": [
+      512,
+      896
+    ],
+    "depth_resize_mode": "nearest-exact"
+  },
+  "notes": [
+    "原生同步双目动态驾驶数据，不复制成四目。",
+    "ref0为左目；按Scene隔离所有天气和相机角度变体。",
+    "仅RGB/标定推理，语义和光轴深度在独立targets。",
+    "公共自研与baseline入口均显式num_views=2，按原生同步双目加载，不补齐四目。",
+    "完整原始PNG/JPG/标定可供MVSAnywhere官方VKITTI loader使用。"
+  ]
+}

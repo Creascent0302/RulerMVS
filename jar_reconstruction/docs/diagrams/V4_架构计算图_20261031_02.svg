@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1760" viewBox="0 0 1800 1760">
+  <title>匹配与融合：标尺在哪里真正参与计算？</title>
+  <desc>粗、细阶段分别调用本模块；细阶段还继承粗特征。示例 C=64，粗 D=96 / 细 D=12。</desc>
+  <rect width="100%" height="100%" fill="white" />
+  <defs>
+    <marker id="arrow_old" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A72B2" />
+    </marker>
+    <marker id="arrow_geo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B97A18" />
+    </marker>
+    <marker id="arrow_new" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#29804B" />
+    </marker>
+    <marker id="arrow_train" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8754A5" />
+    </marker>
+    <marker id="arrow_note" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A8796" />
+    </marker>
+  </defs>
+  <polyline points="290.0,285 290.0,365" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="625,220.0 585,220 585,445 535,445.0" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" />
+  <polyline points="290.0,525 290.0,595" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="885.0,285 1180,325 1180,555 560,555 560,690 535,690.0" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" stroke-dasharray="9 6" />
+  <polyline points="535,690.0 625,690.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="535,445.0 885,445 885.0,595" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="885.0,785 885.0,875" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1490.0,285 1490.0,875" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1145,955.0 1235,955.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="885.0,1035 885.0,1115" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="1490.0,1035 1490,1170 1145,1170.0" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="885.0,1225 885,1265 445,1265 445.0,1315" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <polyline points="885.0,1225 885,1265 1335,1265 1335.0,1315" fill="none" stroke="#4A72B2" stroke-width="2.5" marker-end="url(#arrow_old)" />
+  <text x="900.0" y="42.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">匹配与融合：标尺在哪里真正参与计算？</tspan>
+  </text>
+  <text x="900.0" y="105.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">粗、细阶段分别调用本模块；细阶段还继承粗特征。示例 C=64，粗 D=96 / 细 D=12。</tspan>
+  </text>
+  <rect x="45" y="155" width="490" height="130" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="290.0" y="190.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="290.0" dy="0">多目匹配金字塔 F4 / F8 / F16</tspan>
+    <tspan x="290.0" dy="30">每层每视图 64 通道</tspan>
+    <tspan x="290.0" dy="30">参考图描述子来自 F4</tspan>
+  </text>
+  <rect x="625" y="155" width="520" height="130" rx="12" fill="#FFF3DB" stroke="#B97A18" stroke-width="2" />
+  <text x="885.0" y="190.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="885.0" dy="0">候选深度 + K/T + 掩码</tspan>
+    <tspan x="885.0" dy="30">精确重投影：确定各视图取证位置</tspan>
+    <tspan x="885.0" dy="30">投影导数：确定尺度和局部运动</tspan>
+  </text>
+  <rect x="1235" y="155" width="510" height="130" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="1490.0" y="190.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1490.0" dy="0">参考图 ViT 的四层输出</tspan>
+    <tspan x="1490.0" dy="30">4×[B,768,16,28] → 各层128通道</tspan>
+    <tspan x="1490.0" dy="30">按像素中心对齐到候选格点</tspan>
+  </text>
+  <rect x="45" y="365" width="490" height="160" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="290.0" y="400.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="290.0" dy="0">几何尺度路由 + 双线性取特征</tspan>
+    <tspan x="290.0" dy="30">从 F4/F8/F16 取相邻层加权结果</tspan>
+    <tspan x="290.0" dy="30">屏蔽缺图 / 越界 / 后方 / 视差退化</tspan>
+    <tspan x="290.0" dy="30">描述子按通道归一化</tspan>
+  </text>
+  <rect x="45" y="595" width="490" height="190" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="290.0" y="630.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="290.0" dy="0">逐参考-源视图，构造候选证据</tspan>
+    <tspan x="290.0" dy="30">64维乘积 + 64维绝对差</tspan>
+    <tspan x="290.0" dy="30">8维分组相关 + 3维标尺量</tspan>
+    <tspan x="290.0" dy="30">标尺量：g 的二维方向 + 区间足迹</tspan>
+    <tspan x="290.0" dy="30">逐点网络 139→64→64</tspan>
+  </text>
+  <rect x="625" y="595" width="520" height="190" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="885.0" y="630.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="885.0" dy="0">4 头源视图注意力</tspan>
+    <tspan x="885.0" dy="30">参考 Q 与源 K：64→4×16</tspan>
+    <tspan x="885.0" dy="30">Q·K / √16 + 学习可靠性</tspan>
+    <tspan x="885.0" dy="30">加 null 分支，按源视图 masked softmax</tspan>
+    <tspan x="885.0" dy="30">源值加权 → 64维；拒绝量不再归一化</tspan>
+  </text>
+  <rect x="625" y="875" width="520" height="160" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="885.0" y="911.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="885.0" dy="0">证据嵌入与深度位置编码</tspan>
+    <tspan x="885.0" dy="29">64维聚合 + null + 导数信息 = 66</tspan>
+    <tspan x="885.0" dy="29">1×1×1卷积：66→64→64</tspan>
+    <tspan x="885.0" dy="29">再加 [log深度位置,sin,cos] 的 3→64→64</tspan>
+  </text>
+  <rect x="1235" y="875" width="510" height="160" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="1490.0" y="910.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1490.0" dy="0">候选条件化的四层单图读取</tspan>
+    <tspan x="1490.0" dy="30">候选特征生成查询：64→128</tspan>
+    <tspan x="1490.0" dy="30">查询与四层128维特征分别点积</tspan>
+    <tspan x="1490.0" dy="30">沿四层 softmax → 加权128维 → 64</tspan>
+  </text>
+  <rect x="625" y="1115" width="520" height="110" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="885.0" y="1140.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="885.0" dy="0">相加 + 候选通道归一化 + 有效掩码</tspan>
+    <tspan x="885.0" dy="30">[B,64,D,Hq,Wq]</tspan>
+    <tspan x="885.0" dy="30">单图信息在每个候选上参与判断</tspan>
+  </text>
+  <rect x="75" y="1315" width="740" height="190" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="445.0" y="1348.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="445.0" dy="0">仅粗阶段：三尺度候选卷积</tspan>
+    <tspan x="445.0" dy="31">[B,64,96,32,56] → 16×28 → 8×14</tspan>
+    <tspan x="445.0" dy="31">深度轴 96 始终保留；只缩小图像平面</tspan>
+    <tspan x="445.0" dy="31">每尺度：逐通道 3×3×3 → GELU → 1×1×1</tspan>
+    <tspan x="445.0" dy="31">由小尺度向大尺度回传并残差相加</tspan>
+  </text>
+  <rect x="965" y="1315" width="740" height="190" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="1335.0" y="1348.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1335.0" dy="0">细阶段：继承选中粗候选特征</tspan>
+    <tspan x="1335.0" dy="31">当前细候选特征 + 1×1×1投影的粗特征</tspan>
+    <tspan x="1335.0" dy="31">候选归一化 → [B,64,12,64,112]</tspan>
+    <tspan x="1335.0" dy="31">使用原共享 score / offset 头</tspan>
+    <tspan x="1335.0" dy="31">然后进入第03页的新 Flow；此处不再跑粗层卷积</tspan>
+  </text>
+  <rect x="60" y="1580" width="1680" height="120" rx="12" fill="#F4F6F8" stroke="#7A8796" stroke-width="2" />
+  <text x="900.0" y="1610.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">标尺在三处起作用：特征读取尺度、源注意力的几何条件、细候选搜索间距；新增 Flow 还读取其区间足迹。</tspan>
+    <tspan x="900.0" dy="30">源注意力选择“相信哪个视图”；层注意力选择“读取参考图哪层信息”。两者沿不同维度归一化。</tspan>
+    <tspan x="900.0" dy="30">几何有效性和可采样支持不等于无遮挡、匹配正确或表面已经存在。</tspan>
+  </text>
+</svg>

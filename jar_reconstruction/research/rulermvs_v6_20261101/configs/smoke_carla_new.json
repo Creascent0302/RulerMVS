@@ -1,0 +1,323 @@
+{
+  "architecture": "rulermvs_v6",
+  "seed": 20261102,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/smoke_carla_new",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "augmentation": true,
+  "initialization": {
+    "foundation": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/depth_anything_v2_vitb.pth",
+    "matching": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/resnet18-f37072fd.pth"
+  },
+  "model": {
+    "near": 0.1,
+    "far": 1000.0,
+    "transition": 16.0,
+    "depth_bins": 96,
+    "channels": 64,
+    "raw_channels": 128,
+    "peak_count": 4,
+    "peak_separation_m": 0.1,
+    "fine_min_step_m": 0.005,
+    "fine_max_step_m": 100.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": true,
+    "absolute_information": true,
+    "use_scene": false,
+    "use_fine_offset": true,
+    "local_kind": "scale_space",
+    "proposal_transport": "bilinear",
+    "scale_routing": true,
+    "compact_sources": true,
+    "spatial_layout": true
+  },
+  "datasets": [
+    {
+      "name": "CARLA_new_wide4",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/val_upper.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    }
+  ],
+  "train": {
+    "batch_size": 4,
+    "accumulation": 1,
+    "workers": 0,
+    "precision": "fp32",
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "checkpoint_every": 1,
+    "log_every": 1,
+    "validation_samples_per_domain": 1,
+    "full_validation_every": 1,
+    "minimum_free_gib": 200,
+    "threads": 2,
+    "allow_tf32": false,
+    "stage_policy": "continuous_new",
+    "domain_schedule": "balanced_prefix"
+  },
+  "stages": [
+    {
+      "number": 1,
+      "name": "公共V6迁移新CARLA，轮换全部有标签参考",
+      "min_epochs": 1,
+      "max_epochs": 1,
+      "trainable_prefixes": [
+        "decoder.",
+        "bridge.",
+        "matching.lateral.",
+        "matching.smooth."
+      ],
+      "foundation_blocks": 0,
+      "decoder_lr": 1e-05,
+      "handoff_lr": 0.0001,
+      "bridge_lr": 2e-05,
+      "fpn_lr": 5e-06,
+      "matching_lr": 0.0,
+      "foundation_lr": 0.0,
+      "bridge_detach_backbone": true,
+      "correspondence_weight": 0.02
+    },
+    {
+      "number": 2,
+      "name": "新CARLA几何与匹配深层低速收敛",
+      "min_epochs": 1,
+      "max_epochs": 1,
+      "trainable_prefixes": [
+        "decoder.",
+        "bridge.",
+        "matching.lateral.",
+        "matching.smooth.",
+        "matching.backbone.layer3.",
+        "matching.backbone.layer4."
+      ],
+      "foundation_blocks": 0,
+      "decoder_lr": 5e-06,
+      "handoff_lr": 5e-05,
+      "bridge_lr": 1e-05,
+      "fpn_lr": 2e-06,
+      "matching_lr": 2e-07,
+      "foundation_lr": 0.0,
+      "bridge_detach_backbone": true,
+      "correspondence_weight": 0.02
+    }
+  ],
+  "evaluation": {
+    "precision": "fp32",
+    "test_after_training": false,
+    "selection_region_weights": {
+      "full": 0.7,
+      "near": 0.15,
+      "mid": 0.1,
+      "far": 0.05
+    }
+  },
+  "initial_model_checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_round2/carla_parent_all_corrected/final.pt",
+  "loss": {
+    "fine_readout_weight": 0.0
+  },
+  "phase": "carla_new",
+  "validation_datasets": [
+    {
+      "name": "CARLA_new_stereo_left",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_left.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1,
+      "selection_depth_scale": 10.0
+    },
+    {
+      "name": "CARLA_new_stereo_right",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 1,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_right.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1,
+      "selection_depth_scale": 10.0
+    },
+    {
+      "name": "CARLA_new_stereo_up",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_up.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1,
+      "selection_depth_scale": 10.0
+    },
+    {
+      "name": "CARLA_new_stereo_down",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 3,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/manifests/val_stereo_down.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1,
+      "selection_depth_scale": 10.0
+    }
+  ],
+  "bridge": {
+    "enabled": true,
+    "layers": [
+      "layer1",
+      "layer2"
+    ],
+    "bottleneck": 32,
+    "hidden": 128,
+    "subcells": 2,
+    "detach_backbone": true,
+    "residual_scale": 0.1
+  },
+  "input_mode": "equal_pixels",
+  "handoff": {
+    "enabled": true,
+    "mode": "parent",
+    "within_group": "mean",
+    "upsample_feature": "winner",
+    "gate_bias": -2.0
+  },
+  "protocol_notes": [
+    "从独立自研V6权重继续训练；不加载Hero任务权重或baseline教师。",
+    "训练与VAL统一equal_pixels：共同RGB256x448，匹配图仅由共同RGB放大至512x896。",
+    "完整TRAIN每轮至少一次，有限重放沿用既有倍率；重放不是新样本。",
+    "各阶段连续训练末步参数，不回滚旧权重；本轮完整VAL选best，另存final/last。",
+    "固定VAL选择权重full/near/mid/far为0.70/0.15/0.10/0.05，非空段归一、各域等权。",
+    "远距/近距不退与超越旧模型是验收目标，不能由配置保证；完整TEST仅在训练后执行。",
+    "本轮暖启动且追加全量训练预算，不能把全部提升归因V6结构。",
+    "直接fine读出损失0.15在同预算短训未获通用收益，正式配置关闭，保留消融实现。"
+  ],
+  "smoke": true,
+  "smoke_note": "仅功能检查，每阶段每域一组8卡更新；CARLA从既有corrected CARLA V6开始，不冒充公共训练迁移验证。"
+}

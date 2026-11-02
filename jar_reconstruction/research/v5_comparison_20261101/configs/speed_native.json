@@ -1,0 +1,6 @@
+{
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/v5_comparison_20261101/configs/speed_data_native.json",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v5_comparison_20261101/four_reference_native.json",
+  "warmup": 10,
+  "repeats": 40
+}

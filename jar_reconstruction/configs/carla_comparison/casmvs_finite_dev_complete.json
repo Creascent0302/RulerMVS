@@ -1,0 +1,34 @@
+{
+  "protocol": "configs/carla_comparison/common.json",
+  "method": "cas_mvsnet",
+  "model_config": "configs/carla_comparison/casmvs_model.json",
+  "split": "dev_complete",
+  "weights": "runs/carla_research_20261011/casmvs_finite_grid/train/last.pt",
+  "training": {
+    "seed": 17,
+    "learning_rate": 0.001,
+    "weight_decay": 0,
+    "warmup_steps": 500,
+    "warmup_factor": 0.3333333333333333,
+    "decay_epochs": [
+      10,
+      12,
+      14
+    ],
+    "gamma": 0.5,
+    "stage_loss_weights": [
+      0.5,
+      1,
+      2
+    ],
+    "max_steps": 1000,
+    "checkpoint_every": 100,
+    "log_every": 20
+  },
+  "official_training_source": {
+    "url": "https://github.com/alibaba/cascade-stereo/blob/2ae7da65515c82025383a0fbee8d6fe063dc7101/CasMVSNet/train.py",
+    "blob_sha": "7c69f1c84d9be2adce546c3e534da2c7564107a0",
+    "verified": "Adam lr0.001/betas0.9,0.999/wd0; WarmupMultiStepLR warmup500 factor1/3; epochs10,12,14 gamma0.5; original three-stage loss weights0.5,1,2"
+  },
+  "adaptation_note": "只修正未定义投影grid为图外零填充；原lr0.001/warmup500/结构/原生loss完全保留，独立从头训练。"
+}

@@ -1,0 +1,7 @@
+{
+  "protocol": "configs/carla_comparison/common.json",
+  "method": "census",
+  "model_config": "configs/carla_comparison/census_model.json",
+  "split": "test_complete",
+  "weights": ""
+}

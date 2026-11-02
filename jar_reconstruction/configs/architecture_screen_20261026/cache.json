@@ -1,0 +1,9 @@
+{
+  "checkpoint": "runs/active/public_refinement_20261025/recommended/pretrained.pt",
+  "cache": "runs/active/architecture_screen_20261026/features",
+  "device": "cuda:1",
+  "seed": 20261026,
+  "train_samples": 32,
+  "development_per_domain": 8,
+  "confirmation_per_domain": 32
+}

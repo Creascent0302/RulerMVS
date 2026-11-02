@@ -1,0 +1,89 @@
+{
+  "method": "mvsanywhere",
+  "profile": "carla",
+  "data": {
+    "root": "/data/liuzonghao_data/dataset/MVS_Synth",
+    "geometry_units": "scene_unit",
+    "num_views": 4,
+    "train_manifest": "prepared/manifests/train.jsonl",
+    "val_manifest": "prepared/manifests/val.jsonl",
+    "test_manifest": "prepared/manifests/test.jsonl",
+    "split_protocol": "sequence",
+    "supervision_depth_range": [
+      2,
+      80
+    ]
+  },
+  "model": {
+    "num_views": 4,
+    "image_height": 256,
+    "image_width": 448,
+    "reference_indices": [
+      2
+    ],
+    "depth_bins": 64,
+    "min_depth": 2.0,
+    "max_depth": 80.0,
+    "pretrained": false,
+    "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+    "da_weights": "",
+    "range_refinement_steps": 0
+  },
+  "training": {
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "lr_steps": [
+      70000,
+      80000
+    ],
+    "gradient_accumulation_steps": 2,
+    "max_steps": 200,
+    "batch_size": 1,
+    "seed": 17,
+    "lr_da_encoder": 5e-06,
+    "lr_da_decoder": 5e-05,
+    "training_depth_range": "gt_range_perturbation_train_only",
+    "num_workers": 2,
+    "checkpoint_every": 200,
+    "precision": "fp32",
+    "step_unit": "joint_optimizer_update",
+    "step_note": "一个step共同更新三组参数；官方Lightning global_step每次联合更新增加3。每步累积两个microbatch。"
+  },
+  "evaluation": {
+    "reference_indices": [
+      2
+    ],
+    "depth_range": [
+      2,
+      80
+    ],
+    "warmup": 2,
+    "roi": [
+      [
+        0,
+        80
+      ],
+      [
+        -45,
+        45
+      ],
+      [
+        -2,
+        20
+      ]
+    ],
+    "surface_thresholds_m": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "initialization_note": "可通过--checkpoint加载现有完整本地权重；正式公共数据训练需记录初始化来源。",
+  "adaptation_note": "公共数据接入配置，真实视角数/单位以data为准；不是CARLA四目协议，不代表论文复现。",
+  "image_size": [
+    256,
+    448
+  ],
+  "seed": 17,
+  "cpu_threads": 2
+}

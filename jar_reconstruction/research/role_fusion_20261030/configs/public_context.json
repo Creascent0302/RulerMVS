@@ -1,0 +1,25 @@
+{
+  "checkpoint": "runs/active/v2_restart_20261029/public/best.pt",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "output": "runs/active/role_fusion_20261030/public_context",
+  "device": "cuda:1",
+  "seed": 20261030,
+  "train_samples_per_domain": 128,
+  "epochs": 1,
+  "batch_size": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "actual_fine_risk": true,
+  "correspondence_weight": 0.0,
+  "augmentation": true,
+  "workers": 2,
+  "threads": 2,
+  "minimum_free_gib": 200,
+  "variant": {
+    "context": true,
+    "carry": false
+  },
+  "initial_identity": true
+}

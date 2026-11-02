@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-11",
+  "protocol": "configs/carla_comparison/common.json",
+  "data_inventory": {
+    "train_complete": 66,
+    "development_complete": 25,
+    "test_complete": 200,
+    "gt_reference": "stereo_up",
+    "gt_slot": 2,
+    "semantic_labels": 0,
+    "sky_labels": 0,
+    "occupancy_files": 0
+  },
+  "adaptations": [
+    "保持官方架构和原生损失，接入同步四目/标定/256x448。共同GT监督及评价深度范围2-80米；Fast/SimpleRecon配置此匹配范围，MVSAnywhere保留原生标定启发式范围及预测驱动细化，不用测试标签。",
+    "显式data.supervision_depth_range只筛独立targets.depth_valid，输入及预测不读取标签。",
+    "显式temporal_gap允许同一训练轨迹后段作开发集，并检查顺序及至少40个frame ID间隔；不称独立地图验证。",
+    "SimpleRecon源图没有GT深度，官方多视图损失空集合为0；MVSAnywhere缺sky标签，对应监督为0。其余原生损失保留。",
+    "四参考推理的整体成本必须计算；精度只在有原始GT的槽2可验证。"
+  ],
+  "methods": {
+    "fast_mvsnet": {
+      "commit": "ccb686dda2717613c67d8a289dfe7b2aeb60e2fd",
+      "license": "MIT",
+      "initialization": "官方DTU pretrained.pth；全部参数严格加载，只有upnet→propagation_net名称对应",
+      "status": "完成官方DTU初始化、1000步CARLA训练、dev候选数比较、冻结96候选后的test200。",
+      "checkpoint": "runs/carla_research_20261011/baselines/fast_mvsnet/step1000.pt"
+    },
+    "simplerecon": {
+      "commit": "113b825084cc62166c6f5584d526650928127317",
+      "license": "Niantic，含非商业限制",
+      "initialization": "官方ImageNet21k→1k EfficientNetV2-S与anti-aliased ResNet18默认finetune权重；四目98维metadata MLP从头训练",
+      "status": "完成官方ImageNet骨干初始化、1000及3000累计步训练和dev比较；仅按dev选择3000，完成一次test200。远距仍欠拟合，非原八目Hero论文精度复现。",
+      "checkpoint": "runs/carla_research_20261011/baselines/simplerecon/step3000.pt"
+    },
+    "mvsanywhere": {
+      "commit": "5bd49bba0992aa56060e1aa3bb40b2150b04726f",
+      "license": "Niantic，含非商业限制",
+      "initialization": "官方完整mvsanywhere_hero.ckpt，源URL见预训练缓存来源记录",
+      "status": "官方完整Hero严格加载；完成官方权重dev25/test200及CARLA原生1000步微调dev25/test200，两个条件分列。",
+      "checkpoint_source": "runs/carla_research_20261011/cache/mvsanywhere_hero_source.json",
+      "pretrained_sha256": "00878bab903b1d384cd6bb9ea092e247a9036d429cb8bcc3d6dcbb81f67e556d",
+      "checkpoint": "runs/carla_research_20261011/baselines/mvsanywhere/step1000.pt"
+    },
+    "octreeocc": {
+      "method": "octreeocc",
+      "commit": "54afdd64b210fa45a0b1e1f255e4f88739b4e5a8",
+      "status": "blocked_upstream_incomplete",
+      "full_model_forward_backward_tested": false,
+      "findings": [
+        {
+          "kind": "invalid_official_config",
+          "path": "projects/configs/OctreeOcc/octreeocc_base.py",
+          "line": 105,
+          "detail": "keyword argument repeated: loss_octree_pred"
+        },
+        {
+          "kind": "missing_import",
+          "path": "projects/mmdet3d_plugin/bevformer/modules/temporal_self_attention.py",
+          "detail": "octree_transformer.py imports this unpublished module"
+        },
+        {
+          "kind": "unregistered_config_type",
+          "detail": "config selects OctreeOcc_pred; published detector is OctreeOcc"
+        },
+        {
+          "kind": "unpublished_semantic_initializer",
+          "path": "projects/mmdet3d_plugin/datasets/pipelines/loading.py:LoadSegPriorFromFile",
+          "detail": "RGB-only inference requires UNet-generated seg_structure_l1/l2; released code only loads offline NPZ, without its generation pipeline, trained UNet or training configuration"
+        },
+        {
+          "kind": "paper_code_temporal_difference",
+          "detail": "paper uses temporal self-attention; official config has queue_length=16 but layer operation_order omits self_attn, and forward_test supplies prev_bev=None"
+        }
+      ]
+    },
+    "gaussianformer2": {
+      "commit": "b7e22bfc04cd6360cdee74be5af7fdace102f0a3",
+      "license": "固定提交LICENSE文件为空，未确认使用授权",
+      "status": "本轮真实完整训练阻塞",
+      "reasons": [
+        "没有occupied语义标签；由单目深度只能构造已观测free/hit/unknown，不能伪造0-16语义类。",
+        "官方初始化器和FCOS3D预训练/完整checkpoint未提供到本地。",
+        "已记录Prob-256重复网格索引输入spconv导致同输入重复推理不一致；不得通过合并高斯静默改变架构。",
+        "原发布源码没有初始化器训练第一阶段的完整超参数。"
+      ],
+      "prior_diagnostic": "official_methods/docs/gaussianformer2_prob256_repeatability.json"
+    }
+  },
+  "executed_cpu_checks": {
+    "manifest_tests": "29 passed (manifest + shared)",
+    "native_real_first_frame_64x128": {
+      "fast_mvsnet": {
+        "finite_gradient_tensors": 101,
+        "GN": true
+      },
+      "simplerecon": {
+        "finite_gradient_tensors": 778,
+        "mv_loss": 0.0
+      },
+      "mvsanywhere": {
+        "finite_gradient_tensors": 525,
+        "nonzero_gradient_tensors": 501,
+        "sky_loss": 0.0
+      }
+    },
+    "niantic_contract": "3 passed，含2个方法子测试；原生官方checkpoint、分辨率网格、稀疏和缺标签梯度。"
+  },
+  "limitations": [
+    "本报告管线检查损失不是重建精度，实际指标从共同工具comparison.json读取。",
+    "真实数据只含两条轨迹，无小障碍物实例或完整3D真值。",
+    "全局原生数据集论文指标未复现。"
+  ],
+  "executed_gpu_checks": {
+    "fast_mvsnet": "真实256x448前后向；预热79组、完整GN101组有限梯度；四参考推理。",
+    "simplerecon": "官方ImageNet初始化，真实256x448前后向778组有限梯度；四参考推理。",
+    "mvsanywhere": "官方Hero完整初始化，真实256x448前后向525组有限梯度；四参考推理。",
+    "niantic_real_native_equivalence": "SimpleRecon step1000与MVSAnywhere官方权重：真实训练首帧，原生与适配器输出逐位相等；改变targets和训练专用字段不改变eval。",
+    "source_audit": "fetch_upstream.py --audit 退出码0；固定源码/已有兼容补丁/排版记录校验通过。本轮未改官方核心文件。",
+    "multi_gpu": "本轮每方法单卡独立训练，未重做DDP验收。"
+  },
+  "result_summary": "runs/carla_research_20261011/baselines/official_baseline_summary.json",
+  "result_report": "official_methods/docs/carla_experiments_20261011.md"
+}

@@ -1,0 +1,20 @@
+{
+  "root": "/data/liuzonghao_data/dataset/MVS_Synth",
+  "raw_directory": "raw/GTAV_540",
+  "output_directory": "prepared",
+  "geometry_units": "scene_unit",
+  "reference_slot": 2,
+  "split_seed": 20261024,
+  "split_scene_counts": {"train": 96, "val": 12, "test": 12},
+  "maximum_valid_depth_scene_unit": 1000000000.0,
+  "geometry_samples_per_scene": 3,
+  "selection": {
+    "frame_window": 20,
+    "minimum_baseline_in_pose_steps": 0.5,
+    "maximum_baseline_in_pose_steps": 20.0,
+    "preferred_baseline_in_pose_steps": 4.0,
+    "maximum_angle_degrees": 30.0,
+    "minimum_probe_overlap": 0.5,
+    "probe_depth_in_pose_steps": [5, 10, 20, 40, 80, 160]
+  }
+}

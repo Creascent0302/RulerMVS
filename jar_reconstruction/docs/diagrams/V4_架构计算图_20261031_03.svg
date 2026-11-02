@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2080" viewBox="0 0 1800 2080">
+  <title>V4 新增模块：保持选面，修正每个候选区间内的位置</title>
+  <desc>绿：实际推理路径｜紫色虚线：仅训练的监督分支｜默认 inference_steps=1，noise_sigma=0。</desc>
+  <rect width="100%" height="100%" fill="white" />
+  <defs>
+    <marker id="arrow_old" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A72B2" />
+    </marker>
+    <marker id="arrow_geo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B97A18" />
+    </marker>
+    <marker id="arrow_new" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#29804B" />
+    </marker>
+    <marker id="arrow_train" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8754A5" />
+    </marker>
+    <marker id="arrow_note" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A8796" />
+    </marker>
+  </defs>
+  <polyline points="305.0,315 305,395 630,395 630.0,445" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="905.0,365 905,395 630,395 630.0,445" fill="none" stroke="#B97A18" stroke-width="2.5" marker-end="url(#arrow_geo)" />
+  <polyline points="630.0,570 630.0,645" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="630.0,810 630.0,915" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="1505.0,315 1500.0,555" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="1250,630.0 1120,630 1120,997 970,997.5" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="630.0,1080 630.0,1160" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="630.0,1310 630.0,1385" fill="none" stroke="#29804B" stroke-width="2.5" marker-end="url(#arrow_new)" />
+  <polyline points="1500.0,960 1500.0,1050" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <polyline points="1750,897.5 1780,897 1780,1332 1750,1332.5" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <polyline points="970,997.5 1080,997 1080,1107 1250,1107.5" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <polyline points="970,997.5 1045,997 1045,1332 1250,1332.5" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <polyline points="970,1442.5 1120,1442 1120,1600 1250,1600.0" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <polyline points="1750,897.5 1795,897 1795,1600 1750,1600.0" fill="none" stroke="#8754A5" stroke-width="2.5" marker-end="url(#arrow_train)" stroke-dasharray="9 6" />
+  <text x="900.0" y="42.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">V4 新增模块：保持选面，修正每个候选区间内的位置</tspan>
+  </text>
+  <text x="900.0" y="105.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">绿：实际推理路径｜紫色虚线：仅训练的监督分支｜默认 inference_steps=1，noise_sigma=0。</tspan>
+  </text>
+  <rect x="45" y="165" width="520" height="150" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="305.0" y="195.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="305.0" dy="0">细层候选特征 [B,64,12,64,112]</tspan>
+    <tspan x="305.0" dy="30">按 4 组、每组三点整理</tspan>
+    <tspan x="305.0" dy="30">每组 3×64 = 192 通道</tspan>
+    <tspan x="305.0" dy="30">[4B,192,64,112]</tspan>
+  </text>
+  <rect x="625" y="165" width="560" height="200" rx="12" fill="#FFF3DB" stroke="#B97A18" stroke-width="2" />
+  <text x="905.0" y="207.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="905.0" dy="0">原 score / 相似度 / 支持比例 / null</tspan>
+    <tspan x="905.0" dy="29">相对深度 / 区间宽度 / 标尺足迹 / 有效性</tspan>
+    <tspan x="905.0" dy="29">以上各3维 + 组深度位置1 + 组跨度1</tspan>
+    <tspan x="905.0" dy="29">合计 26 通道；仅描述原取证位置</tspan>
+    <tspan x="905.0" dy="29">与192维特征拼接 → 218通道</tspan>
+  </text>
+  <rect x="1260" y="165" width="490" height="150" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="1505.0" y="196.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1505.0" dy="0">原偏移头输出 Z_old 与 cell [L,U]</tspan>
+    <tspan x="1505.0" dy="29">width = U−L；有效宽度掩码</tspan>
+    <tspan x="1505.0" dy="29">anchor = 2×(Z_old−L)/width − 1</tspan>
+    <tspan x="1505.0" dy="29">12 个候选各有自己的局部坐标</tspan>
+  </text>
+  <rect x="290" y="445" width="680" height="125" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="630.0" y="476.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="630.0" dy="0">一次构造证据上下文：[4B,218,64,112]</tspan>
+    <tspan x="630.0" dy="31">Conv1×1 218→48 → GroupNorm(8) → SiLU</tspan>
+    <tspan x="630.0" dy="31">输出 [4B,48,64,112]，供速度头复用</tspan>
+  </text>
+  <rect x="290" y="645" width="680" height="165" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="630.0" y="681.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="630.0" dy="0">区间门控四邻域消息（上 / 下 / 左 / 右）</tspan>
+    <tspan x="630.0" dy="31">只连接邻像素的同序号组，屏蔽环绕边界</tspan>
+    <tspan x="630.0" dy="31">交叠长度 / 两组最大宽度 → 门控差分</tspan>
+    <tspan x="630.0" dy="31">Conv1×1 48→48 + 残差 → GroupNorm → SiLU</tspan>
+  </text>
+  <rect x="1250" y="555" width="500" height="150" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="1500.0" y="585.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1500.0" dy="0">推理状态从 anchor 开始</tspan>
+    <tspan x="1500.0" dy="30">三点当前状态 3维 + 原anchor 3维</tspan>
+    <tspan x="1500.0" dy="30">时间条件 (r,t,t−r,sin πt) 共4维</tspan>
+    <tspan x="1500.0" dy="30">一步推理取 r=0，t=1</tspan>
+  </text>
+  <rect x="290" y="915" width="680" height="165" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="630.0" y="951.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="630.0" dy="0">平均速度头：[48+3+3+4]=58 通道</tspan>
+    <tspan x="630.0" dy="31">Conv1×1 58→48 → SiLU</tspan>
+    <tspan x="630.0" dy="31">Conv1×1 48→48 → SiLU → Conv1×1 48→3</tspan>
+    <tspan x="630.0" dy="31">2×tanh，输出每组三个有界速度</tspan>
+  </text>
+  <rect x="290" y="1160" width="680" height="150" rx="12" fill="#E3F5E9" stroke="#29804B" stroke-width="2" />
+  <text x="630.0" y="1190.0" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="21" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="630.0" dy="0">局部更新 q_new = clamp(anchor−u, −1,1)</tspan>
+    <tspan x="630.0" dy="30">Z_new = Z_old + 0.5×width×(q_new−anchor)</tspan>
+    <tspan x="630.0" dy="30">无效或退化区间不加修正</tspan>
+    <tspan x="630.0" dy="30">不重新采样图像，不改变 score / winner</tspan>
+  </text>
+  <rect x="290" y="1385" width="680" height="115" rx="12" fill="#EDF3FF" stroke="#4A72B2" stroke-width="2" />
+  <text x="630.0" y="1411.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="630.0" dy="0">原 argmax 赢家选取 Z_new</tspan>
+    <tspan x="630.0" dy="31">[B,1,64,112] → 原凸上采样 ×4</tspan>
+    <tspan x="630.0" dy="31">[B,1,256,448] 深度输出</tspan>
+  </text>
+  <rect x="1250" y="835" width="500" height="125" rx="12" fill="#F2EAFB" stroke="#8754A5" stroke-width="2" />
+  <text x="1500.0" y="868.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1500.0" dy="0">仅训练：GT深度和有效标签</tspan>
+    <tspan x="1500.0" dy="29">只给 GT 落入真实 cell 的候选定位责任</tspan>
+    <tspan x="1500.0" dy="29">GT不进入推理输入或窗口生成</tspan>
+  </text>
+  <rect x="1250" y="1050" width="500" height="115" rx="12" fill="#F2EAFB" stroke="#8754A5" stroke-width="2" />
+  <text x="1500.0" y="1079.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1500.0" dy="0">真实起点端点监督，权重1.0</tspan>
+    <tspan x="1500.0" dy="28">u(anchor,0,1) 对齐 anchor−GT局部坐标</tspan>
+    <tspan x="1500.0" dy="28">不能靠接近GT的训练状态掩盖起点错误</tspan>
+  </text>
+  <rect x="1250" y="1250" width="500" height="165" rx="12" fill="#F2EAFB" stroke="#8754A5" stroke-width="2" />
+  <text x="1500.0" y="1276.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1500.0" dy="0">MeanFlow 辅助监督，权重0.25</tspan>
+    <tspan x="1500.0" dy="28">构造 GT→anchor 的中间状态与两时刻</tspan>
+    <tspan x="1500.0" dy="28">同一速度头 + JVP 构造平均速度目标</tspan>
+    <tspan x="1500.0" dy="28">JVP不重算图像投影；目标停止梯度</tspan>
+    <tspan x="1500.0" dy="28">默认不加高斯噪声</tspan>
+  </text>
+  <rect x="1250" y="1530" width="500" height="140" rx="12" fill="#F2EAFB" stroke="#8754A5" stroke-width="2" />
+  <text x="1500.0" y="1556.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="1500.0" dy="0">同时保留原训练监督</tspan>
+    <tspan x="1500.0" dy="29">全图 / 粗细深度、候选分类与风险等</tspan>
+    <tspan x="1500.0" dy="29">共同训练可更新原表示与评分头</tspan>
+    <tspan x="1500.0" dy="29">不是只训练新增18,339参数</tspan>
+  </text>
+  <rect x="60" y="1750" width="1680" height="125" rx="12" fill="#F4F6F8" stroke="#7A8796" stroke-width="2" />
+  <text x="900.0" y="1781.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">推理时：上下文一次，速度头一次；训练时：额外调用同一小头构造 MeanFlow 监督。</tspan>
+    <tspan x="900.0" dy="31">Flow 的直接作用是区间内连续定位，不能直接恢复区间外表面、重新选峰或认证遮挡。</tspan>
+    <tspan x="900.0" dy="31">保留模块结构 ≠ 冻结其参数：联合训练仍可能改变原粗候选、评分和编码表示。</tspan>
+  </text>
+  <rect x="60" y="1915" width="1680" height="115" rx="12" fill="#F4F6F8" stroke="#7A8796" stroke-width="2" />
+  <text x="900.0" y="1943.5" fill="#182535" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="900.0" dy="0">代码：research/ruler_flow_v2_20261031/{model.py,field.py,losses.py}</tspan>
+    <tspan x="900.0" dy="29">继承：jar/pretraining/{encoders.py,model.py}；jar/models/{ruler_direct.py,ruler_proposals.py,ruler_spatial.py}</tspan>
+    <tspan x="900.0" dy="29">依据：本轮 public/config.json；维度为原生 256×448 主图、512×896 匹配图。</tspan>
+  </text>
+</svg>

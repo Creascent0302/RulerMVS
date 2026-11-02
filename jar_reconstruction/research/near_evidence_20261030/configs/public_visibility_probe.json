@@ -1,0 +1,11 @@
+{
+  "output": "runs/active/near_evidence_20261030/public_visibility_probe",
+  "data_config": "research/v2_restart_20261029/configs/train_public.json",
+  "device": "cuda:2",
+  "old_plan": "runs/active/near_evidence_20261030/public_control/plan.json",
+  "methods": {
+    "frozen": "runs/active/v2_restart_20261029/public/best.pt",
+    "control": "runs/active/near_evidence_20261030/public_control/final.pt",
+    "visibility_veto": "runs/active/near_evidence_20261030/public_visibility_veto/final.pt"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "shard_size": 128,
+  "surface_queries": 1024,
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "training_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/ruler_flow_v2_20261031/configs/train_carla_new.json",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/ruler_flow_v2_20261031/carla_new/best.pt",
+  "seed": 20261031,
+  "protocol_notes": [
+    "固定完整VAL选择的V4 best、旧V2 best和官方Hero权重；不以TEST选择配置或训练。",
+    "共同RGB信息为256x448；自研matching仅由该主图双线性放大到既有512x896分支，不读取额外高分辨率RGB。",
+    "自研网络分支尺寸保留，故相同输入信息不等于相同内部算力、参数量或训练预算。",
+    "原baseline第一遍与一轮范围细化两种官方推理分别报告，起始范围统一来自TRAIN。",
+    "同帧、标定、真实N、GT有效区域、单位与距离段定义保持原完整TEST协议；不补假视角、不增加历史帧。",
+    "匹配分支上采样引入的分布变化属于固定权重输入预算干预，不是重新训练的低分辨率架构。",
+    "native完整TEST结果另外保留，不按数据域挑选native/equal_pixels组合。"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/ruler_flow_v2_20261031/verification/equal_pixels/carla_other_refs",
+  "datasets": [
+    {
+      "name": "CARLA_new_stereo_left",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/val_stereo_left.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/test_stereo_left.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    },
+    {
+      "name": "CARLA_new_stereo_right",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 1,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/val_stereo_right.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/test_stereo_right.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    },
+    {
+      "name": "CARLA_new_stereo_down",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 3,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/3Dscene_runs/active_research/v2_training_20261028/carla_prepared/train_supervised.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/val_stereo_down.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_evaluation_20261029/manifests/test_stereo_down.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    }
+  ],
+  "methods": {
+    "v4_equal_pixels": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/ruler_flow_v2_20261031/carla_new/best.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "v2_equal_pixels": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/carla_new/best.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_firstpass": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 0,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    }
+  },
+  "extension_source_sha256": {
+    "research/ruler_flow_v2_20261031/after_training.py": "06235bff118aae02e8fb0ee7b06065c19e58f922a0a5db936c4b1d1d8e51814c",
+    "research/ruler_flow_v2_20261031/readout_probe.py": "e34e40bebbf2a38fbf9ee9b7f77f4cc2a74da275545ebea35ff713ee2c85a587",
+    "research/ruler_flow_v2_20261031/audit_training_v4.py": "72260420cf9c99ae99996fe46ee8ffa81c047315799cf2b9f3d8268e98d99049",
+    "research/ruler_flow_v2_20261031/prepare.py": "519c3966cf5158966ed63a9552893023ca6dbfdc55a919ab21c23163a7da09d7",
+    "research/ruler_flow_v2_20261031/field.py": "e286615d8706bb433421f4bd99a81cdae877b7ba58b0669df72629e669698196",
+    "research/ruler_flow_v2_20261031/model.py": "4f25847e72cc64498e05b29857eb5fa7b2f5f345fca60db255bf4b9ddd1406a6",
+    "research/ruler_flow_v2_20261031/pilot.py": "55e80177a659e41eddcc8c28cdd586d54564f7ee6b1647cbc9b847249f94dc3a",
+    "research/ruler_flow_v2_20261031/losses.py": "d79769e24a5bf0f7f8c00753f2fc3ac523750e23cc6c7ec06abc76decd572287",
+    "research/ruler_flow_v2_20261031/verify_speed.py": "f63a3ec4d9b4583bb7c65549ba14322d17ad40d4c9bac07d83dec8c5d606e47b",
+    "research/ruler_flow_v2_20261031/prepare_verification.py": "7139e2e00a2aea8ba93202b73cb7c65a8e03a2108dfa674303625b53b41dee46",
+    "research/ruler_flow_v2_20261031/run_pilots.py": "f1af900858c4b881a469b6715c9f70391e54a1734eac27d9079130666a09f321",
+    "research/ruler_flow_v2_20261031/test_model.py": "b9390f9c8d22dc6d4b90fa13abfda2cd8ad459784d8aeb8baccb07fc24c21a7a",
+    "research/ruler_flow_v2_20261031/test_losses.py": "ee55e9bafd9150b271bb53c04b9cfb34f1de24c2def51f2422e34b7b5da9e354",
+    "research/ruler_flow_v2_20261031/latency.py": "dde5402c416aeb639cc53262fdb5a9497f2abddcdd76d2fac7eb3e50ab89b292",
+    "research/ruler_flow_v2_20261031/audit_completed.py": "719a700a710219cb2f27217a8a62139f7de5f39aabbf9279ebf3e7c4c69f9c2d",
+    "research/ruler_flow_v2_20261031/launch_audit.py": "2f4d9961be982ee67394bfad49cb81b0c537d3dd5c2ae8ae283a320d321ba487",
+    "research/ruler_flow_v2_20261031/__init__.py": "83935caaaf2717158b0cac54b5321fd51913d1f6bd5fa5ee13682bf26b735aed",
+    "research/ruler_flow_v2_20261031/test_training.py": "3b1920179916faec7cf6aaaa5de694339af52073316f589dce42b945cddd2c07",
+    "research/ruler_flow_v2_20261031/evaluation.py": "e63dc89f940f80eba6115279a0e1ad3516456173a521d12e2c349c9e645c14fd",
+    "research/ruler_flow_v2_20261031/training.py": "929a3cc7ffb6faffb22038afa1bfe77adcdc412f72f45c7e77f62771521e45da",
+    "research/ruler_flow_v2_20261031/verify_resume.py": "94819675e0287ad93eaf57967196e47bfb10d23c39cf9fa6b3c7ea9a416c3a2b",
+    "research/ruler_flow_v2_20261031/summarize.py": "ef41e71ea5991738c4d85e604c1ec4e29f659672f2280d22db029ee59de312a6"
+  }
+}

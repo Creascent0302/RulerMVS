@@ -1,0 +1,168 @@
+{
+  "schema": "public_pretraining_plan_v1",
+  "status": "splits_ready_after_registry_tool; mixed_training_not_implemented",
+  "storage_root": "/data/liuzonghao_data/dataset/public_pretraining_v1",
+  "minimum_free_gib": 300,
+  "datasets": [
+    {
+      "name": "TartanAir_forest",
+      "root": "/home/liuzonghao/3Dscene/data/TartanAir_forest",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "sampling_probability_proposed": 0.14,
+      "own_config": "configs/public_datasets/tartanair_forest_own.json",
+      "mvsanywhere_config": "configs/public_datasets/tartanair_forest_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/TartanAir_forest/prepared/manifests/test.jsonl"
+      }
+    },
+    {
+      "name": "MatrixCity_street",
+      "root": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "sampling_probability_proposed": 0.14,
+      "own_config": "configs/public_datasets/matrixcity_street_own.json",
+      "mvsanywhere_config": "configs/public_datasets/matrixcity_street_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/test.jsonl"
+      }
+    },
+    {
+      "name": "Hypersim_subset",
+      "root": "/home/liuzonghao/3Dscene/data/Hypersim_subset",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "synchronized_capture": false,
+      "sampling_probability_proposed": 0.02,
+      "own_config": "configs/public_datasets/hypersim_subset_own.json",
+      "mvsanywhere_config": "configs/public_datasets/hypersim_subset_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/Hypersim_subset/manifests/test.jsonl"
+      }
+    },
+    {
+      "name": "MVS_Synth",
+      "root": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": false,
+      "sampling_probability_proposed": 0.24,
+      "own_config": "configs/public_datasets/mvssynth_own.json",
+      "mvsanywhere_config": "configs/public_datasets/mvssynth_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/test.jsonl"
+      }
+    },
+    {
+      "name": "VKITTI2",
+      "root": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "synchronized_capture": true,
+      "sampling_probability_proposed": 0.24,
+      "own_config": "configs/public_datasets/vkitti2_own.json",
+      "mvsanywhere_config": "configs/public_datasets/vkitti2_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/test.jsonl"
+      }
+    },
+    {
+      "name": "BlendedMVS",
+      "root": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": false,
+      "sampling_probability_proposed": 0.21,
+      "own_config": "configs/public_datasets/blendedmvs_own.json",
+      "mvsanywhere_config": "configs/public_datasets/blendedmvs_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/test.jsonl"
+      }
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "root": "/home/liuzonghao/3Dscene/data/DynamicReplica_valid",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "synchronized_capture": true,
+      "sampling_probability_proposed": 0.01,
+      "own_config": "configs/public_datasets/dynamicreplica_own.json",
+      "mvsanywhere_config": "configs/public_datasets/dynamicreplica_mvsanywhere.json",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/val.jsonl",
+        "test": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/project_development_v1/test.jsonl"
+      },
+      "development_split": {
+        "source_manifest": "/data/liuzonghao_data/dataset/DynamicReplica_valid/prepared/manifests/val.jsonl",
+        "sequences": {
+          "train": [
+            "06dcf6-3_obj",
+            "0cde48-3_obj"
+          ],
+          "val": [
+            "151c87-3_obj"
+          ],
+          "test": [
+            "216ba3-3_obj"
+          ]
+        },
+        "warning": "原官方valid子集的项目开发划分；不是官方训练集或官方测试协议，不保证资产/背景独立"
+      }
+    }
+  ],
+  "training_plan_proposed": {
+    "architecture": "ruler_direct_scale_transport",
+    "image_size_hw": [
+      256,
+      448
+    ],
+    "matching_image_size_hw": [
+      512,
+      896
+    ],
+    "world_size": 8,
+    "precision": "bf16",
+    "batch_per_gpu": 2,
+    "gradient_accumulation": 2,
+    "effective_batch": 32,
+    "seed": 20261024,
+    "warmup_steps": 500,
+    "initial_max_optimizer_steps": 20000,
+    "head_lr": 0.0002,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "eval_every_steps": 1000,
+    "test_policy": "仅配置/权重固定后完整报告一次；历史已查看样本不可称盲测",
+    "readiness_blockers": [
+      "候选格与损失的跨域范围/单位适配",
+      "多数据集同域批次采样、参考槽位和可恢复DDP调度",
+      "解码器重新初始化与两个预训练编码器的显式权重导入",
+      "独立无标签范围验证与逐域指标汇总",
+      "8卡实际吞吐/显存与恢复烟测"
+    ],
+    "sampling_note": "面向室外的初始建议；避免按条数拼接或对小子集过度重复。仅用val调整，test不参与。"
+  }
+}

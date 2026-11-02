@@ -1,0 +1,25 @@
+{
+  "seed": 20261102,
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/carla_new/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json",
+  "device": "cuda:0",
+  "variant": "parent",
+  "grouped_loss": true,
+  "train_samples_per_domain": 256,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder."
+  ],
+  "minimum_free_gib": 200,
+  "geometry_ablation": "no_jacobian_width",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_geometry_ablation/training/carla/no_jacobian_width",
+  "experiment_notes": [
+    "将fine_step_pixels设为0，细搜索半径仅由粗刻度半宽及原上下限决定；仍为四候选族各三点，候选仍精确投影。",
+    "所有组相同候选数、可训练参数集合、优化器、样本顺序和固定末步规则。",
+    "CARLA从对应V5 CARLA起点独立适配；不是接续公共组。"
+  ]
+}

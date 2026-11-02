@@ -1,0 +1,12 @@
+{
+  "name": "adapter_smoke_queue",
+  "output": "runs/active/role_fusion_20261030/logs",
+  "workers": [
+    [
+      "research/role_fusion_20261030/configs/smoke_public_both_adapters.json"
+    ],
+    [
+      "research/role_fusion_20261030/configs/smoke_carla_both_adapters.json"
+    ]
+  ]
+}

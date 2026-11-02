@@ -1,0 +1,139 @@
+{
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "gpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "cpu_threads": 2,
+  "loader_workers": 1,
+  "shard_size": 48,
+  "surface_queries": 1024,
+  "tf32": false,
+  "position_cache": true,
+  "fast_cost_volume": true,
+  "training_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v5_20261031/configs/train_carla_new.json",
+  "own_weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/carla_new/best.pt",
+  "seed": 20261031,
+  "protocol_notes": [
+    "完整VAL决定best，final为实际末步；TEST不回写训练或默认模型",
+    "V5严格保留V2候选/解码，仅新增CNN到ViT连接；原V2和baseline按各自架构加载。",
+    "V5继承独立V2后另有训练预算，不将全部差异归因新增模块。",
+    "相同GT、TRAIN固定搜索范围、完整TEST、FP32/TF32off；缺相机不复制。",
+    "native自研匹配RGB分辨率较高；equal_pixels先使用共同主图再上采样匹配图。",
+    "scene_unit不解释为米；双目公共数据不冒充同步四目。"
+  ],
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v5_comparison_20261101/carla_complete_equal_pixels",
+  "datasets": [
+    {
+      "name": "CARLA_new_upper",
+      "root": "/data/liuzonghao_data/dataset/CARLA_data",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/train.jsonl",
+        "val": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/val.jsonl",
+        "test": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/baseline_audit_20261031/suite/manifests/CARLA_new_upper/test.jsonl"
+      },
+      "near": 2.0,
+      "far": 80.0,
+      "depth_scale": 1.0,
+      "eval_range": [
+        2.0,
+        80.0
+      ],
+      "correspondence": true,
+      "camera": {
+        "mode": "wide4",
+        "wide_ids": [
+          "stereo_left",
+          "stereo_right",
+          "stereo_up",
+          "stereo_down"
+        ],
+        "tele_ids": [],
+        "allow_missing": true,
+        "disabled_ids": []
+      },
+      "train_manifest_sha256": "8b99c552253b00a779bba56a6ed7e6256afd751b3e113d8ee0974030efd65446",
+      "train_multiplier": 1
+    }
+  ],
+  "methods": {
+    "v5_best": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/carla_new/best.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "original_v2": {
+      "kind": "own",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v2_restart_20261029/carla_new/best.pt",
+      "input_mode": "equal_pixels",
+      "inference": {
+        "spatial_layout": true
+      }
+    },
+    "mvsanywhere_refined": {
+      "kind": "mvsanywhere",
+      "weights": "runs/carla_research_20261011/cache/mvsanywhere_hero.ckpt",
+      "refinements": 1,
+      "shared_train_range": true,
+      "drop_missing_views": true
+    },
+    "patchmatchnet_dtu": {
+      "kind": "patchmatchnet",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/official_methods/methods/patchmatchnet/upstream/checkpoints/model_000007.ckpt"
+    },
+    "fast_mvsnet_dtu": {
+      "kind": "fast_mvsnet",
+      "weights": "/home/liuzonghao/3Dscene/jar_reconstruction/official_methods/methods/fast_mvsnet/upstream/outputs/pretrained.pth"
+    }
+  },
+  "extension_source_sha256": {
+    "research/rulermvs_v5_20261031/bridge.py": "756e61f50563a5a938bc664337dbc51d11899cbd5db539295aa71624b2bfa8f1",
+    "research/rulermvs_v5_20261031/prepare.py": "2fdcb63214a9581b6f75d4939774d870ad955e1543aca9b7baf162305f78d0e0",
+    "research/rulermvs_v5_20261031/model.py": "efb21a78ce63e766ddb72ace74cf3bee58ed5641ee29fb4ecf4ba8c333645761",
+    "research/rulermvs_v5_20261031/pilot.py": "ef2b00a545e8bf87a67b7a46ea87ab7deef5a5bc805e5a854f49dbec1a74d48d",
+    "research/rulermvs_v5_20261031/infer.py": "1eb9a417a050c10db2c00312f73811b3b55a8f32c08975d1b036aae3b7fd692f",
+    "research/rulermvs_v5_20261031/latency.py": "49363540a80a2fbad753d81e4eea9103301de0921dca76e813da8eb283f2a2d7",
+    "research/rulermvs_v5_20261031/test_bridge.py": "65e75c0fa8f8bda2b1aea241846e4f09032a15d8d5460c01fd37ebc06c9ddc5f",
+    "research/rulermvs_v5_20261031/evaluation.py": "14aec82a4d4e427386f7897d721315b0091e13821f7b542c929a61c29b04a99c",
+    "research/rulermvs_v5_20261031/training.py": "967326c4094233b8a18019e9f62ece8269306727991d9715da85b3081f3e3259",
+    "research/rulermvs_v5_20261031/diagnose.py": "a8e942099b3cfe9e45ff49d8da09c3992e0f34f55b8012420eb143a3934330c6",
+    "research/rulermvs_v5_20261031/summarize.py": "cfd7eca7ef182e8663b7673ac9d1e119d8d2f5dd7520393e96e255e8667975c8",
+    "research/v5_comparison_20261101/evaluate.py": "cbe6796b9210ce4009b39fa44fd0b40646d612e15b79a17cc11204d7bdc4925f",
+    "official_methods/methods/patchmatchnet/adapter.py": "6ddbfebec87b5f42ee07dffae80f437fc4902a11da3c231a31782bdcfd9f0564",
+    "official_methods/methods/patchmatchnet/__init__.py": "2d6fd7ff59d14b8f4dbd6bb62b04d41acab4e58f55e2e30c62e1d30919ce5182",
+    "official_methods/methods/patchmatchnet/upstream/train.py": "acde3a613e4406f85df0ecc917cbf37d1d87814c0238c2960b015bd73fa225e0",
+    "official_methods/methods/patchmatchnet/upstream/visualize_ply.py": "fbe7e0dd21563babe97ae59e910856b061f521e7e0e4bdb015399f9007f51bce",
+    "official_methods/methods/patchmatchnet/upstream/eval_tank.py": "f1b1d1312b697dc28374cebcbe9a656d0d6ec294d0fe3eeb58441f8ab7284bf8",
+    "official_methods/methods/patchmatchnet/upstream/eval.py": "d5f589c34ef66db8bb74085c13b7019fe17788bf6c9257fbd61b529ca6d83d27",
+    "official_methods/methods/patchmatchnet/upstream/colmap_input.py": "8a47e495b37e90c9d150a4d3da8c5652b71636e9170139d85d3ee5c03d0be168",
+    "official_methods/methods/patchmatchnet/upstream/utils.py": "8e5c670923b1a35eea9238551279c30c810e2300adb8910799e4bb539dd32301",
+    "official_methods/methods/patchmatchnet/upstream/eval_custom.py": "aebaa4d28a2037f6c8905aa4af5c93eec849e9401f7836ddb2ad09ec7c11e695",
+    "official_methods/methods/patchmatchnet/upstream/eval_eth.py": "eb9b46808463095712c272d32fe9ed88a0d644f3ee01c3ed431cf58b471c0abd",
+    "official_methods/methods/patchmatchnet/upstream/datasets/data_io.py": "79fe66ac0625a0362d0731f8960278c8a5e65ed1f28f0e0b8369643ccfb43220",
+    "official_methods/methods/patchmatchnet/upstream/datasets/dtu_yao_eval.py": "ad98131360db4d7cbf3c10df040aa67e5ea08b19c49d1b70fddb0806d3c4e2bb",
+    "official_methods/methods/patchmatchnet/upstream/datasets/dtu_yao.py": "c74acb30cc758d1f158dcecb1afaafaa2ed0219a26121e2fe593e8d43e9e0262",
+    "official_methods/methods/patchmatchnet/upstream/datasets/eth3d.py": "b5ec2fadc165113cb1fa00ea1011ac0e248541cb996af1610d50fbd81a206b04",
+    "official_methods/methods/patchmatchnet/upstream/datasets/tanks.py": "79886ebe9dbdda79303d81951e3cf3e57d0c96c3ab6800ba25e229f4397bc8f1",
+    "official_methods/methods/patchmatchnet/upstream/datasets/__init__.py": "3c6ca08e6378e698e939f690c6674e0770c600a91d5c3974186a6d79a89297b5",
+    "official_methods/methods/patchmatchnet/upstream/datasets/custom.py": "7b40a5cc09a6d5cf1e4476d845b37a18c2f2764219c6de70acf8324cf7d5cf92",
+    "official_methods/methods/patchmatchnet/upstream/models/patchmatch.py": "bb128e750fb540bfbf52e645c15de46b6a75de7389fcc949b88ff784aab411ea",
+    "official_methods/methods/patchmatchnet/upstream/models/module.py": "fb9e2059bce9616f3f9a7fe20fe64576016fa7fc737930a84f76ae9b7ed1d80f",
+    "official_methods/methods/patchmatchnet/upstream/models/net.py": "4d4fc91f1cab6c8f7dc94c80c20d94b8a90f92d5610c87deeba996008e5caea3",
+    "official_methods/methods/patchmatchnet/upstream/models/__init__.py": "8264e8c4fb9154adb29f01c76b561c54ca07de38cc3cd393eed3a273d4c2aab4"
+  }
+}

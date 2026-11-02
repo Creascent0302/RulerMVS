@@ -1,0 +1,8 @@
+{
+  "device": "cuda:7",
+  "public_count": 8,
+  "carla_count": 16,
+  "phases": ["public", "carla"],
+  "pilot_root": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/train_target_audit"
+}

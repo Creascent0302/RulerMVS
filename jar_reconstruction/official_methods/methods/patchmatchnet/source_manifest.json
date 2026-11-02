@@ -1,0 +1,49 @@
+{
+  "commit": "c6d2dce962be8109779afcdb3b79880d35ff9c83",
+  "download": "https://codeload.github.com/FangjinhuaWang/PatchmatchNet/tar.gz/c6d2dce962be8109779afcdb3b79880d35ff9c83",
+  "archive_sha256": "1ff0a58055c25f785255d24d069213f66109c2956c8573d0c1715f18f3ac3716",
+  "upstream_changes": [
+    {
+      "file": "models/patchmatch.py",
+      "change": "两处get_device()改为.device；CPU返回torch.device(cpu)，GPU设备选择相同",
+      "patched_sha256": "bb128e750fb540bfbf52e645c15de46b6a75de7389fcc949b88ff784aab411ea"
+    }
+  ],
+  "files_sha256": {
+    "train.py": "acde3a613e4406f85df0ecc917cbf37d1d87814c0238c2960b015bd73fa225e0",
+    "visualize_ply.py": "fbe7e0dd21563babe97ae59e910856b061f521e7e0e4bdb015399f9007f51bce",
+    "eval_tank.py": "f1b1d1312b697dc28374cebcbe9a656d0d6ec294d0fe3eeb58441f8ab7284bf8",
+    "eval.py": "d5f589c34ef66db8bb74085c13b7019fe17788bf6c9257fbd61b529ca6d83d27",
+    "train.sh": "5b28ffdc5f63185717355044186ae08fd02429d1685d32aa5e18fe593d99fbca",
+    "colmap_input.py": "8a47e495b37e90c9d150a4d3da8c5652b71636e9170139d85d3ee5c03d0be168",
+    "utils.py": "8e5c670923b1a35eea9238551279c30c810e2300adb8910799e4bb539dd32301",
+    "eval_custom.py": "aebaa4d28a2037f6c8905aa4af5c93eec849e9401f7836ddb2ad09ec7c11e695",
+    "requirements.txt": "e5b00a86b683937e3b8ed0522f3790f6dc0ba2531d39db08491a7a398564d1e7",
+    "README.md": "c487bff696f5c0475e6576ebd3dd398bc5d13f44f8d2e5699283a3e7cb128c1e",
+    "eval.sh": "c44d0036cd935a78dccedda05274c1df25e290414d44d2070e88fc2d6708ee7e",
+    "LICENSE": "169dfa822b4a7bd11da9d71e20d7629ac30f35c26d42b787a44b7041aa876bcb",
+    "eval_eth.py": "eb9b46808463095712c272d32fe9ed88a0d644f3ee01c3ed431cf58b471c0abd",
+    "checkpoints/model_000007.ckpt": "e90fc16f7a7680085d4c52b31f1098ea34ede4c0f26faeaf863560bef2189d59",
+    "datasets/data_io.py": "79fe66ac0625a0362d0731f8960278c8a5e65ed1f28f0e0b8369643ccfb43220",
+    "datasets/dtu_yao_eval.py": "ad98131360db4d7cbf3c10df040aa67e5ea08b19c49d1b70fddb0806d3c4e2bb",
+    "datasets/dtu_yao.py": "c74acb30cc758d1f158dcecb1afaafaa2ed0219a26121e2fe593e8d43e9e0262",
+    "datasets/eth3d.py": "b5ec2fadc165113cb1fa00ea1011ac0e248541cb996af1610d50fbd81a206b04",
+    "datasets/tanks.py": "79886ebe9dbdda79303d81951e3cf3e57d0c96c3ab6800ba25e229f4397bc8f1",
+    "datasets/__init__.py": "3c6ca08e6378e698e939f690c6674e0770c600a91d5c3974186a6d79a89297b5",
+    "datasets/custom.py": "7b40a5cc09a6d5cf1e4476d845b37a18c2f2764219c6de70acf8324cf7d5cf92",
+    "models/patchmatch.py": "75ac51cc1c13b5366ae0596b7b4999c6f209b4f99573950f236e12c8e42eecad",
+    "models/module.py": "fb9e2059bce9616f3f9a7fe20fe64576016fa7fc737930a84f76ae9b7ed1d80f",
+    "models/net.py": "4d4fc91f1cab6c8f7dc94c80c20d94b8a90f92d5610c87deeba996008e5caea3",
+    "models/__init__.py": "8264e8c4fb9154adb29f01c76b561c54ca07de38cc3cd393eed3a273d4c2aab4",
+    "lists/dtu/val.txt": "23ea4f65ade1a9ee85566c69729300c1ec548aece79beafd5efee7124463bdc1",
+    "lists/dtu/test.txt": "ae1050f2d83040caefd3a701c5d19874405abccc4eccb56c66cad01903a9b750",
+    "lists/dtu/train.txt": "bc811e4a9b058cbe17590dc52b74fe782b7c21054c03cbfc65b36fe219828616",
+    "evaluations/dtu/ComputeStat_web.m": "54035b90c82c943d4d55dbfa37979cd2877dd81262c6cf50c00727e9762ba771",
+    "evaluations/dtu/BaseEval2Obj_web.m": "cad47b8e7aa35240d2117ac50ceaf18d519d8e7ab9eea1a5e02758b54ef8eddd",
+    "evaluations/dtu/MaxDistCP.m": "17194c53f20dc4f8d8107ee38553ce3757fa1ab0e6616d4d08990790e8d0ca22",
+    "evaluations/dtu/BaseEvalMain_web.m": "36fc19f8b9e896c10c5da1a6e7e61916c6d233ecfb650b48f2c1fe043e9f9360",
+    "evaluations/dtu/reducePts_haa.m": "e0e2592ccbef07581af8f3021fe071c9b1111f1e516ae937a7215ed4f1069d62",
+    "evaluations/dtu/PointCompareMain.m": "5886e96adac00b31148e3e131f054d5bd1b33d4e0313a4e459d1b9a777cfe221",
+    "evaluations/dtu/plyread.m": "b402bd14ea0e9b79cc7ecce732579f818ebab5eadfab4afc68eb87e8ca4f8a5d"
+  }
+}

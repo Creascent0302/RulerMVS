@@ -1,0 +1,30 @@
+{
+  "name": "formal_queue",
+  "output": "runs/active/ruler_flow_20261030/logs",
+  "workers": [
+    [
+      "research/ruler_flow_20261030/configs/public_control.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/public_direct.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/public_flow.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/public_flow_no_direction.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/carla_control.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/carla_direct.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/carla_flow.json"
+    ],
+    [
+      "research/ruler_flow_20261030/configs/carla_flow_no_direction.json"
+    ]
+  ]
+}

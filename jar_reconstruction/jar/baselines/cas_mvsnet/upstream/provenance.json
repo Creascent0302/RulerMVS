@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/alibaba/cascade-stereo",
+  "commit": "2ae7da65515c82025383a0fbee8d6fe063dc7101",
+  "files": {
+    "cas_mvsnet.py": {
+      "source": "https://raw.githubusercontent.com/alibaba/cascade-stereo/2ae7da65515c82025383a0fbee8d6fe063dc7101/CasMVSNet/models/cas_mvsnet.py",
+      "sha256": "863d1d1e9912dc8ac6cf1ce882a5a5ebf0dc36c2f447ac3cba82cbc9db7d0f12",
+      "bytes": 8343
+    },
+    "module.py": {
+      "source": "https://raw.githubusercontent.com/alibaba/cascade-stereo/2ae7da65515c82025383a0fbee8d6fe063dc7101/CasMVSNet/models/module.py",
+      "sha256": "ca8721035f5cb746566e113c83bb4978909f99d69a3b4f65bba01c6a9544595e",
+      "bytes": 25216
+    },
+    "LICENSE": {
+      "source": "https://raw.githubusercontent.com/alibaba/cascade-stereo/2ae7da65515c82025383a0fbee8d6fe063dc7101/LICENSE",
+      "sha256": "ee538e112f410522436515d2c75265bff28512ef2ee6607e2171e1e803a60e9d",
+      "bytes": 1064
+    }
+  },
+  "local_compatibility_patches": [
+    "Remove unused external utils.local_pcd import and sys.path mutation",
+    "Explicit align_corners=True matching original W-1/H-1 normalization and PyTorch1.2 behavior",
+    "2026-10-11: map only nonfinite homography sampling coordinates to outside-grid=2 for zero fill; finite coordinates including negative source-Z are unchanged. CARLA cascade candidate hitting source focal plane previously contaminated the 3D cost volume with NaN. No architecture, sample-range or loss change."
+  ],
+  "local_sha256": {
+    "module.py": "aa6520acf3f0e602f1ece26990de033a7012f3402248eade3d8d49447ca26a75",
+    "cas_mvsnet.py": "87361edc2e09c03e1706d2b9f2982a37f2bae18bb1835719ca40c058a3cc9512",
+    "__init__.py": "9ae0df8aa9ae92a7781a27dc7bdbedf15440eff65894b261acbb6600ee3a494b"
+  },
+  "pre_format_local_sha256": {
+    "module.py": "a8265a6205860badd963c4c4692f3b0874b0d551ee50cf1067fad7057c33adaa",
+    "cas_mvsnet.py": "863d1d1e9912dc8ac6cf1ce882a5a5ebf0dc36c2f447ac3cba82cbc9db7d0f12",
+    "__init__.py": "9ae0df8aa9ae92a7781a27dc7bdbedf15440eff65894b261acbb6600ee3a494b"
+  },
+  "formatting": "black==25.1.0; line-length=100; AST equivalent",
+  "pre_finite_grid_sha256": "639918eeb126df9038377f48c6d03df4e1771446d873e9df5d858b9b0d5a3b7f"
+}

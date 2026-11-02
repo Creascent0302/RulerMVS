@@ -1,0 +1,29 @@
+{
+  "seed": 20261102,
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots_mask/public_group_mean",
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/pilots/public_parent/final.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_public.json",
+  "device": "cuda:3",
+  "variant": "parent",
+  "grouped_loss": true,
+  "train_samples_per_domain": 64,
+  "batch_size": 2,
+  "epochs": 2,
+  "lr": 1e-05,
+  "new_lr": 0.001,
+  "weight_decay": 0.0001,
+  "trainable_prefixes": [
+    "decoder.upsample_mask."
+  ],
+  "minimum_free_gib": 200,
+  "verify_coarse_frozen": true,
+  "experiment_notes": [
+    "固定起点为第一轮V6 parent末步权重；本次只适配原上采样mask，未增加参数。",
+    "winner对照与group_mean共用数据顺序、种子、448/128更新和修正版目标；其他全部参数冻结。",
+    "固定16VAL开发/确认，不读取TEST或追加完整VAL；检查粗细预测逐位不变。"
+  ],
+  "handoff": {
+    "upsample_feature": "group_mean"
+  },
+  "verify_preupsample_frozen": true
+}

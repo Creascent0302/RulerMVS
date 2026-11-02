@@ -1,0 +1,5 @@
+{
+  "compile": true,
+  "surface_checkpoint": "runs/active/near_mid_20261027/smoke_full_batch_8gpu/pretrained.pt",
+  "output": "runs/active/near_mid_20261027/timing_smoke_weights"
+}

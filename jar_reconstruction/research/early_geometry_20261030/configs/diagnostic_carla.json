@@ -1,0 +1,7 @@
+{
+  "checkpoint": "runs/active/early_geometry_20261030/carla_early/final.pt",
+  "output": "runs/active/early_geometry_20261030/carla_early/diagnostic.json",
+  "device": "cuda:1",
+  "datasets": ["CARLA_new_stereo_up", "CARLA_new_stereo_down"],
+  "interventions": ["baseline_zero", "angular_canonical", "matching_off", "vit_off"]
+}

@@ -1,0 +1,50 @@
+{
+  "date_beijing": "2026-11-02",
+  "layout": "按数据依赖展开的分支、汇合、复用；替代旧行列布局",
+  "groups": {
+    "RulerMVS_V6": [
+      "V6-1 整体数据流",
+      "V6-2 编码分支与汇合",
+      "V6-3 匹配内部数据流",
+      "V6-4 候选交接与读出"
+    ],
+    "MVSAnywhere_HERO": [
+      "MVSA-1 整体数据流",
+      "MVSA-2 匹配到深度"
+    ],
+    "MVSFormerPlusPlus": [
+      "Former-1 整体数据流",
+      "Former-2 候选体内部"
+    ],
+    "PatchmatchNet": [
+      "Patch-1 整体数据流",
+      "Patch-2 单次更新"
+    ]
+  },
+  "checks": "配置断言、布局节点与文字宽度、XML及引用检查；未运行新性能实验",
+  "source_sha256": {
+    "research/rulermvs_v6_20261101/configs/train_public.json": "de2bd11b2546c0c188d211f0aef57f10a64bc3c71680983170992fea973136f1",
+    "research/rulermvs_v6_20261101/model.py": "fbb805cd098b6f02e3b166a4e38eacedb24a07b61929cb7fee2ee3f017f3b7a5",
+    "research/rulermvs_v6_20261101/handoff.py": "06388dce26a76727fd42c346dd88b3e150b1d65ba128c463578961e9d5fe8d04",
+    "research/rulermvs_v6_20261101/objective.py": "f71b53b54f05efa77a40f333a7087b10cea1128276055c585f4b7b41d45bc61d",
+    "research/rulermvs_v5_20261031/model.py": "efb21a78ce63e766ddb72ace74cf3bee58ed5641ee29fb4ecf4ba8c333645761",
+    "research/rulermvs_v5_20261031/bridge.py": "756e61f50563a5a938bc664337dbc51d11899cbd5db539295aa71624b2bfa8f1",
+    "jar/pretraining/encoders.py": "263a4ab5c3f4069b199ea4611166c3db98a8af8b0c171bbb5f85b14c53562175",
+    "jar/pretraining/model.py": "b6a83470c485f2ad920e91bd25808737ea5ca626a59d86b5e3864402c9803bb7",
+    "jar/models/ruler_direct.py": "8536f612f7f54a17ecf32f27db5f752fe7a888260670c0b19a994dfacf4efc8e",
+    "jar/models/ruler_proposals.py": "a2f0f654ed9fe40172eba17b0f80f0a575f405f455c027b310d32ac0ddb3c3f5",
+    "jar/models/ruler_spatial.py": "9638fb964f98261b16ba6e77fc968f585d2dfd49f786997b9d3ea1f8d285c33a",
+    "official_methods/methods/mvsanywhere/upstream/src/mvsanywhere/experiment_modules/sr_depth_model.py": "97bab1a3dfcd9c56520a406bd52dd3594bf9636c95bc42ed60a46179bcd52ae7",
+    "official_methods/methods/mvsanywhere/upstream/src/mvsanywhere/modules/vit_modules.py": "e8b21626a8aea4d4912942d9eff05bc2769721d230ee8ddfa2970c6664ddbf7c",
+    "official_methods/methods/mvsanywhere/upstream/src/mvsanywhere/modules/networks.py": "f6bac0344ff30d68475732ddc64b8d657a43bad9c59787ea572f89d36f306035",
+    "official_methods/methods/mvsanywhere/upstream/src/mvsanywhere/modules/depth_anything_blocks.py": "709ea922f6b9cf2eec8473e933570a21cec6e7b4d615520929c880dff2b5cb28",
+    "official_methods/methods/mvsanywhere/upstream/src/mvsanywhere/modules/view_agnostic_feature_volume.py": "4f72385ce4af3f3122f09dc0fa6031855759ca82b66fcdb8478254342c85dd2f",
+    "official_methods/methods/mvsformerpp/upstream/config/mvsformer++.json": "abc505c25bb1bd7a40e0159c0164a868e12fa6e41c44eb8dd96e174ca5f96c9f",
+    "official_methods/methods/mvsformerpp/upstream/models/networks/DINOv2_mvsformer_model.py": "9a89322e6a483471d6eada0ac392528985c2ebce4a55306fdd0675fcaf8fe30d",
+    "official_methods/methods/mvsformerpp/upstream/models/module.py": "d9aadc523a658a2e5e990aec7455276822fe158dfc18565279a2c0d056d33b28",
+    "official_methods/methods/mvsformerpp/upstream/models/FMT.py": "6f76f9d431b93f9eff8dbc7fb3726d0dd30e6fa08cb752d60deed905c8555e47",
+    "official_methods/methods/mvsformerpp/upstream/models/cost_volume.py": "a126c265f5f81164b9943a98d5c42c5969f3cd238f64df45f800c68e397c8a1e",
+    "official_methods/methods/patchmatchnet/upstream/models/net.py": "4d4fc91f1cab6c8f7dc94c80c20d94b8a90f92d5610c87deeba996008e5caea3",
+    "official_methods/methods/patchmatchnet/upstream/models/patchmatch.py": "bb128e750fb540bfbf52e645c15de46b6a75de7389fcc949b88ff784aab411ea"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/carla_new/best.pt",
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v5_20261031/configs/train_carla_new.json",
+  "dataset": "CARLA_new_wide4",
+  "split": "val",
+  "indices": [
+    0
+  ],
+  "device": "cuda:0",
+  "cpu_threads": 2,
+  "bridge_enabled": true,
+  "inference": {
+    "spatial_layout": true
+  },
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v5_20261031/infer_carla_new"
+}

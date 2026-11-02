@@ -1,0 +1,7 @@
+{
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/paper_range_probe",
+  "evaluation_plan": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/evaluation_recovery/plan.json",
+  "diagnostics": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/diagnostics/full/summary.json",
+  "minimum_free_gib": 200,
+  "gpu": 6
+}

@@ -1,0 +1,50 @@
+{
+  "device": "cuda:0",
+  "output": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/full_validation_round2/carla/rank0",
+  "models": [
+    {
+      "name": "frozen_v6",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/rulermvs_v6_20261101/full_training/carla_new/best.pt",
+      "variant": "control"
+    },
+    {
+      "name": "fixed_new_only",
+      "variant": "fixed",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/fixed_new_only/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/fixed_new_only/carla/round2_audit.json"
+    },
+    {
+      "name": "fixed_joint_keep",
+      "variant": "fixed",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/fixed_joint_keep/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/fixed_joint_keep/carla/round2_audit.json"
+    },
+    {
+      "name": "coordinate_new_only",
+      "variant": "coordinate",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/coordinate_new_only/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/coordinate_new_only/carla/round2_audit.json"
+    },
+    {
+      "name": "coordinate_joint_keep",
+      "variant": "coordinate",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/coordinate_joint_keep/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_round2/coordinate_joint_keep/carla/round2_audit.json"
+    },
+    {
+      "name": "synthetic_new_only",
+      "variant": "coordinate",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_new_only/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_new_only/carla/synthetic_audit.json"
+    },
+    {
+      "name": "synthetic_joint_keep",
+      "variant": "coordinate",
+      "checkpoint": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_joint_keep/carla/final.pt",
+      "completion": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/v7_domain_20261102/pilots_synthetic/coordinate_joint_keep/carla/synthetic_audit.json"
+    }
+  ],
+  "rank": 0,
+  "world": 8,
+  "data_config": "/home/liuzonghao/3Dscene/jar_reconstruction/research/rulermvs_v6_20261101/configs/data_carla.json"
+}
