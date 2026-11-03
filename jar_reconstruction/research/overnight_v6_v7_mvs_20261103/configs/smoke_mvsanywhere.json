@@ -1,0 +1,264 @@
+{
+  "architecture": "mvsanywhere_retrained",
+  "seed": 20261103,
+  "output": "/data/liuzonghao_data/dataset/public_expansion_20261102/overnight_v6_v7_mvs_20261103/smoke/mvsanywhere",
+  "image_size": [
+    256,
+    448
+  ],
+  "matching_image_size": [
+    512,
+    896
+  ],
+  "augmentation": true,
+  "initialization": {
+    "foundation": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/depth_anything_v2_vitb.pth",
+    "matching": "/home/liuzonghao/3Dscene/jar_reconstruction/runs/active/public_pretrain_no_hero_v2/initialization/resnet18-f37072fd.pth",
+    "dinov2": "/data/liuzonghao_data/dataset/public_expansion_20261102/mvs_initialization/dinov2_vitb14_pretrain.pth",
+    "matching_antialiased": "/data/liuzonghao_data/dataset/public_expansion_20261102/mvs_initialization/resnet18_lpf4_finetune-8cc58f59.pth"
+  },
+  "model": {
+    "near": 0.1,
+    "far": 1000.0,
+    "transition": 16.0,
+    "depth_bins": 96,
+    "channels": 64,
+    "raw_channels": 128,
+    "peak_count": 4,
+    "peak_separation_m": 0.1,
+    "fine_min_step_m": 0.005,
+    "fine_max_step_m": 100.0,
+    "fine_step_pixels": 0.5,
+    "use_geometry": true,
+    "absolute_information": true,
+    "use_scene": false,
+    "use_fine_offset": true,
+    "local_kind": "scale_space",
+    "proposal_transport": "bilinear",
+    "scale_routing": true,
+    "compact_sources": true,
+    "spatial_layout": true
+  },
+  "datasets": [
+    {
+      "name": "TartanAir_forest",
+      "root": "/data/liuzonghao_data/dataset/TartanAir_expanded",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/TartanAir_expanded/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/TartanAir_expanded/manifests/val.jsonl"
+      },
+      "near": 0.11094082031250001,
+      "far": 409.375,
+      "depth_scale": 0.2484375,
+      "correspondence": true,
+      "train_manifest_sha256": "86bd9c248b6c9c76844b17ee7c8293b9f6330e07249c38aa498a829cc163e6e9",
+      "train_multiplier": 1.0,
+      "display_name": "TartanAir_expanded"
+    },
+    {
+      "name": "MatrixCity_street",
+      "root": "/home/liuzonghao/3Dscene/data/MatrixCity_street",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MatrixCity_street/manifests/val.jsonl"
+      },
+      "near": 1.0887500047683716,
+      "far": 795.5999755859375,
+      "depth_scale": 0.7945000171661377,
+      "correspondence": true,
+      "train_manifest_sha256": "d1cd83f54824f8fbae8143b7503b745e07c7db3b48e86ea841e69085c6096ed0",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "Hypersim_subset",
+      "root": "/data/liuzonghao_data/dataset/Hypersim_expanded",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/Hypersim_expanded/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/Hypersim_expanded/manifests/val.jsonl"
+      },
+      "near": 0.05061214779689908,
+      "far": 31.5452378749897,
+      "depth_scale": 0.36251752376556395,
+      "correspondence": true,
+      "train_manifest_sha256": "cb5dae10aee157606d47f106944063241cac3ad37c64ff6a49fb46ddf7b2b9f6",
+      "train_multiplier": 1.5,
+      "display_name": "Hypersim_expanded"
+    },
+    {
+      "name": "MVS_Synth",
+      "root": "/home/liuzonghao/3Dscene/data/MVS_Synth",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/MVS_Synth/prepared/manifests/val.jsonl"
+      },
+      "near": 7.552403125,
+      "far": 30080.0,
+      "depth_scale": 26.625,
+      "correspondence": false,
+      "train_manifest_sha256": "a583eb251bd41004f4f3d01fdaa23c9730b7404a0f02094b8c7fda95bad0ba06",
+      "train_multiplier": 1.0
+    },
+    {
+      "name": "VKITTI2",
+      "root": "/home/liuzonghao/3Dscene/data/VKITTI2",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "meters",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/VKITTI2/prepared/manifests/synchronized2/val.jsonl"
+      },
+      "near": 0.78,
+      "far": 464.7243750001188,
+      "depth_scale": 1.675,
+      "correspondence": true,
+      "train_manifest_sha256": "393d2ff0ac3d00300444cca6d535aab160e275391d8c2321e9244011296ae7c7",
+      "train_multiplier": 1.5
+    },
+    {
+      "name": "BlendedMVS",
+      "root": "/home/liuzonghao/3Dscene/data/BlendedMVS",
+      "num_views": 4,
+      "reference_index": 2,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/train_labeled.jsonl",
+        "val": "/data/liuzonghao_data/dataset/BlendedMVS/manifests/val.jsonl"
+      },
+      "near": 0.054385287584364415,
+      "far": 465.98676498414227,
+      "depth_scale": 3.6425594329833983,
+      "correspondence": true,
+      "train_manifest_sha256": "df0e9c11ec22672621682c687a71cc8242fdf310376c0d67e40bd82de943ab71",
+      "train_multiplier": 1.6
+    },
+    {
+      "name": "DynamicReplica_valid",
+      "root": "/data/liuzonghao_data/dataset/DynamicReplica_train",
+      "num_views": 2,
+      "reference_index": 0,
+      "geometry_units": "scene_unit",
+      "manifests": {
+        "train": "/data/liuzonghao_data/dataset/DynamicReplica_train/manifests/train.jsonl",
+        "val": "/data/liuzonghao_data/dataset/DynamicReplica_train/manifests/val.jsonl"
+      },
+      "near": 0.05254350891113281,
+      "far": 11.46484375,
+      "depth_scale": 0.23671875,
+      "correspondence": true,
+      "train_manifest_sha256": "ada2535d79fee91c32cbef4ce9f86c40b62b4496b31729cefad0bc24beceb66e",
+      "train_multiplier": 1.5,
+      "display_name": "DynamicReplica_train"
+    }
+  ],
+  "train": {
+    "batch_size": 8,
+    "accumulation": 1,
+    "workers": 2,
+    "precision": "bf16",
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "checkpoint_every": 4,
+    "log_every": 1,
+    "validation_samples_per_domain": 128,
+    "full_validation_every": 3,
+    "minimum_free_gib": 208,
+    "threads": 2,
+    "allow_tf32": false,
+    "stage_policy": "continuous_new",
+    "domain_schedule": "balanced_prefix",
+    "global_batch_size": 32,
+    "warmup_updates": 100,
+    "stop_after_updates": 4
+  },
+  "stages": [
+    {
+      "number": 1,
+      "epochs": 9
+    }
+  ],
+  "evaluation": {
+    "precision": "fp32",
+    "test_after_training": false,
+    "selection_region_weights": {
+      "full": 0.7,
+      "near": 0.15,
+      "mid": 0.1,
+      "far": 0.05
+    }
+  },
+  "initial_model_checkpoint": "",
+  "loss": {
+    "fine_readout_weight": 0.0
+  },
+  "phase": "public",
+  "bridge": {
+    "enabled": true,
+    "layers": [
+      "layer1",
+      "layer2"
+    ],
+    "bottleneck": 32,
+    "hidden": 128,
+    "subcells": 2,
+    "detach_backbone": true,
+    "residual_scale": 0.1
+  },
+  "input_mode": "equal_pixels",
+  "handoff": {
+    "enabled": true,
+    "mode": "parent",
+    "within_group": "mean",
+    "upsample_feature": "winner",
+    "gate_bias": -2.0
+  },
+  "protocol_notes": [
+    "三模型均从通用预训练初始化，不加载旧V6或Hero任务权重，不蒸馏。",
+    "共同七域TRAIN64198组、相同重放倍率、全局batch32与样本键顺序。",
+    "RGB共同256x448；自研匹配支路512x896仅由共同RGB插值，无额外图像信息。",
+    "共同亮度增强；不主动删源；MVS原生几何翻转、范围扰动和原生损失保留。",
+    "V6/V7共同使用TRAIN监督范围扩展和内部单位增强；推理只用无标签固定范围。",
+    "完整VAL每三轮及末轮选本次best；子集VAL仅监测，不回滚历史权重。",
+    "这是有限共同数据预算重训，不是原论文145k步与原八域训练指标复现。",
+    "本轮不训练CARLA、不读取ETH/RMVD TEST，以保留目标域外测。"
+  ],
+  "range_augmentation": {
+    "enabled": false,
+    "nominal_probability": 0.5,
+    "near_multiplier": [
+      0.5,
+      1.0
+    ],
+    "far_multiplier": [
+      1.0,
+      2.0
+    ],
+    "unit_jitter_probability": 0.5,
+    "unit_scale_bounds": [
+      0.5,
+      2.0
+    ]
+  },
+  "method": "mvsanywhere",
+  "mvsanywhere": {
+    "schedule": "budget_scaled",
+    "matching_lr": 0.0001,
+    "encoder_lr": 5e-06,
+    "decoder_lr": 5e-05,
+    "geometric_flip": true,
+    "refinements": 1,
+    "estimate_depth_range": false
+  }
+}

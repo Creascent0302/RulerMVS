@@ -1,0 +1,41 @@
+{
+  "scope": "CPU公式核对与构造示例，非新精度或速度实验；调用现有HierarchicalHandoff实现",
+  "single_point_winner": 10.0,
+  "global_depth_mean": 5.200000286102295,
+  "family_depth_readout": 2.0,
+  "alpha": 0.5,
+  "parent_fine_pooled_probability": [
+    0.7101020216941833,
+    0.28989794850349426
+  ],
+  "kl_grid_optimum_first_probability": 0.71005798,
+  "conditional_unchanged": true,
+  "finite_nonzero_score_gradient": true,
+  "all_invalid_finite_and_zero_depth": true,
+  "quality_gate_parameters": 129,
+  "stereo_derivative_examples": [
+    {
+      "z_m": 5.0,
+      "pixel_per_m": 8.0,
+      "one_pixel_depth_step_m": 0.125
+    },
+    {
+      "z_m": 20.0,
+      "pixel_per_m": 0.5,
+      "one_pixel_depth_step_m": 2.0
+    },
+    {
+      "z_m": 80.0,
+      "pixel_per_m": 0.03125,
+      "one_pixel_depth_step_m": 32.0
+    }
+  ],
+  "dimensionless_span_invariant": true,
+  "absolute_information_not_unit_invariant": [
+    0.25,
+    25.0
+  ],
+  "coarse_candidate_count": 172032,
+  "fine_candidate_count": 86016,
+  "full_96_fine_candidate_count": 688128
+}

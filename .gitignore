@@ -7,6 +7,7 @@
 
 # 实验输出、权重及可重新生成的缓存
 runs/
+docs/
 artifacts/
 outputs/
 checkpoints/

@@ -1,0 +1,106 @@
+{
+  "scope": "CPU synthetic current CandidateViewAttention and exact algebra; no training, GPU, dataset or accuracy evaluation",
+  "source_cardinality": [
+    {
+      "valid_sources": 1,
+      "actual_null": 0.5,
+      "actual_pooled_first_channel": 0.5,
+      "actual_4cos_bypass": 2.0,
+      "actual_information": 2.0,
+      "balanced_null_preserve_three_sources": 0.25
+    },
+    {
+      "valid_sources": 3,
+      "actual_null": 0.25,
+      "actual_pooled_first_channel": 0.75,
+      "actual_4cos_bypass": 3.0,
+      "actual_information": 3.0,
+      "balanced_null_preserve_three_sources": 0.25
+    },
+    {
+      "valid_sources": 7,
+      "actual_null": 0.125,
+      "actual_pooled_first_channel": 0.875,
+      "actual_4cos_bypass": 3.5,
+      "actual_information": 3.5,
+      "balanced_null_preserve_three_sources": 0.25
+    }
+  ],
+  "internal_unit_response": [
+    {
+      "internal_depth_scale": 0.5,
+      "actual_information": 0.5,
+      "metric_input": 0.4054651081081644,
+      "cell_span": 0.5,
+      "log_depth_information": 200.0
+    },
+    {
+      "internal_depth_scale": 1.0,
+      "actual_information": 2.0,
+      "metric_input": 1.0986122886681096,
+      "cell_span": 0.5,
+      "log_depth_information": 200.0
+    },
+    {
+      "internal_depth_scale": 2.0,
+      "actual_information": 8.0,
+      "metric_input": 2.1972245773362196,
+      "cell_span": 0.5,
+      "log_depth_information": 200.0
+    }
+  ],
+  "range_position_response": [
+    {
+      "candidate": 10.0,
+      "near": 0.1,
+      "far": 100.0,
+      "position": [
+        0.6666666666666667,
+        0.8660254037844385,
+        -0.5000000000000002
+      ]
+    },
+    {
+      "candidate": 10.0,
+      "near": 1.0,
+      "far": 100.0,
+      "position": [
+        0.5,
+        1.0,
+        6.123233995736766e-17
+      ]
+    },
+    {
+      "candidate": 10.0,
+      "near": 0.1,
+      "far": 1000.0,
+      "position": [
+        0.5,
+        1.0,
+        6.123233995736766e-17
+      ]
+    }
+  ],
+  "fixed_internal_peak_separation": [
+    {
+      "center": 0.10000000149011612,
+      "excluded_bins_by_fixed_0_1": 10,
+      "fractional_radius": 0.999999985098839
+    },
+    {
+      "center": 1.0245338678359985,
+      "excluded_bins_by_fixed_0_1": 3,
+      "fractional_radius": 0.09760536292589152
+    },
+    {
+      "center": 9.760536193847656,
+      "excluded_bins_by_fixed_0_1": 1,
+      "fractional_radius": 0.010245338782005937
+    },
+    {
+      "center": 48.32930374145508,
+      "excluded_bins_by_fixed_0_1": 1,
+      "fractional_radius": 0.0020691380230711607
+    }
+  ]
+}
